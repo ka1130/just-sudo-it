@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-02-11 08:50:28
-categories: coding DSP
+categories: coding dsp
 author_name : Kamila Matla-Tomczyk
 author_url : /author/kamila
 author_avatar: kamila

@@ -2,7 +2,7 @@
 layout: post-sidebar
 title: "CSS with Superpowers"
 date: 2015-02-11 08:50:28
-categories: coding DSP
+categories: coding dsp
 author_name : Michelle Jones
 author_url : /author/michelle
 author_avatar: michelle
