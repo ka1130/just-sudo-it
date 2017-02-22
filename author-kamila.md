@@ -8,6 +8,6 @@ author_name: Kamila Matla-Tomczyk
 title: Kamila Matla-Tomczyk
 ---
 
-# Michelle Jones
+# Kamila Matla-Tomczyk
 
 A newb in the coding world, Graphic Designer challenged with Front-End adventure. Spending her free time admiring the beauty of the the ugly
