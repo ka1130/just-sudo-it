@@ -3,7 +3,7 @@ layout: post-sidebar
 title: "CSS with Superpowers"
 date: 2015-02-11 08:50:28
 categories: coding dsp
-author_name : Kamila Matla-Tomczyk
+author_name : Kamila
 author_url : /author/kamila
 author_avatar: kamila
 show_avatar : true
