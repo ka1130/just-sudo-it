@@ -1,0 +1,41 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# Site settings
+
+title: Just sudo IT
+email: ka1130@o2.pl
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "/just-sudo-it"
+url: "http://ka1130.github.io"
+twitter_username: ka1130
+github_username:  ka1130
+
+enable_retina: false
+permalink: :title
+nav_list:
+  Home : ['Home', '/', 'fa-home']
+  #Home_Alt : ['Home Alt', '/home-alt', 'fa-home']
+  #Home_Alt_2 : ['Home Alt 2', '/home-alt-2/', 'fa-home']
+  About : ['About', '/about', 'fa-anchor']
+  Contact : ['Contact', '/contact', 'fa-plane']
+  Author : ['Author', '/author/michelle', 'fa-user']
+single_footer: '<p>The writer community loves your content. Writer &copy; 2016 <a href="/">latest posts</a></p>'
+footer_links:
+    About: ['About', '/about']
+    Writer: ['Writer 2016', '/about']
+
+# Build settings
+#markdown: kramdown
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
