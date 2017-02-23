@@ -13,11 +13,11 @@ Beyond programming
 -------
 
 Besides coding I enjoy doing tons of crazy things like travelling to Pripyat, taking shots of forgotten places (the uglier, the more beautiful) and writing weird narratives. This way I keep both hemispheres in balance. ;)
-In case you were curious, here's my alternative blog: [in-dust-real](http://in-dust-real.pl). It's in Polish but you do not miss much, the images should speak by themselves. The blog is currently as forgotten as the places but there is a plan to revive it. 
+In case you were curious, here's my alternative blog: [in-dust-real](http://in-dust-real.pl). It's in Polish but you do not miss much, the images should speak by themselves. The blog is currently as forgotten as the places shot but there is a plan to revive it. 
 
 Beyond what?!
 -------
 
-That must have been a joke, what can a Jr Front-End have time for besides code? ;)
+The above must have been a joke, what the heck can a Jr Front-End Dev have time for besides code? ;)
 * [Kamila's GitHub](http://ka1130.github.com)
 * [Personal Site](http://kamilamatla.com)
