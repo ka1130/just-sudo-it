@@ -2,13 +2,14 @@
 layout: page
 title: About
 permalink: /about/
-feature_image: feature-book
+feature_image: feature-comp2
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Hi, I'm Kamila and I've recently quit my profession to learn coding. Quite a brave decision after 5 years of studies and 9 years of work in one field. However, I gave it a try and found out it was a great choice. Dev's job is very rewarding, exiting and, in contrast to the common belief, truly creative. I'd like to share my passion with you and hope you will find some of the lines here useful. 
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+Feel welcome to [drop me a line](mailto:ka1130@o2.pl) or leave a comment if you have any questions, encounter a mistake or inaccuracy or wish to share some infos. We are here to learn from one another.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Beyond programming
+-------
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius voluptatum tenetur explicabo, vel, praesentium corrupti repudiandae veniam totam reprehenderit, temporibus delectus possimus provident sint rem ex maiores ratione sunt deserunt.
+
