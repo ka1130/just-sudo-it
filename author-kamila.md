@@ -2,7 +2,7 @@
 layout: author
 title: Author
 permalink: author/kamila/
-feature_image: feature-sea
+feature_image: feature-san-fran
 author_avatar: kamila
 author_name: Kamila
 title: Kamila
