@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-02-11 08:50:28
-categories: coding dsp
+categories: coding dsp2017
 author_name : Kamila
 author_url : /author/kamila
 author_avatar: kamila
