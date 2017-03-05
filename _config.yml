@@ -11,6 +11,7 @@ github_username:  ka1130
 
 enable_retina: false
 permalink: :title
+future: false
 nav_list:
   Home : ['Home', '/', 'fa-home']
   #Home_Alt : ['Home Alt', '/home-alt', 'fa-home']
