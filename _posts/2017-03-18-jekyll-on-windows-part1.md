@@ -73,14 +73,12 @@ To get your Jekyll up and ready you simply run:
 {% highlight javascript %}
 gem install jekyll
 {% endhighlight %}<br>
-
 You will need a package manager called Bundler to get all Jekyll dependencies installed properly. Your console needs the following commands:
 
 {% highlight javascript %}
 gem install bundler
 bundle install
 {% endhighlight %}<br>
-
 There you go! You can now start your first Jekyll project. That simple.
 
 ## Step 4. Get your Jekyll blog
@@ -105,19 +103,16 @@ In your project’s folder you will find a file called “Gemfile” (with no ex
 {% highlight javascript %}
 # gem "jekyll", "(you version here)"
 {% endhighlight %}<br>
-
 Now uncomment the "github-pages" gem below by deleting the **#** from the beginning of the line:
 
 {% highlight javascript %}
 gem "github-pages", group: :jekyll_plugins
 {% endhighlight %}<br>
-
 At this point bundler needs to be updated so run:
 
 {% highlight javascript %}
 bundle update
 {% endhighlight %}<br>
-
 You are now ready to get your blog life. Go ahead and type in in your console:
 
 {% highlight javascript %}
