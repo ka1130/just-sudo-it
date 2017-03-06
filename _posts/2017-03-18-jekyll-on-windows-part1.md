@@ -47,12 +47,11 @@ Make sure to check the option in the middle, “Add Ruby executables to your PAT
 {% highlight javascript %}
 ruby -v
 {% endhighlight %}<br>
-
 again to ensure you're good to go.
 
 ## Step 2. Ruby Dev Kit
 
-Since Ruby was not built to be used on Windows (although it is, surely, possible), it can be difficult to install some of the Gems (which you can think of, generally speaking, as a specific kind of library or plugin; more in-depth description [here](http://guides.rubygems.org/what-is-a-gem/)). Go back to the Ruby Installer page and scroll it down. On the left-hand site there is a “Development Section.” Choose the one appropriate for your system’s version, download and select to extract it in **C:\RubyDevKit**. Now navigate to this path in your command line:
+Since Ruby was not built to be used on Windows (although it is, surely, possible), it can be difficult to install some of the Gems (which you can think of, generally speaking, as a specific kind of library or plugin; more in-depth description [here](http://guides.rubygems.org/what-is-a-gem/)). Go back to the Ruby Installer page and scroll it down. On the left-hand site there is a “Development Section.” Choose the one appropriate for your system’s version and download it. Create a new folder called **RubyDevKit** directly in your **C:\ ** directory. Select to extract Ruby Dev Kit's .exe file in **C:\RubyDevKit** (the folder you have just created). Now navigate to this path in your command line:
 
 {% highlight javascript %}
 cd C:\RubyDevKit
@@ -76,7 +75,16 @@ gem install jekyll
 {% endhighlight %}<br>
 There you go! You can now start your first Jekyll project. That simple.
 
-## Step 4. Get your Jekyll blog
+## Step 4. Installing Bundler
+
+You will need a package manager called Bundler to get all Jekyll dependencies installed properly. Your console needs the following commands:
+
+{% highlight javascript %}
+gem install bundler
+bundle install
+{% endhighlight %}<br>
+
+## Step 5. Get your Jekyll blog
 
 Assuming that you know the basics of Git and GitHub, choose a path on your machine where you want to keep your new Jekyll project. Navigate there in your console. Now if for instance your project will be called coolblog, you need to run the following command:
 
@@ -93,18 +101,24 @@ cd coolblog
 {% highlight javascript %}
 git init
 {% endhighlight %}<br>
-In your project’s file create a file called “Gemfile” (with no extension), open it up and paste the following snippet:
+In your project’s folder you will find a file called “Gemfile” (with no extension), open it up and comment the following snippet by simply putting **#** before:
 
 {% highlight javascript %}
-source 'https://rubygems.org'
-gem 'github-pages', group: :jekyll_plugins
+# gem "jekyll", "(you version here)"
 {% endhighlight %}<br>
-You will also need a package manager called Bundler to get all Jekyll dependencies installed properly.
+
+Now uncomment the "github-pages" gem below by deleting the **#** from the beginning of the line:
 
 {% highlight javascript %}
-gem install bundler
-bundle install
+gem "github-pages", group: :jekyll_plugins
 {% endhighlight %}<br>
+
+At this point bundler needs to be updated so run:
+
+{% highlight javascript %}
+bundle update
+{% endhighlight %}<br>
+
 You are now ready to get your blog life. Go ahead and type in in your console:
 
 {% highlight javascript %}
