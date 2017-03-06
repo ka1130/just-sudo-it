@@ -22,7 +22,7 @@ As the recurring definition states, Jekyll is a simple, blog-aware, static site 
 
 And here’s where things go a little bit trickier. As the majority of Poles, I am a more or less happy user of a mundane Windows 7 (yes, 7, in 2017 I find it funny too). As it turned out, running Jekyll on Microsoft’s child was not as smooth as I hoped. I will try to guide you through the process and prevent you from running  into some stumbling blocks I’ve needed to force through myself. 
 
-Some of the steps below look probably alike on systems other than Windows, however, since I have tested the process on Win7 only, I can not specify the exact differences..
+Some of the steps below look probably alike on systems other than Windows, however, since I have tested the process on Win7 only, I can not specify the exact differences.
 
 ## Step 1. Ruby installation
 
@@ -30,10 +30,10 @@ Assuming that you have some basic knowledge of command line and are familiar wit
 
 {% highlight javascript %}
 ruby -v
-{% endhighlight %}
+{% endhighlight %}<br>
 In my case I got the following answer:
 
-{% highlight javascript %}<br>
+{% highlight javascript %}
 ruby 2.3.3p222 (2016-11-21 revision 56859) [x64-mingw32]
 {% endhighlight %}<br>
 If your version is lower than 2.0.0, you can update it. If you don’t have Ruby yet, just visit [this place](http://rubyinstaller.org/downloads/) and download the most suitable installer as per suggestions on the right-hand side. Don’t close the tab yet, we’ll go back to this page in a minute. 
@@ -42,7 +42,13 @@ Now simply run the .exe files and keep clicking “next” until you see the scr
 
 ![ruby-installer](img/post-assets/ruby-installer.jpg){:class="img-responsive"}
 
-Make sure to check the option in the middle, “Add Ruby executables to your PATH”. Click “install” and you’re done!
+Make sure to check the option in the middle, “Add Ruby executables to your PATH”. Click “install” and you’re done! Restart your console and run
+
+{% highlight javascript %}
+ruby -v
+{% endhighlight %}<br>
+
+again to ensure you're good to go.
 
 ## Step 2. Ruby Dev Kit
 
