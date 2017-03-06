@@ -66,16 +66,13 @@ ruby dk.rb install
 If you encounter any trouble at this point, check up [this place](https://labs.sverrirs.com/jekyll/1x-ruby-and-devkit-error.html) for a solution.
 That’s it! If all went fine, you’re ready to proceed and install Jekyll Gem.
 
-## Step 3. Setting up Jekyll
+## Step 3. Setting up Jekyll and Bundler
 
 To get your Jekyll up and ready you simply run:
 
 {% highlight javascript %}
 gem install jekyll
 {% endhighlight %}<br>
-There you go! You can now start your first Jekyll project. That simple.
-
-## Step 4. Installing Bundler
 
 You will need a package manager called Bundler to get all Jekyll dependencies installed properly. Your console needs the following commands:
 
@@ -84,7 +81,9 @@ gem install bundler
 bundle install
 {% endhighlight %}<br>
 
-## Step 5. Get your Jekyll blog
+There you go! You can now start your first Jekyll project. That simple.
+
+## Step 4. Get your Jekyll blog
 
 Assuming that you know the basics of Git and GitHub, choose a path on your machine where you want to keep your new Jekyll project. Navigate there in your console. Now if for instance your project will be called coolblog, you need to run the following command:
 
