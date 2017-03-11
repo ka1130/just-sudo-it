@@ -67,7 +67,7 @@ Hit `Ctrl + C` to finish. Alternatively, if you want to go with the defaults and
 {% highlight javascript %}
 npm init --yes 
 {% endhighlight %}<br>
-At this point in your directory’s root your will see a new file called **package.json**, containing initial .json configuration. Here’s where next modules required will be added as so-called dependencies. This will help you build reusable package.json file that will install all the dependencies in your next projects once you simply run npm init. This is also why you will need to add `--save-dev` to the following installations commands. I will show you exactly how in a moment.
+At this point in your directory’s root your will see a new file called **package.json**, containing initial .json configuration. Here’s where next modules required will be added as so-called dependencies. This will help you build reusable package.json file that will install all the dependencies in your next projects once you simply run `npm init`. This is also why you will need to add `--save-dev` to the following installations commands. I will show you exactly how in a moment.
 
 Now let’s move on to install Gulp locally in your project. Go ahead with the command below:
 
@@ -84,7 +84,7 @@ In order to create Gulp tasks we need a special file called gulpfile.js. Open yo
 {% highlight javascript %}
 var gulp = require(“gulp”); 
 {% endhighlight %}<br>
-The string in the parenthesis stands for the name of the plugin. This way we are asking Node to look inside the node_modules (you will notice this folder created in your project’s file once you’ve installed Node) and search for a given module (in this case it’s Gulp). Now to actually set our task we need the following syntax:
+The string in the parenthesis stands for the name of the plugin. This way we are asking Node to look inside the `node_modules` (you will notice this folder created in your project’s file once you’ve installed Node) and search for a given module (in this case it’s Gulp). Now to actually set our task we need the following syntax:
 
 {% highlight javascript %}
 gulp.task();
@@ -162,7 +162,7 @@ gulp.task("sass", function() {
         .pipe(gulp.dest("src/css/"));
 });
 {% endhighlight %}<br>
-In the `gulp.src()` you put your input path. In my case I have following structure `project_folder` > `src` (a folder where I put my working files which I then deploy for production into the dist folder) > `scss` (where I keep my Sass folders and main.scss file) > main.scss (keeping all the imports from Sass folders). Adjust the path to match your project’s structure.
+In the `gulp.src()` you put your input path. In my case I have following structure `project_folder` **>** `src` (a folder where I put my working files which I then deploy for production into the dist folder) **>** `scss` (where I keep my Sass folders and main.scss file) **>** `main.scss` (keeping all the imports from Sass folders). Adjust the path to match your project’s structure.
 
 The `pipe` method is used to chain multiple tasks together. The consecutive “pipes” are put in new lines for readability.
 
@@ -198,7 +198,7 @@ I usually go for expanded style which seems most legible to me but the choice is
 
 ## Sourcemaps
 
-The next thing I’m going to cover is sourcemaps. Having sourcemaps built into your sass task is a must when it comes to debugging your code. Imagine having an issue in your .css file and trying to fix it with your browser’s Dev Tools. If you try to inspect an element on your website now, you will see a specific line in the .css file. This may not be what you want, especially if you use a compressed output style. You will rather wish the Dev Tools to point out the .scss file and specific line number inside. This is what you need sourcemaps for. Let’s install them and add to devDependencies:
+The next thing I’m going to cover is sourcemaps. Having sourcemaps built into your sass task is a must when it comes to debugging your code. Imagine having an issue in your .css file and trying to fix it with your browser’s Dev Tools. If you try to inspect an element on your website now, you will see a specific line in the .css file. This may not be what you want, especially if you use a compressed output style. You'd rather wish the Dev Tools to point out the .scss file and specific line number inside. This is what you need sourcemaps for. Let’s install them and add to devDependencies:
 
 {% highlight javascript %}
 npm install gulp-sourcemaps --save-dev
@@ -230,7 +230,7 @@ gulp.task("watch", function() {
     gulp.watch("src/scss/**/*.scss", ["sass"]); 
 });
 {% endhighlight %}<br>
-As you have probably guessed, the first parameter in a source path `**` means I want Gulp to look for all of the files in my scss folder and then get all of the files with the .scss extension). The second parameter is an array of tasks for the watcher to keep track of. In our case, we only want to watch for “sass”.
+As you have probably guessed, the first parameter is a source path ( `**` means I want Gulp to look for all of the files in my scss folder and then get all of the files with the .scss extension). The second parameter is an array of tasks for the watcher to keep track of. In our case, we only want to watch for “sass”.
 
 You already know how to run this task:
 
@@ -239,7 +239,7 @@ gulp watch
 {% endhighlight %}<br>
 This way we start the watch mode. If you want to stop it, hit `Ctrl + C`.
 
-## Listening for changes
+## Synchronized browser testing
 
 The last thing I am going to cover is something which I hope you’ll find really neat: live reloading your web project on your browser. We can handle this with a BrowserSync plugin. It is not a Gulp module but it doesn’t matter, we can use it anyhow. Let’s install it:
 
@@ -260,7 +260,7 @@ gulp.task("sync", function() {
     });
 });
 {% endhighlight %}<br>
-Inside the `browserSync.init()` function we define a configuration object which in this case contains simply the path to our project. Since I usually keep all my source files in a folder called “src” (as mentioned above), I have declared server: `src/`. If you decided to put all your files directly within your main project’s directory, your task may look like this:
+Inside the `browserSync.init()` function we define a configuration object which in this case contains simply the path to our project. Since I usually keep all my source files in a folder called “src” (as mentioned above), I have declared `server: src/`. If you decided to put all your files directly within your main project’s directory, your task may look like this:
 
 {% highlight javascript %}
 gulp.task(“sync”, function() {
@@ -293,7 +293,7 @@ You’ll notice your website open up in a new tab of your default browser, on `l
 
 ## Default series of tasks
 
-Or maybe you want to run more than one task at a time? No problem, you can do this with a “default” task (this time the name of the task does matter, it has to be called “default”). Let’s give it a try and define a default to run “sass”, “sync” and “watch” in a row. It’s a simple one-liner:
+Or maybe you want to run more than one task at a time? No problem, you can do this with a `default` task (this time the name of the task does matter, it has to be called “default”). Let’s give it a try and define a default to run “sass”, “sync” and “watch” in a row. It’s a simple one-liner:
 
 {% highlight javascript %}
 gulp.task("default", ["sass", "sync", "watch"]);
@@ -339,7 +339,7 @@ gulp.task("watch", function() {
 
 gulp.task("default", ["sass", "sync", "watch"]);
 {% endhighlight %}<br>
-Note that if you followed this tutorial and saved all dependencies in your package.json file, then in your next projects, given that you will need the same npm modules, you can simply copy package.json to the project’s root, navigate to the main project’s folder in your console and run npm init to install all the modules. Then, of course, you’ll need an analogous gulpfile.js - just remember to check all the paths, folder and tasks names to avoid errors.
+Note that if you followed this tutorial and saved all dependencies in your package.json file, then in your next projects, given that you will need the same npm modules, you can simply copy `package.json` to the project’s root, navigate to the main project’s folder in your console and run `npm init` to install all the modules. Then, of course, you’ll need an analogous `gulpfile.js` - just remember to check all the paths, folder and tasks names to avoid errors.
 
 I am aware I covered just a small part of what Gulp is capable of. What you can do more is, for example, optimizing your images, concatenating and minifying your files, preventing your watcher from stopping on error and much more. At this point however I believe you’re tired enough. :) If not, take a look at the documentation, really nice and clear:
 
