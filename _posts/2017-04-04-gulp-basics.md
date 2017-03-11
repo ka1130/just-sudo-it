@@ -106,6 +106,39 @@ Try it out! In your console run:
 gulp hello
 {% endhighlight %}<br>
 And the console will answer logging “Hello World!” just as expected.
+
+Below you can see a table explaining 4 simple Gulp APIs. <br>
+Isn't it super nice and easy?
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l">API</th>
+    <th class="tg-yw4l">Purpose</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">gulp.task</td>
+    <td class="tg-yw4l">Define a task</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">gulp.src</td>
+    <td class="tg-yw4l">Read files in</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">gulp.dest</td>
+    <td class="tg-yw4l">Write files out</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">gulp.watch</td>
+    <td class="tg-yw4l">Watch files for changes</td>
+  </tr>
+</table>
+<br>
+
 Now that you have the basic knowledge of creating tasks in Gulp, let’s try something more practical.
 
 ## Compiling Sass to CSS 

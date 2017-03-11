@@ -102,7 +102,7 @@ git init
 In your project’s folder you will find a file called “Gemfile” (with no extension), open it up and comment the following snippet by simply putting **#** before:
 
 {% highlight javascript %}
-# gem "jekyll", "(you version here)"
+# gem "jekyll", "(your version here)"
 {% endhighlight %}<br>
 Now uncomment the "github-pages" gem below by deleting the **#** from the beginning of the line:
 
