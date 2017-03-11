@@ -10,6 +10,7 @@ show_avatar : true
 read_time : 32
 feature_image: feature-jekyll-1
 show_related_posts: true
+comments: true
 square_related: recommend-jekyll-1
 ---
 
