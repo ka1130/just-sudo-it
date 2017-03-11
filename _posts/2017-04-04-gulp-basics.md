@@ -89,8 +89,8 @@ The string in the parenthesis stands for the name of the plugin. This way we are
 gulp.task();
 {% endhighlight %}<br>
 There will be two parameters inside this function:
-the name of a task as a string (the name is up to you)
-the function to perform
+1. the name of a task as a string (the name is up to you)
+2. the function to perform
 
 So, if we would like to log “Hello World” in the console and we want to call the task “hello”, this is how we will build our task:
 
@@ -111,32 +111,37 @@ Now that you have the basic knowledge of creating tasks in Gulp, let’s try som
 
 If you work with preprocessors like Sass or Less, you need your .scss files to be compiled to .css so that the browser understands what you want. It can be easily done with Gulp. First, you need to install the special module for that:
 
+{% highlight javascript %}
 npm install --save-dev gulp-sass
-
+{% endhighlight %}<br>
 Now in your gulpfile.js after the first gulp variable declaration add another one:
 
+{% highlight javascript %}
 var sass = require(“gulp-sass”);
-
+{% endhighlight %}<br>
 Let’s define our task. I called mine “sass”. Here’s how it looks like in my case, we will go through this snippet in a second:
 
+{% highlight javascript %}
 gulp.task("sass", function() {
     gulp.src("src/scss/main.scss")
         .pipe(sass())
         .pipe(gulp.dest("src/css/"));
 });
+{% endhighlight %}<br>
+In the `gulp.src()` you put your input path. In my case I have following structure `project_folder` > `src` (a folder where I put my working files which I then deploy for production into the dist folder) > `scss` (where I keep my Sass folders and main.scss file) > main.scss (keeping all the imports from Sass folders). Adjust the path to match your project’s structure.
 
-In the gulp.src() you put your input path. In my case I have following structure project_folder > src (a folder where I put my working files which I then deploy for production into the dist folder) > scss (where I keep my Sass folders and main.scss file) > main.scss (keeping all the imports from Sass folders). Adjust the path to match your project’s structure.
+The `pipe` method is used to chain multiple tasks together. The consecutive “pipes” are put in new lines for readability.
 
-The “pipe” method is used to chain multiple tasks together. The consecutive “pipes” are put in new lines for readability.
-
-The gulp.dest() part defines where your final .css file will go.
+The `gulp.dest()` part defines where your final .css file will go.
 
 Once you’ve set the task ask the console to compile your Sass like this:
 
+{% highlight javascript %}
 gulp sass
+{% endhighlight %}<br>
+The `sass` method can take a configuration object as a parameter. Let’s do that:
 
-The sass method can take a configuration object as a parameter. Let’s do that:
-
+{% highlight javascript %}
 gulp.task("sass", function() {
     gulp.src("src/scss/main.scss")
         .pipe(sass({
@@ -145,25 +150,28 @@ gulp.task("sass", function() {
         }))
         .pipe(gulp.dest("src/css/"));
 });
-
+{% endhighlight %}<br>
 What’s happening here is we ask Gulp to compile Sass files to expanded style in .css and we also want to see errors in our console, if they occur. So what is this output style issue? It is simply how our final .css will look like: whether it will be minified or more human-friendly.
 We have four options to choose from:
-:nested
-:compact
-:expanded
-:compressed
++ :nested
++ :compact
++ :expanded
++ :compressed
 
-Here is how each of them looks like: http://inchoo.net/dev-talk/tools/sass-output-styles/
+[Here is](http://inchoo.net/dev-talk/tools/sass-output-styles/) how each of them looks like.
 
 I usually go for expanded style which seems most legible to me but the choice is completely up to you.
 
 ## Sourcemaps
 
 The next thing I’m going to cover is sourcemaps. Having sourcemaps built into your sass task is a must when it comes to debugging your code. Imagine having an issue in your .css file and trying to fix it with your browser’s Dev Tools. If you try to inspect an element on your website now, you will see a specific line in the .css file. This may not be what you want, especially if you use a compressed output style. You will rather wish the Dev Tools to point out the .scss file and specific line number inside. This is what you need sourcemaps for. Let’s install them and add to devDependencies:
+
+{% highlight javascript %}
 npm install gulp-sourcemaps --save-dev
+{% endhighlight %}<br>
 Now we need to rebuild the “sass” task like this:
 
-
+{% highlight javascript %}
 gulp.task("sass", function() {
     gulp.src("src/scss/main.scss")
         .pipe(sourcemaps.init())
@@ -174,9 +182,8 @@ gulp.task("sass", function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("src/css/"));
 });
-
+{% endhighlight %}<br>
 Once you’re done, try to inspect a chosen element of your site with Dev Tools. You should see them pointing to the source .scss file and a code line inside of it.
-
 
 ## Listening for changes
 
@@ -184,37 +191,44 @@ When working on your Sass project you probably wouldn’t like to be forced to r
 
 Let’s define this task:
 
+{% highlight javascript %}
 gulp.task("watch", function() {
     gulp.watch("src/scss/**/*.scss", ["sass"]); 
 });
-
-As you have probably guessed, the first parameter in a source path (“**” means I want Gulp to look for all of the files in my scss folder and then get all of the files with the .scss extension). The second parameter is an array of tasks for the watcher to keep track of. In our case, we only want to watch for “sass”.
+{% endhighlight %}<br>
+As you have probably guessed, the first parameter in a source path `**` means I want Gulp to look for all of the files in my scss folder and then get all of the files with the .scss extension). The second parameter is an array of tasks for the watcher to keep track of. In our case, we only want to watch for “sass”.
 
 You already know how to run this task:
 
+{% highlight javascript %}
 gulp watch
-
-This way we start the watch mode. If you want to stop it, hit Ctrl + C.
+{% endhighlight %}<br>
+This way we start the watch mode. If you want to stop it, hit `Ctrl + C`.
 
 ## Listening for changes
 
 The last thing I am going to cover is something which I hope you’ll find really neat: live reloading your web project on your browser. We can handle this with a BrowserSync plugin. It is not a Gulp module but it doesn’t matter, we can use it anyhow. Let’s install it:
 
+{% highlight javascript %}
 npm install browser-sync gulp --save-dev
+{% endhighlight %}<br>
 ...and define as a variable in our gulpfile.js:
 
+{% highlight javascript %}
 var browserSync = require(“browser-sync”);
-
+{% endhighlight %}<br>
 Time to create a task called “sync” (or anything you like) which will look like this:
 
+{% highlight javascript %}
 gulp.task("sync", function() {
     browserSync.init({
         server: "src/"
     });
 });
+{% endhighlight %}<br>
+Inside the `browserSync.init()` function we define a configuration object which in this case contains simply the path to our project. Since I usually keep all my source files in a folder called “src” (as mentioned above), I have declared server: `src/`. If you decided to put all your files directly within your main project’s directory, your task may look like this:
 
-Inside the browserSync.init() function we define a configuration object which in this case contains simply the path to our project. Since I usually keep all my source files in a folder called “src” (as mentioned above), I have declared server: “src/”. If you decided to put all your files directly within your main project’s directory, your task may look like this:
-
+{% highlight javascript %}
 gulp.task(“sync”, function() {
     browserSync.init({
         server: {
@@ -222,8 +236,10 @@ gulp.task(“sync”, function() {
         }
     });
 });
+{% endhighlight %}<br>
 The last thing to do here is adding browserSync to our chain in “sass” task:
 
+{% highlight javascript %}
 gulp.task("sass", function() {
     gulp.src("src/scss/main.scss")
         .pipe(sass({
@@ -233,29 +249,33 @@ gulp.task("sass", function() {
         .pipe(gulp.dest("src/css/"))
         .pipe(browserSync.stream()); 
 });
-
+{% endhighlight %}<br>
 Let’s try it out! Run:
 
+{% highlight javascript %}
 gulp sync
-
-You’ll notice your website open up in a new tab of your default browser, on localhost:3000. Try entering any changes to your stylesheet - they will be introduced immediately without the need to reload your page. Cool, isn’t it?
+{% endhighlight %}<br>
+You’ll notice your website open up in a new tab of your default browser, on `localhost:3000`. Try entering any changes to your stylesheet - they will be introduced immediately without the need to reload your page. Cool, isn’t it?
 
 ## Default series of tasks
 
 Or maybe you want to run more than one task at a time? No problem, you can do this with a “default” task (this time the name of the task does matter, it has to be called “default”). Let’s give it a try and define a default to run “sass”, “sync” and “watch” in a row. It’s a simple one-liner:
 
+{% highlight javascript %}
 gulp.task("default", ["sass", "sync", "watch"]);
-
+{% endhighlight %}<br>
 Guess what? Now you simply run:
 
+{% highlight javascript %}
 gulp
-
+{% endhighlight %}<br>
 and that’s all, Gulp will perform the array of tasks one by one. 
 
 ## Summary
 
 OK, so here’s the final contents of your gulpfile.js if you followed along. The paths and tasks’ names may differ, of course, but you get the idea:
 
+{% highlight javascript %}
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var browserSync = require("browser-sync");
@@ -284,13 +304,13 @@ gulp.task("watch", function() {
 });
 
 gulp.task("default", ["sass", "sync", "watch"]);
-
+{% endhighlight %}<br>
 Note that if you followed this tutorial and saved all dependencies in your package.json file, then in your next projects, given that you will need the same npm modules, you can simply copy package.json to the project’s root, navigate to the main project’s folder in your console and run npm init to install all the modules. Then, of course, you’ll need an analogous gulpfile.js - just remember to check all the paths, folder and tasks names to avoid errors.
 
 I am aware I covered just a small part of what Gulp is capable of. What you can do more is, for example, optimizing your images, concatenating and minifying your files, preventing your watcher from stopping on error and much more. At this point however I believe you’re tired enough. :) If not, take a look at the documentation, really nice and clear:
 
-http://gulpjs.com/
-https://www.npmjs.com/package/gulp
++ <http://gulpjs.com/>
++ <https://www.npmjs.com/package/gulp>
 
 That’s it for today, hope you enjoyed fiddling with Gulp. Test it yourself, play with the variety of possibilities, learn by trial and error: this way you’ll get best understanding and courage, both indispensable in any aspect of developer’s job. See you soon, happy coding! :)
 
