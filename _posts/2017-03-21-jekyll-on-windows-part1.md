@@ -8,9 +8,9 @@ author_url : /author/kamila
 author_avatar: kamila
 show_avatar : true
 read_time : 32
-feature_image: feature-fire
+feature_image: feature-jekyll-1
 show_related_posts: true
-square_related: recommend-fire
+square_related: recommend-jekyll-1
 ---
 
 For many years I have been using Wordpress as an obvious choice when choosing a blogging platform. Wordpress is by far the most popular CMS on the market, supported and developed for 14 years, powering around 8% of all pages in World Wide Web. That speaks for itself. However, since I’ve been keeping my projects on GitHub pages for the last few months, I’ve discovered it might be much easier to run the next blogging project directly on GitHub server and make use of Jekyll due to its native support in GitHub pages.
