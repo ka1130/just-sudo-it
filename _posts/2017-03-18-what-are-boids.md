@@ -13,22 +13,24 @@ show_related_posts: true
 comments: true
 square_related: recommend-laptop
 ---
-## ..Ds - what?
-You might be wondering what the heck is this Dsp2017 in the categories' section and what actually am I doing here, starting yet another programming blog with little experience in front-end development. Well, what got me going with all this stuff is a competition opened by [Maciej Aniserowicz](http://devstyle.pl/o-mnie/), founder of [Devstyle](http://devstyle.pl) blog, one of the best of the kind in Poland. "Dsp" is a Polish acronym for "Get Noticed" and this is exactly the name of the competition. It is targeted at literally all programmers, no matter how experienced they are. Anyone can join, work on their own project, blog about it, share their knowledge and learn at the same time.
+## What is this project about?
 
-Believe me, I'm scared to death. I have defined my project (more about it in the following posts), gathered necessary materials but, as a newbie in the industry, I know I will need to work really hard to make my readers benefit from the posts here. That said, I know there are thousands of people like me and I hope to encourage them to step out of the shade and believe that if I can become an IT blogger, they too have valuable knowledge to share.
+Ever heard about artificial life programs? Sure you have, Internet is full of information, projects and games based on natural life’s simulation. Consider [Conway’s Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life), for instance, which simulates “colonies” growing or dying depending on how crowded or lonely the single cells are. It is still purely math-based but it very believably resembles a kind of natural life patterns, where cells are forming generations connoting almost a kind of collective intelligence, especially if they are given a really big space to colonize. Since I have lately programmed [JavaScript implementation of Game of Life](https://ka1130.github.io/Game-of-Life/src/), I decided to challenge myself with something presumably much more demanding.
 
+## The “Boids” idea
 
-## So why would anyone want to stay here?
-Little experience does not mean having nothing to contribute. I've made sure my project would be ambitious enough to get some programmers interested. I will definitely stumble upon problems some programmers will encounter (or already did in the past) too and hope the solutions I come up with will prove helpful.
+As per [Wikipedia’s definition](https://en.wikipedia.org/wiki/Boids), Boids is an artificial life program, developed by Craig Reynolds in 1986, which simulates the flocking behaviour of birds. I have encountered two derivations of the term “boids”. One says it is a shorthand for “bird-oid”, in other words, “bird-like” objects. The other suggests it stems from the way that New Yorkers pronounce the word “birds”. Leaving aside the story of the term, Reynold’s Boids model (also referred to as flocking algorithm) follows three simple rules:
 
-## Schedule
-The posts will appear at least twice a week for minimum 10 weeks continuously. Each week I will issue a post with some information related strictly to the project, and another one associated with coding / IT environment.
++ **separation**: steer to avoid crowding
++ **alignment**: steer towards the average heading of local flockmates
++ **cohesion**: steer to move toward the average position of local flockmates
 
-## Technologies
-You can expect me to write about JavaScript, as well as HTML/CSS/Sass issues. The blog is powered by Jekyll and hosted on GitHub pages so I plan to walk you through the process which turned out to be a bit tricky on Windows. ;)
+What is phenomenal about Reynold’s model is that using these plain rules only on single units it generates behaviour strongly resembling a real flock’s one. Just as in the Game of Life the result is surprisingly complex and realistic. Boids are one of many experiments in the field of so-called swarm intelligence(https://en.wikipedia.org/wiki/Swarm_intelligence) characterized by the lack of centralized control agent: each boid follows its own rules, still resulting in a surprising group behaviour.
 
-## OK, are you finished?
-Yes. Not going to bore you to death. ;) If you wish to keep track of this blog, just make use of the RSS button on the [home site](http://just-sudo-it.pl).
+Here is a nice visualization and further explanation of the idea:
 
+(https://www.youtube.com/watch?v=QbUPfMXXQIY&t=36s)
 
+##My goal
+
+The purpose of my project is to create a JavaScript implementation of boids. I know I am definitely not the first one to try - there even are whole libraries and scripts available to use freely. However, I will try to figure the thing out myself, preferably with pure Vanilla JS. We’ll see what I’ll end up with. Keep your fingers crossed, I will report you soon about the project’s state!
