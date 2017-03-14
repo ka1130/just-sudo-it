@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Just sudo IT | Strange case of Dr Jekyll and Mr Windows / part I</title>
+    <meta name="description" content="For many years I have been using Wordpress as an obvious choice when choosing a blogging platform. Wordpress is by far the most popular CMS on the market, su...">
+
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/jekyll-on-windows-part1">
+    <link rel="alternate" type="application/rss+xml" title="Just sudo IT" href="http://localhost:4000/feed.xml" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" >
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <!--[if lt IE 9]>
+        <script src="/js/vendor/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+
+  <body class="">
+    <!-- if the user has javascript disabled they can still use the menu -->
+<noscript>
+    <div class="no-js-menu clearfix">
+        <ul>
+            
+                <li><i class="fa fa-home"></i><a href="/">Home</a></li>
+            
+                <li><i class="fa fa-anchor"></i><a href="/about">About</a></li>
+            
+                <li><i class="fa fa-user"></i><a href="/author/kamila">Author</a></li>
+            
+        </ul>
+    </div>
+</noscript>
+<!-- end no script -->
+
+    <header class="hero-image" style='background-image: url(/img/feature-jekyll-1.jpg);'>
+    <span class="menu-trigger animated fadeInDown">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </span>
+
+    <div id="menu-target">
+    <ul>
+        
+            <li><i class="fa fa-home"></i><a href="/">Home</a></li>
+        
+            <li><i class="fa fa-anchor"></i><a href="/about">About</a></li>
+        
+            <li><i class="fa fa-user"></i><a href="/author/kamila">Author</a></li>
+        
+    </ul>
+</div>
+
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 single-content-sidebar">
+
+            <h1>Strange case of Dr Jekyll and Mr Windows / part I</h1>
+
+            <p>For many years I have been using Wordpress as an obvious choice when choosing a blogging platform. Wordpress is by far the most popular CMS on the market, supported and developed for 14 years, powering around 8% of all pages in World Wide Web. That speaks for itself. However, since I’ve been keeping my projects on GitHub pages for the last few months, I’ve discovered it might be much easier to run the next blogging project directly on GitHub server and make use of Jekyll due to its native support in GitHub pages.</p>
+
+<h2 id="so-what-is-jekyll">So what is Jekyll?</h2>
+<p>As the recurring definition states, Jekyll is a simple, blog-aware, static site generator based on Ruby language. By saying “static” we mean it’s flat-file and ready for deployment. No databases needed, no security headaches, no maintenance issues. It’s ultra-fast, cheap (your blog can be hosted for free on GitHub pages) and manageable. The contents are written simply in HTML/CSS/Markdown so if you’ve had any blogging experience, switching to Jekyll should be duck soup. :) At least when you’re running it on Mac OS or Linux platform.</p>
+
+<h2 id="but-i-am-not">…but I am not.</h2>
+
+<p>And here’s where things go a little bit trickier. As the majority of Poles, I am a more or less happy user of a mundane Windows 7 (yes, 7, in 2017 I find it funny too). As it turned out, running Jekyll on Microsoft’s child was not as smooth as I hoped. I will try to guide you through the process and prevent you from running  into some stumbling blocks I’ve needed to force through myself.</p>
+
+<p>Some of the steps below look probably alike on systems other than Windows, however, since I have tested the process on Win7 only, I can not specify the exact differences.</p>
+
+<h2 id="step-1-ruby-installation">Step 1. Ruby installation</h2>
+
+<p>Assuming that you have some basic knowledge of command line and are familiar with Git (and have Git ready to use on your platform), you can proceed with setting up our GitHub-hosted, Jekyll-powered website. First, we need to install Ruby. It is likely you already have Ruby on your machine so go ahead and type in your console:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ruby</span> <span class="o">-</span><span class="nx">v</span></code></pre></figure>
+<p><br />
+In my case I got the following answer:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ruby</span> <span class="mf">2.3</span><span class="p">.</span><span class="mi">3</span><span class="nx">p222</span> <span class="p">(</span><span class="mi">2016</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">21</span> <span class="nx">revision</span> <span class="mi">56859</span><span class="p">)</span> <span class="p">[</span><span class="nx">x64</span><span class="o">-</span><span class="nx">mingw32</span><span class="p">]</span></code></pre></figure>
+<p><br />
+If your version is lower than 2.0.0, you can update it. If you don’t have Ruby yet, just visit <a href="http://rubyinstaller.org/downloads/">this place</a> and download the most suitable installer as per suggestions on the right-hand side. Don’t close the tab yet, we’ll go back to this page in a minute.</p>
+
+<p>Now simply run the .exe files and keep clicking “next” until you see the screen below.</p>
+
+<p><img src="img/post-assets/ruby-installer.jpg" alt="ruby-installer" class="img-responsive" /></p>
+
+<p>Make sure to check the option in the middle, “Add Ruby executables to your PATH”. Click “install” and you’re done! Restart your console and run</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ruby</span> <span class="o">-</span><span class="nx">v</span></code></pre></figure>
+<p><br />
+again to ensure you’re good to go.</p>
+
+<h2 id="step-2-ruby-dev-kit">Step 2. Ruby Dev Kit</h2>
+
+<p>Since Ruby was not built to be used on Windows (although it is, surely, possible), it can be difficult to install some of the Gems (which you can think of, generally speaking, as a specific kind of library or plugin; more in-depth description <a href="http://guides.rubygems.org/what-is-a-gem/">here</a>). Go back to the Ruby Installer page and scroll it down. On the left-hand site there is a “Development Section.” Choose the one appropriate for your system’s version and download it. Create a new folder called <strong>RubyDevKit</strong> directly in your <strong>C:\ ** directory. Select to extract Ruby Dev Kit’s .exe file in **C:\RubyDevKit</strong> (the folder you have just created). Now navigate to this path in your command line:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">cd</span> <span class="nx">C</span><span class="err">:\</span><span class="nx">RubyDevKit</span></code></pre></figure>
+<p><br />
+Then go ahead and run the commands below:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ruby</span> <span class="nx">dk</span><span class="p">.</span><span class="nx">rb</span> <span class="nx">init</span>
+<span class="nx">ruby</span> <span class="nx">dk</span><span class="p">.</span><span class="nx">rb</span> <span class="nx">review</span>
+<span class="nx">ruby</span> <span class="nx">dk</span><span class="p">.</span><span class="nx">rb</span> <span class="nx">install</span></code></pre></figure>
+<p><br />
+If you encounter any trouble at this point, check up <a href="https://labs.sverrirs.com/jekyll/1x-ruby-and-devkit-error.html">this place</a> for a solution.
+That’s it! If all went fine, you’re ready to proceed and install Jekyll Gem.</p>
+
+<h2 id="step-3-setting-up-jekyll-and-bundler">Step 3. Setting up Jekyll and Bundler</h2>
+
+<p>To get your Jekyll up and ready you simply run:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gem</span> <span class="nx">install</span> <span class="nx">jekyll</span></code></pre></figure>
+<p><br />
+You will need a package manager called Bundler to get all Jekyll dependencies installed properly. Your console needs the following commands:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gem</span> <span class="nx">install</span> <span class="nx">bundler</span>
+<span class="nx">bundle</span> <span class="nx">install</span></code></pre></figure>
+<p><br />
+There you go! You can now start your first Jekyll project. That simple.</p>
+
+<h2 id="step-4-get-your-jekyll-blog">Step 4. Get your Jekyll blog</h2>
+
+<p>Assuming that you know the basics of Git and GitHub, choose a path on your machine where you want to keep your new Jekyll project. Navigate there in your console. Now if for instance your project will be called coolblog, you need to run the following command:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jekyll</span> <span class="k">new</span> <span class="nx">coolblog</span></code></pre></figure>
+<p><br />
+Move to this directory…</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">cd</span> <span class="nx">coolblog</span></code></pre></figure>
+<p><br />
+…and intialize your Git repo:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">git</span> <span class="nx">init</span></code></pre></figure>
+<p><br />
+In your project’s folder you will find a file called “Gemfile” (with no extension), open it up and comment the following snippet by simply putting <strong>#</strong> before:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span> <span class="nx">gem</span> <span class="s2">"jekyll"</span><span class="p">,</span> <span class="s2">"(your version here)"</span></code></pre></figure>
+<p><br />
+Now uncomment the “github-pages” gem below by deleting the <strong>#</strong> from the beginning of the line:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gem</span> <span class="s2">"github-pages"</span><span class="p">,</span> <span class="nx">group</span><span class="err">:</span> <span class="err">:</span><span class="nx">jekyll_plugins</span></code></pre></figure>
+<p><br />
+…and have a look at the end of the file which should say something like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span> <span class="nx">Windows</span> <span class="nx">does</span> <span class="nx">not</span> <span class="nx">include</span> <span class="nx">zoneinfo</span> <span class="nx">files</span><span class="p">,</span> <span class="nx">so</span> <span class="nx">bundle</span> <span class="nx">the</span> <span class="nx">tzinfo</span><span class="o">-</span><span class="nx">data</span> <span class="nx">gem</span>
+<span class="nx">gem</span> <span class="s1">'tzinfo-data'</span><span class="p">,</span> <span class="nx">platforms</span><span class="err">:</span> <span class="p">[</span><span class="err">:</span><span class="nx">mingw</span><span class="p">,</span> <span class="err">:</span><span class="nx">mswin</span><span class="p">,</span> <span class="err">:</span><span class="nx">x64_mingw</span><span class="p">,</span> <span class="err">:</span><span class="nx">jruby</span><span class="p">]</span>
+
+<span class="nx">gem</span> <span class="s1">'wdm'</span><span class="p">,</span> <span class="s1">'&gt;= 0.1.0'</span> <span class="k">if</span> <span class="nx">Gem</span><span class="p">.</span><span class="nx">win_platform</span><span class="p">?</span></code></pre></figure>
+<p><br />
+At this point bundler needs to be updated so run:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">bundle</span> <span class="nx">update</span></code></pre></figure>
+<p><br />
+You are now ready to get your blog life. Go ahead and type in in your console:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jekyll</span> <span class="nx">serve</span></code></pre></figure>
+<p><br />
+to put Jekyll in kind of “watch” mode where all your changes to the blog’s files (apart from .yml configuration files) will be instantly introduced.</p>
+
+<p>Now, in your browser go to <code class="highlighter-rouge">http://localhost:4000</code>. You will see your freshly created blog which will look like this:</p>
+
+<p><img src="img/post-assets/your-awesome-blog.jpg" alt="your-awesome-blog" class="img-responsive" /></p>
+
+<p>Congratulations! You’re ready to go!</p>
+
+<p>Bear in mind that once you hit Ctrl + C or close the console, Jekyll server will stop and you will be unable to see your site on localhost. I myself was not aware of this initially and lost much too much time stack-overflowing why my blog stopped working. ;)</p>
+
+<h2 id="further-reading-and-tips">Further reading and tips</h2>
+
+<p>This has been a long post, however you may find it insufficient. To learn more about working with Jekyll I encourage you to visit the following places:</p>
+<ul>
+  <li>Very insightful yet easy to follow <a href="https://jekyllrb.com/">documentation</a></li>
+  <li><a href="http://jekyll-windows.juthilo.com/">Nice guide for Windows users</a></li>
+  <li>Another <a href="http://yizeng.me/2013/05/10/install-jekyll-3-on-windows/">Jekyll installation guide</a> with a very helpful part about troubleshooting</li>
+  <li>For those unfamiliar with GitHub, <a href="https://guides.github.com/activities/hello-world/">here</a> is a friendly and straightforward overview</li>
+  <li>Using Windows command line only? This may not always be the best idea. Check out <a href="https://git-for-windows.github.io/">Git Bash</a></li>
+</ul>
+
+<p>In the next post we will take a look at customizing your blog and running it on your own domain if you preferred it over the Git Hub default one.</p>
+
+<p>Now get down to work, I keep my fingers crossed for your awesome project! :)</p>
+
+
+
+        </div><!-- main-content/col -->
+
+        <div class="col-xs-12 col-md-3 col-md-offset-1 single-content-sidebar-area">
+
+            <img src='/img/kamila.jpg' class="user-icon " alt="user-image">
+            <div class="meta">
+
+                <div class="sidebar-info">
+                    <a href="/author/kamila">Kamila</a> in <a href='/category/dsp2017'>Dsp2017</a>
+                </div>
+
+                <div class="sidebar-readtime">
+                    <i class="fa fa-bookmark"></i> 30 minute read
+                </div>
+
+            </div>
+
+            <h2 class="favorites">Similar Posts</h2>
+
+            
+                
+                <div class="similar-post">
+                    <a href="/gulp-basics"><h3>A Gulp of Node.js</h3></a>
+                </div>
+                
+
+
+            
+                
+                <div class="similar-post">
+                    <a href="/jekyll-on-windows-part2"><h3>Strange case of Dr Jekyll and Mr Windows / part II</h3></a>
+                </div>
+                
+
+
+            
+                
+                <div class="similar-post">
+                    <a href="/what-are-boids"><h3>What the Boids?</h3></a>
+                </div>
+                
+
+
+            
+                
+                <div class="similar-post">
+                    <a href="/get-noticed-2017"><h3>Get Noticed! / ed.2017</h3></a>
+                </div>
+                
+
+
+            
+
+
+        </div>
+
+    </div> <!--/row -->
+
+    <div class="row">
+        <div class="col-xs-12 col-md-8 single-content-sidebar">
+            
+				<div id="disqus_thread"></div>
+				<script>
+			
+				var disqus_config = function () {
+				this.page.url = "http://just-sudo-it.pl"; // <--- use canonical URL
+				this.page.identifier = "/jekyll-on-windows-part1";
+				};
+				
+				(function() { // DON'T EDIT BELOW THIS LINE
+				var d = document, s = d.createElement('script');
+				s.src = 'https://just-sudo-it.disqus.com/embed.js';
+				s.setAttribute('data-timestamp', +new Date());
+				(d.head || d.body).appendChild(s);
+				})();
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			
+        </div>
+    </div>
+
+</main> <!-- /container -->
+
+<footer class="single">
+    <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-2">
+            <img src="/img/kamila.jpg" class="user-icon " alt="user-image">
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="category-list">
+                <p>Published <span>Mar 21, 2017</span></p>
+                <p><a href="/author/kamila">Kamila</a> in <a href='/category/dsp2017'>Dsp2017</a></p>
+
+                <div class="other-catergories">
+                    <h3>Also found in</h3>
+
+                    <ul>
+                        
+                        <li>
+                            <a href='/category/dsp2017'>Dsp2017</a>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </div><!-- end col -->
+        <div class="col-xs-12 col-sm-4">
+            <div class="social">
+                <p>Share this article</a>
+                <div class="social-links">
+                    <a class="social-icon" href="#" data-platform="twitter" data-message="" data-url="http://localhost:4000/jekyll-on-windows-part1"><i class="fa fa-twitter"></i></a>
+
+                    <a class="social-icon" href="#" data-platform="facebook" data-message="" data-url="http://localhost:4000/jekyll-on-windows-part1"><i class="fa fa-facebook-official"></i></a>
+                    <a class="social-icon" data-platform="mail"  href="mailto:ka1130@o2.pl?body=http://localhost:4000/jekyll-on-windows-part1"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div><!-- end row -->
+</div>
+
+
+    
+        <div class="row read-another-section">
+    
+        
+        <a href="/gulp-basics"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
+            <div class="overlay"></div>
+            <img src='/img/recommend-gulp.jpg'>
+            <h3 class="read-another">A Gulp of Node.js</h3>
+        </div></a>
+        
+    
+        
+        <a href="/jekyll-on-windows-part2"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
+            <div class="overlay"></div>
+            <img src='/img/recommend-jekyll-2.jpg'>
+            <h3 class="read-another">Strange case of Dr Jekyll and Mr Windows / part II</h3>
+        </div></a>
+        
+    
+        
+        <a href="/what-are-boids"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
+            <div class="overlay"></div>
+            <img src='/img/recommend-boids.jpg'>
+            <h3 class="read-another">What the Boids?</h3>
+        </div></a>
+        
+    
+        
+        <a href="/get-noticed-2017"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
+            <div class="overlay"></div>
+            <img src='/img/recommend-laptop.jpg'>
+            <h3 class="read-another">Get Noticed! / ed.2017</h3>
+        </div></a>
+        
+    
+</div>
+    
+</footer>
+
+
+    <script src='/js/vendor/modernizr.custom.32229-2.8-respondjs-1-4-2.js'></script>
+    <script src="/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src='/js/vendor/jquery.jpanelmenu.min.js'></script>
+    <script type='application/javascript' src='/js/vendor/fastclick.min.js'></script>
+    
+    <script src=' /js/main.js'></script>
+    <script id="dsq-count-scr" src="//just-sudo-it.disqus.com/count.js" async></script>
+  </body>
+
+</html>

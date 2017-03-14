@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Just sudo IT</title>
+    <description>Dev lines from a coding novice toiling to become a ninja.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 14 Mar 2017 18:00:03 +0100</pubDate>
+    <lastBuildDate>Tue, 14 Mar 2017 18:00:03 +0100</lastBuildDate>
+    <generator>Jekyll v3.4.2</generator>
+    
+      <item>
+        <title>A Gulp of Node.js</title>
+        <description>&lt;p&gt;Working on a website project is not only about writing code in HTML, CSS and JS. When it comes to deployment or using preprocessors for instance, you need some tasks to be done repeatedly, like:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;concatenating and minifying CSS and JavaScript files&lt;/li&gt;
+  &lt;li&gt;compiling Sass to CSS (I highly recommend writing in Sass rather than pure CSS, especially if you work on a little bit bigger project)&lt;/li&gt;
+  &lt;li&gt;reloading your browser each time you introduce changes to your styles&lt;/li&gt;
+  &lt;li&gt;compressing images&lt;/li&gt;
+  &lt;li&gt;watching Sass for changes&lt;/li&gt;
+  &lt;li&gt;…and so on :)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is when tools like Gulp or Grunt come in handy. In this tutorial I will show you some basics of Gulp which I find easier than Grunt, with API is a bit cleaner and faster performance. That doesn’t mean it’s overall better, it’s just what I work with on a daily basis and can tell you something about.&lt;/p&gt;
+
+&lt;h2 id=&quot;all-cool-but-what-is-gulp-actually&quot;&gt;All cool but what is Gulp actually?&lt;/h2&gt;
+&lt;p&gt;In simplest terms, Gulp is an automation tool, or a JavaScript task runner, that takes tons of tedious, repetitive work off your hands. It is built on Node.js so you will define your task in JavaScript in so-called gulpfile.js. Pretty nice for a Front-End Developer.&lt;/p&gt;
+
+&lt;h2 id=&quot;lets-get-started&quot;&gt;Let’s get started&lt;/h2&gt;
+
+&lt;p&gt;You will get a clear impression of how it all works if you just try yourself - and it’s pretty simple. What we need to do is install Node first. Node is a platform that lets you run JavaScript outside of a browser. Node itself is a C++ program but don’t worry about that, you only need JavaScript to handle your tasks. What’s cool about Node is its modules which you can also refer to as kind of plugins or files that keep specific functions to run them when needed.&lt;/p&gt;
+
+&lt;p&gt;Now let’s go ahead and install Node. It is possible you already have Node on your machine so open up your console and run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+If your console answers with a version number, you’re good to go. If not, go to the &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Node.js website&lt;/a&gt;, download and install Node. The Node Package Manager (npm) should have been installed too, so run this command to check it:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+As before, your console should answer with the npm’s version number.&lt;/p&gt;
+
+&lt;h2 id=&quot;installing-gulp&quot;&gt;Installing Gulp&lt;/h2&gt;
+
+&lt;p&gt;Now that we have our Node platform ready, let’s proceed and install Gulp. Simply type this in your console:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+to install Gulp globally. If you are on Mac or Linux you should precede this command with &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo&lt;/code&gt;. This is something you do once and for good. You will also need to install Gulp locally in your project’s folder, so navigate there in your console (nice trick: type &lt;code class=&quot;highlighter-rouge&quot;&gt;cd + space&lt;/code&gt; and then simply drag &amp;amp; drop your folder inside the console; hit enter and you’re there!).&lt;/p&gt;
+
+&lt;p&gt;Gulp is a Node Package Manager module so let’s initialize npm like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Given this command, the console will ask you a series of questions. You can give them specific answers or simply keep hitting Enter for the defaults until the process is finished. You will probably need to stop the task manually once you see this line:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;Is&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Hit &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl + C&lt;/code&gt; to finish. Alternatively, if you want to go with the defaults and omit the questions’ part, simply run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yes&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+At this point in your directory’s root your will see a new file called &lt;strong&gt;package.json&lt;/strong&gt;, containing initial .json configuration. Here’s where next modules required will be added as so-called dependencies. This will help you build reusable package.json file that will install all the dependencies in your next projects once you simply run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt;. This is also why you will need to add &lt;code class=&quot;highlighter-rouge&quot;&gt;--save-dev&lt;/code&gt; to the following installations commands. I will show you exactly how in a moment.&lt;/p&gt;
+
+&lt;p&gt;Now let’s move on to install Gulp locally in your project. Go ahead with the command below:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+If you take a look at your package.json file, you’ll notice Gulp added to devDependencies. Good, let’s create our first task!&lt;/p&gt;
+
+&lt;h2 id=&quot;hello-world-with-gulp&quot;&gt;“Hello World” with Gulp&lt;/h2&gt;
+
+&lt;p&gt;In order to create Gulp tasks we need a special file called gulpfile.js. Open your editor, ask it for a new file and save it as &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt;. As per the old programming tradition, let’s build a “Hello World” task to get acquainted with the environment. In order to define it, go ahead and type this at the beginning of your gulpfile.js:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+The string in the parenthesis stands for the name of the plugin. This way we are asking Node to look inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;node_modules&lt;/code&gt; (you will notice this folder created in your project’s file once you’ve installed Node) and search for a given module (in this case it’s Gulp). Now to actually set our task we need the following syntax:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+There will be two parameters inside this function:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;the name of a task as a string (the name is up to you)&lt;/li&gt;
+  &lt;li&gt;the function to perform&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So, if we would like to log “Hello World” in the console and we want to call the task “hello”, this is how we will build our task:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;World&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Try it out! In your console run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+And the console will answer logging “Hello World!” just as expected.&lt;/p&gt;
+
+&lt;p&gt;Below you can see a table explaining 4 simple Gulp APIs. &lt;br /&gt;
+Isn’t it super nice and easy?&lt;/p&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top}
+&lt;/style&gt;
+
+&lt;table class=&quot;tg&quot;&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;tg-yw4l&quot;&gt;API&lt;/th&gt;
+    &lt;th class=&quot;tg-yw4l&quot;&gt;Purpose&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-yw4l&quot;&gt;gulp.task&lt;/td&gt;
+    &lt;td class=&quot;tg-yw4l&quot;&gt;Define a task&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-yw4l&quot;&gt;gulp.src&lt;/td&gt;
+    &lt;td class=&quot;tg-yw4l&quot;&gt;Read files in&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-yw4l&quot;&gt;gulp.dest&lt;/td&gt;
+    &lt;td class=&quot;tg-yw4l&quot;&gt;Write files out&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-yw4l&quot;&gt;gulp.watch&lt;/td&gt;
+    &lt;td class=&quot;tg-yw4l&quot;&gt;Watch files for changes&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that you have the basic knowledge of creating tasks in Gulp, let’s try something more practical.&lt;/p&gt;
+
+&lt;h2 id=&quot;compiling-sass-to-css&quot;&gt;Compiling Sass to CSS&lt;/h2&gt;
+
+&lt;p&gt;If you work with preprocessors like Sass or Less, you need your .scss files to be compiled to .css so that the browser understands what you want. It can be easily done with Gulp. First, you need to install the special module for that:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dev&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Now in your gulpfile.js after the first gulp variable declaration add another one:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Let’s define our task. I called mine “sass”. Here’s how it looks like in my case, we will go through this snippet in a second:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/scss/main.scss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/css/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+In the &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp.src()&lt;/code&gt; you put your input path. In my case I have following structure &lt;code class=&quot;highlighter-rouge&quot;&gt;project_folder&lt;/code&gt; &lt;strong&gt;&amp;gt;&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;src&lt;/code&gt; (a folder where I put my working files which I then deploy for production into the dist folder) &lt;strong&gt;&amp;gt;&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;scss&lt;/code&gt; (where I keep my Sass folders and main.scss file) &lt;strong&gt;&amp;gt;&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;main.scss&lt;/code&gt; (keeping all the imports from Sass folders). Adjust the path to match your project’s structure.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;pipe&lt;/code&gt; method is used to chain multiple tasks together. The consecutive “pipes” are put in new lines for readability.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;gulp.dest()&lt;/code&gt; part defines where your final .css file will go.&lt;/p&gt;
+
+&lt;p&gt;Once you’ve set the task ask the console to compile your Sass like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;sass&lt;/code&gt; method can take a configuration object as a parameter. Let’s do that:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/scss/main.scss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;outputStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'expanded'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;errLogToConsole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/css/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+What’s happening here is we ask Gulp to compile Sass files to expanded style in .css and we also want to see errors in our console, if they occur. So what is this output style issue? It is simply how our final .css will look like: whether it will be minified or more human-friendly.
+We have four options to choose from:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;:nested&lt;/li&gt;
+  &lt;li&gt;:compact&lt;/li&gt;
+  &lt;li&gt;:expanded&lt;/li&gt;
+  &lt;li&gt;:compressed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://inchoo.net/dev-talk/tools/sass-output-styles/&quot;&gt;Here is&lt;/a&gt; how each of them looks like.&lt;/p&gt;
+
+&lt;p&gt;I usually go for expanded style which seems most legible to me but the choice is completely up to you.&lt;/p&gt;
+
+&lt;h2 id=&quot;sourcemaps&quot;&gt;Sourcemaps&lt;/h2&gt;
+
+&lt;p&gt;The next thing I’m going to cover is sourcemaps. Having sourcemaps built into your sass task is a must when it comes to debugging your code. Imagine having an issue in your .css file and trying to fix it with your browser’s Dev Tools. If you try to inspect an element on your website now, you will see a specific line in the .css file. This may not be what you want, especially if you use a compressed output style. You’d rather wish the Dev Tools to point out the .scss file and specific line number inside. This is what you need sourcemaps for. Let’s install them and add to devDependencies:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sourcemaps&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dev&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Now we need to rebuild the “sass” task like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/scss/main.scss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sourcemaps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;outputStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'expanded'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;errLogToConsole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sourcemaps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/css/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Once you’re done, try to inspect a chosen element of your site with Dev Tools. You should see them pointing to the source .scss file and a code line inside of it.&lt;/p&gt;
+
+&lt;h2 id=&quot;listening-for-changes&quot;&gt;Listening for changes&lt;/h2&gt;
+
+&lt;p&gt;When working on your Sass project you probably wouldn’t like to be forced to run gulp sass each time you save changes to the stylesheet. I assume you’d rather have your changes introduced to the .css file each time you change one of your .scss stylesheets. You can achieve this with a Gulp watcher that will keep track of the changes and introduce them immediately into the destination .css.&lt;/p&gt;
+
+&lt;p&gt;Let’s define this task:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;watch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/scss/**/*.scss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+As you have probably guessed, the first parameter is a source path ( &lt;code class=&quot;highlighter-rouge&quot;&gt;**&lt;/code&gt; means I want Gulp to look for all of the files in my scss folder and then get all of the files with the .scss extension). The second parameter is an array of tasks for the watcher to keep track of. In our case, we only want to watch for “sass”.&lt;/p&gt;
+
+&lt;p&gt;You already know how to run this task:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;watch&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+This way we start the watch mode. If you want to stop it, hit &lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl + C&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;synchronized-browser-testing&quot;&gt;Synchronized browser testing&lt;/h2&gt;
+
+&lt;p&gt;The last thing I am going to cover is something which I hope you’ll find really neat: live reloading your web project on your browser. We can handle this with a BrowserSync plugin. It is not a Gulp module but it doesn’t matter, we can use it anyhow. Let’s install it:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;browser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sync&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dev&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+…and define as a variable in our gulpfile.js:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;browserSync&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;browser&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sync&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Time to create a task called “sync” (or anything you like) which will look like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sync&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;browserSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;src/&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;browserSync.init()&lt;/code&gt; function we define a configuration object which in this case contains simply the path to our project. Since I usually keep all my source files in a folder called “src” (as mentioned above), I have declared &lt;code class=&quot;highlighter-rouge&quot;&gt;server: src/&lt;/code&gt;. If you decided to put all your files directly within your main project’s directory, your task may look like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sync&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;browserSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;baseDir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;./&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+The last thing to do here is adding browserSync to our chain in “sass” task:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/scss/main.scss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;outputStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'expanded'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;errLogToConsole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/css/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;browserSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Let’s try it out! Run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sync&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+You’ll notice your website open up in a new tab of your default browser, on &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:3000&lt;/code&gt;. Try entering any changes to your stylesheet - they will be introduced immediately without the need to reload your page. Cool, isn’t it?&lt;/p&gt;
+
+&lt;h2 id=&quot;default-series-of-tasks&quot;&gt;Default series of tasks&lt;/h2&gt;
+
+&lt;p&gt;Or maybe you want to run more than one task at a time? No problem, you can do this with a &lt;code class=&quot;highlighter-rouge&quot;&gt;default&lt;/code&gt; task (this time the name of the task does matter, it has to be called “default”). Let’s give it a try and define a default to run “sass”, “sync” and “watch” in a row. It’s a simple one-liner:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;default&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;sync&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;watch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Guess what? Now you simply run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+and that’s all, Gulp will perform the array of tasks one by one.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;OK, so here’s the final contents of your gulpfile.js if you followed along. The paths and tasks’ names may differ, of course, but you get the idea:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gulp&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gulp-sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;browserSync&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;browser-sync&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sourcemaps&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gulp-sourcemaps&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/scss/main.scss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sourcemaps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;outputStyle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'expanded'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;errLogToConsole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sourcemaps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/css/&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pipe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;browserSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sync&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;browserSync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;src/&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;watch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;src/scss/**/*.scss&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//table with a list of tasks&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gulp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;default&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sass&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;sync&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;watch&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Note that if you followed this tutorial and saved all dependencies in your package.json file, then in your next projects, given that you will need the same npm modules, you can simply copy &lt;code class=&quot;highlighter-rouge&quot;&gt;package.json&lt;/code&gt; to the project’s root, navigate to the main project’s folder in your console and run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt; to install all the modules. Then, of course, you’ll need an analogous &lt;code class=&quot;highlighter-rouge&quot;&gt;gulpfile.js&lt;/code&gt; - just remember to check all the paths, folder and tasks names to avoid errors.&lt;/p&gt;
+
+&lt;p&gt;I am aware I covered just a small part of what Gulp is capable of. What you can do more is, for example, optimizing your images, concatenating and minifying your files, preventing your watcher from stopping on error and much more. At this point however I believe you’re tired enough. :) If not, take a look at the documentation, really nice and clear:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://gulpjs.com/&quot;&gt;http://gulpjs.com/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.npmjs.com/package/gulp&quot;&gt;https://www.npmjs.com/package/gulp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That’s it for today, hope you enjoyed fiddling with Gulp. Test it yourself, play with the variety of possibilities, learn by trial and error: this way you’ll get best understanding and courage, both indispensable in any aspect of developer’s job. See you soon, happy coding! :)&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 04 Apr 2017 15:10:14 +0200</pubDate>
+        <link>http://localhost:4000/gulp-basics</link>
+        <guid isPermaLink="true">http://localhost:4000/gulp-basics</guid>
+        
+        
+        <category>dsp2017</category>
+        
+        <category>coding</category>
+        
+      </item>
+    
+      <item>
+        <title>Strange case of Dr Jekyll and Mr Windows / part II</title>
+        <description>&lt;p&gt;Now that we have the basic setup for Jekyll blog, it’s time for some customization. You will probably want to adjust the layout of the blog, install a theme that you like (you can also style your blog completely from scratch but we’re not going to cover this case here), add custom domain etc. Let’s see how to do it.&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-configuration&quot;&gt;Basic configuration&lt;/h2&gt;
+
+&lt;p&gt;First, we’ll have a look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file that lives in your project’s root. Open it up with your editor. Change the default values of the &lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;email&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;description&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt; (the subpath of your site, e.g. /blog).&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; will be your GitHub .io home page and the &lt;code class=&quot;highlighter-rouge&quot;&gt;baseurl&lt;/code&gt; will be the name of the repository which we’ll create later on. Here’s how it looks in my case:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/testjekyll&quot;&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://ka1130.github.io/&quot;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+You can find a very extensive explanation of all the configuration options on the &lt;a href=&quot;http://jekyllrb.com/docs/configuration/&quot;&gt;Jekyll documentation page&lt;/a&gt; but you probably won’t need most of this stuff. Good to know, however.&lt;/p&gt;
+
+&lt;p&gt;As you will see in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Build settings&lt;/code&gt; section, the default template is &lt;em&gt;minima&lt;/em&gt;: that’s what you can see at the moment once you run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; and open up your browser on &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;pushing-your-blog-to-github-pages&quot;&gt;Pushing your blog to GitHub pages&lt;/h2&gt;
+
+&lt;p&gt;Now let’s create a new repository on GitHub. As mentioned above, I decided to go for a &lt;em&gt;testjekyll&lt;/em&gt; name. Check the &lt;code class=&quot;highlighter-rouge&quot;&gt;Initialize this repository with a README&lt;/code&gt; box, otherwise you’ll be directed to the setup page.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;img/post-assets/repo-init.jpg&quot; alt=&quot;Starting a new repository&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At this point my exemplary repo lives under this address:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//github.com/ka1130/testjekyll&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Now push the project to GitHub pages (remember to change the address to the one of your blog!):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;remote&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//github.com/ka1130/testjekyll&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Next, add a special branch that has to be called &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;checkout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pages&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Still on gh-pages branch, make your first commit:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;commit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;“&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Initial&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;commit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+And finally, push the commit to GitHub pages:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gh&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pages&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+In your browser, navigate to the new project:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ka1130.github.io/testjekyll/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+No need to add that in the address there will be your username instead of ka1130, and the uri will be the name of your project. :) Here we are, your blog in already online, hosted on GitHub pages. Cool!&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-up-your-theme&quot;&gt;Setting up your theme&lt;/h2&gt;
+
+&lt;p&gt;Time for some work with the visual part of your project. As mentioned before, you can style it all by yourself and there are many nice walkthroughs to check, like for example:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;1&lt;/li&gt;
+  &lt;li&gt;2&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://app.pluralsight.com/library/courses/custom-jekyll-theme-2372/table-of-contents&quot;&gt;In-depth tutorial on Pluralsight&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However you might choose to go for a ready-to-go theme, just as I did, since I was running out of time and needed something “here and now”. In this case you can opt for a free or premium template. I personally recommend you the second option, simply from my own experience. I might have had bad luck but having tried to install a free theme, I failed. The first problem was the outlook: as a (more or less former) designer, I just couldn’t bear something I found ugly in terms of fonts, layout, colors etc. ;) This point is kind of funny in a coding world, I know - but wait, there’s more! The tricky thing is that free templates are often not-that-great in terms of documentation and adjustability. For me, being very fresh to Jekyll, that was a pain in the ass. A few hours wasted and I moved back to the good old &lt;a href=&quot;https://themeforest.net/tags/jekyll&quot;&gt;Theme Forest&lt;/a&gt;. Don’t yell at me, I know their downsides but, on the other hand, their themes are well tested, you get almost immediate support for any issue - and they simply look good. Again, presumably no one will write your template better than yourself but… yeah, you know my &lt;em&gt;but&lt;/em&gt;. ;)&lt;/p&gt;
+
+&lt;p&gt;So here’s the deal: once you get your theme (you choose the source, it may well be true, that there are far better options that Theme Forest, I’ll be happy to get to know them!), you need to get familiar with the Jekyll’s structure. At this moment your project’s structure looks probably like this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;.git&lt;/strong&gt; 		    // &lt;em&gt;folder&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;_posts 		// &lt;em&gt;folder&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;_site		    // &lt;em&gt;folder&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;_config.yml&lt;/strong&gt;	// &lt;em&gt;file&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;about.md	    // &lt;em&gt;file&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gemfile&lt;/strong&gt;	    // &lt;em&gt;file&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gemfile.lock&lt;/strong&gt;	// &lt;em&gt;file&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;index.md	    // &lt;em&gt;file&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have bolded the files and folders that need to stay where they are, the rest will be replaced with your theme files. In my case, that was enough to get the template up and running. If you chose a free theme, it may end up being a bit more tricky so choose wisely - paid or not, your theme should have clear installation guides, unless you already are a Jekyll ninja. :)&lt;/p&gt;
+
+&lt;p&gt;Now what are these folders for exactly? Let’s have a look at an exemplary basic structure of a Jekyll site:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;yml&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_drafts&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;crazy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ideas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;md&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;simplicity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;technology&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;md&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_includes&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;footer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_layouts&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_posts&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2007&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;29&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;why&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;every&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;programmer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;should&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nethack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;md&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2009&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;04&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;26&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;barcamp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;boston&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;roundup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;md&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_sass&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scss&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;   &lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_layout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scss&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_site&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// or index.md&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+We already know what &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; is. And we’ll come back to some more adjustments here in just a moment.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;_drafts&lt;/code&gt; folder is optional. As its name suggests, here’s where you store draft files for your posts. You will not see them published on your public blog but you can preview them locally once you run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt; command on your console.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt; folder stores the partials such as footer or sidebar. These are the sections that get duplicated on respective sites.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt; keeps, you guessed it, the layouts for individual sites, such as home, page, post, contact or category. You may well have only the default.html and post.html here, all up to you and/or the theme chosen.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; are also pretty self-explanatory. It’s basically post files, each of them keeping a single post with its date, title and contents.&lt;/p&gt;
+
+&lt;p&gt;If you’re working with Sass, it will be no surprise to you to encounter the &lt;code class=&quot;highlighter-rouge&quot;&gt;_sass&lt;/code&gt; folder. In case you don’t know this preprocessor (I strongly recommend you to familiarize yourself with Sass, it will enhance your workflow tremendously), these are the source files for your stylesheets. Something like CSS on steroids. ;)&lt;/p&gt;
+
+&lt;p&gt;And finally the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder where the whole generated site is placed. Stay away from fiddling with this one, it’s not where you edit things, it’s just the final outcome to display in the browser.&lt;/p&gt;
+
+&lt;h2 id=&quot;formatting-your-posts-with-markdown&quot;&gt;Formatting your posts with Markdown&lt;/h2&gt;
+
+&lt;p&gt;Lorem ipsum&lt;/p&gt;
+
+&lt;h2 id=&quot;using-a-custom-domain-with-jekyll&quot;&gt;Using a custom domain with Jekyll&lt;/h2&gt;
+
+&lt;p&gt;Lorem ipsum&lt;/p&gt;
+
+&lt;h2 id=&quot;final-word&quot;&gt;Final word&lt;/h2&gt;
+
+</description>
+        <pubDate>Mon, 27 Mar 2017 17:21:07 +0200</pubDate>
+        <link>http://localhost:4000/jekyll-on-windows-part2</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll-on-windows-part2</guid>
+        
+        
+        <category>dsp2017</category>
+        
+      </item>
+    
+      <item>
+        <title>Strange case of Dr Jekyll and Mr Windows / part I</title>
+        <description>&lt;p&gt;For many years I have been using Wordpress as an obvious choice when choosing a blogging platform. Wordpress is by far the most popular CMS on the market, supported and developed for 14 years, powering around 8% of all pages in World Wide Web. That speaks for itself. However, since I’ve been keeping my projects on GitHub pages for the last few months, I’ve discovered it might be much easier to run the next blogging project directly on GitHub server and make use of Jekyll due to its native support in GitHub pages.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-what-is-jekyll&quot;&gt;So what is Jekyll?&lt;/h2&gt;
+&lt;p&gt;As the recurring definition states, Jekyll is a simple, blog-aware, static site generator based on Ruby language. By saying “static” we mean it’s flat-file and ready for deployment. No databases needed, no security headaches, no maintenance issues. It’s ultra-fast, cheap (your blog can be hosted for free on GitHub pages) and manageable. The contents are written simply in HTML/CSS/Markdown so if you’ve had any blogging experience, switching to Jekyll should be duck soup. :) At least when you’re running it on Mac OS or Linux platform.&lt;/p&gt;
+
+&lt;h2 id=&quot;but-i-am-not&quot;&gt;…but I am not.&lt;/h2&gt;
+
+&lt;p&gt;And here’s where things go a little bit trickier. As the majority of Poles, I am a more or less happy user of a mundane Windows 7 (yes, 7, in 2017 I find it funny too). As it turned out, running Jekyll on Microsoft’s child was not as smooth as I hoped. I will try to guide you through the process and prevent you from running  into some stumbling blocks I’ve needed to force through myself.&lt;/p&gt;
+
+&lt;p&gt;Some of the steps below look probably alike on systems other than Windows, however, since I have tested the process on Win7 only, I can not specify the exact differences.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-1-ruby-installation&quot;&gt;Step 1. Ruby installation&lt;/h2&gt;
+
+&lt;p&gt;Assuming that you have some basic knowledge of command line and are familiar with Git (and have Git ready to use on your platform), you can proceed with setting up our GitHub-hosted, Jekyll-powered website. First, we need to install Ruby. It is likely you already have Ruby on your machine so go ahead and type in your console:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+In my case I got the following answer:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;p222&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2016&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;revision&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;56859&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x64&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mingw32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+If your version is lower than 2.0.0, you can update it. If you don’t have Ruby yet, just visit &lt;a href=&quot;http://rubyinstaller.org/downloads/&quot;&gt;this place&lt;/a&gt; and download the most suitable installer as per suggestions on the right-hand side. Don’t close the tab yet, we’ll go back to this page in a minute.&lt;/p&gt;
+
+&lt;p&gt;Now simply run the .exe files and keep clicking “next” until you see the screen below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;img/post-assets/ruby-installer.jpg&quot; alt=&quot;ruby-installer&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Make sure to check the option in the middle, “Add Ruby executables to your PATH”. Click “install” and you’re done! Restart your console and run&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;v&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+again to ensure you’re good to go.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-2-ruby-dev-kit&quot;&gt;Step 2. Ruby Dev Kit&lt;/h2&gt;
+
+&lt;p&gt;Since Ruby was not built to be used on Windows (although it is, surely, possible), it can be difficult to install some of the Gems (which you can think of, generally speaking, as a specific kind of library or plugin; more in-depth description &lt;a href=&quot;http://guides.rubygems.org/what-is-a-gem/&quot;&gt;here&lt;/a&gt;). Go back to the Ruby Installer page and scroll it down. On the left-hand site there is a “Development Section.” Choose the one appropriate for your system’s version and download it. Create a new folder called &lt;strong&gt;RubyDevKit&lt;/strong&gt; directly in your &lt;strong&gt;C:\ ** directory. Select to extract Ruby Dev Kit’s .exe file in **C:\RubyDevKit&lt;/strong&gt; (the folder you have just created). Now navigate to this path in your command line:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:\&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;RubyDevKit&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Then go ahead and run the commands below:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rb&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rb&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;review&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;ruby&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rb&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+If you encounter any trouble at this point, check up &lt;a href=&quot;https://labs.sverrirs.com/jekyll/1x-ruby-and-devkit-error.html&quot;&gt;this place&lt;/a&gt; for a solution.
+That’s it! If all went fine, you’re ready to proceed and install Jekyll Gem.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-3-setting-up-jekyll-and-bundler&quot;&gt;Step 3. Setting up Jekyll and Bundler&lt;/h2&gt;
+
+&lt;p&gt;To get your Jekyll up and ready you simply run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jekyll&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+You will need a package manager called Bundler to get all Jekyll dependencies installed properly. Your console needs the following commands:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bundler&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+There you go! You can now start your first Jekyll project. That simple.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-4-get-your-jekyll-blog&quot;&gt;Step 4. Get your Jekyll blog&lt;/h2&gt;
+
+&lt;p&gt;Assuming that you know the basics of Git and GitHub, choose a path on your machine where you want to keep your new Jekyll project. Navigate there in your console. Now if for instance your project will be called coolblog, you need to run the following command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;coolblog&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Move to this directory…&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;coolblog&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+…and intialize your Git repo:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+In your project’s folder you will find a file called “Gemfile” (with no extension), open it up and comment the following snippet by simply putting &lt;strong&gt;#&lt;/strong&gt; before:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;jekyll&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;(your version here)&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Now uncomment the “github-pages” gem below by deleting the &lt;strong&gt;#&lt;/strong&gt; from the beginning of the line:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;github-pages&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jekyll_plugins&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+…and have a look at the end of the file which should say something like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Windows&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;does&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;zoneinfo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;so&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;tzinfo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;gem&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'tzinfo-data'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;platforms&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mingw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mswin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x64_mingw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;jruby&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'wdm'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;gt;= 0.1.0'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;win_platform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+At this point bundler needs to be updated so run:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+You are now ready to get your blog life. Go ahead and type in in your console:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;serve&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+to put Jekyll in kind of “watch” mode where all your changes to the blog’s files (apart from .yml configuration files) will be instantly introduced.&lt;/p&gt;
+
+&lt;p&gt;Now, in your browser go to &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:4000&lt;/code&gt;. You will see your freshly created blog which will look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;img/post-assets/your-awesome-blog.jpg&quot; alt=&quot;your-awesome-blog&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Congratulations! You’re ready to go!&lt;/p&gt;
+
+&lt;p&gt;Bear in mind that once you hit Ctrl + C or close the console, Jekyll server will stop and you will be unable to see your site on localhost. I myself was not aware of this initially and lost much too much time stack-overflowing why my blog stopped working. ;)&lt;/p&gt;
+
+&lt;h2 id=&quot;further-reading-and-tips&quot;&gt;Further reading and tips&lt;/h2&gt;
+
+&lt;p&gt;This has been a long post, however you may find it insufficient. To learn more about working with Jekyll I encourage you to visit the following places:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Very insightful yet easy to follow &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyll-windows.juthilo.com/&quot;&gt;Nice guide for Windows users&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Another &lt;a href=&quot;http://yizeng.me/2013/05/10/install-jekyll-3-on-windows/&quot;&gt;Jekyll installation guide&lt;/a&gt; with a very helpful part about troubleshooting&lt;/li&gt;
+  &lt;li&gt;For those unfamiliar with GitHub, &lt;a href=&quot;https://guides.github.com/activities/hello-world/&quot;&gt;here&lt;/a&gt; is a friendly and straightforward overview&lt;/li&gt;
+  &lt;li&gt;Using Windows command line only? This may not always be the best idea. Check out &lt;a href=&quot;https://git-for-windows.github.io/&quot;&gt;Git Bash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the next post we will take a look at customizing your blog and running it on your own domain if you preferred it over the Git Hub default one.&lt;/p&gt;
+
+&lt;p&gt;Now get down to work, I keep my fingers crossed for your awesome project! :)&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 21 Mar 2017 13:30:55 +0100</pubDate>
+        <link>http://localhost:4000/jekyll-on-windows-part1</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll-on-windows-part1</guid>
+        
+        
+        <category>dsp2017</category>
+        
+      </item>
+    
+      <item>
+        <title>What the Boids?</title>
+        <description>&lt;h2 id=&quot;what-is-this-project-about&quot;&gt;What is this project about?&lt;/h2&gt;
+
+&lt;p&gt;Ever heard about artificial life programs? Sure you have, Internet is full of information, projects and games based on natural life’s simulation. Consider &lt;a href=&quot;https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life&quot;&gt;Conway’s Game of Life&lt;/a&gt;, for instance, which simulates “colonies” growing or dying depending on how crowded or lonely the single cells are. It is still purely math-based but it very believably resembles a kind of natural life patterns, where cells are forming generations connoting almost a kind of collective intelligence, especially if they are given a really big space to colonize. Since I have lately programmed &lt;a href=&quot;https://ka1130.github.io/Game-of-Life/src/&quot;&gt;JavaScript implementation of Game of Life&lt;/a&gt;, I decided to challenge myself with something presumably much more demanding.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-boids-idea&quot;&gt;The “Boids” idea&lt;/h2&gt;
+
+&lt;p&gt;As per &lt;a href=&quot;https://en.wikipedia.org/wiki/Boids&quot;&gt;Wikipedia’s definition&lt;/a&gt;, Boids is an artificial life program, developed by Craig Reynolds in 1986, which simulates the flocking behaviour of birds. I have encountered two derivations of the term “boids”. One says it is a shorthand for “bird-oid”, in other words, “bird-like” objects. The other suggests it stems from the way that New Yorkers pronounce the word “birds”. Leaving aside the story of the term, Reynold’s Boids model (also referred to as flocking algorithm) follows three simple rules:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;separation&lt;/strong&gt;: steer to avoid crowding&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;alignment&lt;/strong&gt;: steer towards the average heading of local flockmates&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cohesion&lt;/strong&gt;: steer to move toward the average position of local flockmates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What is phenomenal about Reynold’s model is that using these plain rules only on single units it generates behaviour strongly resembling a real flock’s one. Just as in the Game of Life the result is surprisingly complex and realistic. Boids are one of many experiments in the field of so-called &lt;a href=&quot;https://en.wikipedia.org/wiki/Swarm_intelligence&quot;&gt;swarm intelligence&lt;/a&gt; characterized by the lack of centralized control agent: each boid follows its own rules, still resulting in a surprising group behaviour.&lt;/p&gt;
+
+&lt;p&gt;Here is a nice visualization and further explanation of the idea:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/QbUPfMXXQIY?ecver=1&quot; frameborder=&quot;0&quot;&gt; &lt;/iframe&gt;
+
+&lt;h2 id=&quot;my-goal&quot;&gt;My goal&lt;/h2&gt;
+
+&lt;p&gt;The purpose of my project is to create a JavaScript implementation of boids. I know I am definitely not the first one to try - there even are whole libraries and scripts available to use freely. However, I will try to figure the thing out myself, preferably with pure Vanilla JS. We’ll see what I’ll end up with. Keep your fingers crossed, I will report you soon about the project’s state!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 18 Mar 2017 19:20:02 +0100</pubDate>
+        <link>http://localhost:4000/what-are-boids</link>
+        <guid isPermaLink="true">http://localhost:4000/what-are-boids</guid>
+        
+        
+        <category>dsp2017</category>
+        
+      </item>
+    
+      <item>
+        <title>Get Noticed! / ed.2017</title>
+        <description>&lt;h2 id=&quot;ds---what&quot;&gt;..Ds - what?&lt;/h2&gt;
+&lt;p&gt;You might be wondering what the heck is this Dsp2017 in the categories’ section and what actually am I doing here, starting yet another programming blog with little experience in front-end development. Well, what got me going with all this stuff is a competition opened by &lt;a href=&quot;http://devstyle.pl/o-mnie/&quot;&gt;Maciej Aniserowicz&lt;/a&gt;, founder of &lt;a href=&quot;http://devstyle.pl&quot;&gt;Devstyle&lt;/a&gt; blog, one of the best of the kind in Poland. “Dsp” is a Polish acronym for “Get Noticed” and this is exactly the name of the competition. It is targeted at literally all programmers, no matter how experienced they are. Anyone can join, work on their own project, blog about it, share their knowledge and learn at the same time.&lt;/p&gt;
+
+&lt;p&gt;Believe me, I’m scared to death. I have defined my project (more about it in the following posts), gathered necessary materials but, as a newbie in the industry, I know I will need to work really hard to make my readers benefit from the posts here. That said, I know there are thousands of people like me and I hope to encourage them to step out of the shade and believe that if I can become an IT blogger, they too have valuable knowledge to share.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-why-would-anyone-want-to-stay-here&quot;&gt;So why would anyone want to stay here?&lt;/h2&gt;
+&lt;p&gt;Little experience does not mean having nothing to contribute. I’ve made sure my project would be ambitious enough to get some programmers interested. I will definitely stumble upon problems some programmers will encounter (or already did in the past) too and hope the solutions I come up with will prove helpful.&lt;/p&gt;
+
+&lt;h2 id=&quot;schedule&quot;&gt;Schedule&lt;/h2&gt;
+&lt;p&gt;The posts will appear at least twice a week for minimum 10 weeks continuously. Each week I will issue a post with some information related strictly to the project, and another one associated with coding / IT environment.&lt;/p&gt;
+
+&lt;h2 id=&quot;technologies&quot;&gt;Technologies&lt;/h2&gt;
+&lt;p&gt;You can expect me to write about JavaScript, as well as HTML/CSS/Sass issues. The blog is powered by Jekyll and hosted on GitHub pages so I plan to walk you through the process which turned out to be a bit tricky on Windows. ;)&lt;/p&gt;
+
+&lt;h2 id=&quot;ok-are-you-finished&quot;&gt;OK, are you finished?&lt;/h2&gt;
+&lt;p&gt;Yes. Not going to bore you to death. ;) If you wish to keep track of this blog, just make use of the RSS button on the &lt;a href=&quot;http://just-sudo-it.pl&quot;&gt;home site&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 15 Mar 2017 09:50:28 +0100</pubDate>
+        <link>http://localhost:4000/get-noticed-2017</link>
+        <guid isPermaLink="true">http://localhost:4000/get-noticed-2017</guid>
+        
+        
+        <category>dsp2017</category>
+        
+      </item>
+    
+  </channel>
+</rss>

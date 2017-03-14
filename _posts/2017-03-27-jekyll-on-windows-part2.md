@@ -127,6 +127,19 @@ If you’re working with Sass, it will be no surprise to you to encounter the `_
 
 And finally the `_site` folder where the whole generated site is placed. Stay away from fiddling with this one, it’s not where you edit things, it’s just the final outcome to display in the browser.
 
+Now basically how you modify the way your sites display is by editing the so-called [YAML front matter](https://jekyllrb.com/docs/frontmatter/). This section is always at the beginning of the file containing your page or post and it allows you to control how Jekyll processes and builds pages. The YAML front matter is put between triple-dashed lines and can look like so:
+
+{% highlight javascript %}
+---
+layout: default
+title: My first post
+date: 2017-03-15 10:34
+author: John Smith
+---
+{% endhighlight %}<br>
+In the above example we ask Jekyll to display this specific post using the `default.html` layout, to give it the specific title and author, and to publish it on a specific date. 
+These are just four examples of predefined global variables that you can use at this point. Some of the others are:
+
 ## Formatting your posts with Markdown
 
 Lorem ipsum
