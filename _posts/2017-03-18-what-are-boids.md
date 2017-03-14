@@ -25,12 +25,12 @@ As per [Wikipedia’s definition](https://en.wikipedia.org/wiki/Boids), Boids is
 + **alignment**: steer towards the average heading of local flockmates
 + **cohesion**: steer to move toward the average position of local flockmates
 
-What is phenomenal about Reynold’s model is that using these plain rules only on single units it generates behaviour strongly resembling a real flock’s one. Just as in the Game of Life the result is surprisingly complex and realistic. Boids are one of many experiments in the field of so-called swarm intelligence(https://en.wikipedia.org/wiki/Swarm_intelligence) characterized by the lack of centralized control agent: each boid follows its own rules, still resulting in a surprising group behaviour.
+What is phenomenal about Reynold’s model is that using these plain rules only on single units it generates behaviour strongly resembling a real flock’s one. Just as in the Game of Life the result is surprisingly complex and realistic. Boids are one of many experiments in the field of so-called [swarm intelligence](https://en.wikipedia.org/wiki/Swarm_intelligence) characterized by the lack of centralized control agent: each boid follows its own rules, still resulting in a surprising group behaviour.
 
 Here is a nice visualization and further explanation of the idea:
 
-(https://www.youtube.com/watch?v=QbUPfMXXQIY&t=36s)
+[How do Boids Work? A Flocking Simulation](https://www.youtube.com/watch?v=QbUPfMXXQIY&t=36s)
 
-##My goal
+## My goal
 
 The purpose of my project is to create a JavaScript implementation of boids. I know I am definitely not the first one to try - there even are whole libraries and scripts available to use freely. However, I will try to figure the thing out myself, preferably with pure Vanilla JS. We’ll see what I’ll end up with. Keep your fingers crossed, I will report you soon about the project’s state!
