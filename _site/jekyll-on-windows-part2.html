@@ -174,6 +174,27 @@ We already know what <code class="highlighter-rouge">_config.yml</code> is. And 
 
 <p>And finally the <code class="highlighter-rouge">_site</code> folder where the whole generated site is placed. Stay away from fiddling with this one, it’s not where you edit things, it’s just the final outcome to display in the browser.</p>
 
+<p>Now basically how you modify the way your sites display is by editing the so-called <a href="https://jekyllrb.com/docs/frontmatter/">YAML front matter</a>. This section is always at the beginning of the file containing your page or post and it allows you to control how Jekyll processes and builds pages. The YAML front matter is put between triple-dashed lines and can look like so:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">---</span>
+<span class="nx">layout</span><span class="err">:</span> <span class="k">default</span>
+<span class="nx">title</span><span class="err">:</span> <span class="nx">My</span> <span class="nx">first</span> <span class="nx">post</span>
+<span class="nl">date</span><span class="p">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">15</span> <span class="mi">10</span><span class="err">:</span><span class="mi">34</span>
+<span class="nl">author</span><span class="p">:</span> <span class="nx">John</span> <span class="nx">Smith</span>
+<span class="o">---</span></code></pre></figure>
+<p><br />
+In the above example we ask Jekyll to display this specific post using the <code class="highlighter-rouge">default.html</code> layout, to give it a specific title and author, and to publish it on a specific date. 
+These are just four examples of predefined global variables that you can use at this point. Some of the others are:</p>
+
+<ul>
+  <li><strong>permalink</strong>: allows you to override the default permalink settings</li>
+  <li><strong>category</strong> or <strong>categories</strong>: puts your post into a specific category / categories (simply put as an array with spaces; no brackets, no commas)</li>
+  <li><strong>comments</strong>: a boolean (true/false) stating whether or not you want the comments to be displayed; <a href="https://disqus.com/">Disqus</a> is a recommended solution for introducing comments’ feature on a Jekyll blog</li>
+  <li><strong>published</strong>: another boolean value that allows you to keep your post unpublished, if set to false</li>
+  <li><strong>tags</strong>: pretty much like comments, tags allow the posts to fall under a given tag</li>
+  <li>and more</li>
+</ul>
+
 <h2 id="formatting-your-posts-with-markdown">Formatting your posts with Markdown</h2>
 
 <p>Lorem ipsum</p>

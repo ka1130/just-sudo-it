@@ -137,8 +137,16 @@ date: 2017-03-15 10:34
 author: John Smith
 ---
 {% endhighlight %}<br>
-In the above example we ask Jekyll to display this specific post using the `default.html` layout, to give it the specific title and author, and to publish it on a specific date. 
+In the above example we ask Jekyll to display this specific post using the `default.html` layout, to give it a specific title and author, and to publish it on a specific date. 
 These are just four examples of predefined global variables that you can use at this point. Some of the others are:
+
++ **permalink**: allows you to override the default permalink settings
++ **category** or **categories**: puts your post into a specific category / categories (simply put as an array with spaces; no brackets, no commas)
++ **comments**: a boolean (true/false) stating whether or not you want the comments to be displayed; [Disqus](https://disqus.com/) is a recommended solution for introducing comments' feature on a Jekyll blog
++ **published**: another boolean value that allows you to keep your post unpublished, if set to false
++ **tags**: pretty much like comments, tags allow the posts to fall under a given tag
++ and more
+
 
 ## Formatting your posts with Markdown
 

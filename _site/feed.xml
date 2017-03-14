@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Mar 2017 18:00:03 +0100</pubDate>
-    <lastBuildDate>Tue, 14 Mar 2017 18:00:03 +0100</lastBuildDate>
+    <pubDate>Tue, 14 Mar 2017 21:24:41 +0100</pubDate>
+    <lastBuildDate>Tue, 14 Mar 2017 21:24:41 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -447,6 +447,27 @@ We already know what &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml
 &lt;p&gt;If you’re working with Sass, it will be no surprise to you to encounter the &lt;code class=&quot;highlighter-rouge&quot;&gt;_sass&lt;/code&gt; folder. In case you don’t know this preprocessor (I strongly recommend you to familiarize yourself with Sass, it will enhance your workflow tremendously), these are the source files for your stylesheets. Something like CSS on steroids. ;)&lt;/p&gt;
 
 &lt;p&gt;And finally the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder where the whole generated site is placed. Stay away from fiddling with this one, it’s not where you edit things, it’s just the final outcome to display in the browser.&lt;/p&gt;
+
+&lt;p&gt;Now basically how you modify the way your sites display is by editing the so-called &lt;a href=&quot;https://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML front matter&lt;/a&gt;. This section is always at the beginning of the file containing your page or post and it allows you to control how Jekyll processes and builds pages. The YAML front matter is put between triple-dashed lines and can look like so:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;My&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;first&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2017&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;03&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;34&lt;/span&gt;
+&lt;span class=&quot;nl&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;John&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Smith&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+In the above example we ask Jekyll to display this specific post using the &lt;code class=&quot;highlighter-rouge&quot;&gt;default.html&lt;/code&gt; layout, to give it a specific title and author, and to publish it on a specific date. 
+These are just four examples of predefined global variables that you can use at this point. Some of the others are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;permalink&lt;/strong&gt;: allows you to override the default permalink settings&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;category&lt;/strong&gt; or &lt;strong&gt;categories&lt;/strong&gt;: puts your post into a specific category / categories (simply put as an array with spaces; no brackets, no commas)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;comments&lt;/strong&gt;: a boolean (true/false) stating whether or not you want the comments to be displayed; &lt;a href=&quot;https://disqus.com/&quot;&gt;Disqus&lt;/a&gt; is a recommended solution for introducing comments’ feature on a Jekyll blog&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;published&lt;/strong&gt;: another boolean value that allows you to keep your post unpublished, if set to false&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;tags&lt;/strong&gt;: pretty much like comments, tags allow the posts to fall under a given tag&lt;/li&gt;
+  &lt;li&gt;and more&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;formatting-your-posts-with-markdown&quot;&gt;Formatting your posts with Markdown&lt;/h2&gt;
 
