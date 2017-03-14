@@ -109,6 +109,14 @@ Now uncomment the "github-pages" gem below by deleting the **#** from the beginn
 {% highlight javascript %}
 gem "github-pages", group: :jekyll_plugins
 {% endhighlight %}<br>
+...and have a look at the end of the file which should say something like this:
+
+{% highlight javascript %}
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+{% endhighlight %}<br>
 At this point bundler needs to be updated so run:
 
 {% highlight javascript %}
