@@ -8,10 +8,10 @@ author_url : /author/kamila
 author_avatar: kamila
 show_avatar : true
 read_time : 15
-feature_image: feature-laptop
+feature_image: feature-boids
 show_related_posts: true
 comments: true
-square_related: recommend-laptop
+square_related: recommend-boids
 ---
 ## What is this project about?
 
