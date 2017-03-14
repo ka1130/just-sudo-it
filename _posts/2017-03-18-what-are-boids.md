@@ -29,7 +29,8 @@ What is phenomenal about Reynold’s model is that using these plain rules only 
 
 Here is a nice visualization and further explanation of the idea:
 
-[How do Boids Work? A Flocking Simulation](https://www.youtube.com/watch?v=QbUPfMXXQIY&t=36s)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QbUPfMXXQIY?ecver=1" frameborder="0"> </iframe>
+
 
 ## My goal
 

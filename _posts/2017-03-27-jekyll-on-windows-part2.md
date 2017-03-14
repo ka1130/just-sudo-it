@@ -71,29 +71,29 @@ No need to add that in the address there will be your username instead of ka1130
 
 ## Setting up your theme
 
-Time for some work with the visual part of your project. As mentioned before, you can style it all by yourself and there are many nice walkthroughs to check, such as
+Time for some work with the visual part of your project. As mentioned before, you can style it all by yourself and there are many nice walkthroughs to check, like for example:
 + 1
 + 2
-+ 3
++ [In-depth tutorial on Pluralsight](https://app.pluralsight.com/library/courses/custom-jekyll-theme-2372/table-of-contents)
 
 However you might choose to go for a ready-to-go theme, just as I did, since I was running out of time and needed something “here and now”. In this case you can opt for a free or premium template. I personally recommend you the second option, simply from my own experience. I might have had bad luck but having tried to install a free theme, I failed. The first problem was the outlook: as a (more or less former) designer, I just couldn’t bear something I found ugly in terms of fonts, layout, colors etc. ;) This point is kind of funny in a coding world, I know - but wait, there’s more! The tricky thing is that free templates are often not-that-great in terms of documentation and adjustability. For me, being very fresh to Jekyll, that was a pain in the ass. A few hours wasted and I moved back to the good old [Theme Forest](https://themeforest.net/tags/jekyll). Don’t yell at me, I know their downsides but, on the other hand, their themes are well tested, you get almost immediate support for any issue - and they simply look good. Again, presumably no one will write your template better than yourself but… yeah, you know my *but*. ;)
 
 So here’s the deal: once you get your theme (you choose the source, it may well be true, that there are far better options that Theme Forest, I’ll be happy to get to know them!), you need to get familiar with the Jekyll’s structure. At this moment your project’s structure looks probably like this:
 
-+ .git 		    // *folder*
++ **.git** 		    // *folder*
 + _posts 		// *folder*
 + _site		    // *folder*
-
-+ _config.yml	// *file*
++ **_config.yml**	// *file*
 + about.md	    // *file*
-+ Gemfile	    // *file*
-+ Gemfile.lock	// *file*
++ **Gemfile**	    // *file*
++ **Gemfile.lock**	// *file*
 + index.md	    // *file*
 
 I have bolded the files and folders that need to stay where they are, the rest will be replaced with your theme files. In my case, that was enough to get the template up and running. If you chose a free theme, it may end up being a bit more tricky so choose wisely - paid or not, your theme should have clear installation guides, unless you already are a Jekyll ninja. :)
 
 Now what are these folders for exactly? Let’s have a look at an exemplary basic structure of a Jekyll site:
 
+{% highlight javascript %}
 ├── _config.yml
 ├── _drafts
 |   ├── begin-with-the-crazy-ideas.md
@@ -112,10 +112,10 @@ Now what are these folders for exactly? Let’s have a look at an exemplary basi
 |   └── _layout.scss
 ├── _site
 └── index.html // or index.md
-
+{% endhighlight %}<br>
 We already know what `_config.yml` is. And we’ll come back to some more adjustments here in just a moment.
 
-The `_drafts` folder is optional. As its name suggests, here’s where you store draft files for your posts. You will not see them published on your public blog but you can preview them locally once you run jekyll serve command on your console.
+The `_drafts` folder is optional. As its name suggests, here’s where you store draft files for your posts. You will not see them published on your public blog but you can preview them locally once you run `jekyll serve` command on your console.
 
 The `_includes` folder stores the partials such as footer or sidebar. These are the sections that get duplicated on respective sites.
 
