@@ -8,10 +8,10 @@ author_url : /author/kamila
 author_avatar: kamila
 show_avatar : true
 read_time : 20
-feature_image: feature-jekyll-1
+feature_image: feature-jekyll-2
 show_related_posts: true
 comments: true
-square_related: recommend-jekyll-1
+square_related: recommend-jekyll-2
 ---
 
 Now that we have the basic setup for Jekyll blog, it’s time for some customization. You will probably want to adjust the layout of the blog, install a theme that you like (you can also style your blog completely from scratch but we’re not going to cover this case here), add custom domain etc. Let’s see how to do it.
@@ -28,11 +28,15 @@ url: "https://ka1130.github.io/"
 {% endhighlight %}<br>
 You can find a very extensive explanation of all the configuration options on the [Jekyll documentation page](http://jekyllrb.com/docs/configuration/) but you probably won’t need most of this stuff. Good to know, however. 
 
-As you will see in the Build settings section, the default template is minima: that’s what you can see at the moment once you run jekyll serve and open up your browser on `http://localhost:4000`.
+As you will see in the `Build settings` section, the default template is *minima*: that’s what you can see at the moment once you run `jekyll serve` and open up your browser on `http://localhost:4000`.
 
 ## Pushing your blog to GitHub pages
 
-Now let’s create a new repository on GitHub. As mentioned above, I decided to go for *testjekyll* name. Check the `Initialize this repository with a README` box, otherwise you’ll be directed to the setup page. At this point my exemplary repo lives under this address:
+Now let’s create a new repository on GitHub. As mentioned above, I decided to go for a *testjekyll* name. Check the `Initialize this repository with a README` box, otherwise you’ll be directed to the setup page. 
+
+![Starting a new repository](img/post-assets/repo-init.jpg){:class="img-responsive"}
+
+At this point my exemplary repo lives under this address:
 
 {% highlight javascript %}
 https://github.com/ka1130/testjekyll
@@ -42,7 +46,7 @@ Now push the project to GitHub pages (remember to change the address to the one 
 {% highlight javascript %}
 git remote add origin https://github.com/ka1130/testjekyll
 {% endhighlight %}<br>
-Next, add a special branch that has to be called gh-pages:
+Next, add a special branch that has to be called `gh-pages`:
 
 {% highlight javascript %}
 git checkout -b gh-pages
