@@ -147,6 +147,13 @@ These are just four examples of predefined global variables that you can use at 
 + **tags**: pretty much like comments, tags allow the posts to fall under a given tag
 + and more
 
+Depending on your theme and needs you will probably mainly need to adjust only front matter. When it comes to styling the contents, it boils down to mastering (joking, some basics will do) Markdown. I will cover some of its syntax in the next section.
+
+Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to get your feedback!
+
++ [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)
++ [So Simple](https://mmistakes.github.io/so-simple-theme/)
+
 
 ## Formatting your posts with Markdown
 
