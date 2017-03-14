@@ -117,9 +117,9 @@ No need to add that in the address there will be your username instead of ka1130
 
 <p>Time for some work with the visual part of your project. As mentioned before, you can style it all by yourself and there are many nice walkthroughs to check, like for example:</p>
 <ul>
-  <li>1</li>
-  <li>2</li>
-  <li><a href="https://app.pluralsight.com/library/courses/custom-jekyll-theme-2372/table-of-contents">In-depth tutorial on Pluralsight</a></li>
+  <li><a href="http://jekyll.tips/">A series of <strong>video tutorials</strong>, far beyond customizing your blog only</a></li>
+  <li><a href="http://pixelcog.com/blog/2013/jekyll-from-scratch-core-architecture/">A nice guide from <strong>Pixel Cog</strong> by Mike Greiling</a></li>
+  <li><a href="https://app.pluralsight.com/library/courses/custom-jekyll-theme-2372/table-of-contents">An in-depth tutorial on <strong>Pluralsight</strong></a>. By the way, you can get a <strong>free Pluralsight account</strong> for as long as <strong>3 months</strong>! Tons of great knowledge to grab, expert tutors, highly recommended stuff.</li>
 </ul>
 
 <p>However you might choose to go for a ready-to-go theme, just as I did, since I was running out of time and needed something “here and now”. In this case you can opt for a free or premium template. I personally recommend you the second option, simply from my own experience. I might have had bad luck but having tried to install a free theme, I failed. The first problem was the outlook: as a (more or less former) designer, I just couldn’t bear something I found ugly in terms of fonts, layout, colors etc. ;) This point is kind of funny in a coding world, I know - but wait, there’s more! The tricky thing is that free templates are often not-that-great in terms of documentation and adjustability. For me, being very fresh to Jekyll, that was a pain in the ass. A few hours wasted and I moved back to the good old <a href="https://themeforest.net/tags/jekyll">Theme Forest</a>. Don’t yell at me, I know their downsides but, on the other hand, their themes are well tested, you get almost immediate support for any issue - and they simply look good. Again, presumably no one will write your template better than yourself but… yeah, you know my <em>but</em>. ;)</p>
@@ -197,7 +197,21 @@ These are just four examples of predefined global variables that you can use at 
 
 <p>Depending on your theme and needs you will probably mainly need to adjust only front matter. When it comes to styling the contents, it boils down to mastering (joking, some basics will do) Markdown. I will cover some of its syntax in the next section.</p>
 
-<p>Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to get your feedback!</p>
+<p>Done with the fundamentals of Jekyll structure, let’s switch back to the <code class="highlighter-rouge">_config.yml</code> file for a minute. You may want to manage how to handle permalinks here. Most often, you will want them to point at the post’s title. In this case go ahead and add this line:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">permalink</span><span class="err">:</span> <span class="err">:</span><span class="nx">title</span></code></pre></figure>
+<p><br /></p>
+
+<p>You can also set up your top navigation and footer here. In my case, here is the final <code class="highlighter-rouge">_config.yml</code> for this blog:</p>
+
+<p><img src="img/post-assets/config-yml.jpg" alt="Final _config.yml" class="img-responsive" /></p>
+
+<p>Don’t forget that you need to re-serve jekyll if you introduce any changes to the <code class="highlighter-rouge">_config.yml</code>, otherwise you won’t be able to track the changes.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jekyll</span> <span class="nx">serve</span></code></pre></figure>
+<p><br /></p>
+
+<p>Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to hear your feedback!</p>
 
 <ul>
   <li><a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a></li>

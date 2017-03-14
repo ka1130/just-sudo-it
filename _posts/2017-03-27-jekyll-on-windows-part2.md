@@ -72,9 +72,9 @@ No need to add that in the address there will be your username instead of ka1130
 ## Setting up your theme
 
 Time for some work with the visual part of your project. As mentioned before, you can style it all by yourself and there are many nice walkthroughs to check, like for example:
-+ 1
-+ 2
-+ [In-depth tutorial on Pluralsight](https://app.pluralsight.com/library/courses/custom-jekyll-theme-2372/table-of-contents)
++ [A series of **video tutorials**, far beyond customizing your blog only](http://jekyll.tips/)
++ [A nice guide from **Pixel Cog** by Mike Greiling](http://pixelcog.com/blog/2013/jekyll-from-scratch-core-architecture/)
++ [An in-depth tutorial on **Pluralsight**](https://app.pluralsight.com/library/courses/custom-jekyll-theme-2372/table-of-contents). By the way, you can get a **free Pluralsight account** for as long as **3 months**! Tons of great knowledge to grab, expert tutors, highly recommended stuff.
 
 However you might choose to go for a ready-to-go theme, just as I did, since I was running out of time and needed something “here and now”. In this case you can opt for a free or premium template. I personally recommend you the second option, simply from my own experience. I might have had bad luck but having tried to install a free theme, I failed. The first problem was the outlook: as a (more or less former) designer, I just couldn’t bear something I found ugly in terms of fonts, layout, colors etc. ;) This point is kind of funny in a coding world, I know - but wait, there’s more! The tricky thing is that free templates are often not-that-great in terms of documentation and adjustability. For me, being very fresh to Jekyll, that was a pain in the ass. A few hours wasted and I moved back to the good old [Theme Forest](https://themeforest.net/tags/jekyll). Don’t yell at me, I know their downsides but, on the other hand, their themes are well tested, you get almost immediate support for any issue - and they simply look good. Again, presumably no one will write your template better than yourself but… yeah, you know my *but*. ;)
 
@@ -149,7 +149,23 @@ These are just four examples of predefined global variables that you can use at 
 
 Depending on your theme and needs you will probably mainly need to adjust only front matter. When it comes to styling the contents, it boils down to mastering (joking, some basics will do) Markdown. I will cover some of its syntax in the next section.
 
-Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to get your feedback!
+Done with the fundamentals of Jekyll structure, let's switch back to the `_config.yml` file for a minute. You may want to manage how to handle permalinks here. Most often, you will want them to point at the post's title. In this case go ahead and add this line:
+
+{% highlight javascript %}
+permalink: :title
+{% endhighlight %}<br>
+
+You can also set up your top navigation and footer here. In my case, here is the final `_config.yml` for this blog:
+
+![Final _config.yml](img/post-assets/config-yml.jpg){:class="img-responsive"}
+
+Don't forget that you need to re-serve jekyll if you introduce any changes to the `_config.yml`, otherwise you won't be able to track the changes. 
+
+{% highlight javascript %}
+jekyll serve
+{% endhighlight %}<br>
+
+Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to hear your feedback!
 
 + [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)
 + [So Simple](https://mmistakes.github.io/so-simple-theme/)

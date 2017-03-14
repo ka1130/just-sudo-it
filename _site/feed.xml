@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Mar 2017 21:36:16 +0100</pubDate>
-    <lastBuildDate>Tue, 14 Mar 2017 21:36:16 +0100</lastBuildDate>
+    <pubDate>Tue, 14 Mar 2017 22:31:15 +0100</pubDate>
+    <lastBuildDate>Tue, 14 Mar 2017 22:31:15 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -391,9 +391,9 @@ No need to add that in the address there will be your username instead of ka1130
 
 &lt;p&gt;Time for some work with the visual part of your project. As mentioned before, you can style it all by yourself and there are many nice walkthroughs to check, like for example:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;1&lt;/li&gt;
-  &lt;li&gt;2&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://app.pluralsight.com/library/courses/custom-jekyll-theme-2372/table-of-contents&quot;&gt;In-depth tutorial on Pluralsight&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyll.tips/&quot;&gt;A series of &lt;strong&gt;video tutorials&lt;/strong&gt;, far beyond customizing your blog only&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pixelcog.com/blog/2013/jekyll-from-scratch-core-architecture/&quot;&gt;A nice guide from &lt;strong&gt;Pixel Cog&lt;/strong&gt; by Mike Greiling&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://app.pluralsight.com/library/courses/custom-jekyll-theme-2372/table-of-contents&quot;&gt;An in-depth tutorial on &lt;strong&gt;Pluralsight&lt;/strong&gt;&lt;/a&gt;. By the way, you can get a &lt;strong&gt;free Pluralsight account&lt;/strong&gt; for as long as &lt;strong&gt;3 months&lt;/strong&gt;! Tons of great knowledge to grab, expert tutors, highly recommended stuff.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;However you might choose to go for a ready-to-go theme, just as I did, since I was running out of time and needed something “here and now”. In this case you can opt for a free or premium template. I personally recommend you the second option, simply from my own experience. I might have had bad luck but having tried to install a free theme, I failed. The first problem was the outlook: as a (more or less former) designer, I just couldn’t bear something I found ugly in terms of fonts, layout, colors etc. ;) This point is kind of funny in a coding world, I know - but wait, there’s more! The tricky thing is that free templates are often not-that-great in terms of documentation and adjustability. For me, being very fresh to Jekyll, that was a pain in the ass. A few hours wasted and I moved back to the good old &lt;a href=&quot;https://themeforest.net/tags/jekyll&quot;&gt;Theme Forest&lt;/a&gt;. Don’t yell at me, I know their downsides but, on the other hand, their themes are well tested, you get almost immediate support for any issue - and they simply look good. Again, presumably no one will write your template better than yourself but… yeah, you know my &lt;em&gt;but&lt;/em&gt;. ;)&lt;/p&gt;
@@ -471,7 +471,21 @@ These are just four examples of predefined global variables that you can use at 
 
 &lt;p&gt;Depending on your theme and needs you will probably mainly need to adjust only front matter. When it comes to styling the contents, it boils down to mastering (joking, some basics will do) Markdown. I will cover some of its syntax in the next section.&lt;/p&gt;
 
-&lt;p&gt;Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to get your feedback!&lt;/p&gt;
+&lt;p&gt;Done with the fundamentals of Jekyll structure, let’s switch back to the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file for a minute. You may want to manage how to handle permalinks here. Most often, you will want them to point at the post’s title. In this case go ahead and add this line:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can also set up your top navigation and footer here. In my case, here is the final &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; for this blog:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;img/post-assets/config-yml.jpg&quot; alt=&quot;Final _config.yml&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Don’t forget that you need to re-serve jekyll if you introduce any changes to the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;, otherwise you won’t be able to track the changes.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;serve&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to hear your feedback!&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;Minimal Mistakes&lt;/a&gt;&lt;/li&gt;
