@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Mar 2017 22:31:15 +0100</pubDate>
-    <lastBuildDate>Tue, 14 Mar 2017 22:31:15 +0100</lastBuildDate>
+    <pubDate>Tue, 14 Mar 2017 22:40:08 +0100</pubDate>
+    <lastBuildDate>Tue, 14 Mar 2017 22:40:08 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -339,7 +339,7 @@ Note that if you followed this tutorial and saved all dependencies in your packa
     
       <item>
         <title>Strange case of Dr Jekyll and Mr Windows / part II</title>
-        <description>&lt;p&gt;Now that we have the basic setup for Jekyll blog, it’s time for some customization. You will probably want to adjust the layout of the blog, install a theme that you like (you can also style your blog completely from scratch but we’re not going to cover this case here), add custom domain etc. Let’s see how to do it.&lt;/p&gt;
+        <description>&lt;p&gt;If you follow me along on “Just sudo IT”, you remember &lt;a href=&quot;http://just-sudo-it.pl/jekyll-on-windows-part1&quot;&gt;the post about setting up Jekyll&lt;/a&gt;. We have ended up with a basic set-up of a default Minima-themed blog. Great for beginning but now time has come to customize it to your liking. You will probably want to adjust the layout, install a chosen template (you can also style your blog completely from scratch but we’re not going to cover this case here), add custom domain etc. Let’s see how to do it.&lt;/p&gt;
 
 &lt;h2 id=&quot;basic-configuration&quot;&gt;Basic configuration&lt;/h2&gt;
 
@@ -474,18 +474,16 @@ These are just four examples of predefined global variables that you can use at 
 &lt;p&gt;Done with the fundamentals of Jekyll structure, let’s switch back to the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file for a minute. You may want to manage how to handle permalinks here. Most often, you will want them to point at the post’s title. In this case go ahead and add this line:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;You can also set up your top navigation and footer here. In my case, here is the final &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; for this blog:&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+You can also set up your top navigation and footer here. In my case, here is the final &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; for this blog:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;img/post-assets/config-yml.jpg&quot; alt=&quot;Final _config.yml&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Don’t forget that you need to re-serve jekyll if you introduce any changes to the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;, otherwise you won’t be able to track the changes.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;jekyll&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;serve&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to hear your feedback!&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;
+Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to hear your feedback!&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;Minimal Mistakes&lt;/a&gt;&lt;/li&gt;

@@ -14,7 +14,7 @@ comments: true
 square_related: recommend-jekyll-2
 ---
 
-Now that we have the basic setup for Jekyll blog, it’s time for some customization. You will probably want to adjust the layout of the blog, install a theme that you like (you can also style your blog completely from scratch but we’re not going to cover this case here), add custom domain etc. Let’s see how to do it.
+If you follow me along on "Just sudo IT", you remember [the post about setting up Jekyll](http://just-sudo-it.pl/jekyll-on-windows-part1). We have ended up with a basic set-up of a default Minima-themed blog. Great for beginning but now time has come to customize it to your liking. You will probably want to adjust the layout, install a chosen template (you can also style your blog completely from scratch but we’re not going to cover this case here), add custom domain etc. Let’s see how to do it.
 
 ## Basic configuration
 
@@ -154,7 +154,6 @@ Done with the fundamentals of Jekyll structure, let's switch back to the `_confi
 {% highlight javascript %}
 permalink: :title
 {% endhighlight %}<br>
-
 You can also set up your top navigation and footer here. In my case, here is the final `_config.yml` for this blog:
 
 ![Final _config.yml](img/post-assets/config-yml.jpg){:class="img-responsive"}
@@ -164,7 +163,6 @@ Don't forget that you need to re-serve jekyll if you introduce any changes to th
 {% highlight javascript %}
 jekyll serve
 {% endhighlight %}<br>
-
 Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to hear your feedback!
 
 + [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/)
