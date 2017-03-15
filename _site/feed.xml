@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 14 Mar 2017 22:54:18 +0100</pubDate>
-    <lastBuildDate>Tue, 14 Mar 2017 22:54:18 +0100</lastBuildDate>
+    <pubDate>Wed, 15 Mar 2017 13:06:52 +0100</pubDate>
+    <lastBuildDate>Wed, 15 Mar 2017 13:06:52 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -492,7 +492,24 @@ Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be 
 
 &lt;h2 id=&quot;formatting-your-posts-with-markdown&quot;&gt;Formatting your posts with Markdown&lt;/h2&gt;
 
-&lt;p&gt;Lorem ipsum&lt;/p&gt;
+&lt;p&gt;The actual content of your Jekyll posts and pages is written in Markdown, a simple text formatting engine that you probably got familiar with when creating your README.md file for your GitHub repositories. However, in case you did not, here are some basics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Headers&lt;/strong&gt;&lt;br /&gt;
+You simply use hashtags for that. The numbers of hashtags determines the size of the header. You can think of adding hashtags as incrementing the number in your &amp;lt;h…&amp;gt;&amp;lt;/h...&amp;gt; tags. For instance, if you write &lt;code class=&quot;highlighter-rouge&quot;&gt;# Header1&lt;/code&gt; the result will be a big header, &lt;code class=&quot;highlighter-rouge&quot;&gt;##  Header&lt;/code&gt; will be a bit smaller and so on. &lt;br /&gt;Note two things:
+    &lt;ul&gt;
+      &lt;li&gt;The single hashtag headers (the biggest ones, equivalent to &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;&amp;lt;/h1&amp;gt;&lt;/code&gt;) are reserved for blog titles, don’t use them in your content.&lt;/li&gt;
+      &lt;li&gt;Make sure there is a space after the hashtag. For some reason Jekyll cares about that.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Inline markup styles&lt;/strong&gt;&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;To make a phrase render as &lt;em&gt;italics&lt;/em&gt; you put it in between of single asterisks: &lt;code class=&quot;highlighter-rouge&quot;&gt;*italics*&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;To make a phrase &lt;strong&gt;bold&lt;/strong&gt; you need to put it in between of double asterisks, like so: &lt;code class=&quot;highlighter-rouge&quot;&gt;**bold**&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;To make your phrase render like &lt;code class=&quot;highlighter-rouge&quot;&gt;code()&lt;/code&gt;, you put it in between of backticks: &lt;code class=&quot;highlighter-rouge&quot;&gt;`code()`&lt;/code&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;using-a-custom-domain-with-jekyll&quot;&gt;Using a custom domain with Jekyll&lt;/h2&gt;
 

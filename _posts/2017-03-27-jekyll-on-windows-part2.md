@@ -171,7 +171,17 @@ Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be 
 
 ## Formatting your posts with Markdown
 
-Lorem ipsum
+The actual content of your Jekyll posts and pages is written in Markdown, a simple text formatting engine that you probably got familiar with when creating your README.md file for your GitHub repositories. However, in case you did not, here are some basics:
+
++ **Headers**<br>
+You simply use hashtags for that. The numbers of hashtags determines the size of the header. You can think of adding hashtags as incrementing the number in your <h…></h...> tags. For instance, if you write `# Header1` the result will be a big header, `##  Header` will be a bit smaller and so on. <br>Note two things:
+    - The single hashtag headers (the biggest ones, equivalent to `<h1></h1>`) are reserved for blog titles, don’t use them in your content.
+    - Make sure there is a space after the hashtag. For some reason Jekyll cares about that.
++ **Inline markup styles**<br>
+    - To make a phrase render as *italics* you put it in between of single asterisks: `*italics*`.
+    - To make a phrase **bold** you need to put it in between of double asterisks, like so: `**bold**`.
+    - To make your phrase render like `code()`, you put it in between of backticks: `` `code()` ``.
+
 
 ## Using a custom domain with Jekyll
 
