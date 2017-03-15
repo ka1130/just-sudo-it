@@ -199,7 +199,7 @@ That was just some very basics of Markdown, enough for the very beginning but in
 	
 + [Markdown cheatsheet on GitHub](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 + [A great video series by Wes Bos](https://masteringmarkdown.com/). 
-    You might have known the guy before, he’s the author of fabulous courses on JavaScript, Flexbox and more. Some of them are free, the others paid. I purchased the one on [EcmaScript6](http://wesbos.com/es6-for-everyone/) and it proved a great value for money.
+    You might have known the guy before, he’s the author of fabulous courses on JavaScript, Flexbox and more. Some of them are free, the others are paid. I purchased the one on [EcmaScript6](http://wesbos.com/es6-for-everyone/) and it proved a great value for money.
 
 ## Using a custom domain with Jekyll
 
@@ -213,4 +213,9 @@ The last thing I’m going to cover is setting up a custom domain for your Jekyl
 
 ## Final word
 
+Whew, you’ve done that! If you’ve read through both parts, congratulations, you are a patient reader. A great feature for a programmer! If you stumble upon any issues (pretty sure you will as every project is different, our needs too), the best places to dive deeper into Jekyll are:
++ [Jekyll’s official site](http://jekyllrb.com/)
++ [GitHub Pages help](https://help.github.com/categories/customizing-github-pages/)
++ and, as always, invaluable **StackOverflow**, god bless the dudes!
 
+Have fun working on your project. :)

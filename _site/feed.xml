@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Mar 2017 15:47:11 +0100</pubDate>
-    <lastBuildDate>Wed, 15 Mar 2017 15:47:11 +0100</lastBuildDate>
+    <pubDate>Wed, 15 Mar 2017 17:20:27 +0100</pubDate>
+    <lastBuildDate>Wed, 15 Mar 2017 17:20:27 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -535,7 +535,7 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;Markdown cheatsheet on GitHub&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://masteringmarkdown.com/&quot;&gt;A great video series by Wes Bos&lt;/a&gt;. 
-  You might have known the guy before, he’s the author of fabulous courses on JavaScript, Flexbox and more. Some of them are free, the others paid. I purchased the one on &lt;a href=&quot;http://wesbos.com/es6-for-everyone/&quot;&gt;EcmaScript6&lt;/a&gt; and it proved a great value for money.&lt;/li&gt;
+  You might have known the guy before, he’s the author of fabulous courses on JavaScript, Flexbox and more. Some of them are free, the others are paid. I purchased the one on &lt;a href=&quot;http://wesbos.com/es6-for-everyone/&quot;&gt;EcmaScript6&lt;/a&gt; and it proved a great value for money.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;using-a-custom-domain-with-jekyll&quot;&gt;Using a custom domain with Jekyll&lt;/h2&gt;
@@ -552,6 +552,14 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
 
 &lt;h2 id=&quot;final-word&quot;&gt;Final word&lt;/h2&gt;
 
+&lt;p&gt;Whew, you’ve done that! If you’ve read through both parts, congratulations, you are a patient reader. A great feature for a programmer! If you stumble upon any issues (pretty sure you will as every project is different, our needs too), the best places to dive deeper into Jekyll are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll’s official site&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.github.com/categories/customizing-github-pages/&quot;&gt;GitHub Pages help&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;and, as always, invaluable &lt;strong&gt;StackOverflow&lt;/strong&gt;, god bless the dudes!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Have fun working on your project. :)&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Mar 2017 17:21:07 +0200</pubDate>
         <link>http://localhost:4000/jekyll-on-windows-part2</link>
