@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Mar 2017 17:20:27 +0100</pubDate>
-    <lastBuildDate>Wed, 15 Mar 2017 17:20:27 +0100</lastBuildDate>
+    <pubDate>Wed, 15 Mar 2017 17:43:42 +0100</pubDate>
+    <lastBuildDate>Wed, 15 Mar 2017 17:43:42 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -568,6 +568,8 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
         
         <category>dsp2017</category>
         
+        <category>coding</category>
+        
       </item>
     
       <item>
@@ -702,6 +704,8 @@ to put Jekyll in kind of “watch” mode where all your changes to the blog’s
         
         
         <category>dsp2017</category>
+        
+        <category>coding</category>
         
       </item>
     
