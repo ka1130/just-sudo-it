@@ -181,11 +181,35 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
     - To make a phrase render as *italics* you put it in between of single asterisks: `*italics*`.
     - To make a phrase **bold** you need to put it in between of double asterisks, like so: `**bold**`.
     - To make your phrase render like `code()`, you put it in between of backticks: `` `code()` ``.
++ **Lists**<br>
+    - **Unordered lists**<br>
+    Unordered lists’ items start with `*` or `+` or `-` . Don’t forget the **space** afterwards!
+        - **Nested list items**<br>
+        For a nested list item hit `Tab` followed by `-` and **space**. You can exchange `-` with `+` or `*` or even **number** (followed by **dot** and, of course, **space**)
+    - **Ordered lists**<br>
+        This one is simple: press **number** followed by **dot** and **space**, like so: `1. list element`. That’s it!
++ **Links**
+    To create a link put its title inside square brackets first, then the actual address inside round brackets, like so: <br>
+    `[Google](http://google.com)`
++ **Images**
+    Placing images follows a rule similar to the links, you only need to precede the whole stuff with an exclamation mark. In the round brackets you either put a relative path to the image on your server, or an absolute path to an image hosted elsewhere. Example:<br>
+    `![Image title](img/my-image.jpg)`
 
+That was just some very basics of Markdown, enough for the very beginning but in the nearest future you might need a more extensive resource. In this case, have a look at what I found for you:
+	
++ [Markdown cheatsheet on GitHub](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
++ [A great video series by Wes Bos](https://masteringmarkdown.com/). 
+    You might have known the guy before, he’s the author of fabulous courses on JavaScript, Flexbox and more. Some of them are free, the others paid. I purchased the one on [EcmaScript6](http://wesbos.com/es6-for-everyone/) and it proved a great value for money.
 
 ## Using a custom domain with Jekyll
 
-Lorem ipsum
+The last thing I’m going to cover is setting up a custom domain for your Jekyll blog. Once you've purchased your domain there are three steps to follow in order to redirect your blog which is currently hosted under `your-login.github.io/your-project`.
+
+1. In your project’s root create a new empty file and save it as `CNAME` (with no extension). Inside of this file enter your domain’s name. For the sake of this example I have got myself a free jekyll.cf domain and that’s exactly and only thing that goes into the `CNAME` file. No http://, www or so, just the plain name.
+2. Now login to your GitHub account and navigate to your project. Choose the **Settings** panel (top right option). Once you’re there, scroll down to the **GitHub Pages** section. You will find here a place to type in your **Custom domain** like on the image below:
+![Custom domain on GitHub Pages](img/post-assets/custom-domain.jpg){:class="img-responsive"}
+3. Point your DNS to GitHub Pages. Login to your domain provider’s panel. Add a **new CNAME record** and target it at your base user’s github.io site. Here is how it looks like in my case:
+![DNS](img/post-assets/dns.jpg){:class="img-responsive"} <br> Wait for the DNS to propagate. You’re there, nice and simple. :)
 
 ## Final word
 

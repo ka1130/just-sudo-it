@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Mar 2017 13:06:52 +0100</pubDate>
-    <lastBuildDate>Wed, 15 Mar 2017 13:06:52 +0100</lastBuildDate>
+    <pubDate>Wed, 15 Mar 2017 15:47:11 +0100</pubDate>
+    <lastBuildDate>Wed, 15 Mar 2017 15:47:11 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -509,11 +509,46 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
       &lt;li&gt;To make your phrase render like &lt;code class=&quot;highlighter-rouge&quot;&gt;code()&lt;/code&gt;, you put it in between of backticks: &lt;code class=&quot;highlighter-rouge&quot;&gt;`code()`&lt;/code&gt;.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Lists&lt;/strong&gt;&lt;br /&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Unordered lists&lt;/strong&gt;&lt;br /&gt;
+  Unordered lists’ items start with &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; . Don’t forget the &lt;strong&gt;space&lt;/strong&gt; afterwards!
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Nested list items&lt;/strong&gt;&lt;br /&gt;
+  For a nested list item hit &lt;code class=&quot;highlighter-rouge&quot;&gt;Tab&lt;/code&gt; followed by &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; and &lt;strong&gt;space&lt;/strong&gt;. You can exchange &lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; or even &lt;strong&gt;number&lt;/strong&gt; (followed by &lt;strong&gt;dot&lt;/strong&gt; and, of course, &lt;strong&gt;space&lt;/strong&gt;)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Ordered lists&lt;/strong&gt;&lt;br /&gt;
+  This one is simple: press &lt;strong&gt;number&lt;/strong&gt; followed by &lt;strong&gt;dot&lt;/strong&gt; and &lt;strong&gt;space&lt;/strong&gt;, like so: &lt;code class=&quot;highlighter-rouge&quot;&gt;1. list element&lt;/code&gt;. That’s it!&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Links&lt;/strong&gt;
+  To create a link put its title inside square brackets first, then the actual address inside round brackets, like so: &lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;[Google](http://google.com)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Images&lt;/strong&gt;
+  Placing images follows a rule similar to the links, you only need to precede the whole stuff with an exclamation mark. In the round brackets you either put a relative path to the image on your server, or an absolute path to an image hosted elsewhere. Example:&lt;br /&gt;
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;![Image title](img/my-image.jpg)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That was just some very basics of Markdown, enough for the very beginning but in the nearest future you might need a more extensive resource. In this case, have a look at what I found for you:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&quot;&gt;Markdown cheatsheet on GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://masteringmarkdown.com/&quot;&gt;A great video series by Wes Bos&lt;/a&gt;. 
+  You might have known the guy before, he’s the author of fabulous courses on JavaScript, Flexbox and more. Some of them are free, the others paid. I purchased the one on &lt;a href=&quot;http://wesbos.com/es6-for-everyone/&quot;&gt;EcmaScript6&lt;/a&gt; and it proved a great value for money.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;using-a-custom-domain-with-jekyll&quot;&gt;Using a custom domain with Jekyll&lt;/h2&gt;
 
-&lt;p&gt;Lorem ipsum&lt;/p&gt;
+&lt;p&gt;The last thing I’m going to cover is setting up a custom domain for your Jekyll blog. Once you’ve purchased your domain there are three steps to follow in order to redirect your blog which is currently hosted under &lt;code class=&quot;highlighter-rouge&quot;&gt;your-login.github.io/your-project&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;In your project’s root create a new empty file and save it as &lt;code class=&quot;highlighter-rouge&quot;&gt;CNAME&lt;/code&gt; (with no extension). Inside of this file enter your domain’s name. For the sake of this example I have got myself a free jekyll.cf domain and that’s exactly and only thing that goes into the &lt;code class=&quot;highlighter-rouge&quot;&gt;CNAME&lt;/code&gt; file. No http://, www or so, just the plain name.&lt;/li&gt;
+  &lt;li&gt;Now login to your GitHub account and navigate to your project. Choose the &lt;strong&gt;Settings&lt;/strong&gt; panel (top right option). Once you’re there, scroll down to the &lt;strong&gt;GitHub Pages&lt;/strong&gt; section. You will find here a place to type in your &lt;strong&gt;Custom domain&lt;/strong&gt; like on the image below:
+&lt;img src=&quot;img/post-assets/custom-domain.jpg&quot; alt=&quot;Custom domain on GitHub Pages&quot; class=&quot;img-responsive&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;Point your DNS to GitHub Pages. Login to your domain provider’s panel. Add a &lt;strong&gt;new CNAME record&lt;/strong&gt; and target it at your base user’s github.io site. Here is how it looks like in my case:
+&lt;img src=&quot;img/post-assets/dns.jpg&quot; alt=&quot;DNS&quot; class=&quot;img-responsive&quot; /&gt; &lt;br /&gt; Wait for the DNS to propagate. You’re there, nice and simple. :)&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;final-word&quot;&gt;Final word&lt;/h2&gt;
 
