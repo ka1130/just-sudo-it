@@ -8,10 +8,10 @@ author_url : /author/kamila
 author_avatar: kamila
 show_avatar : true
 read_time : 10
-feature_image: feature-book
+feature_image: feature-plan
 show_related_posts: true
 comments: true
-square_related: recommend-book
+square_related: recommend-plan
 ---
 Failing to plan is planning to fail. 
 Alan Lakein
