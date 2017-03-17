@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Mar 2017 17:43:42 +0100</pubDate>
-    <lastBuildDate>Wed, 15 Mar 2017 17:43:42 +0100</lastBuildDate>
+    <pubDate>Fri, 17 Mar 2017 14:24:36 +0100</pubDate>
+    <lastBuildDate>Fri, 17 Mar 2017 14:24:36 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -569,6 +569,25 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
         <category>dsp2017</category>
         
         <category>coding</category>
+        
+      </item>
+    
+      <item>
+        <title>Boids: planning the project</title>
+        <description>&lt;p&gt;Failing to plan is planning to fail. 
+Alan Lakein&lt;/p&gt;
+
+&lt;p&gt;Before I decided to register to the “Get Noticed” contest, I had read a whole bunch of posts and articles by attendees of the 2016 edition. They were describing how the participation itself helped them grow as developers, why is it all worth time and effort - and how to prepare yourself to the challenge. Not surprisingly, they all emphasised the significance of having a good, thoughtful plan, factorizing the problem and getting into details of every single step. With that in mind, I started coding with… several sheets of paper and tons of bookmarks open in my browser to analyze what actually needs to be done and how to start. Here is what I have come up with.&lt;/p&gt;
+
+&lt;h2 id=&quot;stage-1&quot;&gt;Stage 1&lt;/h2&gt;
+
+</description>
+        <pubDate>Fri, 24 Mar 2017 12:54:26 +0100</pubDate>
+        <link>http://localhost:4000/the-boids-plan</link>
+        <guid isPermaLink="true">http://localhost:4000/the-boids-plan</guid>
+        
+        
+        <category>dsp2017</category>
         
       </item>
     
