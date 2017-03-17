@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Mar 2017 14:31:17 +0100</pubDate>
-    <lastBuildDate>Fri, 17 Mar 2017 14:31:17 +0100</lastBuildDate>
+    <pubDate>Fri, 17 Mar 2017 16:36:34 +0100</pubDate>
+    <lastBuildDate>Fri, 17 Mar 2017 16:36:34 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -574,12 +574,36 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
     
       <item>
         <title>Boids: planning the project</title>
-        <description>&lt;p&gt;Failing to plan is planning to fail. 
-Alan Lakein&lt;/p&gt;
+        <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+    &lt;p&gt;&lt;em&gt;Failing to plan is planning to fail.&lt;/em&gt;&lt;/p&gt;
+    &lt;footer&gt;Alan Lakein&lt;/footer&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Before I decided to register to the “Get Noticed” contest, I had read a whole bunch of posts and articles by attendees of the 2016 edition. They were describing how the participation itself helped them grow as developers, why is it all worth time and effort - and how to prepare yourself to the challenge. Not surprisingly, they all emphasised the significance of having a good, thoughtful plan, factorizing the problem and getting into details of every single step. With that in mind, I started coding with… several sheets of paper and tons of bookmarks open in my browser to analyze what actually needs to be done and how to start. Here is what I have come up with.&lt;/p&gt;
 
-&lt;h2 id=&quot;stage-1&quot;&gt;Stage 1&lt;/h2&gt;
+&lt;h2 id=&quot;stage-1-choosing-tools-and-technologies&quot;&gt;Stage 1: Choosing tools and technologies&lt;/h2&gt;
+
+&lt;h2 id=&quot;stage-2-preparing-the-environment&quot;&gt;Stage 2: Preparing the environment&lt;/h2&gt;
+
+&lt;h2 id=&quot;stage-3-maths&quot;&gt;Stage 3: Maths!&lt;/h2&gt;
+
+&lt;h2 id=&quot;stage-4-creating-a-boid-class&quot;&gt;Stage 4: Creating a Boid class&lt;/h2&gt;
+
+&lt;h2 id=&quot;stage-5-initial-animation-for-a-group-of-boids&quot;&gt;Stage 5: Initial animation for a group of Boids&lt;/h2&gt;
+
+&lt;h2 id=&quot;stage-6-counting-next-position&quot;&gt;Stage 6: Counting next position&lt;/h2&gt;
+
+&lt;h2 id=&quot;stage-7-changing-the-circle-into-bird-oid-form&quot;&gt;Stage 7: Changing the circle into bird-oid form&lt;/h2&gt;
+
+&lt;h2 id=&quot;stage-8-adding-controls&quot;&gt;Stage 8: Adding controls&lt;/h2&gt;
+
+&lt;h2 id=&quot;stage-9-first-roadblock&quot;&gt;Stage 9: First roadblock&lt;/h2&gt;
+
+&lt;h2 id=&quot;stage-10-dynamic-roadblocks-on-users-click&quot;&gt;Stage 10: Dynamic roadblocks on user’s click&lt;/h2&gt;
+
+&lt;h2 id=&quot;stage-11-getting-it-nice&quot;&gt;Stage 11: Getting it nice!&lt;/h2&gt;
 
 </description>
         <pubDate>Fri, 24 Mar 2017 12:54:26 +0100</pubDate>
