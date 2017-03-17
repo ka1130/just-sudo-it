@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Mar 2017 16:36:34 +0100</pubDate>
-    <lastBuildDate>Fri, 17 Mar 2017 16:36:34 +0100</lastBuildDate>
+    <pubDate>Fri, 17 Mar 2017 19:03:10 +0100</pubDate>
+    <lastBuildDate>Fri, 17 Mar 2017 19:03:10 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -338,6 +338,19 @@ Note that if you followed this tutorial and saved all dependencies in your packa
       </item>
     
       <item>
+        <title>The canvas API</title>
+        <description>
+</description>
+        <pubDate>Thu, 30 Mar 2017 14:02:13 +0200</pubDate>
+        <link>http://localhost:4000/canvas-api</link>
+        <guid isPermaLink="true">http://localhost:4000/canvas-api</guid>
+        
+        
+        <category>dsp2017</category>
+        
+      </item>
+    
+      <item>
         <title>Strange case of Dr Jekyll and Mr Windows / part II</title>
         <description>&lt;p&gt;If you follow me along on “Just sudo IT”, you remember &lt;a href=&quot;http://just-sudo-it.pl/jekyll-on-windows-part1&quot;&gt;the post about setting up Jekyll&lt;/a&gt;. We have ended up with a basic set-up of a default Minima-themed blog. Great for beginning but now time has come to customize it to your liking. You will probably want to adjust the layout, install a chosen template (you can also style your blog completely from scratch but we’re not going to cover this case here), add custom domain etc. Let’s see how to do it.&lt;/p&gt;
 
@@ -581,13 +594,29 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Before I decided to register to the “Get Noticed” contest, I had read a whole bunch of posts and articles by attendees of the 2016 edition. They were describing how the participation itself helped them grow as developers, why is it all worth time and effort - and how to prepare yourself to the challenge. Not surprisingly, they all emphasised the significance of having a good, thoughtful plan, factorizing the problem and getting into details of every single step. With that in mind, I started coding with… several sheets of paper and tons of bookmarks open in my browser to analyze what actually needs to be done and how to start. Here is what I have come up with.&lt;/p&gt;
+&lt;p&gt;Before I decided to register to the “Get Noticed” contest, I had read a whole bunch of posts and articles by attendees of the 2016 edition. They were describing how the participation itself helped them grow as developers, why it is all worth time and effort - and how to prepare yourself to the challenge. Not surprisingly, they all emphasised the significance of having a good, thoughtful plan, factorizing the problem and getting into details of every single step. With that in mind, I started coding with… several sheets of paper and tons of bookmarks open in my browser to analyze what actually needs to be done and how to start. Here is what I have come up with.&lt;/p&gt;
 
 &lt;h2 id=&quot;stage-1-choosing-tools-and-technologies&quot;&gt;Stage 1: Choosing tools and technologies&lt;/h2&gt;
 
+&lt;p&gt;This one was quite obvious: HTML &amp;amp; CSS(Sass) for the project’s shell, JavaScript for the engine. Since there are many cool features introduced by ECMAScript 2015 (wider known as ECMAScript 6 or simply ES6), I will try my first steps here, taking advantage of the newly introduced classes, arrow functions, destructuring etc. The Boids themselves will be animated on HTML5 canvas and I plan to prepare an introduction to the canvas API in the nearest future.&lt;/p&gt;
+
 &lt;h2 id=&quot;stage-2-preparing-the-environment&quot;&gt;Stage 2: Preparing the environment&lt;/h2&gt;
 
+&lt;p&gt;Another warm-up thing: preparing a visual platform at which Boids will be flying. I have created a palette of swatches (an old designer’s habit) and decided to divide the layout vertically, leaving a left-hand aside for some basic information on the Boids idea and a simple manual. All the rest will be taken up by canvas. Initially I wanted to start with a single bird-oid form animating itself but then I changed my mind and chose a roughly straightforward solution to begin with. The elementary Boids will be simply small circles drawn directly on canvas. Once I figure out all the animation’s algorithms, I will try to think of a way to turn circles into something more complex. First things first.&lt;/p&gt;
+
 &lt;h2 id=&quot;stage-3-maths&quot;&gt;Stage 3: Maths!&lt;/h2&gt;
+
+&lt;p&gt;Now here comes the hardest thing for me, or at least at this point it seems so. Getting into counting! Vectors, numbers, algorithms… putting together three seemingly simple rules of flocking put me hardly off. Still, it had to be done. OK, a pile of blank paper sheets and a pen and let’s dismantle the sucker!&lt;/p&gt;
+
+&lt;p&gt;I will need a 2D coordinate system and an array of starting positions of Boids (x and y). Thereafter, Boids will be placed on the given coordinates and put into motion. At this point there has to be a function that takes the initial coordinates and counts the next position of each boid as per the rules described in the former post. A quick reminder:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;separation&lt;/strong&gt;: steer to avoid crowding&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;alignment&lt;/strong&gt;: steer towards the average heading of local flockmates&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cohesion&lt;/strong&gt;: steer to move toward the average position of local flockmates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s break these apart.&lt;/p&gt;
 
 &lt;h2 id=&quot;stage-4-creating-a-boid-class&quot;&gt;Stage 4: Creating a Boid class&lt;/h2&gt;
 
