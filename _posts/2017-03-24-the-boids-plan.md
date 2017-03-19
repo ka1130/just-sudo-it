@@ -64,10 +64,22 @@ Now it’s time to play: circles look dull so I will think of something more cre
 
 ## Stage 8: Adding controls
 
+At this point I can hand over the control to the user, letting them decide on the boids' amount, speed, distance etc. I will need a way to get data from the user: it can be a set of range sliders, buttons or other types of inputs.
+
 ## Stage 9: First roadblock
+
+Time for a first roadblock! I will put a static circle imitating an obstacle and write a function that steers boids away of it. More calculations ahead...
 
 ## Stage 10: Dynamic roadblocks on user’s click
 
+Now that I have a working roadblock, I will put the user in charge of adding and deleting the roadblocks. Guess the simplest option will be by clicking on the canvas to create a roadblock, then another click on the roadblock created would delete it. I may want to change the way the roadblocks look, perhaps add some randomness here too.
+
 ## Stage 11: Getting it nice!
+
+Once all is working fine and tested, I'll get back to my Sass and add some styling so that the whole thing simply looks good. It's also time to develop the aside part, put some more information here and maybe think of some kind of introductory part that tells the story behind the project. I hope to get back to this point before the planned 10 weeks pass.
+
+## Where am I now?
+
+At this moment things are going quite fine. I got to the Stage 6 and the boids are flying as planned. You can check the current status [here](https://ka1130.github.io/Boids/src/). In case you were curious, all the code goes to a [GitHub repo](https://github.com/ka1130/Boids). Wish me good luck! :)
 
 
