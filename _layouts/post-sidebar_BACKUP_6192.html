@@ -1,0 +1,88 @@
+<<<<<<< HEAD
+--- 
+layout: default 
+---
+=======
+--- layout: default ---
+>>>>>>> 04dc1c946c297ad32458a81853282f0ba3afcef1
+
+<header class="hero-image" style='background-image: url({{"/img/" | append: page.feature_image | prepend: site.baseurl }}.jpg);'>
+    <span class="menu-trigger animated fadeInDown">
+        <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    </span>
+
+    {% include nav.html %}
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 single-content-sidebar">
+
+            <h1>{{ page.title }}</h1>
+
+            {{ content }}
+
+        </div>
+        <!-- main-content/col -->
+
+        <div class="col-xs-12 col-md-3 col-md-offset-1 single-content-sidebar-area">
+
+            <img src='{{ "/img/" | append: page.author_avatar | prepend: site.baseurl }}.jpg' class="user-icon " alt="user-image">
+            <div class="meta">
+
+                <div class="sidebar-info">
+                    <a href="{{ page.author_url | prepend: site.baseurl }}">{{ page.author_name | capitalize }}</a> in <a href='{{ "/category/" | append: page.categories.first | prepend: site.baseurl }}'>{{ page.categories.first | capitalize }}</a>
+                </div>
+
+                <div class="sidebar-readtime">
+                    <i class="fa fa-bookmark"></i> {{ page.read_time }} minute read
+                </div>
+
+            </div>
+
+            <h2 class="favorites">Similar Posts</h2>
+
+            {% for post in site.related_posts %} {% if forloop.index
+            <=5 %} <div class="similar-post">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <h3>{{ post.title }}</h3>
+                </a>
+        </div>
+        {% endif %} {% endfor %}
+
+
+    </div>
+
+    </div>
+    <!--/row -->
+
+    <div class="row">
+        <div class="col-xs-12 col-md-8 single-content-sidebar">
+            {% if page.comments %}
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function() {
+                    this.page.url = "http://just-sudo-it.pl"; // <--- use canonical URL
+                    this.page.identifier = "{{ page.id }}";
+                };
+
+                (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document,
+                        s = d.createElement('script');
+                    s.src = 'https://just-sudo-it.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> {% endif %}
+        </div>
+    </div>
+
+</main>
+<!-- /container -->
+
+<footer class="single">
+    {% include footer-single.html %} {% if page.show_related_posts == true %} {% include footer-related-posts.html %} {% endif %}
+</footer>
