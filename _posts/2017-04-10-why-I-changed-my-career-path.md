@@ -8,10 +8,10 @@ author_url : /author/kamila
 author_avatar: kamila
 show_avatar : true
 read_time : 15
-feature_image: feature-gulp
+feature_image: feature-career
 show_related_posts: true
 comments: true
-square_related: recommend-gulp
+square_related: recommend-career
 ---
 
 
