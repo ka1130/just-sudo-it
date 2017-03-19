@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Just sudo IT | What the Boids?</title>
-    <meta name="description" content="What is this project about?">
+    <title>Just sudo IT | Coders Lab: my opinion</title>
+    <meta name="description" content="">
 
     <link rel="stylesheet" href="/css/main.css">
 
-    <link rel="canonical" href="http://localhost:4000/what-are-boids">
+    <link rel="canonical" href="http://localhost:4000/coderslab">
     <link rel="alternate" type="application/rss+xml" title="Just sudo IT" href="http://localhost:4000/feed.xml" />
     <link rel="shortcut icon" type="image/png" href="/favicon.png" >
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
@@ -38,7 +38,7 @@
 </noscript>
 <!-- end no script -->
 
-    <header class="hero-image" style='background-image: url(/img/feature-boids.jpg);'>
+    <header class="hero-image" style='background-image: url(/img/feature-laptop.jpg);'>
     <span class="menu-trigger animated fadeInDown">
         <span class="bar"></span>
     <span class="bar"></span>
@@ -63,31 +63,9 @@
     <div class="row">
         <div class="col-xs-12 col-md-8 single-content-sidebar">
 
-            <h1>What the Boids?</h1>
+            <h1>Coders Lab: my opinion</h1>
 
-            <h2 id="what-is-this-project-about">What is this project about?</h2>
-
-<p>Ever heard about artificial life programs? Sure you have, Internet is full of information, projects and games based on natural life’s simulation. Consider <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway’s Game of Life</a>, for instance, which simulates “colonies” growing or dying depending on how crowded or lonely the single cells are. It is still purely math-based but it very believably resembles a kind of natural life patterns, where cells are forming generations connoting almost a kind of collective intelligence, especially if they are given a really big space to colonize. Since I have lately programmed <a href="https://ka1130.github.io/Game-of-Life/src/">JavaScript implementation of Game of Life</a>, I decided to challenge myself with something presumably much more demanding.</p>
-
-<h2 id="the-boids-idea">The “Boids” idea</h2>
-
-<p>As per <a href="https://en.wikipedia.org/wiki/Boids">Wikipedia’s definition</a>, Boids is an artificial life program, developed by Craig Reynolds in 1986, which simulates the flocking behaviour of birds. I have encountered two derivations of the term “boids”. One says it is a shorthand for “bird-oid”, in other words, “bird-like” objects. The other suggests it stems from the way that New Yorkers pronounce the word “birds”. Leaving aside the story of the term, Reynold’s Boids model (also referred to as flocking algorithm) follows three simple rules:</p>
-
-<ul>
-  <li><strong>separation</strong>: steer to avoid crowding</li>
-  <li><strong>alignment</strong>: steer towards the average heading of local flockmates</li>
-  <li><strong>cohesion</strong>: steer to move toward the average position of local flockmates</li>
-</ul>
-
-<p>What is phenomenal about Reynold’s model is that using these plain rules only on single units it generates behaviour strongly resembling a real flock’s one. Just as in the Game of Life the result is surprisingly complex and realistic. Boids are one of many experiments in the field of so-called <a href="https://en.wikipedia.org/wiki/Swarm_intelligence">swarm intelligence</a> characterized by the lack of centralized control agent: each boid follows its own rules, still resulting in a surprising group behaviour.</p>
-
-<p>Here is a nice visualization and further explanation of the idea:</p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QbUPfMXXQIY?ecver=1" frameborder="0"> </iframe>
-
-<h2 id="my-goal">My goal</h2>
-
-<p>The purpose of my project is to create a JavaScript implementation of boids. I know I am definitely not the first one to try - there even are whole libraries and scripts available to use freely. However, I will try to figure the thing out myself, preferably with pure Vanilla JS. We’ll see what I’ll end up with. Keep your fingers crossed, I will report you soon about the project’s state!</p>
+            
 
 
         </div>
@@ -103,7 +81,7 @@
                 </div>
 
                 <div class="sidebar-readtime">
-                    <i class="fa fa-bookmark"></i> 10 minute read
+                    <i class="fa fa-bookmark"></i> 7 minute read
                 </div>
 
             </div>
@@ -111,11 +89,6 @@
             <h2 class="favorites">Similar Posts</h2>
 
               <div class="similar-post">
-                <a href="/coderslab">
-                    <h3>Coders Lab: my opinion</h3>
-                </a>
-        </div>
-           <div class="similar-post">
                 <a href="/why-I-changed-my-career-path">
                     <h3>Why I changed my career path</h3>
                 </a>
@@ -135,6 +108,11 @@
                     <h3>Strange case of Dr Jekyll and Mr Windows / part II</h3>
                 </a>
         </div>
+           <div class="similar-post">
+                <a href="/the-boids-plan">
+                    <h3>Boids: planning the project</h3>
+                </a>
+        </div>
                
 
 
@@ -150,7 +128,7 @@
             <script>
                 var disqus_config = function() {
                     this.page.url = "http://just-sudo-it.pl"; // <--- use canonical URL
-                    this.page.identifier = "/what-are-boids";
+                    this.page.identifier = "/coderslab";
                 };
 
                 (function() { // DON'T EDIT BELOW THIS LINE
@@ -176,7 +154,7 @@
         </div>
         <div class="col-xs-12 col-sm-6">
             <div class="category-list">
-                <p>Published <span>Mar 18, 2017</span></p>
+                <p>Published <span>Apr 19, 2017</span></p>
                 <p><a href="/author/kamila">Kamila</a> in <a href='/category/dsp2017'>Dsp2017</a></p>
 
                 <div class="other-catergories">
@@ -198,24 +176,16 @@
             <div class="social">
                 <p>Share this article</a>
                 <div class="social-links">
-                    <a class="social-icon" href="#" data-platform="twitter" data-message="" data-url="http://localhost:4000/what-are-boids"><i class="fa fa-twitter"></i></a>
+                    <a class="social-icon" href="#" data-platform="twitter" data-message="" data-url="http://localhost:4000/coderslab"><i class="fa fa-twitter"></i></a>
 
-                    <a class="social-icon" href="#" data-platform="facebook" data-message="" data-url="http://localhost:4000/what-are-boids"><i class="fa fa-facebook-official"></i></a>
-                    <a class="social-icon" data-platform="mail"  href="mailto:ka1130@o2.pl?body=http://localhost:4000/what-are-boids"><i class="fa fa-envelope"></i></a>
+                    <a class="social-icon" href="#" data-platform="facebook" data-message="" data-url="http://localhost:4000/coderslab"><i class="fa fa-facebook-official"></i></a>
+                    <a class="social-icon" data-platform="mail"  href="mailto:ka1130@o2.pl?body=http://localhost:4000/coderslab"><i class="fa fa-envelope"></i></a>
                 </div>
             </div>
         </div>
     </div><!-- end row -->
 </div>
   <div class="row read-another-section">
-    
-        
-        <a href="/coderslab"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
-            <div class="overlay"></div>
-            <img src='/img/recommend-laptop.jpg'>
-            <h3 class="read-another">Coders Lab: my opinion</h3>
-        </div></a>
-        
     
         
         <a href="/why-I-changed-my-career-path"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
@@ -254,6 +224,14 @@
             <div class="overlay"></div>
             <img src='/img/recommend-plan.jpg'>
             <h3 class="read-another">Boids: planning the project</h3>
+        </div></a>
+        
+    
+        
+        <a href="/jekyll-on-windows-part1"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
+            <div class="overlay"></div>
+            <img src='/img/recommend-jekyll-1.jpg'>
+            <h3 class="read-another">Strange case of Dr Jekyll and Mr Windows / part I</h3>
         </div></a>
         
     

@@ -96,13 +96,25 @@
 
 <p>Let’s break these apart.</p>
 
+<p>I decided to start with <strong>cohesion</strong>. To calculate it, I will need to find the center of gravity for the flock. This will be the average of coordinates of all the boids except for the one, for which I will calculate the movement. I assume I will move the boid towards the new position by 10% of the newly calculated coordinates, just to keep the whole animation smooth and concise.</p>
+
+<p>Next, I will handle the <strong>separation</strong> rule. This rule needs a constant of the maximum distance between the boids.</p>
+
 <h2 id="stage-4-creating-a-boid-class">Stage 4: Creating a Boid class</h2>
+
+<p>One of the cool new features of ES6 is the introduction of <a href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Classes">classes</a>. Something for you, JS-despisers! JavaScript classes are actually just a bit of syntactic sugar over the Objects and prototypes but they make our code much cleaner and simplify working with inheritance. I will harness this new feature by creating a simple Boid class that keeps the instance’s position and speed (the movement’s vector).</p>
 
 <h2 id="stage-5-initial-animation-for-a-group-of-boids">Stage 5: Initial animation for a group of Boids</h2>
 
+<p>Having the initial group of boids on canvas, I will define the first basic animation. It can be simply running on the X-axis. Once a boid hits the canvas’ border, the direction of the movement will be reverted. Thereafter, I will make boids fly on the Y-axis as well so that they make use of the whole canvas’ area.</p>
+
 <h2 id="stage-6-counting-next-position">Stage 6: Counting next position</h2>
 
+<p>I will need a function that makes use of the previously defined cohesion, separation and alignment rules. This way the function will perform calculations of the next position of a boid, then clear the canvas and redraw it on a new position. At this point I can tell I’d have released the projects’ .beta version. :)</p>
+
 <h2 id="stage-7-changing-the-circle-into-bird-oid-form">Stage 7: Changing the circle into bird-oid form</h2>
+
+<p>Now it’s time to play: circles look dull so I will think of something more creative, probably in a form of bird. It would be great if every single boid would also animate itself, as if it was flying. If I get stuck, I will continue with the next steps and come back here after resolving the rest of the issues.</p>
 
 <h2 id="stage-8-adding-controls">Stage 8: Adding controls</h2>
 
@@ -135,6 +147,11 @@
             <h2 class="favorites">Similar Posts</h2>
 
               <div class="similar-post">
+                <a href="/coderslab">
+                    <h3>Coders Lab: my opinion</h3>
+                </a>
+        </div>
+           <div class="similar-post">
                 <a href="/why-I-changed-my-career-path">
                     <h3>Why I changed my career path</h3>
                 </a>
@@ -154,12 +171,7 @@
                     <h3>Strange case of Dr Jekyll and Mr Windows / part II</h3>
                 </a>
         </div>
-           <div class="similar-post">
-                <a href="/jekyll-on-windows-part1">
-                    <h3>Strange case of Dr Jekyll and Mr Windows / part I</h3>
-                </a>
-        </div>
-             
+               
 
 
     </div>
@@ -234,6 +246,14 @@
   <div class="row read-another-section">
     
         
+        <a href="/coderslab"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
+            <div class="overlay"></div>
+            <img src='/img/recommend-laptop.jpg'>
+            <h3 class="read-another">Coders Lab: my opinion</h3>
+        </div></a>
+        
+    
+        
         <a href="/why-I-changed-my-career-path"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
             <div class="overlay"></div>
             <img src='/img/recommend-career.jpg'>
@@ -274,17 +294,12 @@
         
     
         
-        <a href="/what-are-boids"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
-            <div class="overlay"></div>
-            <img src='/img/recommend-boids.jpg'>
-            <h3 class="read-another">What the Boids?</h3>
-        </div></a>
-        
     
         
     
 </div> 
 </footer>
+
 
     <script src='/js/vendor/modernizr.custom.32229-2.8-respondjs-1-4-2.js'></script>
     <script src="/js/vendor/jquery-1.11.2.min.js"></script>

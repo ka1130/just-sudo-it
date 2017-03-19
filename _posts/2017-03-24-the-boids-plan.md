@@ -42,13 +42,25 @@ I will need a 2D coordinate system and an array of starting positions of Boids (
 
 Let’s break these apart.
 
+I decided to start with **cohesion**. To calculate it, I will need to find the center of gravity for the flock. This will be the average of coordinates of all the boids except for the one, for which I will calculate the movement. I assume I will move the boid towards the new position by 10% of the newly calculated coordinates, just to keep the whole animation smooth and concise.
+
+Next, I will handle the **separation** rule. This rule needs a constant of the maximum distance between the boids. 
+
 ## Stage 4: Creating a Boid class
+
+One of the cool new features of ES6 is the introduction of [classes](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Classes). Something for you, JS-despisers! JavaScript classes are actually just a bit of syntactic sugar over the Objects and prototypes but they make our code much cleaner and simplify working with inheritance. I will harness this new feature by creating a simple Boid class that keeps the instance’s position and speed (the movement’s vector).
 
 ## Stage 5: Initial animation for a group of Boids
 
+Having the initial group of boids on canvas, I will define the first basic animation. It can be simply running on the X-axis. Once a boid hits the canvas’ border, the direction of the movement will be reverted. Thereafter, I will make boids fly on the Y-axis as well so that they make use of the whole canvas’ area.
+
 ## Stage 6: Counting next position
 
+I will need a function that makes use of the previously defined cohesion, separation and alignment rules. This way the function will perform calculations of the next position of a boid, then clear the canvas and redraw it on a new position. At this point I can tell I'd have released the projects’ .beta version. :)
+
 ## Stage 7: Changing the circle into bird-oid form
+
+Now it’s time to play: circles look dull so I will think of something more creative, probably in a form of bird. It would be great if every single boid would also animate itself, as if it was flying. If I get stuck, I will continue with the next steps and come back here after resolving the rest of the issues.
 
 ## Stage 8: Adding controls
 

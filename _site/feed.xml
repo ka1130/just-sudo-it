@@ -6,9 +6,22 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Mar 2017 12:04:07 +0100</pubDate>
-    <lastBuildDate>Sun, 19 Mar 2017 12:04:07 +0100</lastBuildDate>
+    <pubDate>Sun, 19 Mar 2017 14:21:45 +0100</pubDate>
+    <lastBuildDate>Sun, 19 Mar 2017 14:21:45 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
+    
+      <item>
+        <title>Coders Lab: my opinion</title>
+        <description>
+</description>
+        <pubDate>Wed, 19 Apr 2017 10:20:12 +0200</pubDate>
+        <link>http://localhost:4000/coderslab</link>
+        <guid isPermaLink="true">http://localhost:4000/coderslab</guid>
+        
+        
+        <category>dsp2017</category>
+        
+      </item>
     
       <item>
         <title>Why I changed my career path</title>
@@ -633,13 +646,25 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
 
 &lt;p&gt;Let’s break these apart.&lt;/p&gt;
 
+&lt;p&gt;I decided to start with &lt;strong&gt;cohesion&lt;/strong&gt;. To calculate it, I will need to find the center of gravity for the flock. This will be the average of coordinates of all the boids except for the one, for which I will calculate the movement. I assume I will move the boid towards the new position by 10% of the newly calculated coordinates, just to keep the whole animation smooth and concise.&lt;/p&gt;
+
+&lt;p&gt;Next, I will handle the &lt;strong&gt;separation&lt;/strong&gt; rule. This rule needs a constant of the maximum distance between the boids.&lt;/p&gt;
+
 &lt;h2 id=&quot;stage-4-creating-a-boid-class&quot;&gt;Stage 4: Creating a Boid class&lt;/h2&gt;
+
+&lt;p&gt;One of the cool new features of ES6 is the introduction of &lt;a href=&quot;https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Classes&quot;&gt;classes&lt;/a&gt;. Something for you, JS-despisers! JavaScript classes are actually just a bit of syntactic sugar over the Objects and prototypes but they make our code much cleaner and simplify working with inheritance. I will harness this new feature by creating a simple Boid class that keeps the instance’s position and speed (the movement’s vector).&lt;/p&gt;
 
 &lt;h2 id=&quot;stage-5-initial-animation-for-a-group-of-boids&quot;&gt;Stage 5: Initial animation for a group of Boids&lt;/h2&gt;
 
+&lt;p&gt;Having the initial group of boids on canvas, I will define the first basic animation. It can be simply running on the X-axis. Once a boid hits the canvas’ border, the direction of the movement will be reverted. Thereafter, I will make boids fly on the Y-axis as well so that they make use of the whole canvas’ area.&lt;/p&gt;
+
 &lt;h2 id=&quot;stage-6-counting-next-position&quot;&gt;Stage 6: Counting next position&lt;/h2&gt;
 
+&lt;p&gt;I will need a function that makes use of the previously defined cohesion, separation and alignment rules. This way the function will perform calculations of the next position of a boid, then clear the canvas and redraw it on a new position. At this point I can tell I’d have released the projects’ .beta version. :)&lt;/p&gt;
+
 &lt;h2 id=&quot;stage-7-changing-the-circle-into-bird-oid-form&quot;&gt;Stage 7: Changing the circle into bird-oid form&lt;/h2&gt;
+
+&lt;p&gt;Now it’s time to play: circles look dull so I will think of something more creative, probably in a form of bird. It would be great if every single boid would also animate itself, as if it was flying. If I get stuck, I will continue with the next steps and come back here after resolving the rest of the issues.&lt;/p&gt;
 
 &lt;h2 id=&quot;stage-8-adding-controls&quot;&gt;Stage 8: Adding controls&lt;/h2&gt;
 
