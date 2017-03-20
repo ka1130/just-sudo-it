@@ -48,6 +48,8 @@ Next, I will handle the **separation** rule. This rule needs a constant of the m
 
 And finally, the **alignment** rule forcing all Boids to follow the average direction of the flock and adjust the speed of each Boid to its neighbours.
 
+When breaking these rules apart, I came across a nice explanation of the problem by Conrad Parker. He [decribed the calculations using pseudocode](http://www.kfish.org/boids/pseudocode.html). This was a great help in implementation, having undesrtood this thing was enough to get down to coding in JavaScript.
+
 ## Stage 4: Creating a Boid class
 
 One of the cool new features of ES6 is the introduction of [classes](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Classes). Something for you, JS-despisers! JavaScript classes are actually just a bit of syntactic sugar over the Objects and prototypes but they make our code much cleaner and simplify working with inheritance. I will harness this new feature by creating a simple Boid class that keeps the instance’s position and speed.
@@ -58,7 +60,7 @@ Having the initial group of boids on canvas, I will define the first basic anima
 
 ## Stage 6: Counting next position
 
-I will need a function that makes use of the previously defined cohesion, separation and alignment rules. This way the function will perform calculations of the next position of a boid, then clear the canvas and redraw it on a new position. At this point I can tell I'd have released the projects’ .beta version. :)
+I will need a function that makes use of the previously defined cohesion, separation and alignment rules. This way the function will perform calculations of the next position of a Boid, then clear the canvas and redraw the whole flock on a new position. At this point I can tell I'd have released the projects’ .beta version. :)
 
 ## Stage 7: Changing the circle into bird-oid form
 

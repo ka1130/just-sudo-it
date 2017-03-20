@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 19 Mar 2017 21:46:27 +0100</pubDate>
-    <lastBuildDate>Sun, 19 Mar 2017 21:46:27 +0100</lastBuildDate>
+    <pubDate>Mon, 20 Mar 2017 12:57:43 +0100</pubDate>
+    <lastBuildDate>Mon, 20 Mar 2017 12:57:43 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -636,7 +636,7 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
 
 &lt;p&gt;Now here comes the hardest thing for me, or at least at this point it seems so. Getting into counting! Vectors, numbers, algorithms… getting together three seemingly simple rules of flocking put me hardly off. Still, it had to be done. OK, a pile of blank paper sheets and a pen and let’s dismantle the sucker!&lt;/p&gt;
 
-&lt;p&gt;I will need a 2D coordinate system and an array of starting positions of Boids (X and Y). Thereafter, Boids will be placed on the given coordinates and put into motion. At this point there has to be a function that takes the initial coordinates and counts the next position of each boid as per the rules described in the former post. A quick reminder:&lt;/p&gt;
+&lt;p&gt;I will need a 2D coordinate system and an array of starting positions of Boids (X and Y). Thereafter, Boids will be placed on the given coordinates and put into motion. At this point there has to be a function that takes the initial coordinates and counts the next position of each Boid as per the rules described in the former post. A quick reminder:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;separation&lt;/strong&gt;: steer to avoid crowding&lt;/li&gt;
@@ -646,9 +646,9 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
 
 &lt;p&gt;Let’s break these apart.&lt;/p&gt;
 
-&lt;p&gt;I decided to start with &lt;strong&gt;cohesion&lt;/strong&gt;. To calculate it, I will need to find the center of mass for the flock. This will be the average of coordinates of all the boids except for the one, for which I will calculate the movement. I assume I will move the boid towards the new position by 10% of the newly calculated coordinates, just to keep the whole animation smooth and concise.&lt;/p&gt;
+&lt;p&gt;I decided to start with &lt;strong&gt;cohesion&lt;/strong&gt;. To calculate it, I will need to find the center of mass for the flock. This will be the average of coordinates of all the boids except for the one, for which I will calculate the movement. I assume I will move the Boid towards the new position by 10% of the distance between the current and calculated position, just to keep the whole animation smooth and concise. In order to count the distance, I will need the Pythagorean theorem, a nice reminder of good old times in my primary school. ;)&lt;/p&gt;
 
-&lt;p&gt;Next, I will handle the &lt;strong&gt;separation&lt;/strong&gt; rule. This rule needs a constant of the maximum distance between the boids. When a Boid gets to close to its colleague, it will need to steer away.&lt;/p&gt;
+&lt;p&gt;Next, I will handle the &lt;strong&gt;separation&lt;/strong&gt; rule. This rule needs a constant of the maximum distance between the boids. When a Boid gets too close to its colleague, it will need to steer away.&lt;/p&gt;
 
 &lt;p&gt;And finally, the &lt;strong&gt;alignment&lt;/strong&gt; rule forcing all Boids to follow the average direction of the flock and adjust the speed of each Boid to its neighbours.&lt;/p&gt;
 
@@ -662,7 +662,7 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
 
 &lt;h2 id=&quot;stage-6-counting-next-position&quot;&gt;Stage 6: Counting next position&lt;/h2&gt;
 
-&lt;p&gt;I will need a function that makes use of the previously defined cohesion, separation and alignment rules. This way the function will perform calculations of the next position of a boid, then clear the canvas and redraw it on a new position. At this point I can tell I’d have released the projects’ .beta version. :)&lt;/p&gt;
+&lt;p&gt;I will need a function that makes use of the previously defined cohesion, separation and alignment rules. This way the function will perform calculations of the next position of a Boid, then clear the canvas and redraw the whole flock on a new position. At this point I can tell I’d have released the projects’ .beta version. :)&lt;/p&gt;
 
 &lt;h2 id=&quot;stage-7-changing-the-circle-into-bird-oid-form&quot;&gt;Stage 7: Changing the circle into bird-oid form&lt;/h2&gt;
 
