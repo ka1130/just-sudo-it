@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Mar 2017 15:16:56 +0100</pubDate>
-    <lastBuildDate>Mon, 20 Mar 2017 15:16:56 +0100</lastBuildDate>
+    <pubDate>Mon, 20 Mar 2017 21:07:25 +0100</pubDate>
+    <lastBuildDate>Mon, 20 Mar 2017 21:07:25 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -367,7 +367,33 @@ Note that if you followed this tutorial and saved all dependencies in your packa
     
       <item>
         <title>The canvas API</title>
-        <description>
+        <description>&lt;p&gt;Two posts ago I promised to tell you something more about the HTML5 technology that I use to draw and animate Boids, that is the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt; element. As you have probably guessed, it is basically just an HTML tag - but its possibilities are truly impressive. With the use of the simple &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt; element and JavaScript you can create advanced games, multimedia applications and charting. This is because canvas is very fast and efficient so it can perform complicated calculations and animations. Since canvas is pixel-based API, you can go as far as pixel manipulation, creating for instance some impressive filters for your photos. The possibilities are endless!&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;The canvas API itself is not really complicated in terms of the amount of knowledge to grasp. All the methods and properties are nicely put together on the &lt;a href=&quot;https://www.w3schools.com/tags/ref_canvas.asp&quot;&gt;w3schools reference&lt;/a&gt;. Yes, I am aware of the &lt;a href=&quot;https://www.impressivewebs.com/w3schools-ugly-bad-good/&quot;&gt;controversy behind w3schools&lt;/a&gt; and I admit it’s definitely not the ultimate choice for learning but when it comes to getting to know HTML5, especially if you’re fresh to some of its features, it’s a nice start. Having said that, you should definitely check out the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API&quot;&gt;MDN documentation for canvas&lt;/a&gt; which provides you with in-depth information on all the API’s features.&lt;/p&gt;
+
+&lt;p&gt;Basically, canvas API consists of a set of &lt;strong&gt;functions&lt;/strong&gt; and &lt;strong&gt;properties&lt;/strong&gt;. &lt;strong&gt;Functions&lt;/strong&gt; can be divided as per their purpose like so:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;line and shape&lt;/strong&gt; functions (for example: &lt;code class=&quot;highlighter-rouge&quot;&gt;arc&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;fill&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;rect&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;stroke&lt;/code&gt; etc.)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; functions (&lt;code class=&quot;highlighter-rouge&quot;&gt;fillText&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;measureText&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;strokeText&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;transform&lt;/strong&gt; functions (&lt;code class=&quot;highlighter-rouge&quot;&gt;save&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;restore&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;rotate&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;scale&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;transform&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;translate&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition to the functions, canvas API provides you with a set of &lt;strong&gt;properties&lt;/strong&gt; that are basically designed to let you style the elements before they get drawn on canvas. Some of these properties are: &lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;font&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;fillStyle&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;globalAlpha&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;globalCompositeOperations&lt;/code&gt;. OK, let’s get down to actual coding so that you can check yourself how to make use of canvas. Once you get the knack of it, I promise, you’ll have fun!&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-usage&quot;&gt;Basic usage&lt;/h2&gt;
+
+&lt;p&gt;First, let’s insert canvas on our website. In a place of your choice simply put:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;myCanvas&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;”&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;Your&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;browser&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;does&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;support&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/canvas&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly in the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt; tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML.&lt;/p&gt;
+
+&lt;p&gt;OK, you have canvas in our layout but still, you won’t see anything at this point. The canvas is there but nothing’s going on on it. Time to jump into your JavaScript file.&lt;/p&gt;
+
 </description>
         <pubDate>Thu, 30 Mar 2017 14:02:13 +0200</pubDate>
         <link>http://localhost:4000/canvas-api</link>
