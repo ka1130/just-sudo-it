@@ -32,9 +32,9 @@ Another warm-up thing: preparing a visual platform at which Boids will be flying
 
 ## Stage 3: Maths!
 
-Now here comes the hardest thing for me, or at least at this point it seems so. Getting into counting! Vectors, numbers, algorithms… putting together three seemingly simple rules of flocking put me hardly off. Still, it had to be done. OK, a pile of blank paper sheets and a pen and let’s dismantle the sucker!
+Now here comes the hardest thing for me, or at least at this point it seems so. Getting into counting! Vectors, numbers, algorithms… getting together three seemingly simple rules of flocking put me hardly off. Still, it had to be done. OK, a pile of blank paper sheets and a pen and let’s dismantle the sucker!
 
-I will need a 2D coordinate system and an array of starting positions of Boids (x and y). Thereafter, Boids will be placed on the given coordinates and put into motion. At this point there has to be a function that takes the initial coordinates and counts the next position of each boid as per the rules described in the former post. A quick reminder:
+I will need a 2D coordinate system and an array of starting positions of Boids (X and Y). Thereafter, Boids will be placed on the given coordinates and put into motion. At this point there has to be a function that takes the initial coordinates and counts the next position of each Boid as per the rules described in the former post. A quick reminder:
 
 + **separation**: steer to avoid crowding
 + **alignment**: steer towards the average heading of local flockmates
@@ -42,13 +42,15 @@ I will need a 2D coordinate system and an array of starting positions of Boids (
 
 Let’s break these apart.
 
-I decided to start with **cohesion**. To calculate it, I will need to find the center of gravity for the flock. This will be the average of coordinates of all the boids except for the one, for which I will calculate the movement. I assume I will move the boid towards the new position by 10% of the newly calculated coordinates, just to keep the whole animation smooth and concise.
+I decided to start with **cohesion**. To calculate it, I will need to find the center of mass for the flock. This will be the average of coordinates of all the boids except for the one, for which I will calculate the movement. I assume I will move the Boid towards the new position by 10% of the distance between the current and calculated position, just to keep the whole animation smooth and concise. In order to count the distance, I will need the Pythagorean theorem, a nice reminder of good old times in my primary school. ;)
 
-Next, I will handle the **separation** rule. This rule needs a constant of the maximum distance between the boids. 
+Next, I will handle the **separation** rule. This rule needs a constant of the maximum distance between the boids. When a Boid gets too close to its colleague, it will need to steer away.
+
+And finally, the **alignment** rule forcing all Boids to follow the average direction of the flock and adjust the speed of each Boid to its neighbours.
 
 ## Stage 4: Creating a Boid class
 
-One of the cool new features of ES6 is the introduction of [classes](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Classes). Something for you, JS-despisers! JavaScript classes are actually just a bit of syntactic sugar over the Objects and prototypes but they make our code much cleaner and simplify working with inheritance. I will harness this new feature by creating a simple Boid class that keeps the instance’s position and speed (the movement’s vector).
+One of the cool new features of ES6 is the introduction of [classes](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Classes). Something for you, JS-despisers! JavaScript classes are actually just a bit of syntactic sugar over the Objects and prototypes but they make our code much cleaner and simplify working with inheritance. I will harness this new feature by creating a simple Boid class that keeps the instance’s position and speed.
 
 ## Stage 5: Initial animation for a group of Boids
 
