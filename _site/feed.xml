@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Mar 2017 12:57:43 +0100</pubDate>
-    <lastBuildDate>Mon, 20 Mar 2017 12:57:43 +0100</lastBuildDate>
+    <pubDate>Mon, 20 Mar 2017 15:16:56 +0100</pubDate>
+    <lastBuildDate>Mon, 20 Mar 2017 15:16:56 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -651,6 +651,8 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
 &lt;p&gt;Next, I will handle the &lt;strong&gt;separation&lt;/strong&gt; rule. This rule needs a constant of the maximum distance between the boids. When a Boid gets too close to its colleague, it will need to steer away.&lt;/p&gt;
 
 &lt;p&gt;And finally, the &lt;strong&gt;alignment&lt;/strong&gt; rule forcing all Boids to follow the average direction of the flock and adjust the speed of each Boid to its neighbours.&lt;/p&gt;
+
+&lt;p&gt;When breaking these rules apart, I came across a nice explanation of the problem by Conrad Parker. He &lt;a href=&quot;http://www.kfish.org/boids/pseudocode.html&quot;&gt;decribed the calculations using pseudocode&lt;/a&gt;. This was a great help in my implementation, having understood this thing was enough to get down to coding in JavaScript.&lt;/p&gt;
 
 &lt;h2 id=&quot;stage-4-creating-a-boid-class&quot;&gt;Stage 4: Creating a Boid class&lt;/h2&gt;
 

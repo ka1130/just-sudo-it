@@ -102,6 +102,8 @@
 
 <p>And finally, the <strong>alignment</strong> rule forcing all Boids to follow the average direction of the flock and adjust the speed of each Boid to its neighbours.</p>
 
+<p>When breaking these rules apart, I came across a nice explanation of the problem by Conrad Parker. He <a href="http://www.kfish.org/boids/pseudocode.html">decribed the calculations using pseudocode</a>. This was a great help in my implementation, having understood this thing was enough to get down to coding in JavaScript.</p>
+
 <h2 id="stage-4-creating-a-boid-class">Stage 4: Creating a Boid class</h2>
 
 <p>One of the cool new features of ES6 is the introduction of <a href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Classes">classes</a>. Something for you, JS-despisers! JavaScript classes are actually just a bit of syntactic sugar over the Objects and prototypes but they make our code much cleaner and simplify working with inheritance. I will harness this new feature by creating a simple Boid class that keeps the instance’s position and speed.</p>

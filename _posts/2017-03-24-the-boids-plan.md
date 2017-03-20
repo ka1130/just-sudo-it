@@ -48,7 +48,7 @@ Next, I will handle the **separation** rule. This rule needs a constant of the m
 
 And finally, the **alignment** rule forcing all Boids to follow the average direction of the flock and adjust the speed of each Boid to its neighbours.
 
-When breaking these rules apart, I came across a nice explanation of the problem by Conrad Parker. He [decribed the calculations using pseudocode](http://www.kfish.org/boids/pseudocode.html). This was a great help in implementation, having undesrtood this thing was enough to get down to coding in JavaScript.
+When breaking these rules apart, I came across a nice explanation of the problem by Conrad Parker. He [decribed the calculations using pseudocode](http://www.kfish.org/boids/pseudocode.html). This was a great help in my implementation, having understood this thing was enough to get down to coding in JavaScript.
 
 ## Stage 4: Creating a Boid class
 
