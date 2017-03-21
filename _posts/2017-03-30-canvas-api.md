@@ -1,13 +1,13 @@
 ---
 layout: post-sidebar
 title: "The canvas API"
-date: 2017-03-30 12:02:13
+date: 2017-03-30 09:02:13
 categories: dsp2017
 author_name : Kamila
 author_url : /author/kamila
 author_avatar: kamila
 show_avatar : true
-read_time : 10
+read_time : 40
 feature_image: feature-canvas
 show_related_posts: true
 comments: true
@@ -32,23 +32,26 @@ In addition to the functions, canvas API provides you with a set of **properties
 First, let’s insert canvas on our website. In a place of your choice simply put:
 
 {% highlight javascript %}
-<canvas id=”myCanvas” width=”400” height=”400”>
+<canvas id="myCanvas" width="400" height="400"
 	Your browser does not support canvas
 </canvas>
 {% endhighlight %}<br>
-No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly in the `<canvas>` tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML.
-
-OK, you have canvas in our layout but still, you won’t see anything at this point. The canvas is there but nothing’s going on on it. Time to jump into your JavaScript file.
-
-First, we need to catch our canvas to a variable. Let’s make use of the new variable declarations introduced by ES6 (more on that in the future post, I plan to show you all the ES6 features I use in the project). 
+No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly in the `<canvas>` tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML. I would also suggest adding some basic styling to the canvas so that you can see clearly where it is. Let’s jump to the stylesheet and add some CSS declarations like:
 
 {% highlight javascript %}
-const canvas = document.getElementById(“myCanvas”);
+#myCanvas {
+    border: 1px solid black;
+}
+{% endhighlight %}<br>
+Now that we have our bare canvas placed on the layout, it’s time to jump into the JavaScript file. First, we need to catch our canvas to a variable. Let’s make use of the new variable declarations introduced by ES6 (more on that in the future post, I plan to show you all the ES6 features I use in the project). 
+
+{% highlight javascript %}
+const canvas = document.getElementById("myCanvas");
 {% endhighlight %}<br>
 Now we need to define the context in which we want to work. In most of the cases, you will need a 2D context. The canvas element has a special method for that called `getContext`.
 
 {% highlight javascript %}
-const ctx = canvas.getContext(“2d”);
+const ctx = canvas.getContext("2d");
 {% endhighlight %}<br>
 Finally, let’s draw something simple like rectangle:
 
@@ -130,7 +133,11 @@ ctx.closePath();
 
 ## Basic animation
 
-Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. 
+Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anywise so we can skip these steps.
+
+To schedule the updates you can use one of the following functions: `setTimeout(fn, delay)`, `setInterval(fn, delay)` or` requestAnimationFrame(callback)`. I suggest you go for the thirs option since it’s best in terms of performance of your animation. This is how the `requestAnimationFrame()` method works:
+
+
 
 
 

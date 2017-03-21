@@ -84,21 +84,23 @@
 
 <p>First, let’s insert canvas on our website. In a place of your choice simply put:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">canvas</span> <span class="nx">id</span><span class="o">=</span><span class="err">”</span><span class="nx">myCanvas</span><span class="err">”</span> <span class="nx">width</span><span class="o">=</span><span class="err">”</span><span class="mi">400</span><span class="err">”</span> <span class="nx">height</span><span class="o">=</span><span class="err">”</span><span class="mi">400</span><span class="err">”</span><span class="o">&gt;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">canvas</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"myCanvas"</span> <span class="nx">width</span><span class="o">=</span><span class="s2">"400"</span> <span class="nx">height</span><span class="o">=</span><span class="s2">"400"</span>
 	<span class="nx">Your</span> <span class="nx">browser</span> <span class="nx">does</span> <span class="nx">not</span> <span class="nx">support</span> <span class="nx">canvas</span>
 <span class="o">&lt;</span><span class="sr">/canvas&gt;</span></code></pre></figure>
 <p><br />
-No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly in the <code class="highlighter-rouge">&lt;canvas&gt;</code> tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML.</p>
+No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly in the <code class="highlighter-rouge">&lt;canvas&gt;</code> tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML. I would also suggest adding some basic styling to the canvas so that you can see clearly where it is. Let’s jump to the stylesheet and add some CSS declarations like:</p>
 
-<p>OK, you have canvas in our layout but still, you won’t see anything at this point. The canvas is there but nothing’s going on on it. Time to jump into your JavaScript file.</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span><span class="nx">myCanvas</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span> <span class="nx">solid</span> <span class="nx">black</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+<p><br />
+Now that we have our bare canvas placed on the layout, it’s time to jump into the JavaScript file. First, we need to catch our canvas to a variable. Let’s make use of the new variable declarations introduced by ES6 (more on that in the future post, I plan to show you all the ES6 features I use in the project).</p>
 
-<p>First, we need to catch our canvas to a variable. Let’s make use of the new variable declarations introduced by ES6 (more on that in the future post, I plan to show you all the ES6 features I use in the project).</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="err">“</span><span class="nx">myCanvas</span><span class="err">”</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"myCanvas"</span><span class="p">);</span></code></pre></figure>
 <p><br />
 Now we need to define the context in which we want to work. In most of the cases, you will need a 2D context. The canvas element has a special method for that called <code class="highlighter-rouge">getContext</code>.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="err">“</span><span class="mi">2</span><span class="nx">d</span><span class="err">”</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s2">"2d"</span><span class="p">);</span></code></pre></figure>
 <p><br />
 Finally, let’s draw something simple like rectangle:</p>
 
@@ -171,6 +173,12 @@ A riddle for you: how to draw a circle with fill only, no stroke, as in the case
 <span class="nx">ctx</span><span class="p">.</span><span class="nx">closePath</span><span class="p">();</span></code></pre></figure>
 <p><br /></p>
 
+<h2 id="basic-animation">Basic animation</h2>
+
+<p>Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anywise so we can skip these steps.</p>
+
+<p>To schedule the updates you can use one of the following functions: <code class="highlighter-rouge">setTimeout(fn, delay)</code>, <code class="highlighter-rouge">setInterval(fn, delay)</code> or<code class="highlighter-rouge"> requestAnimationFrame(callback)</code>. I suggest you go for the thirs option since it’s best in terms of performance of your animation. This is how the <code class="highlighter-rouge">requestAnimationFrame()</code> method works:</p>
+
 
 
         </div>
@@ -186,7 +194,7 @@ A riddle for you: how to draw a circle with fill only, no stroke, as in the case
                 </div>
 
                 <div class="sidebar-readtime">
-                    <i class="fa fa-bookmark"></i> 10 minute read
+                    <i class="fa fa-bookmark"></i> 40 minute read
                 </div>
 
             </div>
