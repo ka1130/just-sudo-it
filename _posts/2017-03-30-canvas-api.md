@@ -135,7 +135,9 @@ ctx.closePath();
 
 Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anywise so we can skip these steps.
 
-To schedule the updates you can use one of the following functions: `setTimeout(fn, delay)`, `setInterval(fn, delay)` or` requestAnimationFrame(callback)`. I suggest you go for the thirs option since it’s best in terms of performance of your animation. This is how the `requestAnimationFrame()` method works:
+To schedule the updates you can use one of the following functions: `setTimeout(fn, delay)`, `setInterval(fn, delay)` or` requestAnimationFrame(callback)`. I suggest you go for the thirs option since it’s best in terms of performance of your animation. 
+
+To schedule the updates you can use one of three functions: `setTimeout(fn, delay)`, `setInterval(fn, delay)` or` requestAnimationFrame(callback)`. I suggest you go for the thirs option since it’s best in terms of performance of your animation. Paul Irish explained very nicely [the way `requestAnimationFrame()` method works](https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/) and why to choose it over `setTimeout()` or `setInterval`. The post is old but still valid, just the support of the browser is now almost complete, it’s just Opera Mini that doesn’t understand the deal. Anyways, has anyone of you ever used Opera Mini? Personally, I don’t even know how dude looks like!. ;)
 
 
 
