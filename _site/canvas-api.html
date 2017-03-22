@@ -177,15 +177,19 @@ A riddle for you: how to draw a circle with fill only, no stroke, as in the case
 
 <p>Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anywise so we can skip these steps.</p>
 
-<p>To schedule the updates you can use one of the following functions: <code class="highlighter-rouge">setTimeout(fn, delay)</code>, <code class="highlighter-rouge">setInterval(fn, delay)</code> or<code class="highlighter-rouge"> requestAnimationFrame(callback)</code>. I suggest you go for the thirs option since it’s best in terms of performance of your animation.</p>
+<p>To schedule the updates you can use one of the following functions: <code class="highlighter-rouge">setTimeout(fn, delay)</code>, <code class="highlighter-rouge">setInterval(fn, delay)</code> or<code class="highlighter-rouge"> requestAnimationFrame(callback)</code>. I suggest you go for the third option since it’s best in terms of performance of your animation.</p>
 
 <p>To schedule the updates you can use one of three functions: <code class="highlighter-rouge">setTimeout(fn, delay)</code>, <code class="highlighter-rouge">setInterval(fn, delay)</code> or<code class="highlighter-rouge"> requestAnimationFrame(callback)</code>. I suggest you go for the thirs option since it’s best in terms of performance of your animation. Paul Irish explained very nicely <a href="https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/">the way <code class="highlighter-rouge">requestAnimationFrame()</code> method works</a> and why to choose it over <code class="highlighter-rouge">setTimeout()</code> or <code class="highlighter-rouge">setInterval</code>. The post is old but still valid, just the support of the browser is now almost complete, it’s just Opera Mini that doesn’t understand the deal. Anyways, has anyone of you ever used Opera Mini? Personally, I don’t even know how dude looks like!. ;)</p>
 
-<p>OK, so how to use the <code class="highlighter-rouge">requestAnimationFrame()</code> method? We use it on a global object (that is, in our case, window) and we pass it a callback function which will run each time the browser performs drawing on the screen. So here’s the basic syntax:
-window.requestAnimationFrame(callbackFunction);
-Which is, as you know, the same thing as:
-requestAnimationFrame(callbackFunction);
-With that in mind, let’s write a core fore our animate() function which will run the <code class="highlighter-rouge">requestAnimationFrame()</code> method, calculate next position and then re-draw it.</p>
+<p>OK, so how to use the <code class="highlighter-rouge">requestAnimationFrame()</code> method? We use it on a global object (that is, in our case, window) and we pass it a callback function which will run each time the browser performs drawing on the screen. So here’s the basic syntax:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">callbackFunction</span><span class="p">);</span></code></pre></figure>
+<p><br />
+Which is, as you know, the same thing as:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">callbackFunction</span><span class="p">);</span></code></pre></figure>
+<p><br />
+With that in mind, let’s write a core for our <code class="highlighter-rouge">animate()</code> function which will run the <code class="highlighter-rouge">requestAnimationFrame()</code> method, calculate next position and then re-draw it.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
@@ -193,7 +197,7 @@ With that in mind, let’s write a core fore our animate() function which will r
     <span class="nx">draw</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 <p><br />
-Next, let’s define the <code class="highlighter-rouge">draw()</code> function. It will run in a multiple sequence so the first thing you need to do is clearing the canvas before redrawing the element on the next position. To clear the canvas, you will use the <code class="highlighter-rouge">clearRect()</code> method on the canvas’ context (as you remember, we keep it in a variable called <code class="highlighter-rouge">ctx</code>). The <code class="highlighter-rouge">clearRect()</code> method takes the following parameters:</p>
+Next, let’s define the <code class="highlighter-rouge">draw()</code> function. It will be running in a multiple sequence so the first thing you need to do is clear the canvas before re-drawing the element on the next position. To clear the canvas, you need to run the <code class="highlighter-rouge">clearRect()</code> method on the canvas’ context (as you remember, we keep it in a variable called <code class="highlighter-rouge">ctx</code>). The <code class="highlighter-rouge">clearRect()</code> method takes the following parameters:</p>
 <ul>
   <li><strong>x</strong> (the x-coordinate of the upper-left corner of the rectangle to clear)</li>
   <li><strong>y</strong> (the y-coordinate of the upper-left corner of the rectangle to clear)</li>
@@ -209,7 +213,7 @@ Next, let’s define the <code class="highlighter-rouge">draw()</code> function.
 <span class="p">}</span>
 <span class="nx">animate</span><span class="p">();</span></code></pre></figure>
 <p><br />
-Having this basis, let’s think of how we will actually deal with moving our element around. For the very beginning, we’ll move the element on x-coordinate only asking it to revert the direction of the movement once the element hits the border of the canvas. We need three variables:<code class="highlighter-rouge"> x</code> and <code class="highlighter-rouge">y</code> for initial position and <code class="highlighter-rouge">speed</code> for… yeah, the speed. :)
+Having this basis, let’s think of how we will actually deal with moving our element around. For the very beginning, we’ll move the element on x-coordinate only asking it to revert the direction of the movement once the element hits the border of the canvas. We need three variables: <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> for initial position and <code class="highlighter-rouge">speed</code> for… yeah, the speed. :)
 Let’s declare these at the very beginning, above the <code class="highlighter-rouge">animate()</code> and <code class="highlighter-rouge">draw()</code> functions:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
@@ -228,7 +232,7 @@ At this moment we can complete the <code class="highlighter-rouge">draw()</code>
 	<span class="nx">ctx</span><span class="p">.</span><span class="nx">closePath</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 <p><br />
-Finally, we will move the circle on the x-axis by incrementing the x variable which defines the circle’s horizontal position:</p>
+Finally, we will move the circle on the x-axis by incrementing the <code class="highlighter-rouge">x</code> variable which defines the circle’s horizontal position:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
@@ -241,7 +245,60 @@ Finally, we will move the circle on the x-axis by incrementing the x variable wh
     <span class="nx">draw</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 <p><br />
-OK, what’s going on here and where are these <code class="highlighter-rouge">40</code> and <code class="highlighter-rouge">360</code> values come from?</p>
+OK, what’s going on here and where do these <code class="highlighter-rouge">40</code> and <code class="highlighter-rouge">360</code> values come from? As you remember, the canvas width and height are both equal to 400px. The circle’s width is 40px and we start to draw the center of it at <code class="highlighter-rouge">(40, 40)</code> position. This means the circle will hit the left border of canvas at <code class="highlighter-rouge">(40, 40)</code> position and the right border at <code class="highlighter-rouge">(360, 40)</code> (the canvas’ width minus 40px). These two are the moments when we want to revert the direction of the movement.</p>
+
+<p>Let’s have a look at the final code:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"myCanvas"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s2">"2d"</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">calculateRadians</span><span class="p">(</span><span class="nx">degrees</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">degrees</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">180</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">speed</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
+
+    <span class="nx">x</span> <span class="o">+=</span> <span class="nx">speed</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;=</span> <span class="mi">40</span> <span class="o">||</span> <span class="nx">x</span> <span class="o">&gt;=</span> <span class="mi">360</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">speed</span> <span class="o">=</span> <span class="o">-</span><span class="nx">speed</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">draw</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">"#bcd664"</span><span class="p">;</span>
+
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">calculateRadians</span><span class="p">(</span><span class="mi">360</span><span class="p">));</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">closePath</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">animate</span><span class="p">();</span></code></pre></figure>
+<p><br /></p>
+
+<p>At this moment you should see your circle rolling around your canvas from one side to another - and back. Now you can play with the speed, y-axis position and much more. Have fun! :)</p>
+
+<h2 id="further-reading">Further reading</h2>
+
+<p>We have only touched the very surface of canvas’ possibilities and I’m sure you’ll want much more. 
+Here are some resources which I personally find clear and helpful for diving deeper into canvas:</p>
+
+<ul>
+  <li><a href="http://codetheory.in/20-best-canvas-tutorials-and-examples-that-will-make-you-a-canvas-master/">Code Theory</a></li>
+  <li><a href="http://diveintohtml5.info/canvas.html">ll</a></li>
+  <li><a href="http://creativejs.com/2011/08/31-days-of-canvas-tutorials/">ll</a></li>
+</ul>
+
+<p>Hope you’ve enjoyed this little playground, see you back soon! :)</p>
 
 
 

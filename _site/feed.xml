@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Mar 2017 16:14:25 +0100</pubDate>
-    <lastBuildDate>Wed, 22 Mar 2017 16:14:25 +0100</lastBuildDate>
+    <pubDate>Wed, 22 Mar 2017 16:53:13 +0100</pubDate>
+    <lastBuildDate>Wed, 22 Mar 2017 16:53:13 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -479,15 +479,19 @@ A riddle for you: how to draw a circle with fill only, no stroke, as in the case
 
 &lt;p&gt;Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anywise so we can skip these steps.&lt;/p&gt;
 
-&lt;p&gt;To schedule the updates you can use one of the following functions: &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout(fn, delay)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setInterval(fn, delay)&lt;/code&gt; or&lt;code class=&quot;highlighter-rouge&quot;&gt; requestAnimationFrame(callback)&lt;/code&gt;. I suggest you go for the thirs option since it’s best in terms of performance of your animation.&lt;/p&gt;
+&lt;p&gt;To schedule the updates you can use one of the following functions: &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout(fn, delay)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setInterval(fn, delay)&lt;/code&gt; or&lt;code class=&quot;highlighter-rouge&quot;&gt; requestAnimationFrame(callback)&lt;/code&gt;. I suggest you go for the third option since it’s best in terms of performance of your animation.&lt;/p&gt;
 
 &lt;p&gt;To schedule the updates you can use one of three functions: &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout(fn, delay)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setInterval(fn, delay)&lt;/code&gt; or&lt;code class=&quot;highlighter-rouge&quot;&gt; requestAnimationFrame(callback)&lt;/code&gt;. I suggest you go for the thirs option since it’s best in terms of performance of your animation. Paul Irish explained very nicely &lt;a href=&quot;https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/&quot;&gt;the way &lt;code class=&quot;highlighter-rouge&quot;&gt;requestAnimationFrame()&lt;/code&gt; method works&lt;/a&gt; and why to choose it over &lt;code class=&quot;highlighter-rouge&quot;&gt;setTimeout()&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;setInterval&lt;/code&gt;. The post is old but still valid, just the support of the browser is now almost complete, it’s just Opera Mini that doesn’t understand the deal. Anyways, has anyone of you ever used Opera Mini? Personally, I don’t even know how dude looks like!. ;)&lt;/p&gt;
 
-&lt;p&gt;OK, so how to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;requestAnimationFrame()&lt;/code&gt; method? We use it on a global object (that is, in our case, window) and we pass it a callback function which will run each time the browser performs drawing on the screen. So here’s the basic syntax:
-window.requestAnimationFrame(callbackFunction);
-Which is, as you know, the same thing as:
-requestAnimationFrame(callbackFunction);
-With that in mind, let’s write a core fore our animate() function which will run the &lt;code class=&quot;highlighter-rouge&quot;&gt;requestAnimationFrame()&lt;/code&gt; method, calculate next position and then re-draw it.&lt;/p&gt;
+&lt;p&gt;OK, so how to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;requestAnimationFrame()&lt;/code&gt; method? We use it on a global object (that is, in our case, window) and we pass it a callback function which will run each time the browser performs drawing on the screen. So here’s the basic syntax:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;requestAnimationFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callbackFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Which is, as you know, the same thing as:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;requestAnimationFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callbackFunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+With that in mind, let’s write a core for our &lt;code class=&quot;highlighter-rouge&quot;&gt;animate()&lt;/code&gt; function which will run the &lt;code class=&quot;highlighter-rouge&quot;&gt;requestAnimationFrame()&lt;/code&gt; method, calculate next position and then re-draw it.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;requestAnimationFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -495,7 +499,7 @@ With that in mind, let’s write a core fore our animate() function which will r
     &lt;span class=&quot;nx&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;br /&gt;
-Next, let’s define the &lt;code class=&quot;highlighter-rouge&quot;&gt;draw()&lt;/code&gt; function. It will run in a multiple sequence so the first thing you need to do is clearing the canvas before redrawing the element on the next position. To clear the canvas, you will use the &lt;code class=&quot;highlighter-rouge&quot;&gt;clearRect()&lt;/code&gt; method on the canvas’ context (as you remember, we keep it in a variable called &lt;code class=&quot;highlighter-rouge&quot;&gt;ctx&lt;/code&gt;). The &lt;code class=&quot;highlighter-rouge&quot;&gt;clearRect()&lt;/code&gt; method takes the following parameters:&lt;/p&gt;
+Next, let’s define the &lt;code class=&quot;highlighter-rouge&quot;&gt;draw()&lt;/code&gt; function. It will be running in a multiple sequence so the first thing you need to do is clear the canvas before re-drawing the element on the next position. To clear the canvas, you need to run the &lt;code class=&quot;highlighter-rouge&quot;&gt;clearRect()&lt;/code&gt; method on the canvas’ context (as you remember, we keep it in a variable called &lt;code class=&quot;highlighter-rouge&quot;&gt;ctx&lt;/code&gt;). The &lt;code class=&quot;highlighter-rouge&quot;&gt;clearRect()&lt;/code&gt; method takes the following parameters:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;x&lt;/strong&gt; (the x-coordinate of the upper-left corner of the rectangle to clear)&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;y&lt;/strong&gt; (the y-coordinate of the upper-left corner of the rectangle to clear)&lt;/li&gt;
@@ -511,7 +515,7 @@ Next, let’s define the &lt;code class=&quot;highlighter-rouge&quot;&gt;draw()&
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;br /&gt;
-Having this basis, let’s think of how we will actually deal with moving our element around. For the very beginning, we’ll move the element on x-coordinate only asking it to revert the direction of the movement once the element hits the border of the canvas. We need three variables:&lt;code class=&quot;highlighter-rouge&quot;&gt; x&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; for initial position and &lt;code class=&quot;highlighter-rouge&quot;&gt;speed&lt;/code&gt; for… yeah, the speed. :)
+Having this basis, let’s think of how we will actually deal with moving our element around. For the very beginning, we’ll move the element on x-coordinate only asking it to revert the direction of the movement once the element hits the border of the canvas. We need three variables: &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; for initial position and &lt;code class=&quot;highlighter-rouge&quot;&gt;speed&lt;/code&gt; for… yeah, the speed. :)
 Let’s declare these at the very beginning, above the &lt;code class=&quot;highlighter-rouge&quot;&gt;animate()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;draw()&lt;/code&gt; functions:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -530,7 +534,7 @@ At this moment we can complete the &lt;code class=&quot;highlighter-rouge&quot;&
 	&lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;closePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;br /&gt;
-Finally, we will move the circle on the x-axis by incrementing the x variable which defines the circle’s horizontal position:&lt;/p&gt;
+Finally, we will move the circle on the x-axis by incrementing the &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; variable which defines the circle’s horizontal position:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;requestAnimationFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -543,7 +547,60 @@ Finally, we will move the circle on the x-axis by incrementing the x variable wh
     &lt;span class=&quot;nx&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;br /&gt;
-OK, what’s going on here and where are these &lt;code class=&quot;highlighter-rouge&quot;&gt;40&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;360&lt;/code&gt; values come from?&lt;/p&gt;
+OK, what’s going on here and where do these &lt;code class=&quot;highlighter-rouge&quot;&gt;40&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;360&lt;/code&gt; values come from? As you remember, the canvas width and height are both equal to 400px. The circle’s width is 40px and we start to draw the center of it at &lt;code class=&quot;highlighter-rouge&quot;&gt;(40, 40)&lt;/code&gt; position. This means the circle will hit the left border of canvas at &lt;code class=&quot;highlighter-rouge&quot;&gt;(40, 40)&lt;/code&gt; position and the right border at &lt;code class=&quot;highlighter-rouge&quot;&gt;(360, 40)&lt;/code&gt; (the canvas’ width minus 40px). These two are the moments when we want to revert the direction of the movement.&lt;/p&gt;
+
+&lt;p&gt;Let’s have a look at the final code:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myCanvas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;calculateRadians&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;degrees&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;degrees&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PI&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;180&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;speed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;requestAnimationFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;360&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;speed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;draw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clearRect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fillStyle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;#bcd664&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;beginPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;calculateRadians&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;360&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;closePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;animate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;At this moment you should see your circle rolling around your canvas from one side to another - and back. Now you can play with the speed, y-axis position and much more. Have fun! :)&lt;/p&gt;
+
+&lt;h2 id=&quot;further-reading&quot;&gt;Further reading&lt;/h2&gt;
+
+&lt;p&gt;We have only touched the very surface of canvas’ possibilities and I’m sure you’ll want much more. 
+Here are some resources which I personally find clear and helpful for diving deeper into canvas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://codetheory.in/20-best-canvas-tutorials-and-examples-that-will-make-you-a-canvas-master/&quot;&gt;Code Theory&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://diveintohtml5.info/canvas.html&quot;&gt;ll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://creativejs.com/2011/08/31-days-of-canvas-tutorials/&quot;&gt;ll&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hope you’ve enjoyed this little playground, see you back soon! :)&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 30 Mar 2017 11:02:13 +0200</pubDate>
