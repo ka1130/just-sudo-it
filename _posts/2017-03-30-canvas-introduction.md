@@ -7,25 +7,27 @@ author_name : Kamila
 author_url : /author/kamila
 author_avatar: kamila
 show_avatar : true
-read_time : 45
+read_time : 30
 feature_image: feature-canvas
 show_related_posts: true
 comments: true
 square_related: recommend-canvas
 ---
 
-Two posts ago I promised to tell you something more about the HTML5 technology that I use to draw and animate Boids, that is the `<canvas>` element. As you have probably guessed, it is basically just an HTML tag - but its possibilities are truly impressive. With the use of the simple `<canvas>` element and JavaScript you can create advanced games, multimedia applications and charting. This is because canvas is very fast and efficient so it can perform complicated calculations and animations. Since canvas is pixel-based API, you can go as far as manipulating pixels, creating for instance some impressive filters for your photos. The possibilities are endless!
+Two posts ago I promised to tell you something more about the HTML5 technology that I use to draw and animate Boids, that is the `<canvas>` element. As you have probably guessed, it is basically just an HTML tag - but its possibilities are truly impressive. With the use of a simple `<canvas>` element and JavaScript you can create advanced games, multimedia applications, charting - and much more. This is because canvas is very fast and efficient so it can perform complicated calculations and animations. Since canvas is a pixel-based API, you can go as far as manipulating pixels, creating for instance some impressive filters for your photos. The possibilities are endless!
 
 ## Overview
 
 The canvas API itself is not really complicated in terms of the amount of knowledge to grasp. All the methods and properties are nicely put together on the [w3schools reference](https://www.w3schools.com/tags/ref_canvas.asp). Yes, I am aware of the [controversy behind w3schools](https://www.impressivewebs.com/w3schools-ugly-bad-good/) and I admit it’s definitely not the ultimate choice for learning but when it comes to getting to know HTML5, especially if you’re fresh to some of its features, it’s a nice start. Having said that, you should definitely check out the [MDN documentation for canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) which provides you with in-depth information on all the API’s features.
 
-Basically, canvas API consists of a set of **functions** and **properties**. **Functions** can be divided as per their purpose like so:
+Basically, the canvas API consists of a set of **functions** and **properties**. **Functions** can be divided as per their purpose like so:
 + **line and shape** functions (for example: `arc`, `fill`, `rect`, `stroke` etc.)
 + **text** functions (`fillText`, `measureText`, `strokeText`)
 + **transform** functions (`save`, `restore`, `rotate`, `scale`, `transform`, `translate`)
 
-In addition to the functions, canvas API provides you with a set of **properties** that are basically designed to let you style the elements before they get drawn on canvas. Some of these properties are: `width`, `height`, `font`, `fillStyle`, `globalAlpha`, `globalCompositeOperations`. OK, let’s get down to actual coding so that you can check yourself how to make use of canvas. Once you get the knack of it, I promise, you’ll have fun!
+In addition to the functions, canvas API provides you with a set of **properties** that are basically designed to let you style the elements before they get drawn on canvas. Some of these properties are: `width`, `height`, `font`, `fillStyle`, `globalAlpha`, `globalCompositeOperations`. 
+
+OK, let’s get down to actual coding so that you can check yourself how to make use of canvas. Once you get the knack of it, I promise, you’ll have fun!
 
 ## Basic usage
 
@@ -36,14 +38,14 @@ First, let’s insert canvas on our website. In a place of your choice simply pu
 	Your browser does not support canvas
 </canvas>
 {% endhighlight %}<br>
-No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly in the `<canvas>` tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML. I would also suggest adding some basic styling to the canvas so that you can see clearly where it is. Let’s move to the stylesheet and add some CSS declarations like:
+No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly inside of the `<canvas>` tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML. I would also suggest adding some basic styling to the canvas so that you can see clearly where it is. Let’s move to the stylesheet and add some CSS declarations like:
 
 {% highlight javascript %}
 #myCanvas {
     border: 1px solid black;
 }
 {% endhighlight %}<br>
-Now that we have our bare canvas placed on the layout, it’s time to jump into the JavaScript file. First, we need to catch our canvas to a variable. Let’s make use of the new variable declarations introduced by ES6 (more on that in the future post, I plan to show you all the ES6 features I use in the project). 
+Now that we have our bare canvas placed on the layout, it’s time to jump into the JavaScript file. First, we need to catch our canvas to a variable. Let’s make use of the new variable declarations introduced by ES6 (more on that in the future post, I plan to show you all the ES6 features I use in the Boids project). 
 
 {% highlight javascript %}
 const canvas = document.getElementById("myCanvas");
@@ -103,7 +105,7 @@ ctx.beginPath();
 + **r** (the radius)
 + **sAngle** (the starting angle, in radians, where 0 is at the 3 o'clock position of the arc's circle)
 + **eAngle** (the ending angle, in radians)
-+ **counterclockwise** (this one is optional and takes a boolean value)
++ **counterclockwise** (this one is optional and takes a boolean value: `true` or `false`)
 
 Let’s imagine we’d like the arc to be drawn in the middle of the canvas, with the radius of 20px, taking 90 degrees. Calculating radians may be a bit counterintuitive for you (it is for me!) so why not get ourselves a little helper function that will take degrees and return radians? Like so:
 
@@ -133,11 +135,9 @@ ctx.closePath();
 
 ## Let's animate it!
 
-Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anywise so we can skip these steps.
+Last thing I’m gonna show you is a simple animation that will get you familiarized with some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anyhow so we can skip these steps.
 
-To schedule the updates you can use one of the following functions: `setTimeout(fn, delay)`, `setInterval(fn, delay)` or` requestAnimationFrame(callback)`. I suggest you go for the third option since it’s best in terms of performance of your animation. 
-
-To schedule the updates you can use one of three functions: `setTimeout(fn, delay)`, `setInterval(fn, delay)` or` requestAnimationFrame(callback)`. I suggest you go for the thirs option since it’s best in terms of performance of your animation. Paul Irish explained very nicely [the way `requestAnimationFrame()` method works](https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/) and why to choose it over `setTimeout()` or `setInterval`. The post is old but still valid, just the support of the browser is now almost complete, it’s just Opera Mini that doesn’t understand the deal. Anyways, has anyone of you ever used Opera Mini? Personally, I don’t even know how dude looks like!. ;)
+To schedule the updates you can use one of the following functions: `setTimeout(fn, delay)`, `setInterval(fn, delay)` or` requestAnimationFrame(callback)`. I suggest you go for the third option since it’s best in terms of performance of your animation. Paul Irish explained very nicely [the way requestAnimationFrame() method works](https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/) and why to choose it over `setTimeout()` or `setInterval`. The post is old but still valid, just the support of the browser is now almost complete. It’s just Opera Mini that doesn’t understand the deal. Anyways, has anyone of you ever used Opera Mini? Personally, I don’t even know how dude looks like!. ;)
 
 OK, so how to use the `requestAnimationFrame()` method? We use it on a global object (that is, in our case, window) and we pass it a callback function which will run each time the browser performs drawing on the screen. So here’s the basic syntax:
 
@@ -167,8 +167,8 @@ Next, let’s define the `draw()` function. It will be running in a multiple seq
 Now, the foundation of your `draw()` function will look like this:
 {% highlight javascript %}
 function draw() {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-		//drawing goes here
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+	    //drawing goes here
 }
 animate();
 {% endhighlight %}<br>

@@ -65,20 +65,22 @@
 
             <h1>The canvas API</h1>
 
-            <p>Two posts ago I promised to tell you something more about the HTML5 technology that I use to draw and animate Boids, that is the <code class="highlighter-rouge">&lt;canvas&gt;</code> element. As you have probably guessed, it is basically just an HTML tag - but its possibilities are truly impressive. With the use of the simple <code class="highlighter-rouge">&lt;canvas&gt;</code> element and JavaScript you can create advanced games, multimedia applications and charting. This is because canvas is very fast and efficient so it can perform complicated calculations and animations. Since canvas is pixel-based API, you can go as far as manipulating pixels, creating for instance some impressive filters for your photos. The possibilities are endless!</p>
+            <p>Two posts ago I promised to tell you something more about the HTML5 technology that I use to draw and animate Boids, that is the <code class="highlighter-rouge">&lt;canvas&gt;</code> element. As you have probably guessed, it is basically just an HTML tag - but its possibilities are truly impressive. With the use of a simple <code class="highlighter-rouge">&lt;canvas&gt;</code> element and JavaScript you can create advanced games, multimedia applications, charting - and much more. This is because canvas is very fast and efficient so it can perform complicated calculations and animations. Since canvas is a pixel-based API, you can go as far as manipulating pixels, creating for instance some impressive filters for your photos. The possibilities are endless!</p>
 
 <h2 id="overview">Overview</h2>
 
 <p>The canvas API itself is not really complicated in terms of the amount of knowledge to grasp. All the methods and properties are nicely put together on the <a href="https://www.w3schools.com/tags/ref_canvas.asp">w3schools reference</a>. Yes, I am aware of the <a href="https://www.impressivewebs.com/w3schools-ugly-bad-good/">controversy behind w3schools</a> and I admit it’s definitely not the ultimate choice for learning but when it comes to getting to know HTML5, especially if you’re fresh to some of its features, it’s a nice start. Having said that, you should definitely check out the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">MDN documentation for canvas</a> which provides you with in-depth information on all the API’s features.</p>
 
-<p>Basically, canvas API consists of a set of <strong>functions</strong> and <strong>properties</strong>. <strong>Functions</strong> can be divided as per their purpose like so:</p>
+<p>Basically, the canvas API consists of a set of <strong>functions</strong> and <strong>properties</strong>. <strong>Functions</strong> can be divided as per their purpose like so:</p>
 <ul>
   <li><strong>line and shape</strong> functions (for example: <code class="highlighter-rouge">arc</code>, <code class="highlighter-rouge">fill</code>, <code class="highlighter-rouge">rect</code>, <code class="highlighter-rouge">stroke</code> etc.)</li>
   <li><strong>text</strong> functions (<code class="highlighter-rouge">fillText</code>, <code class="highlighter-rouge">measureText</code>, <code class="highlighter-rouge">strokeText</code>)</li>
   <li><strong>transform</strong> functions (<code class="highlighter-rouge">save</code>, <code class="highlighter-rouge">restore</code>, <code class="highlighter-rouge">rotate</code>, <code class="highlighter-rouge">scale</code>, <code class="highlighter-rouge">transform</code>, <code class="highlighter-rouge">translate</code>)</li>
 </ul>
 
-<p>In addition to the functions, canvas API provides you with a set of <strong>properties</strong> that are basically designed to let you style the elements before they get drawn on canvas. Some of these properties are: <code class="highlighter-rouge">width</code>, <code class="highlighter-rouge">height</code>, <code class="highlighter-rouge">font</code>, <code class="highlighter-rouge">fillStyle</code>, <code class="highlighter-rouge">globalAlpha</code>, <code class="highlighter-rouge">globalCompositeOperations</code>. OK, let’s get down to actual coding so that you can check yourself how to make use of canvas. Once you get the knack of it, I promise, you’ll have fun!</p>
+<p>In addition to the functions, canvas API provides you with a set of <strong>properties</strong> that are basically designed to let you style the elements before they get drawn on canvas. Some of these properties are: <code class="highlighter-rouge">width</code>, <code class="highlighter-rouge">height</code>, <code class="highlighter-rouge">font</code>, <code class="highlighter-rouge">fillStyle</code>, <code class="highlighter-rouge">globalAlpha</code>, <code class="highlighter-rouge">globalCompositeOperations</code>.</p>
+
+<p>OK, let’s get down to actual coding so that you can check yourself how to make use of canvas. Once you get the knack of it, I promise, you’ll have fun!</p>
 
 <h2 id="basic-usage">Basic usage</h2>
 
@@ -88,13 +90,13 @@
 	<span class="nx">Your</span> <span class="nx">browser</span> <span class="nx">does</span> <span class="nx">not</span> <span class="nx">support</span> <span class="nx">canvas</span>
 <span class="o">&lt;</span><span class="sr">/canvas&gt;</span></code></pre></figure>
 <p><br />
-No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly in the <code class="highlighter-rouge">&lt;canvas&gt;</code> tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML. I would also suggest adding some basic styling to the canvas so that you can see clearly where it is. Let’s move to the stylesheet and add some CSS declarations like:</p>
+No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly inside of the <code class="highlighter-rouge">&lt;canvas&gt;</code> tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML. I would also suggest adding some basic styling to the canvas so that you can see clearly where it is. Let’s move to the stylesheet and add some CSS declarations like:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span><span class="nx">myCanvas</span> <span class="p">{</span>
     <span class="nl">border</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span> <span class="nx">solid</span> <span class="nx">black</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 <p><br />
-Now that we have our bare canvas placed on the layout, it’s time to jump into the JavaScript file. First, we need to catch our canvas to a variable. Let’s make use of the new variable declarations introduced by ES6 (more on that in the future post, I plan to show you all the ES6 features I use in the project).</p>
+Now that we have our bare canvas placed on the layout, it’s time to jump into the JavaScript file. First, we need to catch our canvas to a variable. Let’s make use of the new variable declarations introduced by ES6 (more on that in the future post, I plan to show you all the ES6 features I use in the Boids project).</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"myCanvas"</span><span class="p">);</span></code></pre></figure>
 <p><br />
@@ -147,7 +149,7 @@ Now we need a method to start the path:</p>
   <li><strong>r</strong> (the radius)</li>
   <li><strong>sAngle</strong> (the starting angle, in radians, where 0 is at the 3 o’clock position of the arc’s circle)</li>
   <li><strong>eAngle</strong> (the ending angle, in radians)</li>
-  <li><strong>counterclockwise</strong> (this one is optional and takes a boolean value)</li>
+  <li><strong>counterclockwise</strong> (this one is optional and takes a boolean value: <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>)</li>
 </ul>
 
 <p>Let’s imagine we’d like the arc to be drawn in the middle of the canvas, with the radius of 20px, taking 90 degrees. Calculating radians may be a bit counterintuitive for you (it is for me!) so why not get ourselves a little helper function that will take degrees and return radians? Like so:</p>
@@ -175,11 +177,9 @@ A riddle for you: how to draw a circle with fill only, no stroke, as in the case
 
 <h2 id="lets-animate-it">Let’s animate it!</h2>
 
-<p>Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anywise so we can skip these steps.</p>
+<p>Last thing I’m gonna show you is a simple animation that will get you familiarized with some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anyhow so we can skip these steps.</p>
 
-<p>To schedule the updates you can use one of the following functions: <code class="highlighter-rouge">setTimeout(fn, delay)</code>, <code class="highlighter-rouge">setInterval(fn, delay)</code> or<code class="highlighter-rouge"> requestAnimationFrame(callback)</code>. I suggest you go for the third option since it’s best in terms of performance of your animation.</p>
-
-<p>To schedule the updates you can use one of three functions: <code class="highlighter-rouge">setTimeout(fn, delay)</code>, <code class="highlighter-rouge">setInterval(fn, delay)</code> or<code class="highlighter-rouge"> requestAnimationFrame(callback)</code>. I suggest you go for the thirs option since it’s best in terms of performance of your animation. Paul Irish explained very nicely <a href="https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/">the way <code class="highlighter-rouge">requestAnimationFrame()</code> method works</a> and why to choose it over <code class="highlighter-rouge">setTimeout()</code> or <code class="highlighter-rouge">setInterval</code>. The post is old but still valid, just the support of the browser is now almost complete, it’s just Opera Mini that doesn’t understand the deal. Anyways, has anyone of you ever used Opera Mini? Personally, I don’t even know how dude looks like!. ;)</p>
+<p>To schedule the updates you can use one of the following functions: <code class="highlighter-rouge">setTimeout(fn, delay)</code>, <code class="highlighter-rouge">setInterval(fn, delay)</code> or<code class="highlighter-rouge"> requestAnimationFrame(callback)</code>. I suggest you go for the third option since it’s best in terms of performance of your animation. Paul Irish explained very nicely <a href="https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/">the way requestAnimationFrame() method works</a> and why to choose it over <code class="highlighter-rouge">setTimeout()</code> or <code class="highlighter-rouge">setInterval</code>. The post is old but still valid, just the support of the browser is now almost complete. It’s just Opera Mini that doesn’t understand the deal. Anyways, has anyone of you ever used Opera Mini? Personally, I don’t even know how dude looks like!. ;)</p>
 
 <p>OK, so how to use the <code class="highlighter-rouge">requestAnimationFrame()</code> method? We use it on a global object (that is, in our case, window) and we pass it a callback function which will run each time the browser performs drawing on the screen. So here’s the basic syntax:</p>
 
@@ -208,8 +208,8 @@ Next, let’s define the <code class="highlighter-rouge">draw()</code> function.
 <p>Now, the foundation of your <code class="highlighter-rouge">draw()</code> function will look like this:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
-		<span class="c1">//drawing goes here</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+	    <span class="c1">//drawing goes here</span>
 <span class="p">}</span>
 <span class="nx">animate</span><span class="p">();</span></code></pre></figure>
 <p><br />
@@ -314,7 +314,7 @@ OK, what’s going on here and where do these <code class="highlighter-rouge">40
                 </div>
 
                 <div class="sidebar-readtime">
-                    <i class="fa fa-bookmark"></i> 45 minute read
+                    <i class="fa fa-bookmark"></i> 30 minute read
                 </div>
 
             </div>
