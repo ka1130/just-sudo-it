@@ -1,6 +1,4 @@
---- 
-layout: default 
----
+--- layout: default ---
 
 <header class="hero-image" style='background-image: url({{"/img/" | append: page.feature_image | prepend: site.baseurl }}.jpg);'>
     <span class="menu-trigger animated fadeInDown">
@@ -60,7 +58,7 @@ layout: default
             <div id="disqus_thread"></div>
             <script>
                 var disqus_config = function() {
-                    this.page.url = "http://just-sudo-it.pl"; // <--- use canonical URL
+                    this.page.url = "http://just-sudo-it.pl{{ page.id }}"; // <--- use canonical URL
                     this.page.identifier = "{{ page.id }}";
                 };
 

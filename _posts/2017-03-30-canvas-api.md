@@ -7,7 +7,7 @@ author_name : Kamila
 author_url : /author/kamila
 author_avatar: kamila
 show_avatar : true
-read_time : 40
+read_time : 45
 feature_image: feature-canvas
 show_related_posts: true
 comments: true
@@ -131,7 +131,7 @@ ctx.fill();
 ctx.closePath();
 {% endhighlight %}<br>
 
-## Basic animation
+## Let's animate it!
 
 Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anywise so we can skip these steps.
 
@@ -252,11 +252,10 @@ At this moment you should see your circle rolling around your canvas from one si
 
 ## Further reading
 
-We have only touched the very surface of canvas' possibilities and I'm sure you'll want much more. 
-Here are some resources which I personally find clear and helpful for diving deeper into canvas:
+I have only touched the very surface of canvas' possibilities and I'm sure you'll want much more. Here's a generous handful of really nice recourses that will help you dive deeper into canvas' features:
 
-+ [Code Theory](http://codetheory.in/20-best-canvas-tutorials-and-examples-that-will-make-you-a-canvas-master/)
-+ [ll](http://diveintohtml5.info/canvas.html)
++ This is a big one! A [selection of top-notch tutorials for any-level coders](http://codetheory.in/20-best-canvas-tutorials-and-examples-that-will-make-you-a-canvas-master/). Thank you, [Code Theory](http://codetheory.in/)! :)
++ A great [step-by-step guide by DiveIntoHTML5](http://diveintohtml5.info/canvas.html). As a side note, I encourage you to check out all the [DiveIntoHTML5 series](http://diveintohtml5.info/index.html), Mark Pilgrim did an excellent job.
 + [ll](http://creativejs.com/2011/08/31-days-of-canvas-tutorials/)
 
 Hope you've enjoyed this little playground, see you back soon! :)

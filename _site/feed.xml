@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Mar 2017 16:53:13 +0100</pubDate>
-    <lastBuildDate>Wed, 22 Mar 2017 16:53:13 +0100</lastBuildDate>
+    <pubDate>Wed, 22 Mar 2017 18:30:13 +0100</pubDate>
+    <lastBuildDate>Wed, 22 Mar 2017 18:30:13 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -475,7 +475,7 @@ A riddle for you: how to draw a circle with fill only, no stroke, as in the case
 &lt;span class=&quot;nx&quot;&gt;ctx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;closePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;basic-animation&quot;&gt;Basic animation&lt;/h2&gt;
+&lt;h2 id=&quot;lets-animate-it&quot;&gt;Let’s animate it!&lt;/h2&gt;
 
 &lt;p&gt;Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anywise so we can skip these steps.&lt;/p&gt;
 
@@ -591,12 +591,11 @@ OK, what’s going on here and where do these &lt;code class=&quot;highlighter-r
 
 &lt;h2 id=&quot;further-reading&quot;&gt;Further reading&lt;/h2&gt;
 
-&lt;p&gt;We have only touched the very surface of canvas’ possibilities and I’m sure you’ll want much more. 
-Here are some resources which I personally find clear and helpful for diving deeper into canvas:&lt;/p&gt;
+&lt;p&gt;I have only touched the very surface of canvas’ possibilities and I’m sure you’ll want much more. Here’s a generous handful of really nice recourses that will help you dive deeper into canvas’ features:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://codetheory.in/20-best-canvas-tutorials-and-examples-that-will-make-you-a-canvas-master/&quot;&gt;Code Theory&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://diveintohtml5.info/canvas.html&quot;&gt;ll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This is a big one! A &lt;a href=&quot;http://codetheory.in/20-best-canvas-tutorials-and-examples-that-will-make-you-a-canvas-master/&quot;&gt;selection of top-notch tutorials for any-level coders&lt;/a&gt;. Thank you, &lt;a href=&quot;http://codetheory.in/&quot;&gt;Code Theory&lt;/a&gt;! :)&lt;/li&gt;
+  &lt;li&gt;A great &lt;a href=&quot;http://diveintohtml5.info/canvas.html&quot;&gt;step-by-step guide by DiveIntoHTML5&lt;/a&gt;. As a side note, I encourage you to check out all the &lt;a href=&quot;http://diveintohtml5.info/index.html&quot;&gt;DiveIntoHTML5 series&lt;/a&gt;, Mark Pilgrim did an excellent job.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://creativejs.com/2011/08/31-days-of-canvas-tutorials/&quot;&gt;ll&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 

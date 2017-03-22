@@ -1,44 +1,6 @@
-<!DOCTYPE html>
-<html class="no-js">
+--- layout: default ---
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Just sudo IT | The canvas API</title>
-    <meta name="description" content="Two posts ago I promised to tell you something more about the HTML5 technology that I use to draw and animate Boids, that is the &lt;canvas&gt; element. As y...">
-
-    <link rel="stylesheet" href="/css/main.css">
-
-    <link rel="canonical" href="http://localhost:4000/canvas-api">
-    <link rel="alternate" type="application/rss+xml" title="Just sudo IT" href="http://localhost:4000/feed.xml" />
-    <link rel="shortcut icon" type="image/png" href="/favicon.png" >
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
-    <!--[if lt IE 9]>
-        <script src="/js/vendor/html5shiv.min.js"></script>
-    <![endif]-->
-</head>
-
-
-  <body class="">
-    <!-- if the user has javascript disabled they can still use the menu -->
-<noscript>
-    <div class="no-js-menu clearfix">
-        <ul>
-            
-                <li><i class="fa fa-home"></i><a href="/">Home</a></li>
-            
-                <li><i class="fa fa-anchor"></i><a href="/about">About</a></li>
-            
-                <li><i class="fa fa-user"></i><a href="/author/kamila">Author</a></li>
-            
-        </ul>
-    </div>
-</noscript>
-<!-- end no script -->
-
-    <header class="hero-image" style='background-image: url(/img/feature-canvas.jpg);'>
+<header class="hero-image" style='background-image: url(/img/feature-canvas.jpg);'>
     <span class="menu-trigger animated fadeInDown">
         <span class="bar"></span>
     <span class="bar"></span>
@@ -173,7 +135,7 @@ A riddle for you: how to draw a circle with fill only, no stroke, as in the case
 <span class="nx">ctx</span><span class="p">.</span><span class="nx">closePath</span><span class="p">();</span></code></pre></figure>
 <p><br /></p>
 
-<h2 id="basic-animation">Basic animation</h2>
+<h2 id="lets-animate-it">Let’s animate it!</h2>
 
 <p>Last thing I’m gonna show you is a simplest animation that will show you some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anywise so we can skip these steps.</p>
 
@@ -289,12 +251,11 @@ OK, what’s going on here and where do these <code class="highlighter-rouge">40
 
 <h2 id="further-reading">Further reading</h2>
 
-<p>We have only touched the very surface of canvas’ possibilities and I’m sure you’ll want much more. 
-Here are some resources which I personally find clear and helpful for diving deeper into canvas:</p>
+<p>I have only touched the very surface of canvas’ possibilities and I’m sure you’ll want much more. Here’s a generous handful of really nice recourses that will help you dive deeper into canvas’ features:</p>
 
 <ul>
-  <li><a href="http://codetheory.in/20-best-canvas-tutorials-and-examples-that-will-make-you-a-canvas-master/">Code Theory</a></li>
-  <li><a href="http://diveintohtml5.info/canvas.html">ll</a></li>
+  <li>This is a big one! A <a href="http://codetheory.in/20-best-canvas-tutorials-and-examples-that-will-make-you-a-canvas-master/">selection of top-notch tutorials for any-level coders</a>. Thank you, <a href="http://codetheory.in/">Code Theory</a>! :)</li>
+  <li>A great <a href="http://diveintohtml5.info/canvas.html">step-by-step guide by DiveIntoHTML5</a>. As a side note, I encourage you to check out all the <a href="http://diveintohtml5.info/index.html">DiveIntoHTML5 series</a>, Mark Pilgrim did an excellent job.</li>
   <li><a href="http://creativejs.com/2011/08/31-days-of-canvas-tutorials/">ll</a></li>
 </ul>
 
@@ -315,7 +276,7 @@ Here are some resources which I personally find clear and helpful for diving dee
                 </div>
 
                 <div class="sidebar-readtime">
-                    <i class="fa fa-bookmark"></i> 40 minute read
+                    <i class="fa fa-bookmark"></i> 45 minute read
                 </div>
 
             </div>
@@ -361,7 +322,7 @@ Here are some resources which I personally find clear and helpful for diving dee
             <div id="disqus_thread"></div>
             <script>
                 var disqus_config = function() {
-                    this.page.url = "http://just-sudo-it.pl"; // <--- use canonical URL
+                    this.page.url = "http://just-sudo-it.pl/canvas-api"; // <--- use canonical URL
                     this.page.identifier = "/canvas-api";
                 };
 
@@ -475,15 +436,3 @@ Here are some resources which I personally find clear and helpful for diving dee
     
 </div> 
 </footer>
-
-
-    <script src='/js/vendor/modernizr.custom.32229-2.8-respondjs-1-4-2.js'></script>
-    <script src="/js/vendor/jquery-1.11.2.min.js"></script>
-    <script src='/js/vendor/jquery.jpanelmenu.min.js'></script>
-    <script type='application/javascript' src='/js/vendor/fastclick.min.js'></script>
-    
-    <script src=' /js/main.js'></script>
-    <script id="dsq-count-scr" src="//just-sudo-it.disqus.com/count.js" async></script>
-  </body>
-
-</html>
