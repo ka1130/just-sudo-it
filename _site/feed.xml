@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 22 Mar 2017 18:41:08 +0100</pubDate>
-    <lastBuildDate>Wed, 22 Mar 2017 18:41:08 +0100</lastBuildDate>
+    <pubDate>Wed, 22 Mar 2017 18:47:20 +0100</pubDate>
+    <lastBuildDate>Wed, 22 Mar 2017 18:47:20 +0100</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -15,8 +15,8 @@
         <description>
 </description>
         <pubDate>Wed, 19 Apr 2017 10:20:12 +0200</pubDate>
-        <link>http://localhost:4000/coderslab</link>
-        <guid isPermaLink="true">http://localhost:4000/coderslab</guid>
+        <link>http://localhost:4000/coders-lab</link>
+        <guid isPermaLink="true">http://localhost:4000/coders-lab</guid>
         
         
         <category>dsp2017</category>
@@ -28,8 +28,8 @@
         <description>
 </description>
         <pubDate>Mon, 10 Apr 2017 13:15:53 +0200</pubDate>
-        <link>http://localhost:4000/why-I-changed-my-career-path</link>
-        <guid isPermaLink="true">http://localhost:4000/why-I-changed-my-career-path</guid>
+        <link>http://localhost:4000/reasons-for-changing-career-path</link>
+        <guid isPermaLink="true">http://localhost:4000/reasons-for-changing-career-path</guid>
         
         
         <category>dsp2017</category>
@@ -355,8 +355,8 @@ Note that if you followed this tutorial and saved all dependencies in your packa
 
 </description>
         <pubDate>Tue, 04 Apr 2017 15:10:14 +0200</pubDate>
-        <link>http://localhost:4000/gulp-basics</link>
-        <guid isPermaLink="true">http://localhost:4000/gulp-basics</guid>
+        <link>http://localhost:4000/gulp-introduction</link>
+        <guid isPermaLink="true">http://localhost:4000/gulp-introduction</guid>
         
         
         <category>dsp2017</category>
@@ -603,8 +603,8 @@ OK, what’s going on here and where do these &lt;code class=&quot;highlighter-r
 
 </description>
         <pubDate>Thu, 30 Mar 2017 11:02:13 +0200</pubDate>
-        <link>http://localhost:4000/canvas-api</link>
-        <guid isPermaLink="true">http://localhost:4000/canvas-api</guid>
+        <link>http://localhost:4000/canvas-introduction</link>
+        <guid isPermaLink="true">http://localhost:4000/canvas-introduction</guid>
         
         
         <category>dsp2017</category>
@@ -612,7 +612,7 @@ OK, what’s going on here and where do these &lt;code class=&quot;highlighter-r
       </item>
     
       <item>
-        <title>Strange case of Dr Jekyll and Mr Windows / part II</title>
+        <title>Strange case of Dr Jekyll and Mr Windows / Part II</title>
         <description>&lt;p&gt;If you follow me along on “Just sudo IT”, you remember &lt;a href=&quot;http://just-sudo-it.pl/jekyll-on-windows-part1&quot;&gt;the post about setting up Jekyll&lt;/a&gt;. We have ended up with a basic set-up of a default Minima-themed blog. Great for beginning but now time has come to customize it to your liking. You will probably want to adjust the layout, install a chosen template (you can also style your blog completely from scratch but we’re not going to cover this case here), add custom domain etc. Let’s see how to do it.&lt;/p&gt;
 
 &lt;h2 id=&quot;basic-configuration&quot;&gt;Basic configuration&lt;/h2&gt;
@@ -836,8 +836,8 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
 &lt;p&gt;Have fun working on your project. :)&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Mar 2017 17:21:07 +0200</pubDate>
-        <link>http://localhost:4000/jekyll-on-windows-part2</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll-on-windows-part2</guid>
+        <link>http://localhost:4000/jekyll-part2</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll-part2</guid>
         
         
         <category>dsp2017</category>
@@ -925,8 +925,8 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
 
 </description>
         <pubDate>Fri, 24 Mar 2017 12:54:26 +0100</pubDate>
-        <link>http://localhost:4000/the-boids-plan</link>
-        <guid isPermaLink="true">http://localhost:4000/the-boids-plan</guid>
+        <link>http://localhost:4000/boids-plan</link>
+        <guid isPermaLink="true">http://localhost:4000/boids-plan</guid>
         
         
         <category>dsp2017</category>
@@ -934,7 +934,7 @@ You simply use hashtags for that. The numbers of hashtags determines the size of
       </item>
     
       <item>
-        <title>Strange case of Dr Jekyll and Mr Windows / part I</title>
+        <title>Strange case of Dr Jekyll and Mr Windows / Part I</title>
         <description>&lt;p&gt;For many years I have been using Wordpress as an obvious choice when choosing a blogging platform. Wordpress is by far the most popular CMS on the market, supported and developed for 14 years, powering around 8% of all pages in World Wide Web. That speaks for itself. However, since I’ve been keeping my projects on GitHub pages for the last few months, I’ve discovered it might be much easier to run the next blogging project directly on GitHub server and make use of Jekyll due to its native support in GitHub pages.&lt;/p&gt;
 
 &lt;h2 id=&quot;so-what-is-jekyll&quot;&gt;So what is Jekyll?&lt;/h2&gt;

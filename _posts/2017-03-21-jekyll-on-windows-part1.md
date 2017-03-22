@@ -1,6 +1,6 @@
 ---
 layout: post-sidebar
-title: "Strange case of Dr Jekyll and Mr Windows / part I"
+title: "Strange case of Dr Jekyll and Mr Windows / Part I"
 date: 2017-03-21 11:30:51
 categories: dsp2017 coding
 author_name : Kamila
