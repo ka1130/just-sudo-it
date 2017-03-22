@@ -255,10 +255,10 @@ At this moment you should see your circle rolling around your canvas from one si
 I have only touched the very surface of canvas' possibilities and I'm sure you'll want much more. Here's a generous handful of really nice recourses that will help you dive deeper into canvas' features:
 
 + This is a big one! A [selection of top-notch tutorials for any-level coders](http://codetheory.in/20-best-canvas-tutorials-and-examples-that-will-make-you-a-canvas-master/). Thank you, [Code Theory](http://codetheory.in/)! :)
-+ A great [step-by-step guide by DiveIntoHTML5](http://diveintohtml5.info/canvas.html). As a side note, I encourage you to check out all the [DiveIntoHTML5 series](http://diveintohtml5.info/index.html), Mark Pilgrim did an excellent job.
-+ [ll](http://creativejs.com/2011/08/31-days-of-canvas-tutorials/)
++ A great [step-by-step guide by DiveIntoHTML5](http://diveintohtml5.info/canvas.html). As a side note, I encourage you to check out all the [DiveIntoHTML5 series](http://diveintohtml5.info/index.html), Mark Pilgrim did an excellent job explaining all the HTML5 particularities in a creative yet not overwhelming form.
++ [A 31-days canvas challenge](http://creativejs.com/2011/08/31-days-of-canvas-tutorials/). Good way to stay on track in the learning process.
 
-Hope you've enjoyed this little playground, see you back soon! :)
+That's it for now, hope you've enjoyed this little playground, see you back soon! :)
 
 
 
