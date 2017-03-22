@@ -36,7 +36,7 @@ First, let’s insert canvas on our website. In a place of your choice simply pu
 	Your browser does not support canvas
 </canvas>
 {% endhighlight %}<br>
-No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly in the `<canvas>` tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML. I would also suggest adding some basic styling to the canvas so that you can see clearly where it is. Let’s jump to the stylesheet and add some CSS declarations like:
+No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly in the `<canvas>` tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML. I would also suggest adding some basic styling to the canvas so that you can see clearly where it is. Let’s move to the stylesheet and add some CSS declarations like:
 
 {% highlight javascript %}
 #myCanvas {
@@ -53,12 +53,12 @@ Now we need to define the context in which we want to work. In most of the cases
 {% highlight javascript %}
 const ctx = canvas.getContext("2d");
 {% endhighlight %}<br>
-Finally, let’s draw something simple like rectangle:
+Finally, let’s draw something simple like a rectangle:
 
 {% highlight javascript %}
 ctx.fillRect(200, 200, 100, 100);
 {% endhighlight %}<br>
-The `fillRect` method takes four parameters: `x`, `y`, `width` and `height`. The X and y coordinates are where the rectangle’s upper-left corner is. The default color is black, that’s why you can see a black rectangle on your canvas now even though you didn’t set any styling. Actually if you do want to style your components anyhow, you have to define the visual side first. Let’s add some colour to our rectangle, say, orange for example. Now the code will look like this:
+The `fillRect()` method takes four parameters: `x`, `y`, `width` and `height`. The x and y coordinates define the rectangle’s upper-left corner's position. The default color is black, that’s why you can see a black rectangle on your canvas now even though you didn’t set any styling. Actually if you do want to style your components anyhow, you should define the visual side first. Let’s add some colour to our rectangle, say, orange for example. Now the code will look like this:
 
 {% highlight javascript %}
 ctx.fillStyle = "#ffa500";
@@ -138,6 +138,71 @@ Last thing I’m gonna show you is a simplest animation that will show you some 
 To schedule the updates you can use one of the following functions: `setTimeout(fn, delay)`, `setInterval(fn, delay)` or` requestAnimationFrame(callback)`. I suggest you go for the thirs option since it’s best in terms of performance of your animation. 
 
 To schedule the updates you can use one of three functions: `setTimeout(fn, delay)`, `setInterval(fn, delay)` or` requestAnimationFrame(callback)`. I suggest you go for the thirs option since it’s best in terms of performance of your animation. Paul Irish explained very nicely [the way `requestAnimationFrame()` method works](https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/) and why to choose it over `setTimeout()` or `setInterval`. The post is old but still valid, just the support of the browser is now almost complete, it’s just Opera Mini that doesn’t understand the deal. Anyways, has anyone of you ever used Opera Mini? Personally, I don’t even know how dude looks like!. ;)
+
+OK, so how to use the `requestAnimationFrame()` method? We use it on a global object (that is, in our case, window) and we pass it a callback function which will run each time the browser performs drawing on the screen. So here’s the basic syntax:
+window.requestAnimationFrame(callbackFunction);
+Which is, as you know, the same thing as:
+requestAnimationFrame(callbackFunction);
+With that in mind, let’s write a core fore our animate() function which will run the `requestAnimationFrame()` method, calculate next position and then re-draw it.
+
+{% highlight javascript %}
+function animate() {
+    requestAnimationFrame(animate);
+        // calculate next position
+    draw();
+}
+{% endhighlight %}<br>
+Next, let’s define the `draw()` function. It will run in a multiple sequence so the first thing you need to do is clearing the canvas before redrawing the element on the next position. To clear the canvas, you will use the `clearRect()` method on the canvas’ context (as you remember, we keep it in a variable called `ctx`). The `clearRect()` method takes the following parameters:
++ **x** (the x-coordinate of the upper-left corner of the rectangle to clear)
++ **y** (the y-coordinate of the upper-left corner of the rectangle to clear)
++ **width** (of the rectangle to clear, in px: in our case this will be the width of the whole canvas)
++ **height**
+
+Now, the foundation of your `draw()` function will look like this:
+{% highlight javascript %}
+function draw() {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+		//drawing goes here
+}
+animate();
+{% endhighlight %}<br>
+Having this basis, let’s think of how we will actually deal with moving our element around. For the very beginning, we’ll move the element on x-coordinate only asking it to revert the direction of the movement once the element hits the border of the canvas. We need three variables:` x` and `y` for initial position and `speed` for… yeah, the speed. :)
+Let’s declare these at the very beginning, above the `animate()` and `draw()` functions:
+
+{% highlight javascript %}
+let x = 40;
+let y = 40;
+let speed = 5;
+{% endhighlight %}<br>
+At this moment we can complete the `draw()` function and make it draw a circle like we did before in this tutorial:
+
+{% highlight javascript %}
+function draw() {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.fillStyle = "#bcd664";
+
+	ctx.beginPath();
+	ctx.arc(x, y, 40, 0, calculateRadians(360));
+	ctx.fill();
+	ctx.closePath();
+}
+{% endhighlight %}<br>
+Finally, we will move the circle on the x-axis by incrementing the x variable which defines the circle’s horizontal position:
+
+{% highlight javascript %}
+function animate() {
+    requestAnimationFrame(animate);
+    x += speed;
+
+    if (x <= 40 || x >= 360) {
+        speed = -speed;
+    }
+
+    draw();
+}
+{% endhighlight %}<br>
+OK, what’s going on here and where are these `40` and `360` values come from?
+
 
 
 
