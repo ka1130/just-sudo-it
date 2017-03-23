@@ -258,7 +258,9 @@ I have only touched the very surface of canvas' possibilities and I'm sure you'l
 + A great [step-by-step guide by DiveIntoHTML5](http://diveintohtml5.info/canvas.html). As a side note, I encourage you to check out all the [DiveIntoHTML5 series](http://diveintohtml5.info/index.html), Mark Pilgrim did an excellent job explaining all the HTML5 particularities in a creative yet not overwhelming form.
 + [A 31-days canvas challenge](http://creativejs.com/2011/08/31-days-of-canvas-tutorials/). Good way to stay on track in the learning process.
 
-If you're curious how am I doing with the Boids, check out
+## How are Boids flying on canvas?
+
+If you're curious how I'm doing with the Boids, check it out here:
 + [the source code on GitHub](https://github.com/ka1130/Boids). You can find out how I applied the methods described in the above tutorial to animate Boid instances on canvas. I will be glad to hear your tips on that!
 + [Boids online](https://ka1130.github.io/Boids/src/)
 
