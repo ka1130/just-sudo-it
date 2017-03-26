@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 24 Mar 2017 23:00:33 +0100</pubDate>
-    <lastBuildDate>Fri, 24 Mar 2017 23:00:33 +0100</lastBuildDate>
+    <pubDate>Sun, 26 Mar 2017 21:43:25 +0200</pubDate>
+    <lastBuildDate>Sun, 26 Mar 2017 21:43:25 +0200</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -58,6 +58,10 @@
 &lt;p&gt;As a designer, I needed some coding stuff for myself too: online portfolios, Wordpress blogs etc. I completed a few courses, some of them on-line, the others stationary, even finished postgraduate studies on Polish-Japanese Academy of Information Technology, two semesters on “Advanced Multimedia”, again, EU-funded. Honestly, I didn’t learn much on programming there, yet I reasserted my conviction that coding is really cool.&lt;/p&gt;
 
 &lt;p&gt;A breaking point came in 2013 - and 3 years must have passed before I realized that. I stumbled upon an announcement on &lt;a href=&quot;http://railsgirls.com/&quot;&gt;Rails Girls workshops&lt;/a&gt; in Warsaw. I didn’t even know that there is a programming language called Ruby but since the workshop was dedicated to beginners, and it was about CODING, I applied and got approved.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;img/post-assets/ruby1.jpg&quot; alt=&quot;Rails Girls 2013&quot; class=&quot;img-responsive&quot; /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;img/post-assets/ruby2.jpg&quot; alt=&quot;Rails Girls 2013&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;and-what-now&quot;&gt;…and what now?&lt;/h2&gt;
 

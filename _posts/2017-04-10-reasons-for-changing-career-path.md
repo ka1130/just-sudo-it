@@ -48,6 +48,10 @@ As a designer, I needed some coding stuff for myself too: online portfolios, Wor
 
 A breaking point came in 2013 - and 3 years must have passed before I realized that. I stumbled upon an announcement on [Rails Girls workshops](http://railsgirls.com/) in Warsaw. I didn’t even know that there is a programming language called Ruby but since the workshop was dedicated to beginners, and it was about CODING, I applied and got approved. 
 
+![Rails Girls 2013](img/post-assets/ruby1.jpg){:class="img-responsive"}
+<br>
+![Rails Girls 2013](img/post-assets/ruby2.jpg){:class="img-responsive"}
+
 ## ...and what now?
 
 
