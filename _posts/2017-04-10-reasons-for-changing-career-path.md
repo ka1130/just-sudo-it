@@ -7,7 +7,7 @@ author_name : Kamila
 author_url : /author/kamila
 author_avatar: kamila
 show_avatar : true
-read_time : 15
+read_time : 20
 feature_image: feature-career
 show_related_posts: true
 comments: true
@@ -48,10 +48,18 @@ As a designer, I needed some coding stuff for myself too: online portfolios, Wor
 
 A breaking point came in 2013 - and 3 years must have passed before I realized that. I stumbled upon an announcement on [Rails Girls workshops](http://railsgirls.com/) in Warsaw. I didn’t even know that there is a programming language called Ruby but since the workshop was dedicated to beginners, and it was about CODING, I applied and got approved. 
 
+The workshop lasted two days - definitely not enough to learn Ruby but enough to get to know the basics of programming, hear stories of people who have retrained and became developers, and finally - how to change one’s career path. I still keep pics from that time:
+
 ![Rails Girls 2013](img/post-assets/ruby1.jpg){:class="img-responsive"}
 <br>
 ![Rails Girls 2013](img/post-assets/ruby2.jpg){:class="img-responsive"}
 
+It was also at Rails Girls where I got to know there is a place called Coders Lab, an intensive full-time bootcamp that takes 6 weeks of hard work, costs a fortune - but actually guarantees you will find a job as a Junior Developer after completion. I asked my mentor what he thought about that and he told me that, yes, that’s a hard deal but for those ready to commit - it’s worth it. I took a discount flier for Coders Lab and kept it in a cabinet so that I saw it every day. Remember I told myself: “if anything else fails, I’ll go for it”.
+
+May 2016, I woke up one morning, having a really tough year behind me, and it dawned on me quite mightily: “actually, isn’t NOW the right time”? I do not believe in stories of “one day change” of one’s life, I guess there was a huge subconscious process behind but the truth is: it was this morning when I took the decision. I quit my job. Enrolled to Coders Lab. Learned as hard as I could. And you know what? That was reaaaalllly cool. I simply couldn’t break away from coding, it turned out to be the most engaging, rewarding - and, yes, creative activity I’ve ever experienced. Obviously, it’s also wearing at times, as any job, I guess. But I feel that a developer’s job is just a great fit to me. 
+
 ## ...and what now?
+
+Well, I have just started my first job as a Junior Developer. So actually - it all just began. Once I settle down a bit, I plan to write more on that. Keep your fingers crossed!
 
 
