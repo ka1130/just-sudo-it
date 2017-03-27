@@ -56,10 +56,10 @@ The workshop lasted two days - definitely not enough to learn Ruby but enough to
 
 It was also at Rails Girls where I got to know there is a place called Coders Lab, an intensive full-time bootcamp that takes 6 weeks of hard work, costs a fortune - but actually guarantees you will find a job as a Junior Developer after completion. I asked my mentor what he thought about that and he told me that, yes, that’s a hard deal but for those ready to commit - it’s worth it. I took a discount flier for Coders Lab and kept it in a cabinet so that I saw it every day. Remember I told myself: “if anything else fails, I’ll go for it”.
 
-May 2016, I woke up one morning, having a really tough year behind me, and it dawned on me quite mightily: “actually, isn’t NOW the right time”? I do not believe in stories of “one day change” of one’s life, I guess there was a huge subconscious process behind but the truth is: it was this morning when I took the decision. I quit my job. Enrolled to Coders Lab. Learned as hard as I could. And you know what? That was reaaaalllly cool. I simply couldn’t break away from coding, it turned out to be the most engaging, rewarding - and, yes, creative activity I’ve ever experienced. Obviously, it’s also wearing at times, as any job, I guess. But I feel that a developer’s job is just a great fit to me. 
+May 2016, I woke up one morning, having a really tough year behind me, and it dawned on me quite mightily: “actually, isn’t NOW the right time”? I do not believe in stories of “one day change” of one’s life, I guess there was a huge subconscious process behind but the truth is: it was this morning when I took the decision. I quit my job. Enrolled to Coders Lab. Learned as hard as I could. And you know what? That was reaaaalllly cool. I simply couldn’t break away from coding, it turned out to be the most engaging, rewarding - and, yes, creative activity I’ve ever experienced. Obviously, it’s also wearing at times, as any job, I guess. But I feel that a developer’s profession is just a great fit to me. 
 
 ## ...and what now?
 
-Well, I have just started my first job as a Junior Developer. So actually - it all just began. Once I settle down a bit, I plan to write more on that. Keep your fingers crossed!
+Well, I started working as a Junior Developer a few days ago. So actually - it all just began. Once I settle down a bit, I plan to write a bit more on that. Keep your fingers crossed!
 
 
