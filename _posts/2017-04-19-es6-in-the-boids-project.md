@@ -1,8 +1,8 @@
 ---
 layout: post-sidebar
-title: "Coders Lab: my opinion"
-date: 2017-04-19 08:20:12
-categories: dsp2017
+title: "ES6 features in the Boids project"
+date: 2017-04-19 09:00:12
+categories: dsp2017 coding
 author_name : Kamila
 author_url : /author/kamila
 author_avatar: kamila
@@ -11,7 +11,7 @@ read_time : 7
 feature_image: feature-es6
 show_related_posts: true
 comments: true
-square_related: recommend-coderslab
+square_related: recommend-es6
 ---
 
 
