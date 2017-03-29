@@ -6,17 +6,31 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 28 Mar 2017 22:56:36 +0200</pubDate>
-    <lastBuildDate>Tue, 28 Mar 2017 22:56:36 +0200</lastBuildDate>
+    <pubDate>Wed, 29 Mar 2017 18:32:40 +0200</pubDate>
+    <lastBuildDate>Wed, 29 Mar 2017 18:32:40 +0200</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
         <title>8 ES6 features I use in the Boids project (and work great anywhere!)</title>
-        <description>&lt;p&gt;The introduction of ECMAScript 2015 standard, also known as ES6, is a quantum leap for JavaScript that the language hadn’t seen since 2009.&lt;/p&gt;
+        <description>&lt;p&gt;The introduction of ECMAScript 2015 standard, also known as ES6, is a quantum leap for JavaScript that the language hadn’t seen since 2009. I didn’t realize the significance of the changes until very recently when I started to learn the new ES6 features. Some of them are pretty self-explanatory, the others took me more time to comprehend - and there’s still a bunch of stuff I have only blurry idea about. Since the best way of learning to code is actually… to code, I decided to introduce ES6 to the Boids project. And you know what, it considerably simplified and clarified the work. So I decided to share some insight with you. Here are the 8 ES6 features I have used when programming Boids.&lt;/p&gt;
 
-&lt;h2 id=&quot;1-block-scoped-constructs-let-and-const&quot;&gt;1. Block-Scoped Constructs Let and Const&lt;/h2&gt;
+&lt;h2 id=&quot;1-block-scoped-constructs-let-and-const&quot;&gt;1. Block-Scoped Constructs: Let and Const&lt;/h2&gt;
+
+&lt;p&gt;ES6 has introduced two new ways of defining variables. Apart from &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; we have also now &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;cost&lt;/code&gt;. Now what are &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; for and why was &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; not enough?&lt;/p&gt;
+
+&lt;p&gt;The main problem with &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; was its scope, which is a function scope, whereas &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; are block-scoped. It means they only exist within the current block represented by a pair of curly braces: &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt;: it may be a block within an &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; statement, a loop - or you can simply create one and put your &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; inside. This helps avoid common developers’ problems and makes JavaScript behave more predictably to those used to work in other languages, such as Java, C or C++.&lt;/p&gt;
+
+&lt;p&gt;Also, when using &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; you do not fall into the hoisting trap, which you may welcome with relief as many people find the hoisting idea pretty distressing. This is because &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; remain uninitialized until they are declared. The timespan before &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; initialization is called “Temporal Dead Zone” (TDZ). For more in-depth explanation, have a look &lt;a href=&quot;https://ponyfoo.com/articles/es6-let-const-and-temporal-dead-zone-in-depth&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Next, &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; declarations cannot be reassigned. So you won’t accidentally overwrite your variables. You can only update the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;. By contrast, &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; declaration is created to keep values that will not be changed. Some programmers say it’s best to use &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; by default and &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; only in special cases, when the value of the variable is bound to be changed (such as the counter in your &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loop).&lt;/p&gt;
+
+&lt;p&gt;Last but not least, &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; do not become properties of the global object, in case you defined them globally (which you should never do by the way). The same is true for the new ES6 Classes - and I’ll tell you more about them later in this post.&lt;/p&gt;
+
+&lt;p&gt;Of course, you can still use &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; if you want, there’s nothing wrong with that. Just be aware of it’s characteristics and give the new constructs a try too see if you feel commfortable working with them.&lt;/p&gt;
 
 &lt;h2 id=&quot;2-arrow-functions&quot;&gt;2. Arrow Functions&lt;/h2&gt;
+
+&lt;p&gt;A cool new feature of ES6 are arrow functions, also referred to as fat-arrow functions.&lt;/p&gt;
 
 &lt;h2 id=&quot;3-default-parameters&quot;&gt;3. Default Parameters&lt;/h2&gt;
 
@@ -32,7 +46,7 @@
 
 &lt;h2 id=&quot;babel&quot;&gt;Babel&lt;/h2&gt;
 
-&lt;h2 id=&quot;summing-up&quot;&gt;Summing Up&lt;/h2&gt;
+&lt;h2 id=&quot;summing-up--learning-resources&quot;&gt;Summing Up &amp;amp; Learning Resources&lt;/h2&gt;
 
 </description>
         <pubDate>Wed, 19 Apr 2017 11:00:12 +0200</pubDate>

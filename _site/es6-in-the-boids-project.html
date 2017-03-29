@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Just sudo IT | 8 ES6 features I use in the Boids project (and work great anywhere!)</title>
-    <meta name="description" content="The introduction of ECMAScript 2015 standard, also known as ES6, is a quantum leap for JavaScript that the language hadn’t seen since 2009.">
+    <meta name="description" content="The introduction of ECMAScript 2015 standard, also known as ES6, is a quantum leap for JavaScript that the language hadn’t seen since 2009. I didn’t realize ...">
 
     <link rel="stylesheet" href="/css/main.css">
 
@@ -65,11 +65,25 @@
 
             <h1>8 ES6 features I use in the Boids project (and work great anywhere!)</h1>
 
-            <p>The introduction of ECMAScript 2015 standard, also known as ES6, is a quantum leap for JavaScript that the language hadn’t seen since 2009.</p>
+            <p>The introduction of ECMAScript 2015 standard, also known as ES6, is a quantum leap for JavaScript that the language hadn’t seen since 2009. I didn’t realize the significance of the changes until very recently when I started to learn the new ES6 features. Some of them are pretty self-explanatory, the others took me more time to comprehend - and there’s still a bunch of stuff I have only blurry idea about. Since the best way of learning to code is actually… to code, I decided to introduce ES6 to the Boids project. And you know what, it considerably simplified and clarified the work. So I decided to share some insight with you. Here are the 8 ES6 features I have used when programming Boids.</p>
 
-<h2 id="1-block-scoped-constructs-let-and-const">1. Block-Scoped Constructs Let and Const</h2>
+<h2 id="1-block-scoped-constructs-let-and-const">1. Block-Scoped Constructs: Let and Const</h2>
+
+<p>ES6 has introduced two new ways of defining variables. Apart from <code class="highlighter-rouge">var</code> we have also now <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">cost</code>. Now what are <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> for and why was <code class="highlighter-rouge">var</code> not enough?</p>
+
+<p>The main problem with <code class="highlighter-rouge">var</code> was its scope, which is a function scope, whereas <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> are block-scoped. It means they only exist within the current block represented by a pair of curly braces: <code class="highlighter-rouge"><span class="p">{}</span></code>: it may be a block within an <code class="highlighter-rouge">if</code> statement, a loop - or you can simply create one and put your <code class="highlighter-rouge">let</code> or <code class="highlighter-rouge">const</code> inside. This helps avoid common developers’ problems and makes JavaScript behave more predictably to those used to work in other languages, such as Java, C or C++.</p>
+
+<p>Also, when using <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> you do not fall into the hoisting trap, which you may welcome with relief as many people find the hoisting idea pretty distressing. This is because <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> remain uninitialized until they are declared. The timespan before <code class="highlighter-rouge">let</code> or <code class="highlighter-rouge">const</code> initialization is called “Temporal Dead Zone” (TDZ). For more in-depth explanation, have a look <a href="https://ponyfoo.com/articles/es6-let-const-and-temporal-dead-zone-in-depth">here</a>.</p>
+
+<p>Next, <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> declarations cannot be reassigned. So you won’t accidentally overwrite your variables. You can only update the value of <code class="highlighter-rouge">let</code>. By contrast, <code class="highlighter-rouge">const</code> declaration is created to keep values that will not be changed. Some programmers say it’s best to use <code class="highlighter-rouge">const</code> by default and <code class="highlighter-rouge">let</code> only in special cases, when the value of the variable is bound to be changed (such as the counter in your <code class="highlighter-rouge">for</code> loop).</p>
+
+<p>Last but not least, <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> do not become properties of the global object, in case you defined them globally (which you should never do by the way). The same is true for the new ES6 Classes - and I’ll tell you more about them later in this post.</p>
+
+<p>Of course, you can still use <code class="highlighter-rouge">var</code> if you want, there’s nothing wrong with that. Just be aware of it’s characteristics and give the new constructs a try too see if you feel commfortable working with them.</p>
 
 <h2 id="2-arrow-functions">2. Arrow Functions</h2>
+
+<p>A cool new feature of ES6 are arrow functions, also referred to as fat-arrow functions.</p>
 
 <h2 id="3-default-parameters">3. Default Parameters</h2>
 
@@ -85,7 +99,7 @@
 
 <h2 id="babel">Babel</h2>
 
-<h2 id="summing-up">Summing Up</h2>
+<h2 id="summing-up--learning-resources">Summing Up &amp; Learning Resources</h2>
 
 
 
@@ -102,7 +116,7 @@
                 </div>
 
                 <div class="sidebar-readtime">
-                    <i class="fa fa-bookmark"></i> 7 minute read
+                    <i class="fa fa-bookmark"></i> 30 minute read
                 </div>
 
             </div>
