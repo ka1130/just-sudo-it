@@ -32,7 +32,31 @@ Of course, you can still use `var` if you want, there's nothing wrong with that.
 ## 2. Arrow Functions
 
 A cool new feature of ES6 are arrow functions, also referred to as fat-arrow functions. Their name stems from the token they use: `=>` which looks… well, like a fat arrow. Arrow functions are just a more concise syntax for writing function expressions. They also handle `this` bindings in functions in a different way which takes two issues. First, they
-don’t rebind the value of `this` when you use an arrow function inside of another function. Second, the value of `this` inside of a function can never be changed. Let’s see how it works in practice.
+don’t rebind the value of `this` when you use an arrow function inside of another function. Second, the value of `this` inside of a function can never be changed. 
+
+Let’s see how it works in practice. We’ll use a `map` method on an array of numbers to sum them up:
+
+{% highlight javascript %}
+var nums = [10, 20, 30];
+
+nums.map(function(num) {
+return num + num;
+});
+{% endhighlight %}<br>
+Now with the use of ES6 standard we can simplify it to just:
+
+{% highlight javascript %}
+var nums = [10, 20, 30];
+
+nums.map(num => num + num);
+{% endhighlight %}<br>
+Whoaa, what has just happened here? Well, first, we’ve got rid of the `function` keyword. Next, we’ve replaced the `{}` curly braces with the fat-arrow token: `=>`. Then, we’ve made use of the fact that arrow function have so-called implicit returns, which means that we could omit the `return` keyword if it was a simple one-liner. We couldn’t have done this if the `return` expression had multiple lines. And last, since we’ve had just one parameter in the function, we could omit the parentheses around it as well. Doesn’t it look gorgeously nice and clear?
+
+What you need to bear in mind when using arrow functions is the behaviour of `this` that I mentioned in the beginning of this section. So, remember that in an arrow function `this` does not get rebound, it is just inherited from its parent’s scope. Imagine for instance a situation when you want to trigger an event on an element using the `addEventListener()` method. You pass this method a function as a second parameter and `this` in such function gets rebound to an element on which the event was performed. If you tried now to exchange the regular function expression inside of an `addEventListener()` method and printed `this` to the console, you may find out, it directs you to the `Window` object! This would be true if you created a function in a global scope. Conclusion: when working with events or whenever you WANT `this` to get rebound, go for a regular function expression. 
+On the other hand, in situations when you’d write something like `var self = this`, thus needed a fixed `this`, using an arrow function will makes things much cleaner.
+
+And the last thing to remember about arrow functions: they are really handy when working with **anonymous** functions. You cannot use this shorthand if your function is named.
+
 
 
 ## 3. Default Parameters

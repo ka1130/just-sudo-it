@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Mar 2017 18:35:34 +0200</pubDate>
-    <lastBuildDate>Wed, 29 Mar 2017 18:35:34 +0200</lastBuildDate>
+    <pubDate>Thu, 30 Mar 2017 21:29:52 +0200</pubDate>
+    <lastBuildDate>Thu, 30 Mar 2017 21:29:52 +0200</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -30,7 +30,29 @@
 
 &lt;h2 id=&quot;2-arrow-functions&quot;&gt;2. Arrow Functions&lt;/h2&gt;
 
-&lt;p&gt;A cool new feature of ES6 are arrow functions, also referred to as fat-arrow functions. Their name stems from the token they use: &lt;code class=&quot;highlighter-rouge&quot;&gt;=&amp;gt;&lt;/code&gt; which looks… well, like a fat arrow. Arrow functions are just a more concise syntax for writing function expressions. They also handle &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; bindings in functions in a bit different way.&lt;/p&gt;
+&lt;p&gt;A cool new feature of ES6 are arrow functions, also referred to as fat-arrow functions. Their name stems from the token they use: &lt;code class=&quot;highlighter-rouge&quot;&gt;=&amp;gt;&lt;/code&gt; which looks… well, like a fat arrow. Arrow functions are just a more concise syntax for writing function expressions. They also handle &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; bindings in functions in a different way which takes two issues. First, they
+don’t rebind the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; when you use an arrow function inside of another function. Second, the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; inside of a function can never be changed.&lt;/p&gt;
+
+&lt;p&gt;Let’s see how it works in practice. We’ll use a &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt; method on an array of numbers to sum them up:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nums&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Now with the use of ES6 standard we can simplify it to just:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nums&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Whoaa, what has just happened here? Well, first, we’ve got rid of the &lt;code class=&quot;highlighter-rouge&quot;&gt;function&lt;/code&gt; keyword. Next, we’ve replaced the &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt; curly braces with the fat-arrow token: &lt;code class=&quot;highlighter-rouge&quot;&gt;=&amp;gt;&lt;/code&gt;. Then, we’ve made use of the fact that arrow function have so-called implicit returns, which means that we could omit the &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; keyword if it was a simple one-liner. We couldn’t have done this if the &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; expression had multiple lines. And last, since we’ve had just one parameter in the function, we could omit the parentheses around it as well. Doesn’t it look gorgeously nice and clear?&lt;/p&gt;
+
+&lt;p&gt;What you need to bear in mind when using arrow functions is the behaviour of &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; that I mentioned in the beginning of this section. So, remember that in an arrow function &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; does not get rebound, it is just inherited from its parent’s scope. Imagine for instance a situation when you want to trigger an event on an element using the &lt;code class=&quot;highlighter-rouge&quot;&gt;addEventListener()&lt;/code&gt; method. You pass this method a function as a second parameter and &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; in such function gets rebound to an element on which the event was performed. If you tried now to exchange the regular function expression inside of an &lt;code class=&quot;highlighter-rouge&quot;&gt;addEventListener()&lt;/code&gt; method and printed &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; to the console, you may find out, it directs you to the &lt;code class=&quot;highlighter-rouge&quot;&gt;Window&lt;/code&gt; object! This would be true if you created a function in a global scope. Conclusion: when working with events or whenever you WANT &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; to get rebound, go for a regular function expression. 
+On the other hand, in situations when you’d write something like &lt;code class=&quot;highlighter-rouge&quot;&gt;var self = this&lt;/code&gt;, thus needed a fixed &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;, using an arrow function will makes things much cleaner.&lt;/p&gt;
+
+&lt;p&gt;And the last thing to remember about arrow functions: they are really handy when working with &lt;strong&gt;anonymous&lt;/strong&gt; functions. You cannot use this shorthand if your function is named.&lt;/p&gt;
 
 &lt;h2 id=&quot;3-default-parameters&quot;&gt;3. Default Parameters&lt;/h2&gt;
 
