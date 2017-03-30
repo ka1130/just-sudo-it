@@ -31,7 +31,9 @@ Of course, you can still use `var` if you want, there's nothing wrong with that.
 
 ## 2. Arrow Functions
 
-A cool new feature of ES6 are arrow functions, also referred to as fat-arrow functions. Their name stems from the token they use: `=>` which looks… well, like a fat arrow. Arrow functions are just a more concise syntax for writing function expressions. They also handle `this` bindings in functions in a bit different way.
+A cool new feature of ES6 are arrow functions, also referred to as fat-arrow functions. Their name stems from the token they use: `=>` which looks… well, like a fat arrow. Arrow functions are just a more concise syntax for writing function expressions. They also handle `this` bindings in functions in a different way which takes two issues. First, they
+don’t rebind the value of `this` when you use an arrow function inside of another function. Second, the value of `this` inside of a function can never be changed. Let’s see how it works in practice.
+
 
 ## 3. Default Parameters
 
