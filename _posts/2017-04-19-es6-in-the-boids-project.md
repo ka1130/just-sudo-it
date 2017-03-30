@@ -57,13 +57,37 @@ On the other hand, in situations when you’d write something like `var self = t
 
 And the last thing to remember about arrow functions: they are really handy when working with **anonymous** functions. You cannot use this shorthand if your function is named.
 
-
-
 ## 3. Default Parameters
 
+Another cool new feature of ES6 are default functions parameters. By declaring the defaults for a function you initialize it with default values of your choice. They get passed to a called function when an argument is either omitted or `undefined`. 
+
+Let’s say you want to initialize a simple `sum` function with default values. This is how you do it:
+
+{% highlight javascript %}
+function sum(a=10, b=2) {
+  console.log(a+b);
+}
+sum(5, 4); // => 9
+add(); // => 12
+{% endhighlight %}<br>
+That simple! You just assign the default values to the function you declare with the use of an equal sign. Nice, easy and really handy at times.
 
 ## 4. Template Literals 
 
+This one is easy to grasp as well. You have surely done things like this in the past:
+
+{% highlight javascript %}
+function hello(name) {
+    console.log("Hello " + name + ", nice to meet you");
+}
+{% endhighlight %}<br>
+The `+` thing looks pretty awkward especially to the newbies. Now we can handle such issues much simpler using string interpolation (you may be familiar with this idea if you use Sass). What you need is a pair of backticks `` `code` `` to wrap your expression and a dollar sign followed by a pair of curly brackets which keep an expression, parameter or variable. The above code could thus be rewritten like so:
+
+{% highlight javascript %}
+function hello(name) {
+    console.log(`Hello ` ${name}, nice to meet you`);
+}
+{% endhighlight %}<br>
 
 ## 5. Array Helpers
 

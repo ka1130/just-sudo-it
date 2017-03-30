@@ -109,7 +109,32 @@ On the other hand, in situations when you’d write something like <code class="
 
 <h2 id="3-default-parameters">3. Default Parameters</h2>
 
+<p>Another cool new feature of ES6 are default functions parameters. By declaring the defaults for a function you initialize it with default values of your choice. They get passed to a called function when an argument is either omitted or <code class="highlighter-rouge">undefined</code>.</p>
+
+<p>Let’s say you want to initialize a simple <code class="highlighter-rouge">sum</code> function with default values. This is how you do it:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nx">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// =&gt; 9</span>
+<span class="nx">add</span><span class="p">();</span> <span class="c1">// =&gt; 12</span></code></pre></figure>
+<p><br />
+That simple! You just assign the default values to the function you declare with the use of an equal sign. Nice, easy and really handy at times.</p>
+
 <h2 id="4-template-literals">4. Template Literals</h2>
+
+<p>This one is easy to grasp as well. You have surely done things like this in the past:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">hello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello "</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">", nice to meet you"</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+<p><br />
+The <code class="highlighter-rouge">+</code> thing looks pretty awkward especially to the newbies. Now we can handle such issues much simpler using string interpolation (you may be familiar with this idea if you use Sass). What you need is a pair of backticks <code class="highlighter-rouge">`code`</code> to wrap your expression and a dollar sign followed by a pair of curly brackets which keep an expression, parameter or variable. The above code could thus be rewritten like so:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">hello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">Hello</span> <span class="err">`</span> <span class="nx">$</span><span class="p">{</span><span class="nx">name</span><span class="p">},</span> <span class="nx">nice</span> <span class="nx">to</span> <span class="nx">meet</span> <span class="nx">you</span><span class="err">`</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+<p><br /></p>
 
 <h2 id="5-array-helpers">5. Array Helpers</h2>
 
