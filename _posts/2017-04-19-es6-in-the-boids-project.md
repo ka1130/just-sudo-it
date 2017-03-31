@@ -88,6 +88,19 @@ function hello(name) {
     console.log(`Hello ` ${name}, nice to meet you`);
 }
 {% endhighlight %}<br>
+Moreover, template literals support multiliners. That means you no longer need to write things like:
+
+{% highlight javascript %}
+var helloEs5 = 'Hello\n' +
+'  World\n';
+{% endhighlight %}<br>
+ES6 will understand you’d like to keep line breaks if you rewrote the above declaration:
+
+{% highlight javascript %}
+const helloEs6 = `Hello
+  World
+`;
+{% endhighlight %}<br>
 
 ## 5. Array Helpers
 
