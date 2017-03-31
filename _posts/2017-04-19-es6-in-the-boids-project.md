@@ -81,7 +81,7 @@ function hello(name) {
     console.log("Hello " + name + ", nice to meet you");
 }
 {% endhighlight %}<br>
-The `+` thing looks pretty awkward especially to the newbies. Now we can handle such issues much simpler using string interpolation (you may be familiar with this idea if you use Sass). What you need is a pair of backticks `` `code` `` to wrap your expression and a dollar sign followed by a pair of curly brackets which keep an expression, parameter or variable. The above code could thus be rewritten like so:
+The `+` thing looks pretty awkward especially to the newbies. Now we can handle such issues much simpler using string interpolation (you may be familiar with this idea if you use Sass). What you need is a pair of backticks `` `code` `` to wrap your expression and a dollar sign followed by a pair of curly brackets which keep an expression(of any kind), parameter or variable. The above code could thus be rewritten like so:
 
 {% highlight javascript %}
 function hello(name) {
@@ -101,6 +101,7 @@ const helloEs6 = `Hello
   World
 `;
 {% endhighlight %}<br>
+Again, clean, simple and self-explanatory snippet of code. And again, just a piece of syntactic sugar but since most of us like sweets - why not help yourself? :)
 
 ## 5. Array Helpers
 
