@@ -1,6 +1,6 @@
 ---
 layout: post-sidebar
-title: "8 ES6 features I use in the Boids project (and work great anywhere!)"
+title: "6 ES6 features I use in the Boids project (and work great anywhere!)"
 date: 2017-04-19 09:00:12
 categories: dsp2017 coding
 author_name : Kamila
@@ -13,7 +13,7 @@ show_related_posts: true
 comments: true
 square_related: recommend-es6
 ---
-The introduction of ECMAScript 2015 standard, also known as ES6, is a quantum leap for JavaScript that the language hadn’t seen since 2009. I didn’t realize the significance of the changes until very recently when I started to learn the new ES6 features. Some of them are pretty self-explanatory, the others took me more time to comprehend - and there’s still a bunch of stuff I have only blurry idea about. Since the best way of learning to code is actually… to code, I decided to introduce ES6 to the Boids project. And you know what, it considerably simplified and clarified the work. So I decided to share some insight with you. Here are the 8 ES6 features I have used when programming Boids.
+The introduction of ECMAScript 2015 standard, also known as ES6, is a quantum leap for JavaScript that the language hadn’t seen since 2009. I didn’t realize the significance of the changes until very recently when I started to learn the new ES6 features. Some of them are pretty self-explanatory, the others took me more time to comprehend - and there’s still a bunch of stuff I have only blurry idea about. Since the best way of learning to code is actually… to code, I decided to introduce ES6 to the Boids project. And you know what, it considerably simplified and clarified the work. So I decided to share some insight with you. Here are the 6 ES6 features I have used when programming Boids.
 
 ## 1. Block-Scoped Constructs: Let and Const
 
@@ -81,38 +81,32 @@ function hello(name) {
     console.log("Hello " + name + ", nice to meet you");
 }
 {% endhighlight %}<br>
-The `+` thing looks pretty awkward especially to the newbies. Now we can handle such issues much simpler using string interpolation (you may be familiar with this idea if you use Sass). What you need is a pair of backticks `` `code` `` to wrap your expression and a dollar sign followed by a pair of curly brackets which keep an expression(of any kind), parameter or variable. The above code could thus be rewritten like so:
+The `+` thing looks pretty awkward especially to the newbies. Now we can handle such issues much simpler using string interpolation (you may be familiar with this idea if you use Sass). What you need is a pair of backticks `` `code` `` to wrap your expression and a dollar sign followed by a pair of curly brackets which keep an expression (of any kind), parameter or variable. The above code could thus be rewritten like so:
 
 {% highlight javascript %}
 function hello(name) {
     console.log(`Hello ` ${name}, nice to meet you`);
 }
 {% endhighlight %}<br>
-Moreover, template literals support multiliners. That means you no longer need to write things like:
+Moreover, template literals support multiliners. That means you no longer need to write weird things like:
 
 {% highlight javascript %}
 var helloEs5 = 'Hello\n' +
 '  World\n';
 {% endhighlight %}<br>
-ES6 will understand you’d like to keep line breaks if you rewrote the above declaration:
+ES6 will understand you’d like to keep line breaks if you rewrote the above declaration in this way:
 
 {% highlight javascript %}
 const helloEs6 = `Hello
   World
 `;
 {% endhighlight %}<br>
-Again, clean, simple and self-explanatory snippet of code. And again, just a piece of syntactic sugar but since most of us like sweets - why not help yourself? :)
+Again, clean, simple and self-explanatory snippet of code. And again, just a piece of syntactic sugar, yet since most of us like sweets - why not help yourself? :)
 
-## 5. Array Helpers
-
-
-## 6. Rest & Spread Operators
+## 5. Destructuring
 
 
-## 7. Destructuring
-
-
-## 8. Classes
+## 6. Classes
 
 
 ## Babel
