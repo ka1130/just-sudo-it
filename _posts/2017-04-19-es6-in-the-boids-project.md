@@ -108,12 +108,29 @@ Again, clean, simple and self-explanatory snippet of code. And again, just a pie
 At this point I actually ended up dropping out destructuring from the project but who knows where the further work will bring me. Anyways, destructuring is a really nifty way of extracting data from arrays and objects and assign them to variables. Let’s have a look at the following example:
 
 {% highlight javascript %}
+let names = ["Sally", "James", "Ben"];
+let [name1, name2, name3] = names;
 
+console.log(name1);  //"Sally"
+console.log(name2);  //"James"
+console.log(name3);  //"Ben"
 {% endhighlight %}<br>
+Instead of referring each object in the array with the use of its index value, we can simply destructure the array, passing to the square brackets the names of the variables. If we passed less names than the amount of elements in the array, nothing will happen - the excess elements will be ignored.
 
+Destructuring works pretty the same way with objects.
 
 {% highlight javascript %}
+const person = {
+  firstname: "John",
+  lastname: "Smith",
+  country: "Canada" 
+  }
 
+let { firstname, lastname, country } = person;
+
+console.log(firstname);  //"John"
+console.log(lastname);  //"Smith"
+console.log(country);  //"Canada"
 {% endhighlight %}<br>
 
 ## 6. Classes
