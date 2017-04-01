@@ -132,9 +132,13 @@ console.log(firstname);  //"John"
 console.log(lastname);  //"Smith"
 console.log(country);  //"Canada"
 {% endhighlight %}<br>
+Again, the output code is clean, readable and easy to maintain. Of course, there’s much more you can do with destructuring (as with any other feature I present in this post), so go ahead and check it out. I will also show you some resources in the Internet which go deeper into ES6 in the sum-up section.
 
 ## 6. Classes
 
+Last but not least, classes. I've found this feature particularly helpful in my project. Classes will replace the ES5 constructor functions and take JavaScript closer to fully object-oriented languages. Classes are just a bit of syntactic sugar over prototypal inheritance in JS but they make the syntax much cleaner and more readable. JavaScript still keeps its prototypal way of object inheritance, so ES6 classes do not work exactly like in classic OOP as, for obvious reasons, JS has to maintain backward compatibility.
+
+To define a class we simply use the `class` keyword followed by its name and a pair of curly braces which keep the class’ body. Here, we can set a special `constructor` method which initializes every instance of the class with a defined logic. For example:
 
 ## Babel
 

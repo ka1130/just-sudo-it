@@ -152,11 +152,36 @@ Again, clean, simple and self-explanatory snippet of code. And again, just a pie
 
 <p>At this point I actually ended up dropping out destructuring from the project but who knows where the further work will bring me. Anyways, destructuring is a really nifty way of extracting data from arrays and objects and assign them to variables. Let’s have a look at the following example:</p>
 
-<p><br /></p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Sally"</span><span class="p">,</span> <span class="s2">"James"</span><span class="p">,</span> <span class="s2">"Ben"</span><span class="p">];</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="nx">name3</span><span class="p">]</span> <span class="o">=</span> <span class="nx">names</span><span class="p">;</span>
 
-<p><br /></p>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name1</span><span class="p">);</span>  <span class="c1">//"Sally"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name2</span><span class="p">);</span>  <span class="c1">//"James"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name3</span><span class="p">);</span>  <span class="c1">//"Ben"</span></code></pre></figure>
+<p><br />
+Instead of referring each object in the array with the use of its index value, we can simply destructure the array, passing to the square brackets the names of the variables. If we passed less names than the amount of elements in the array, nothing will happen - the excess elements will be ignored.</p>
+
+<p>Destructuring works pretty the same way with objects.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">firstname</span><span class="p">:</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="na">lastname</span><span class="p">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
+  <span class="na">country</span><span class="p">:</span> <span class="s2">"Canada"</span> 
+  <span class="p">}</span>
+
+<span class="kd">let</span> <span class="p">{</span> <span class="nx">firstname</span><span class="p">,</span> <span class="nx">lastname</span><span class="p">,</span> <span class="nx">country</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">person</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>  <span class="c1">//"John"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastname</span><span class="p">);</span>  <span class="c1">//"Smith"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">country</span><span class="p">);</span>  <span class="c1">//"Canada"</span></code></pre></figure>
+<p><br />
+Again, the output code is clean, readable and easy to maintain. Of course, there’s much more you can do with destructuring (as with any other feature I present in this post), so go ahead and check it out. I will also show you some resources in the Internet which go deeper into ES6 in the sum-up section.</p>
 
 <h2 id="6-classes">6. Classes</h2>
+
+<p>Last but not least, classes. I’ve found this feature particularly helpful in my project. Classes will replace the ES5 constructor functions and take JavaScript closer to fully object-oriented languages. Classes are just a bit of syntactic sugar over prototypal inheritance in JS but they make the syntax much cleaner and more readable. JavaScript still keeps its prototypal way of object inheritance, so ES6 classes do not work exactly like in classic OOP as, for obvious reasons, JS has to maintain backward compatibility.</p>
+
+<p>To define a class we simply use the <code class="highlighter-rouge">class</code> keyword followed by its name and a pair of curly braces which keep the class’ body. Here, we can set a special <code class="highlighter-rouge">constructor</code> method which initializes every instance of the class with a defined logic. For example:</p>
 
 <h2 id="babel">Babel</h2>
 
