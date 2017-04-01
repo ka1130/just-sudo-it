@@ -140,6 +140,35 @@ Last but not least, classes. I've found this feature particularly helpful in my 
 
 To define a class we simply use the `class` keyword followed by its name and a pair of curly braces which keep the class’ body. Here, we can set a special `constructor` method which initializes every instance of the class with a defined logic. For example:
 
+{% highlight javascript %}
+class Car {
+    constructor(brand, year) {
+        this._brand = brand;
+        this._year = year;
+    }
+}
+
+let toyota = new Car("Toyota", "2012");
+
+console.log(toyota); //Car {_brand: "Toyota", _year: "2012"}
+{% endhighlight %}<br>
+We can also set methods for a class, again, in a much more concise and clean way. Let’s add a `drive()` method to our class:
+
+{% highlight javascript %}
+class Car {
+    constructor(brand, year) {
+        this._brand = brand;
+        this._year = year;
+    }
+    drive() {
+        console.log("vroom");
+    }
+}
+
+let toyota = new Car("Toyota", "2012");
+
+toyota.drive(); //vroom
+{% endhighlight %}<br>
 ## Babel
 
 

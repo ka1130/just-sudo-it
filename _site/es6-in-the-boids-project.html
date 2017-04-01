@@ -183,6 +183,33 @@ Again, the output code is clean, readable and easy to maintain. Of course, there
 
 <p>To define a class we simply use the <code class="highlighter-rouge">class</code> keyword followed by its name and a pair of curly braces which keep the class’ body. Here, we can set a special <code class="highlighter-rouge">constructor</code> method which initializes every instance of the class with a defined logic. For example:</p>
 
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">Car</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">year</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_brand</span> <span class="o">=</span> <span class="nx">brand</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_year</span> <span class="o">=</span> <span class="nx">year</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">toyota</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s2">"Toyota"</span><span class="p">,</span> <span class="s2">"2012"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">toyota</span><span class="p">);</span> <span class="c1">//Car {_brand: "Toyota", _year: "2012"}</span></code></pre></figure>
+<p><br />
+We can also set methods for a class, again, in a much more concise and clean way. Let’s add a <code class="highlighter-rouge">drive()</code> method to our class:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">Car</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">year</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_brand</span> <span class="o">=</span> <span class="nx">brand</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_year</span> <span class="o">=</span> <span class="nx">year</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">drive</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"vroom"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">toyota</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s2">"Toyota"</span><span class="p">,</span> <span class="s2">"2012"</span><span class="p">);</span>
+
+<span class="nx">toyota</span><span class="p">.</span><span class="nx">drive</span><span class="p">();</span> <span class="c1">//vroom</span></code></pre></figure>
+<p><br /></p>
 <h2 id="babel">Babel</h2>
 
 <h2 id="summing-up--learning-resources">Summing Up &amp; Learning Resources</h2>
