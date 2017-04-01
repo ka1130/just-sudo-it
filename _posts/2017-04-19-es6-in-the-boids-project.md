@@ -105,6 +105,16 @@ Again, clean, simple and self-explanatory snippet of code. And again, just a pie
 
 ## 5. Destructuring
 
+At this point I actually ended up dropping out destructuring from the project but who knows where the further work will bring me. Anyways, destructuring is a really nifty way of extracting data from arrays and objects and assign them to variables. Let’s have a look at the following example:
+
+{% highlight javascript %}
+
+{% endhighlight %}<br>
+
+
+{% highlight javascript %}
+
+{% endhighlight %}<br>
 
 ## 6. Classes
 
