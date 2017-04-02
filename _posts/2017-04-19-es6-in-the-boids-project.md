@@ -169,8 +169,25 @@ let toyota = new Car("Toyota", "2012");
 
 toyota.drive(); //vroom
 {% endhighlight %}<br>
+You can also make use of inheritance and create subclasses (also referred to as “derived classes”) with the new `extends` keyword. Now let’s imagine we would like to create a subclass that inherits the properties of the Car and extends them with yet another “model” property. In this case, we can make use of the `super` keyword which calls the parent class. Let’s see this in action:
+
+{% highlight javascript %}
+class Model extends Car {
+    constructor(brand, year, model) {
+        super(brand, year);
+        this._model = model;
+    }
+}
+
+let prius = new Model("Toyota", "2012", "Prius");
+
+console.log(prius); //Model {_brand: "Toyota", _year: "2012", _model: "Prius"}
+prius.drive(); //vroom
+{% endhighlight %}<br>
+Bear in mind that a subclass cannot contain an empty constructor. Even if the constructor would only call `super()`, it still needs to be there.
 ## Babel
 
+Now here’s the key issue: “Can I use…?”. 
 
 ## Summing Up & Learning Resources
 

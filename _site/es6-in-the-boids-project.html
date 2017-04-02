@@ -209,8 +209,25 @@ We can also set methods for a class, again, in a much more concise and clean way
 <span class="kd">let</span> <span class="nx">toyota</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s2">"Toyota"</span><span class="p">,</span> <span class="s2">"2012"</span><span class="p">);</span>
 
 <span class="nx">toyota</span><span class="p">.</span><span class="nx">drive</span><span class="p">();</span> <span class="c1">//vroom</span></code></pre></figure>
-<p><br /></p>
+<p><br />
+You can also make use of inheritance and create subclasses (also referred to as “derived classes”) with the new <code class="highlighter-rouge">extends</code> keyword. Now let’s imagine we would like to create a subclass that inherits the properties of the Car and extends them with yet another “model” property. In this case, we can make use of the <code class="highlighter-rouge">super</code> keyword which calls the parent class. Let’s see this in action:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">Model</span> <span class="kr">extends</span> <span class="nx">Car</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">year</span><span class="p">,</span> <span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">year</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_model</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">prius</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Model</span><span class="p">(</span><span class="s2">"Toyota"</span><span class="p">,</span> <span class="s2">"2012"</span><span class="p">,</span> <span class="s2">"Prius"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prius</span><span class="p">);</span> <span class="c1">//Model {_brand: "Toyota", _year: "2012", _model: "Prius"}</span>
+<span class="nx">prius</span><span class="p">.</span><span class="nx">drive</span><span class="p">();</span> <span class="c1">//vroom</span></code></pre></figure>
+<p><br />
+Bear in mind that a subclass cannot contain an empty constructor. Even if the constructor would only call <code class="highlighter-rouge">super()</code>, it still needs to be there.</p>
 <h2 id="babel">Babel</h2>
+
+<p>Now here’s the key issue: “Can I use…?”.</p>
 
 <h2 id="summing-up--learning-resources">Summing Up &amp; Learning Resources</h2>
 
