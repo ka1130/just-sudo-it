@@ -187,7 +187,7 @@ prius.drive(); //vroom
 Bear in mind that a subclass cannot contain an empty constructor. Even if the constructor would only call `super()`, it still needs to be there.
 ## Babel
 
-Now here’s the key issue: “Can I use…?”. 
+Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are probematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is [Babel](https://babeljs.io/).
 
 ## Summing Up & Learning Resources
 
