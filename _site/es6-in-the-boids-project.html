@@ -225,9 +225,12 @@ You can also make use of inheritance and create subclasses (also referred to as 
 <span class="nx">prius</span><span class="p">.</span><span class="nx">drive</span><span class="p">();</span> <span class="c1">//vroom</span></code></pre></figure>
 <p><br />
 Bear in mind that a subclass cannot contain an empty constructor. Even if the constructor would only call <code class="highlighter-rouge">super()</code>, it still needs to be there.</p>
+
 <h2 id="babel">Babel</h2>
 
-<p>Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are probematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is <a href="https://babeljs.io/">Babel</a>.</p>
+<p>Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are problematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is <a href="https://babeljs.io/">Babel</a>. Go ahead and visit its site. In the top menu you will find a “Try it out” tab which allows you to see how Babel handles your ES6 code. When you paste a snippet of your code on the left, its ES5 representation will show up on the right. Babel does a really good job here!</p>
+
+<p>Installing Babel is easy. A prerequisite is Node.js and npm running on your system. If you do not have them on your system - or aren’t sure about it - please refer to my <a href="http://just-sudo-it.pl/gulp-introduction">Gulp introduction</a>, the first part will follow you along with that.</p>
 
 <h2 id="summing-up--learning-resources">Summing Up &amp; Learning Resources</h2>
 

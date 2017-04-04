@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Apr 2017 19:50:28 +0200</pubDate>
-    <lastBuildDate>Tue, 04 Apr 2017 19:50:28 +0200</lastBuildDate>
+    <pubDate>Tue, 04 Apr 2017 21:54:28 +0200</pubDate>
+    <lastBuildDate>Tue, 04 Apr 2017 21:54:28 +0200</lastBuildDate>
     <generator>Jekyll v3.4.2</generator>
     
       <item>
@@ -172,9 +172,12 @@ You can also make use of inheritance and create subclasses (also referred to as 
 &lt;span class=&quot;nx&quot;&gt;prius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//vroom&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;br /&gt;
 Bear in mind that a subclass cannot contain an empty constructor. Even if the constructor would only call &lt;code class=&quot;highlighter-rouge&quot;&gt;super()&lt;/code&gt;, it still needs to be there.&lt;/p&gt;
+
 &lt;h2 id=&quot;babel&quot;&gt;Babel&lt;/h2&gt;
 
-&lt;p&gt;Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are probematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is &lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are problematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is &lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt;. Go ahead and visit its site. In the top menu you will find a “Try it out” tab which allows you to see how Babel handles your ES6 code. When you paste a snippet of your code on the left, its ES5 representation will show up on the right. Babel does a really good job here!&lt;/p&gt;
+
+&lt;p&gt;Installing Babel is easy. A prerequisite is Node.js and npm running on your system. If you do not have them on your system - or aren’t sure about it - please refer to my &lt;a href=&quot;http://just-sudo-it.pl/gulp-introduction&quot;&gt;Gulp introduction&lt;/a&gt;, the first part will follow you along with that.&lt;/p&gt;
 
 &lt;h2 id=&quot;summing-up--learning-resources&quot;&gt;Summing Up &amp;amp; Learning Resources&lt;/h2&gt;
 
