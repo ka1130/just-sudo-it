@@ -185,9 +185,13 @@ console.log(prius); //Model {_brand: "Toyota", _year: "2012", _model: "Prius"}
 prius.drive(); //vroom
 {% endhighlight %}<br>
 Bear in mind that a subclass cannot contain an empty constructor. Even if the constructor would only call `super()`, it still needs to be there.
+
 ## Babel
 
-Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are probematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is [Babel](https://babeljs.io/).
+Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are problematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is [Babel](https://babeljs.io/). Go ahead and visit its site. In the top menu you will find a “Try it out” tab which allows you to see how Babel handles your ES6 code. When you paste a snippet of your code on the left, its ES5 representation will show up on the right. Babel does a really good job here!
+
+Installing Babel is easy. A prerequisite is Node.js and npm running on your system. If you do not have them on your system - or aren’t sure about it - please refer to my [Gulp introduction](http://just-sudo-it.pl/gulp-introduction), the first part will follow you along with that.
+
 
 ## Summing Up & Learning Resources
 
