@@ -116,7 +116,8 @@ On the other hand, in situations when you’d write something like <code class="
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nx">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nx">sum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// =&gt; 9</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// =&gt; 9
+</span>
 <span class="nx">add</span><span class="p">();</span> <span class="c1">// =&gt; 12</span></code></pre></figure>
 <p><br />
 That simple! You just assign the default values to the function you declare with the use of an equal sign. Nice, easy and really handy at times.</p>
@@ -155,8 +156,10 @@ Again, clean, simple and self-explanatory snippet of code. And again, just a pie
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Sally"</span><span class="p">,</span> <span class="s2">"James"</span><span class="p">,</span> <span class="s2">"Ben"</span><span class="p">];</span>
 <span class="kd">let</span> <span class="p">[</span><span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="nx">name3</span><span class="p">]</span> <span class="o">=</span> <span class="nx">names</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name1</span><span class="p">);</span>  <span class="c1">//"Sally"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name2</span><span class="p">);</span>  <span class="c1">//"James"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name1</span><span class="p">);</span>  <span class="c1">//"Sally"
+</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name2</span><span class="p">);</span>  <span class="c1">//"James"
+</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name3</span><span class="p">);</span>  <span class="c1">//"Ben"</span></code></pre></figure>
 <p><br />
 Instead of referring each object in the array with the use of its index value, we can simply destructure the array, passing to the square brackets the names of the variables. If we passed less names than the amount of elements in the array, nothing will happen - the excess elements will be ignored.</p>
@@ -171,8 +174,10 @@ Instead of referring each object in the array with the use of its index value, w
 
 <span class="kd">let</span> <span class="p">{</span> <span class="nx">firstname</span><span class="p">,</span> <span class="nx">lastname</span><span class="p">,</span> <span class="nx">country</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">person</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>  <span class="c1">//"John"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastname</span><span class="p">);</span>  <span class="c1">//"Smith"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>  <span class="c1">//"John"
+</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastname</span><span class="p">);</span>  <span class="c1">//"Smith"
+</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">country</span><span class="p">);</span>  <span class="c1">//"Canada"</span></code></pre></figure>
 <p><br />
 Again, the output code is clean, readable and easy to maintain. Of course, there’s much more you can do with destructuring (as with any other feature I present in this post), so go ahead and check it out. I will also show you some resources in the Internet which go deeper into ES6 in the sum-up section.</p>
@@ -221,7 +226,8 @@ You can also make use of inheritance and create subclasses (also referred to as 
 
 <span class="kd">let</span> <span class="nx">prius</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Model</span><span class="p">(</span><span class="s2">"Toyota"</span><span class="p">,</span> <span class="s2">"2012"</span><span class="p">,</span> <span class="s2">"Prius"</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prius</span><span class="p">);</span> <span class="c1">//Model {_brand: "Toyota", _year: "2012", _model: "Prius"}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prius</span><span class="p">);</span> <span class="c1">//Model {_brand: "Toyota", _year: "2012", _model: "Prius"}
+</span>
 <span class="nx">prius</span><span class="p">.</span><span class="nx">drive</span><span class="p">();</span> <span class="c1">//vroom</span></code></pre></figure>
 <p><br />
 Bear in mind that a subclass cannot contain an empty constructor. Even if the constructor would only call <code class="highlighter-rouge">super()</code>, it still needs to be there.</p>
@@ -230,9 +236,21 @@ Bear in mind that a subclass cannot contain an empty constructor. Even if the co
 
 <p>Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are problematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is <a href="https://babeljs.io/">Babel</a>. Go ahead and visit its site. In the top menu you will find a “Try it out” tab which allows you to see how Babel handles your ES6 code. When you paste a snippet of your code on the left, its ES5 representation will show up on the right. Babel does a really good job here!</p>
 
-<p>Installing Babel is easy. A prerequisite is Node.js and npm running on your system. If you do not have them on your system - or aren’t sure about it - please refer to my <a href="http://just-sudo-it.pl/gulp-introduction">Gulp introduction</a>, the first part will follow you along with that.</p>
+<p>An instruction for using Babel could actually take a whole new and quite long tutorial(and I consider preparing one for you) so for now please just refer to the great <a href="https://babeljs.io/docs/setup/">Babel documentation</a> or try out the tool live <a href="https://babeljs.io/repl/">here</a>.</p>
 
 <h2 id="summing-up--learning-resources">Summing Up &amp; Learning Resources</h2>
+
+<p>Despite the substantial length of this post, this was just a very brief introduction into the ES6 features described, let alone the whole bunch of other stuff that ES6 has in its offer. I assume you’d feel like diving deeper into the subject so I created a list of nice resources for you. A few free once to start:</p>
+
+<ul>
+  <li>A nice course by <a href="https://egghead.io/courses/learn-es6-ecmascript-2015">Egghead.io</a></li>
+  <li><a href="https://hacks.mozilla.org/category/es6-in-depth/">Mozilla</a></li>
+  <li>
+    <p><a href="https://medium.com/@mrzepinski">Medium.com</a></p>
+  </li>
+  <li><a href="http://wesbos.com/es6-for-everyone/">Wes Bos</a></li>
+  <li><a href="https://www.udemy.com/javascript-es6-tutorial/">Udemy</a></li>
+</ul>
 
 
 

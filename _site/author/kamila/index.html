@@ -100,6 +100,191 @@
 
             <p>The introduction of ECMAScript 2015 standard, also known as ES6, is a quantum leap for JavaScript that the language hadn’t seen since 2009. I didn’t realize the significance of the changes until very recently when I started to learn the new ES6 features. Some of them are pretty self-explanatory, the others took me more time to comprehend - and there’s still a bunch of stuff I have only blurry idea about. Since the best way of learning to code is actually… to code, I decided to introduce ES6 to the Boids project. And you know what, it considerably simplified and clarified the work. So I decided to share some insight with you. Here are the 6 ES6 features I have used when programming Boids.</p>
 
+<h2 id="1-block-scoped-constructs-let-and-const">1. Block-Scoped Constructs: Let and Const</h2>
+
+<p>ES6 has introduced two new ways of defining variables. Apart from <code class="highlighter-rouge">var</code> we have also now <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">cost</code>. Now what are <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> for and why was <code class="highlighter-rouge">var</code> not enough?</p>
+
+<p>The main problem with <code class="highlighter-rouge">var</code> was its scope, which is a function scope, whereas <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> are block-scoped. It means they only exist within the current block represented by a pair of curly braces: <code class="highlighter-rouge"><span class="p">{}</span></code>: it may be a block within an <code class="highlighter-rouge">if</code> statement, a loop - or you can simply create one and put your <code class="highlighter-rouge">let</code> or <code class="highlighter-rouge">const</code> inside. This helps avoid common developers’ problems and makes JavaScript behave more predictably to those used to work in other languages, such as Java, C or C++.</p>
+
+<p>Also, when using <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> you do not fall into the hoisting trap, which you may welcome with relief as many people find the hoisting idea pretty distressing. This is because <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> remain uninitialized until they are declared. The timespan before <code class="highlighter-rouge">let</code> or <code class="highlighter-rouge">const</code> initialization is called “Temporal Dead Zone” (TDZ). For more in-depth explanation, have a look <a href="https://ponyfoo.com/articles/es6-let-const-and-temporal-dead-zone-in-depth">here</a>.</p>
+
+<p>Next, <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> declarations cannot be reassigned. So you won’t accidentally overwrite your variables. You can only update the value of <code class="highlighter-rouge">let</code>. By contrast, <code class="highlighter-rouge">const</code> declaration is created to keep values that will not be changed. Some programmers say it’s best to use <code class="highlighter-rouge">const</code> by default and <code class="highlighter-rouge">let</code> only in special cases, when the value of the variable is bound to be changed (such as the counter in your <code class="highlighter-rouge">for</code> loop).</p>
+
+<p>Last but not least, <code class="highlighter-rouge">let</code> and <code class="highlighter-rouge">const</code> do not become properties of the global object, in case you defined them globally (which you should never do by the way). The same is true for the new ES6 Classes - and I’ll tell you more about them later in this post.</p>
+
+<p>Of course, you can still use <code class="highlighter-rouge">var</code> if you want, there’s nothing wrong with that. Just be aware of it’s characteristics and give the new constructs a try too see if you feel commfortable working with them.</p>
+
+<h2 id="2-arrow-functions">2. Arrow Functions</h2>
+
+<p>A cool new feature of ES6 are arrow functions, also referred to as fat-arrow functions. Their name stems from the token they use: <code class="highlighter-rouge">=&gt;</code> which looks… well, like a fat arrow. Arrow functions are just a more concise syntax for writing function expressions. They also handle <code class="highlighter-rouge">this</code> bindings in functions in a different way which takes two issues. First, they
+don’t rebind the value of <code class="highlighter-rouge">this</code> when you use an arrow function inside of another function. Second, the value of <code class="highlighter-rouge">this</code> inside of a function can never be changed.</p>
+
+<p>Let’s see how it works in practice. We’ll use a <code class="highlighter-rouge">map</code> method on an array of numbers to sum them up:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">];</span>
+
+<span class="nx">nums</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">return</span> <span class="nx">num</span> <span class="o">+</span> <span class="nx">num</span><span class="p">;</span>
+<span class="p">});</span></code></pre></figure>
+<p><br />
+Now with the use of ES6 standard we can simplify it to just:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">];</span>
+
+<span class="nx">nums</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">num</span> <span class="o">=&gt;</span> <span class="nx">num</span> <span class="o">+</span> <span class="nx">num</span><span class="p">);</span></code></pre></figure>
+<p><br />
+Whoaa, what has just happened here? Well, first, we’ve got rid of the <code class="highlighter-rouge">function</code> keyword. Next, we’ve replaced the <code class="highlighter-rouge"><span class="p">{}</span></code> curly braces with the fat-arrow token: <code class="highlighter-rouge">=&gt;</code>. Then, we’ve made use of the fact that arrow function have so-called implicit returns, which means that we could omit the <code class="highlighter-rouge">return</code> keyword if it was a simple one-liner. We couldn’t have done this if the <code class="highlighter-rouge">return</code> expression had multiple lines. And last, since we’ve had just one parameter in the function, we could omit the parentheses around it as well. Doesn’t it look gorgeously nice and clear?</p>
+
+<p>What you need to bear in mind when using arrow functions is the behaviour of <code class="highlighter-rouge">this</code> that I mentioned in the beginning of this section. So, remember that in an arrow function <code class="highlighter-rouge">this</code> does not get rebound, it is just inherited from its parent’s scope. Imagine for instance a situation when you want to trigger an event on an element using the <code class="highlighter-rouge">addEventListener()</code> method. You pass this method a function as a second parameter and <code class="highlighter-rouge">this</code> in such function gets rebound to an element on which the event was performed. If you tried now to exchange the regular function expression inside of an <code class="highlighter-rouge">addEventListener()</code> method and printed <code class="highlighter-rouge">this</code> to the console, you may find out, it directs you to the <code class="highlighter-rouge">Window</code> object! This would be true if you created a function in a global scope. Conclusion: when working with events or whenever you WANT <code class="highlighter-rouge">this</code> to get rebound, go for a regular function expression. 
+On the other hand, in situations when you’d write something like <code class="highlighter-rouge">var self = this</code>, thus needed a fixed <code class="highlighter-rouge">this</code>, using an arrow function will makes things much cleaner.</p>
+
+<p>And the last thing to remember about arrow functions: they are really handy when working with <strong>anonymous</strong> functions. You cannot use this shorthand if your function is named.</p>
+
+<h2 id="3-default-parameters">3. Default Parameters</h2>
+
+<p>Another cool new feature of ES6 are default functions parameters. By declaring the defaults for a function you initialize it with default values of your choice. They get passed to a called function when an argument is either omitted or <code class="highlighter-rouge">undefined</code>.</p>
+
+<p>Let’s say you want to initialize a simple <code class="highlighter-rouge">sum</code> function with default values. This is how you do it:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nx">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// =&gt; 9
+</span>
+<span class="nx">add</span><span class="p">();</span> <span class="c1">// =&gt; 12</span></code></pre></figure>
+<p><br />
+That simple! You just assign the default values to the function you declare with the use of an equal sign. Nice, easy and really handy at times.</p>
+
+<h2 id="4-template-literals">4. Template Literals</h2>
+
+<p>This one is easy to grasp as well. You have surely done things like this in the past:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">hello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello "</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">", nice to meet you"</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+<p><br />
+The <code class="highlighter-rouge">+</code> thing looks pretty awkward especially to the newbies. Now we can handle such issues much simpler using string interpolation (you may be familiar with this idea if you use Sass). What you need is a pair of backticks <code class="highlighter-rouge">`code`</code> to wrap your expression and a dollar sign followed by a pair of curly brackets which keep an expression (of any kind), parameter or variable. The above code could thus be rewritten like so:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">hello</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">`</span><span class="nx">Hello</span> <span class="err">`</span> <span class="nx">$</span><span class="p">{</span><span class="nx">name</span><span class="p">},</span> <span class="nx">nice</span> <span class="nx">to</span> <span class="nx">meet</span> <span class="nx">you</span><span class="err">`</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+<p><br />
+Moreover, template literals support multiliners. That means you no longer need to write weird things like:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">helloEs5</span> <span class="o">=</span> <span class="s1">'Hello\n'</span> <span class="o">+</span>
+<span class="s1">'  World\n'</span><span class="p">;</span></code></pre></figure>
+<p><br />
+ES6 will understand you’d like to keep line breaks if you rewrote the above declaration in this way:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">helloEs6</span> <span class="o">=</span> <span class="err">`</span><span class="nx">Hello</span>
+  <span class="nx">World</span>
+<span class="err">`</span><span class="p">;</span></code></pre></figure>
+<p><br />
+Again, clean, simple and self-explanatory snippet of code. And again, just a piece of syntactic sugar, yet since most of us like sweets - why not help yourself? :)</p>
+
+<h2 id="5-destructuring">5. Destructuring</h2>
+
+<p>At this point I actually ended up dropping out destructuring from the project but who knows where the further work will bring me. Anyways, destructuring is a really nifty way of extracting data from arrays and objects and assign them to variables. Let’s have a look at the following example:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Sally"</span><span class="p">,</span> <span class="s2">"James"</span><span class="p">,</span> <span class="s2">"Ben"</span><span class="p">];</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="nx">name3</span><span class="p">]</span> <span class="o">=</span> <span class="nx">names</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name1</span><span class="p">);</span>  <span class="c1">//"Sally"
+</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name2</span><span class="p">);</span>  <span class="c1">//"James"
+</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name3</span><span class="p">);</span>  <span class="c1">//"Ben"</span></code></pre></figure>
+<p><br />
+Instead of referring each object in the array with the use of its index value, we can simply destructure the array, passing to the square brackets the names of the variables. If we passed less names than the amount of elements in the array, nothing will happen - the excess elements will be ignored.</p>
+
+<p>Destructuring works pretty the same way with objects.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">firstname</span><span class="p">:</span> <span class="s2">"John"</span><span class="p">,</span>
+  <span class="na">lastname</span><span class="p">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
+  <span class="na">country</span><span class="p">:</span> <span class="s2">"Canada"</span> 
+  <span class="p">}</span>
+
+<span class="kd">let</span> <span class="p">{</span> <span class="nx">firstname</span><span class="p">,</span> <span class="nx">lastname</span><span class="p">,</span> <span class="nx">country</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">person</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>  <span class="c1">//"John"
+</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastname</span><span class="p">);</span>  <span class="c1">//"Smith"
+</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">country</span><span class="p">);</span>  <span class="c1">//"Canada"</span></code></pre></figure>
+<p><br />
+Again, the output code is clean, readable and easy to maintain. Of course, there’s much more you can do with destructuring (as with any other feature I present in this post), so go ahead and check it out. I will also show you some resources in the Internet which go deeper into ES6 in the sum-up section.</p>
+
+<h2 id="6-classes">6. Classes</h2>
+
+<p>Last but not least, classes. I’ve found this feature particularly helpful in my project. Classes will replace the ES5 constructor functions and take JavaScript closer to fully object-oriented languages. Classes are just a bit of syntactic sugar over prototypal inheritance in JS but they make the syntax much cleaner and more readable. JavaScript still keeps its prototypal way of object inheritance, so ES6 classes do not work exactly like in classic OOP as, for obvious reasons, JS has to maintain backward compatibility.</p>
+
+<p>To define a class we simply use the <code class="highlighter-rouge">class</code> keyword followed by its name and a pair of curly braces which keep the class’ body. Here, we can set a special <code class="highlighter-rouge">constructor</code> method which initializes every instance of the class with a defined logic. For example:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">Car</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">year</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_brand</span> <span class="o">=</span> <span class="nx">brand</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_year</span> <span class="o">=</span> <span class="nx">year</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">toyota</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s2">"Toyota"</span><span class="p">,</span> <span class="s2">"2012"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">toyota</span><span class="p">);</span> <span class="c1">//Car {_brand: "Toyota", _year: "2012"}</span></code></pre></figure>
+<p><br />
+We can also set methods for a class, again, in a much more concise and clean way. Let’s add a <code class="highlighter-rouge">drive()</code> method to our class:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">Car</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">year</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_brand</span> <span class="o">=</span> <span class="nx">brand</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_year</span> <span class="o">=</span> <span class="nx">year</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">drive</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"vroom"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">toyota</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s2">"Toyota"</span><span class="p">,</span> <span class="s2">"2012"</span><span class="p">);</span>
+
+<span class="nx">toyota</span><span class="p">.</span><span class="nx">drive</span><span class="p">();</span> <span class="c1">//vroom</span></code></pre></figure>
+<p><br />
+You can also make use of inheritance and create subclasses (also referred to as “derived classes”) with the new <code class="highlighter-rouge">extends</code> keyword. Now let’s imagine we would like to create a subclass that inherits the properties of the Car and extends them with yet another “model” property. In this case, we can make use of the <code class="highlighter-rouge">super</code> keyword which calls the parent class. Let’s see this in action:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">class</span> <span class="nx">Model</span> <span class="kr">extends</span> <span class="nx">Car</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">year</span><span class="p">,</span> <span class="nx">model</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kr">super</span><span class="p">(</span><span class="nx">brand</span><span class="p">,</span> <span class="nx">year</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_model</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">prius</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Model</span><span class="p">(</span><span class="s2">"Toyota"</span><span class="p">,</span> <span class="s2">"2012"</span><span class="p">,</span> <span class="s2">"Prius"</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prius</span><span class="p">);</span> <span class="c1">//Model {_brand: "Toyota", _year: "2012", _model: "Prius"}
+</span>
+<span class="nx">prius</span><span class="p">.</span><span class="nx">drive</span><span class="p">();</span> <span class="c1">//vroom</span></code></pre></figure>
+<p><br />
+Bear in mind that a subclass cannot contain an empty constructor. Even if the constructor would only call <code class="highlighter-rouge">super()</code>, it still needs to be there.</p>
+
+<h2 id="babel">Babel</h2>
+
+<p>Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are problematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is <a href="https://babeljs.io/">Babel</a>. Go ahead and visit its site. In the top menu you will find a “Try it out” tab which allows you to see how Babel handles your ES6 code. When you paste a snippet of your code on the left, its ES5 representation will show up on the right. Babel does a really good job here!</p>
+
+<p>An instruction for using Babel could actually take a whole new and quite long tutorial(and I consider preparing one for you) so for now please just refer to the great <a href="https://babeljs.io/docs/setup/">Babel documentation</a> or try out the tool live <a href="https://babeljs.io/repl/">here</a>.</p>
+
+<h2 id="summing-up--learning-resources">Summing Up &amp; Learning Resources</h2>
+
+<p>Despite the substantial length of this post, this was just a very brief introduction into the ES6 features described, let alone the whole bunch of other stuff that ES6 has in its offer. I assume you’d feel like diving deeper into the subject so I created a list of nice resources for you. A few free once to start:</p>
+
+<ul>
+  <li>A nice course by <a href="https://egghead.io/courses/learn-es6-ecmascript-2015">Egghead.io</a></li>
+  <li><a href="https://hacks.mozilla.org/category/es6-in-depth/">Mozilla</a></li>
+  <li>
+    <p><a href="https://medium.com/@mrzepinski">Medium.com</a></p>
+  </li>
+  <li><a href="http://wesbos.com/es6-for-everyone/">Wes Bos</a></li>
+  <li><a href="https://www.udemy.com/javascript-es6-tutorial/">Udemy</a></li>
+</ul>
+
 
 
             <p class="meta">
@@ -131,6 +316,52 @@
 
             <p>OK, time for a coming out. I am 33 years old and I have just started my career as a Junior Front-End Developer. My former position? Senior Graphic Designer. I have been working in the design industry for 9 years, after completing 5 years long studies in the Graphic Design faculty. Adding 2 years of pre-study preparations, it gives me 16 years that I have just turned into dust. Sounds gloomy but, believe me, I feel really happy and excited. Many people ask me why I quit a stable, well-paid job, with no after-hours and familiar environment to… work much more for less(which is obvious at the beginning). Why did I then spend a big part of my savings to get into a full-time programming bootcamp that was eating up to 11-12 hours a day? And how come I find it really cool as opposed to designing, which people believe is more play than work? Well, the answer demands a whole story.</p>
 
+<h2 id="the-choices">The choices</h2>
+
+<p>I was struggling with career choices from a young, actually too young age. The world seemed so inspiring that I wanted to do everything, preferably, everything simultaneously. ;) And yet, everybody around told me I needed to pick up just one thing and concentrate on that since, they explained, I’d have only one profession in my adult life. Trying to figure out what to choose from the growing amount of possibilities, one thing was obvious to me: it had to be something creative. I ended up going for graphic design - not that I had any special manual skills - but I have always loved arts of any kind and designing seemed really alluring. Plus, since the collapse of Communism in Poland, the advertising industry was thriving. Finishing our studies on 2007, me and almost all my fellow students dreamed of working in a “real” advertising agency, imaging it as the coolest and most rewarding job in the world.</p>
+
+<h2 id="imagination-vs-reality">Imagination vs reality</h2>
+
+<p>When I started my first job as a Junior Graphic Designer in a small advertising agency, the first signals of the upcoming economic crisis were already discernible. At the same time, Poland was still rushing ahead to make up for dozens years lost for our Eastern Big Brother. In consequence, the advertising industry was incredibly hungry for more work done but at the same time, not rich enough to reassure decent working conditions, especially for the newbies to the design job - at least that’s how it looked like in most of the cases. It still does. It was normal to work several hours a day, leave the office at night or even early in the morning, be bullied by your boss and Account Managers, always afraid of being fired. Trainings? Development? Sure, you have to do it somehow. At your own cost. After hours.</p>
+
+<p>Designing was cool during studies when we created things that mattered, even if only to us. Put eye to eye with the market’s needs we had to forget about the ideals. What counted was the satisfied client and his money, not the project that you probably wouldn’t like to sign with your name. All of that is a perfect prescription for burnout.</p>
+
+<p>Obviously, this is only the black side of the advertising industry. I know happy designers who love their job, grow as professionals and would tell here an exact opposite story. I also had many bright days and times when I designed with true passion. However, much too often was I confronted with the dirty side of the business. So often that, year by year, my fear of the future and uncertainty about my career choice were growing.</p>
+
+<h2 id="catching-the-balance">Catching the balance</h2>
+
+<p>Years were passing, I was changing the workplaces, slowly figuring out my own ways in the designer’s profession. After periods of storms and stillness, I landed up in a nice small company ran by my former boss. Already experienced, I started to feel really well, appreciated and respected. The environment was friendly, salary was very good, “nine to five” did mean “nine to five”. And all would be great if not for the nagging thought: “what would I do if I lost it? where would I go?”. I was scared by the fact that beyond the cosy walls of this one-off company there was no place for me. How come, you could ask. Well, as I mentioned before, there is a professional development problem in the industry. For 9 years, even though at every job interview I highlighted how important professional development for me was (more even than wages), even though I was promised trainings and development - I wasn’t offered any. Ever. Pardon, once, in a huge corporation, I went through a procedural training. I learned from my colleagues which was fine until 2011. From then on, I was working as the only designer in a company and my growth just stopped. At the same time, the industry’s expectations have skyrocketed. So many new technologies, so much to learn - I didn’t even know what to start with. The longer it lasted, the more anxious I was. I felt like I was getting detached from the world, as if it all raced forward leaving me far behind. I simply could not accept this situation. And though, I had no idea how which way to go.</p>
+
+<h2 id="the-coding-story">The coding story</h2>
+
+<p>Why coding? Why not just choose to learn more great design tools, sharpen my skills etc. Well, there were a few problems with that.</p>
+
+<p>First, I never felt that designer’s job is a best fit for me. I didn’t want to admit even before myself but there were many times when doubted my career choice. It might have been because of unpleasant experiences in my former workplaces, or it was just an intuitive signal.</p>
+
+<p>Second, when you work as a designer, it’s not professionals who judge your work. It’s the client. Client who often believes that it’s just knowing Photoshop tools that makes one a graphic designer. Client who forces their ideas which often result in a work that is, to put it bluntly, ugly as hell. Guess who’s gonna be blamed for that? ;)</p>
+
+<p>And third, I was just tired of struggling with forces that were undeniably unsurmountable. Tired of getting things forever “more catchy”, “more dynamic”, “crazy but not too crazy”, “just not like this…” etc. I’m no fortune-teller, I don’t read minds. I missed explicit expectations, clear evaluation criteria, chances to grow in my profession.</p>
+
+<p>It’s a funny thing with coding in my life: looking back I see that since I got the first experiences with the Internet, I wanted to learn to write websites (I absolutely had no idea that coding goes far beyond that). Now this one will take you aback: I didn’t know how to deal with Internet until the age of 20. True story. It was 2004 when I moved to my own apartment and got myself a broadband, then I learned how to use basic communicators, make do with Yahoo!, Google and Netsprint, manage emails and so on. 2 years later, after completing a short EU-funded training, I wrote my very first website using XHTML and table-based layout. It was a present for my dad who needed a website with an overview of his trainings’ offer. Actually, as for those days, it looked really nice. :)</p>
+
+<p>As a designer, I needed some coding stuff for myself too: online portfolios, Wordpress blogs etc. I completed a few courses, some of them on-line, the others stationary, even finished postgraduate studies on Polish-Japanese Academy of Information Technology, two semesters on “Advanced Multimedia”, again, EU-funded. Honestly, I didn’t learn much on programming there, yet I reasserted my conviction that coding is really cool.</p>
+
+<p>A breaking point came in 2013 - and 3 years must have passed before I realized that. I stumbled upon an announcement on <a href="http://railsgirls.com/">Rails Girls workshops</a> in Warsaw. I didn’t even know that there is a programming language called Ruby but since the workshop was dedicated to beginners, and it was about CODING, I applied and got approved.</p>
+
+<p>The workshop lasted two days - definitely not enough to learn Ruby but enough to get to know the basics of programming, hear stories of people who have retrained and became developers, and finally - how to change one’s career path. I still keep pics from that time:</p>
+
+<p><img src="img/post-assets/ruby1.jpg" alt="Rails Girls 2013" class="img-responsive" />
+<br />
+<img src="img/post-assets/ruby2.jpg" alt="Rails Girls 2013" class="img-responsive" /></p>
+
+<p>It was also at Rails Girls where I got to know there is a place called Coders Lab, an intensive full-time bootcamp that takes 6 weeks of hard work, costs a fortune - but actually guarantees you will find a job as a Junior Developer after completion. I asked my mentor what he thought about that and he told me that, yes, that’s a hard deal but for those ready to commit - it’s worth it. I took a discount flier for Coders Lab and kept it in a cabinet so that I saw it every day. Remember I told myself: “if anything else fails, I’ll go for it”.</p>
+
+<p>May 2016, I woke up one morning, having a really tough year behind me, and it dawned on me quite mightily: “actually, isn’t NOW the right time”? I do not believe in stories of “one day change” of one’s life, I guess there was a huge subconscious process behind but the truth is: it was this morning when I took the decision. I quit my job. Enrolled to Coders Lab. Learned as hard as I could. And you know what? That was reaaaalllly cool. I simply couldn’t break away from coding, it turned out to be the most engaging, rewarding - and, yes, creative activity I’ve ever experienced. Obviously, it’s also wearing at times, as any job, I guess. But I feel that a developer’s profession is just a great fit to me.</p>
+
+<h2 id="and-what-now">…and what now?</h2>
+
+<p>Well, I started working as a Junior Developer a few days ago. So actually - it all just began. Once I settle down a bit, I plan to write a bit more on that. Keep your fingers crossed!</p>
+
 
 
             <p class="meta">
@@ -155,6 +386,310 @@
   <li>…and so on :)</li>
 </ul>
 
+<p>This is when tools like Gulp or Grunt come in handy. In this tutorial I will show you some basics of Gulp which I find easier than Grunt, with API is a bit cleaner and faster performance. That doesn’t mean it’s overall better, it’s just what I work with on a daily basis and can tell you something about.</p>
+
+<h2 id="all-cool-but-what-is-gulp-actually">All cool but what is Gulp actually?</h2>
+<p>In simplest terms, Gulp is an automation tool, or a JavaScript task runner, that takes tons of tedious, repetitive work off your hands. It is built on Node.js so you will define your task in JavaScript in so-called gulpfile.js. Pretty nice for a Front-End Developer.</p>
+
+<h2 id="lets-get-started">Let’s get started</h2>
+
+<p>You will get a clear impression of how it all works if you just try yourself - and it’s pretty simple. What we need to do is install Node first. Node is a platform that lets you run JavaScript outside of a browser. Node itself is a C++ program but don’t worry about that, you only need JavaScript to handle your tasks. What’s cool about Node is its modules which you can also refer to as kind of plugins or files that keep specific functions to run them when needed.</p>
+
+<p>Now let’s go ahead and install Node. It is possible you already have Node on your machine so open up your console and run:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">node</span> <span class="o">--</span><span class="nx">version</span></code></pre></figure>
+<p><br />
+If your console answers with a version number, you’re good to go. If not, go to the <a href="https://nodejs.org/en/">Node.js website</a>, download and install Node. The Node Package Manager (npm) should have been installed too, so run this command to check it:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">npm</span> <span class="o">-</span><span class="nx">v</span></code></pre></figure>
+<p><br />
+As before, your console should answer with the npm’s version number.</p>
+
+<h2 id="installing-gulp">Installing Gulp</h2>
+
+<p>Now that we have our Node platform ready, let’s proceed and install Gulp. Simply type this in your console:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">npm</span> <span class="nx">install</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">gulp</span></code></pre></figure>
+<p><br />
+to install Gulp globally. If you are on Mac or Linux you should precede this command with <code class="highlighter-rouge">sudo</code>. This is something you do once and for good. You will also need to install Gulp locally in your project’s folder, so navigate there in your console (nice trick: type <code class="highlighter-rouge">cd + space</code> and then simply drag &amp; drop your folder inside the console; hit enter and you’re there!).</p>
+
+<p>Gulp is a Node Package Manager module so let’s initialize npm like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">npm</span> <span class="nx">init</span></code></pre></figure>
+<p><br />
+Given this command, the console will ask you a series of questions. You can give them specific answers or simply keep hitting Enter for the defaults until the process is finished. You will probably need to stop the task manually once you see this line:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">Is</span> <span class="k">this</span> <span class="nx">ok</span><span class="p">?</span> <span class="p">(</span><span class="nx">yes</span><span class="p">)</span></code></pre></figure>
+<p><br />
+Hit <code class="highlighter-rouge">Ctrl + C</code> to finish. Alternatively, if you want to go with the defaults and omit the questions’ part, simply run:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">npm</span> <span class="nx">init</span> <span class="o">--</span><span class="nx">yes</span> </code></pre></figure>
+<p><br />
+At this point in your directory’s root your will see a new file called <strong>package.json</strong>, containing initial .json configuration. Here’s where next modules required will be added as so-called dependencies. This will help you build reusable package.json file that will install all the dependencies in your next projects once you simply run <code class="highlighter-rouge">npm init</code>. This is also why you will need to add <code class="highlighter-rouge">--save-dev</code> to the following installations commands. I will show you exactly how in a moment.</p>
+
+<p>Now let’s move on to install Gulp locally in your project. Go ahead with the command below:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">npm</span> <span class="nx">install</span> <span class="o">--</span><span class="nx">save</span><span class="o">-</span><span class="nx">dev</span> <span class="nx">gulp</span> </code></pre></figure>
+<p><br />
+If you take a look at your package.json file, you’ll notice Gulp added to devDependencies. Good, let’s create our first task!</p>
+
+<h2 id="hello-world-with-gulp">“Hello World” with Gulp</h2>
+
+<p>In order to create Gulp tasks we need a special file called gulpfile.js. Open your editor, ask it for a new file and save it as <code class="highlighter-rouge">gulpfile.js</code>. As per the old programming tradition, let’s build a “Hello World” task to get acquainted with the environment. In order to define it, go ahead and type this at the beginning of your gulpfile.js:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">“</span><span class="nx">gulp</span><span class="err">”</span><span class="p">);</span> </code></pre></figure>
+<p><br />
+The string in the parenthesis stands for the name of the plugin. This way we are asking Node to look inside the <code class="highlighter-rouge">node_modules</code> (you will notice this folder created in your project’s file once you’ve installed Node) and search for a given module (in this case it’s Gulp). Now to actually set our task we need the following syntax:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">();</span></code></pre></figure>
+<p><br />
+There will be two parameters inside this function:</p>
+<ol>
+  <li>the name of a task as a string (the name is up to you)</li>
+  <li>the function to perform</li>
+</ol>
+
+<p>So, if we would like to log “Hello World” in the console and we want to call the task “hello”, this is how we will build our task:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="err">“</span><span class="nx">hello</span><span class="err">”</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="err">“</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!</span><span class="err">”</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+<p><br />
+Try it out! In your console run:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span> <span class="nx">hello</span></code></pre></figure>
+<p><br />
+And the console will answer logging “Hello World!” just as expected.</p>
+
+<p>Below you can see a table explaining 4 simple Gulp APIs. <br />
+Isn’t it super nice and easy?</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l">API</th>
+    <th class="tg-yw4l">Purpose</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">gulp.task</td>
+    <td class="tg-yw4l">Define a task</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">gulp.src</td>
+    <td class="tg-yw4l">Read files in</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">gulp.dest</td>
+    <td class="tg-yw4l">Write files out</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">gulp.watch</td>
+    <td class="tg-yw4l">Watch files for changes</td>
+  </tr>
+</table>
+<p><br /></p>
+
+<p>Now that you have the basic knowledge of creating tasks in Gulp, let’s try something more practical.</p>
+
+<h2 id="compiling-sass-to-css">Compiling Sass to CSS</h2>
+
+<p>If you work with preprocessors like Sass or Less, you need your .scss files to be compiled to .css so that the browser understands what you want. It can be easily done with Gulp. First, you need to install the special module for that:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">npm</span> <span class="nx">install</span> <span class="o">--</span><span class="nx">save</span><span class="o">-</span><span class="nx">dev</span> <span class="nx">gulp</span><span class="o">-</span><span class="nx">sass</span></code></pre></figure>
+<p><br />
+Now in your gulpfile.js after the first gulp variable declaration add another one:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">sass</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">“</span><span class="nx">gulp</span><span class="o">-</span><span class="nx">sass</span><span class="err">”</span><span class="p">);</span></code></pre></figure>
+<p><br />
+Let’s define our task. I called mine “sass”. Here’s how it looks like in my case, we will go through this snippet in a second:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"sass"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">"src/scss/main.scss"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s2">"src/css/"</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+<p><br />
+In the <code class="highlighter-rouge">gulp.src()</code> you put your input path. In my case I have following structure <code class="highlighter-rouge">project_folder</code> <strong>&gt;</strong> <code class="highlighter-rouge">src</code> (a folder where I put my working files which I then deploy for production into the dist folder) <strong>&gt;</strong> <code class="highlighter-rouge">scss</code> (where I keep my Sass folders and main.scss file) <strong>&gt;</strong> <code class="highlighter-rouge">main.scss</code> (keeping all the imports from Sass folders). Adjust the path to match your project’s structure.</p>
+
+<p>The <code class="highlighter-rouge">pipe</code> method is used to chain multiple tasks together. The consecutive “pipes” are put in new lines for readability.</p>
+
+<p>The <code class="highlighter-rouge">gulp.dest()</code> part defines where your final .css file will go.</p>
+
+<p>Once you’ve set the task ask the console to compile your Sass like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span> <span class="nx">sass</span></code></pre></figure>
+<p><br />
+The <code class="highlighter-rouge">sass</code> method can take a configuration object as a parameter. Let’s do that:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"sass"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">"src/scss/main.scss"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">({</span>
+            <span class="na">outputStyle</span><span class="p">:</span> <span class="s1">'expanded'</span><span class="p">,</span>
+            <span class="na">errLogToConsole</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">}))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s2">"src/css/"</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+<p><br />
+What’s happening here is we ask Gulp to compile Sass files to expanded style in .css and we also want to see errors in our console, if they occur. So what is this output style issue? It is simply how our final .css will look like: whether it will be minified or more human-friendly.
+We have four options to choose from:</p>
+<ul>
+  <li>:nested</li>
+  <li>:compact</li>
+  <li>:expanded</li>
+  <li>:compressed</li>
+</ul>
+
+<p><a href="http://inchoo.net/dev-talk/tools/sass-output-styles/">Here is</a> how each of them looks like.</p>
+
+<p>I usually go for expanded style which seems most legible to me but the choice is completely up to you.</p>
+
+<h2 id="sourcemaps">Sourcemaps</h2>
+
+<p>The next thing I’m going to cover is sourcemaps. Having sourcemaps built into your sass task is a must when it comes to debugging your code. Imagine having an issue in your .css file and trying to fix it with your browser’s Dev Tools. If you try to inspect an element on your website now, you will see a specific line in the .css file. This may not be what you want, especially if you use a compressed output style. You’d rather wish the Dev Tools to point out the .scss file and specific line number inside. This is what you need sourcemaps for. Let’s install them and add to devDependencies:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">gulp</span><span class="o">-</span><span class="nx">sourcemaps</span> <span class="o">--</span><span class="nx">save</span><span class="o">-</span><span class="nx">dev</span></code></pre></figure>
+<p><br />
+Now we need to rebuild the “sass” task like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"sass"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">"src/scss/main.scss"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">init</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">({</span>
+            <span class="na">outputStyle</span><span class="p">:</span> <span class="s1">'expanded'</span><span class="p">,</span>
+            <span class="na">errLogToConsole</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">}))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">write</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s2">"src/css/"</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+<p><br />
+Once you’re done, try to inspect a chosen element of your site with Dev Tools. You should see them pointing to the source .scss file and a code line inside of it.</p>
+
+<h2 id="listening-for-changes">Listening for changes</h2>
+
+<p>When working on your Sass project you probably wouldn’t like to be forced to run gulp sass each time you save changes to the stylesheet. I assume you’d rather have your changes introduced to the .css file each time you change one of your .scss stylesheets. You can achieve this with a Gulp watcher that will keep track of the changes and introduce them immediately into the destination .css.</p>
+
+<p>Let’s define this task:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"watch"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s2">"src/scss/**/*.scss"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"sass"</span><span class="p">]);</span> 
+<span class="p">});</span></code></pre></figure>
+<p><br />
+As you have probably guessed, the first parameter is a source path ( <code class="highlighter-rouge">**</code> means I want Gulp to look for all of the files in my scss folder and then get all of the files with the .scss extension). The second parameter is an array of tasks for the watcher to keep track of. In our case, we only want to watch for “sass”.</p>
+
+<p>You already know how to run this task:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span> <span class="nx">watch</span></code></pre></figure>
+<p><br />
+This way we start the watch mode. If you want to stop it, hit <code class="highlighter-rouge">Ctrl + C</code>.</p>
+
+<h2 id="synchronized-browser-testing">Synchronized browser testing</h2>
+
+<p>The last thing I am going to cover is something which I hope you’ll find really neat: live reloading your web project on your browser. We can handle this with a BrowserSync plugin. It is not a Gulp module but it doesn’t matter, we can use it anyhow. Let’s install it:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">browser</span><span class="o">-</span><span class="nx">sync</span> <span class="nx">gulp</span> <span class="o">--</span><span class="nx">save</span><span class="o">-</span><span class="nx">dev</span></code></pre></figure>
+<p><br />
+…and define as a variable in our gulpfile.js:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">browserSync</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="err">“</span><span class="nx">browser</span><span class="o">-</span><span class="nx">sync</span><span class="err">”</span><span class="p">);</span></code></pre></figure>
+<p><br />
+Time to create a task called “sync” (or anything you like) which will look like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"sync"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">browserSync</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+        <span class="na">server</span><span class="p">:</span> <span class="s2">"src/"</span>
+    <span class="p">});</span>
+<span class="p">});</span></code></pre></figure>
+<p><br />
+Inside the <code class="highlighter-rouge">browserSync.init()</code> function we define a configuration object which in this case contains simply the path to our project. Since I usually keep all my source files in a folder called “src” (as mentioned above), I have declared <code class="highlighter-rouge">server: src/</code>. If you decided to put all your files directly within your main project’s directory, your task may look like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="err">“</span><span class="nx">sync</span><span class="err">”</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">browserSync</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+        <span class="na">server</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">baseDir</span><span class="p">:</span> <span class="s2">"./"</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span></code></pre></figure>
+<p><br />
+The last thing to do here is adding browserSync to our chain in “sass” task:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"sass"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">"src/scss/main.scss"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">({</span>
+            <span class="na">outputStyle</span><span class="p">:</span> <span class="s1">'expanded'</span><span class="p">,</span>
+            <span class="na">errLogToConsole</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">}))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s2">"src/css/"</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">browserSync</span><span class="p">.</span><span class="nx">stream</span><span class="p">());</span> 
+<span class="p">});</span></code></pre></figure>
+<p><br />
+Let’s try it out! Run:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span> <span class="nx">sync</span></code></pre></figure>
+<p><br />
+You’ll notice your website open up in a new tab of your default browser, on <code class="highlighter-rouge">localhost:3000</code>. Try entering any changes to your stylesheet - they will be introduced immediately without the need to reload your page. Cool, isn’t it?</p>
+
+<h2 id="default-series-of-tasks">Default series of tasks</h2>
+
+<p>Or maybe you want to run more than one task at a time? No problem, you can do this with a <code class="highlighter-rouge">default</code> task (this time the name of the task does matter, it has to be called “default”). Let’s give it a try and define a default to run “sass”, “sync” and “watch” in a row. It’s a simple one-liner:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"default"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"sass"</span><span class="p">,</span> <span class="s2">"sync"</span><span class="p">,</span> <span class="s2">"watch"</span><span class="p">]);</span></code></pre></figure>
+<p><br />
+Guess what? Now you simply run:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span></code></pre></figure>
+<p><br />
+and that’s all, Gulp will perform the array of tasks one by one.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>OK, so here’s the final contents of your gulpfile.js if you followed along. The paths and tasks’ names may differ, of course, but you get the idea:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"gulp"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">sass</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"gulp-sass"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">browserSync</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"browser-sync"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">sourcemaps</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"gulp-sourcemaps"</span><span class="p">);</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"sass"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s2">"src/scss/main.scss"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">init</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">({</span>
+            <span class="na">outputStyle</span><span class="p">:</span> <span class="s1">'expanded'</span><span class="p">,</span>
+            <span class="na">errLogToConsole</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="p">}))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">write</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s2">"src/css/"</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">browserSync</span><span class="p">.</span><span class="nx">stream</span><span class="p">());</span>
+<span class="p">});</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"sync"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">browserSync</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+        <span class="na">server</span><span class="p">:</span> <span class="s2">"src/"</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"watch"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s2">"src/scss/**/*.scss"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"sass"</span><span class="p">]);</span> <span class="c1">//table with a list of tasks
+</span>
+<span class="p">});</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s2">"default"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"sass"</span><span class="p">,</span> <span class="s2">"sync"</span><span class="p">,</span> <span class="s2">"watch"</span><span class="p">]);</span></code></pre></figure>
+<p><br />
+Note that if you followed this tutorial and saved all dependencies in your package.json file, then in your next projects, given that you will need the same npm modules, you can simply copy <code class="highlighter-rouge">package.json</code> to the project’s root, navigate to the main project’s folder in your console and run <code class="highlighter-rouge">npm init</code> to install all the modules. Then, of course, you’ll need an analogous <code class="highlighter-rouge">gulpfile.js</code> - just remember to check all the paths, folder and tasks names to avoid errors.</p>
+
+<p>I am aware I covered just a small part of what Gulp is capable of. What you can do more is, for example, optimizing your images, concatenating and minifying your files, preventing your watcher from stopping on error and much more. At this point however I believe you’re tired enough. :) If not, take a look at the documentation, really nice and clear:</p>
+
+<ul>
+  <li><a href="http://gulpjs.com/">http://gulpjs.com/</a></li>
+  <li><a href="https://www.npmjs.com/package/gulp">https://www.npmjs.com/package/gulp</a></li>
+</ul>
+
+<p>That’s it for today, hope you enjoyed fiddling with Gulp. Test it yourself, play with the variety of possibilities, learn by trial and error: this way you’ll get best understanding and courage, both indispensable in any aspect of developer’s job. See you soon, happy coding! :)</p>
+
 
 
             <p class="meta">
@@ -170,6 +705,248 @@
 
 
             <p>Two posts ago I promised to tell you something more about the HTML5 technology that I use to draw and animate Boids, that is the <code class="highlighter-rouge">&lt;canvas&gt;</code> element. As you have probably guessed, it is basically just an HTML tag - but its possibilities are truly impressive. With the use of a simple <code class="highlighter-rouge">&lt;canvas&gt;</code> element and JavaScript you can create advanced games, multimedia applications, charting - and much more. This is because canvas is very fast and efficient so it can perform complicated calculations and animations. Since canvas is a pixel-based API, you can go as far as manipulating pixels, creating for instance some impressive filters for your photos. The possibilities are endless!</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>The canvas API itself is not really complicated in terms of the amount of knowledge to grasp. All the methods and properties are nicely put together on the <a href="https://www.w3schools.com/tags/ref_canvas.asp">w3schools reference</a>. Yes, I am aware of the <a href="https://www.impressivewebs.com/w3schools-ugly-bad-good/">controversy behind w3schools</a> and I admit it’s definitely not the ultimate choice for learning but when it comes to getting to know HTML5, especially if you’re fresh to some of its features, it’s a nice start. Having said that, you should definitely check out the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">MDN documentation for canvas</a> which provides you with in-depth information on all the API’s features.</p>
+
+<p>Basically, the canvas API consists of a set of <strong>functions</strong> and <strong>properties</strong>. <strong>Functions</strong> can be divided as per their purpose like so:</p>
+<ul>
+  <li><strong>line and shape</strong> functions (for example: <code class="highlighter-rouge">arc</code>, <code class="highlighter-rouge">fill</code>, <code class="highlighter-rouge">rect</code>, <code class="highlighter-rouge">stroke</code> etc.)</li>
+  <li><strong>text</strong> functions (<code class="highlighter-rouge">fillText</code>, <code class="highlighter-rouge">measureText</code>, <code class="highlighter-rouge">strokeText</code>)</li>
+  <li><strong>transform</strong> functions (<code class="highlighter-rouge">save</code>, <code class="highlighter-rouge">restore</code>, <code class="highlighter-rouge">rotate</code>, <code class="highlighter-rouge">scale</code>, <code class="highlighter-rouge">transform</code>, <code class="highlighter-rouge">translate</code>)</li>
+</ul>
+
+<p>In addition to the functions, canvas API provides you with a set of <strong>properties</strong> that are basically designed to let you style the elements before they get drawn on canvas. Some of these properties are: <code class="highlighter-rouge">width</code>, <code class="highlighter-rouge">height</code>, <code class="highlighter-rouge">font</code>, <code class="highlighter-rouge">fillStyle</code>, <code class="highlighter-rouge">globalAlpha</code>, <code class="highlighter-rouge">globalCompositeOperations</code>.</p>
+
+<p>OK, let’s get down to actual coding so that you can check yourself how to make use of canvas. Once you get the knack of it, I promise, you’ll have fun!</p>
+
+<h2 id="basic-usage">Basic usage</h2>
+
+<p>First, let’s insert canvas on our website. In a place of your choice simply put:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">canvas</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"myCanvas"</span> <span class="nx">width</span><span class="o">=</span><span class="s2">"400"</span> <span class="nx">height</span><span class="o">=</span><span class="s2">"400"</span>
+	<span class="nx">Your</span> <span class="nx">browser</span> <span class="nx">does</span> <span class="nx">not</span> <span class="nx">support</span> <span class="nx">canvas</span>
+<span class="o">&lt;</span><span class="sr">/canvas&gt;</span></code></pre></figure>
+<p><br />
+No need to say that the above id, width, height and fallback text is up to you. You might be tempted to omit width and height and choose to style those in CSS but don’t do that, it won’t work. You need to define width and height directly inside of the <code class="highlighter-rouge">&lt;canvas&gt;</code> tag - or in JavaScript. Anyways, it’s best to start from setting initial values here, in HTML. I would also suggest adding some basic styling to the canvas so that you can see clearly where it is. Let’s move to the stylesheet and add some CSS declarations like:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span><span class="nx">myCanvas</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="mi">1</span><span class="nx">px</span> <span class="nx">solid</span> <span class="nx">black</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+<p><br />
+Now that we have our bare canvas placed on the layout, it’s time to jump into the JavaScript file. First, we need to catch our canvas to a variable. Let’s make use of the new variable declarations introduced by ES6 (more on that in the future post, I plan to show you all the ES6 features I use in the Boids project).</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"myCanvas"</span><span class="p">);</span></code></pre></figure>
+<p><br />
+Now we need to define the context in which we want to work. In most of the cases, you will need a 2D context. The canvas element has a special method for that called <code class="highlighter-rouge">getContext</code>.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s2">"2d"</span><span class="p">);</span></code></pre></figure>
+<p><br />
+Finally, let’s draw something simple like a rectangle:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span></code></pre></figure>
+<p><br />
+The <code class="highlighter-rouge">fillRect()</code> method takes four parameters: <code class="highlighter-rouge">x</code>, <code class="highlighter-rouge">y</code>, <code class="highlighter-rouge">width</code> and <code class="highlighter-rouge">height</code>. The x and y coordinates define the rectangle’s upper-left corner’s position. The default color is black, that’s why you can see a black rectangle on your canvas now even though you didn’t set any styling. Actually if you do want to style your components anyhow, you should define the visual side first. Let’s add some colour to our rectangle, say, orange for example. Now the code will look like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">"#ffa500"</span><span class="p">;</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span></code></pre></figure>
+<p><br />
+The same way, you can create a rectangle with a stroke, defining its color first:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">"#ffa500"</span><span class="p">;</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="s2">"#005aff"</span><span class="p">;</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeRect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span></code></pre></figure>
+<p><br />
+This will add a blue stroke to your initial rectangle. You might want to alter the stroke’s width - and that’s simple too. The only thing it takes is a <code class="highlighter-rouge">lineWidth</code> method where you define the line’s width in pixels and pass it as a numeric value like so:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">"#ffa500"</span><span class="p">;</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="s2">"#005aff"</span><span class="p">;</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">lineWidth</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">fillRect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeRect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span></code></pre></figure>
+<p><br />
+Cool, you get the point! The very introduction is behind us, let’s move on to other shapes.</p>
+
+<h2 id="run-rings-around-the-squares">Run rings around the squares!</h2>
+
+<p>Time for something slightly more complex: curves. In the case of Boids I initially wanted to represent them as simple circles. To do that, we need the <code class="highlighter-rouge">arc</code> method that lets you draw curves, ovals and circles. As you remember, we need to define styles first. How about some spring colors and stroke of 5px?</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">"#bcd664"</span><span class="p">;</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="s2">"#54a244"</span><span class="p">;</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">lineWidth</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span></code></pre></figure>
+<p><br />
+Now we need a method to start the path:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span></code></pre></figure>
+<p><br />
+…and draw a curve using the canvas <code class="highlighter-rouge">arc</code> method. The <code class="highlighter-rouge">arc</code> method takes 5 obligatory parameters and 1 optional. These are:</p>
+<ul>
+  <li><strong>x</strong> (the x-coordinate of the center of the circle)</li>
+  <li><strong>y</strong> (the y-coordinate of the center of the circle)</li>
+  <li><strong>r</strong> (the radius)</li>
+  <li><strong>sAngle</strong> (the starting angle, in radians, where 0 is at the 3 o’clock position of the arc’s circle)</li>
+  <li><strong>eAngle</strong> (the ending angle, in radians)</li>
+  <li><strong>counterclockwise</strong> (this one is optional and takes a boolean value: <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>)</li>
+</ul>
+
+<p>Let’s imagine we’d like the arc to be drawn in the middle of the canvas, with the radius of 20px, taking 90 degrees. Calculating radians may be a bit counterintuitive for you (it is for me!) so why not get ourselves a little helper function that will take degrees and return radians? Like so:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">calculateRadians</span><span class="p">(</span><span class="nx">degrees</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">degrees</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">180</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+<p><br />
+Now let’s move back to our arc and draw it!</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">calculateRadians</span><span class="p">(</span><span class="mi">90</span><span class="p">));</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">closePath</span><span class="p">();</span></code></pre></figure>
+<p><br />
+A riddle for you: how to draw a circle with fill only, no stroke, as in the case of rough-and-ready Boids. Yeah, I know that you know. :)</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">"#bcd664"</span><span class="p">;</span>
+
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">calculateRadians</span><span class="p">(</span><span class="mi">360</span><span class="p">));</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">closePath</span><span class="p">();</span></code></pre></figure>
+<p><br /></p>
+
+<h2 id="lets-animate-it">Let’s animate it!</h2>
+
+<p>Last thing I’m gonna show you is a simple animation that will get you familiarized with some concepts of moving elements around on canvas. Basically, drawing on canvas consists in sequential clearing the canvas and redrawing the element on a new position. In case you perform any transformations on the element while animating it, you will also need to store and restore the canvas. We won’t transfigure our circle anyhow so we can skip these steps.</p>
+
+<p>To schedule the updates you can use one of the following functions: <code class="highlighter-rouge">setTimeout(fn, delay)</code>, <code class="highlighter-rouge">setInterval(fn, delay)</code> or<code class="highlighter-rouge"> requestAnimationFrame(callback)</code>. I suggest you go for the third option since it’s best in terms of performance of your animation. Paul Irish explained very nicely <a href="https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/">the way requestAnimationFrame() method works</a> and why to choose it over <code class="highlighter-rouge">setTimeout()</code> or <code class="highlighter-rouge">setInterval</code>. The post is old but still valid, just the support of the browser is now almost complete. It’s just Opera Mini that doesn’t understand the deal. Anyways, has anyone of you ever used Opera Mini? Personally, I don’t even know how dude looks like!. ;)</p>
+
+<p>OK, so how to use the <code class="highlighter-rouge">requestAnimationFrame()</code> method? We use it on a global object (that is, in our case, window) and we pass it a callback function which will run each time the browser performs drawing on the screen. So here’s the basic syntax:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">callbackFunction</span><span class="p">);</span></code></pre></figure>
+<p><br />
+Which is, as you know, the same thing as:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">callbackFunction</span><span class="p">);</span></code></pre></figure>
+<p><br />
+With that in mind, let’s write a core for our <code class="highlighter-rouge">animate()</code> function which will run the <code class="highlighter-rouge">requestAnimationFrame()</code> method, calculate next position and then re-draw it.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
+        <span class="c1">// calculate next position
+</span>
+    <span class="nx">draw</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
+<p><br />
+Next, let’s define the <code class="highlighter-rouge">draw()</code> function. It will be running in a multiple sequence so the first thing you need to do is clear the canvas before re-drawing the element on the next position. To clear the canvas, you need to run the <code class="highlighter-rouge">clearRect()</code> method on the canvas’ context (as you remember, we keep it in a variable called <code class="highlighter-rouge">ctx</code>). The <code class="highlighter-rouge">clearRect()</code> method takes the following parameters:</p>
+<ul>
+  <li><strong>x</strong> (the x-coordinate of the upper-left corner of the rectangle to clear)</li>
+  <li><strong>y</strong> (the y-coordinate of the upper-left corner of the rectangle to clear)</li>
+  <li><strong>width</strong> (of the rectangle to clear, in px: in our case this will be the width of the whole canvas)</li>
+  <li><strong>height</strong></li>
+</ul>
+
+<p>Now, the foundation of your <code class="highlighter-rouge">draw()</code> function will look like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+	    <span class="c1">//drawing goes here
+</span>
+<span class="p">}</span>
+<span class="nx">animate</span><span class="p">();</span></code></pre></figure>
+<p><br />
+Having this basis, let’s think of how we will actually deal with moving our element around. For the very beginning, we’ll move the element on x-coordinate only asking it to revert the direction of the movement once the element hits the border of the canvas. We need three variables: <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> for initial position and <code class="highlighter-rouge">speed</code> for… yeah, the speed. :)
+Let’s declare these at the very beginning, above the <code class="highlighter-rouge">animate()</code> and <code class="highlighter-rouge">draw()</code> functions:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">speed</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span></code></pre></figure>
+<p><br />
+At this moment we can complete the <code class="highlighter-rouge">draw()</code> function and make it draw a circle like we did before in this tutorial:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+	<span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">"#bcd664"</span><span class="p">;</span>
+
+	<span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+	<span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">calculateRadians</span><span class="p">(</span><span class="mi">360</span><span class="p">));</span>
+	<span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>
+	<span class="nx">ctx</span><span class="p">.</span><span class="nx">closePath</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
+<p><br />
+Finally, we will move the circle on the x-axis by incrementing the <code class="highlighter-rouge">x</code> variable which defines the circle’s horizontal position:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
+    <span class="nx">x</span> <span class="o">+=</span> <span class="nx">speed</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;=</span> <span class="mi">40</span> <span class="o">||</span> <span class="nx">x</span> <span class="o">&gt;=</span> <span class="mi">360</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">speed</span> <span class="o">=</span> <span class="o">-</span><span class="nx">speed</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">draw</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
+<p><br />
+OK, what’s going on here and where do these <code class="highlighter-rouge">40</code> and <code class="highlighter-rouge">360</code> values come from? As you remember, the canvas width and height are both equal to 400px. The circle’s width is 40px and we start to draw the center of it at <code class="highlighter-rouge">(40, 40)</code> position. This means the circle will hit the left border of canvas at <code class="highlighter-rouge">(40, 40)</code> position and the right border at <code class="highlighter-rouge">(360, 40)</code> (the canvas’ width minus 40px). These two are the moments when we want to revert the direction of the movement.</p>
+
+<p>Let’s have a look at the final code:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"myCanvas"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">ctx</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s2">"2d"</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">calculateRadians</span><span class="p">(</span><span class="nx">degrees</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">degrees</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">180</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">40</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">speed</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">animate</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
+
+    <span class="nx">x</span> <span class="o">+=</span> <span class="nx">speed</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">x</span> <span class="o">&lt;=</span> <span class="mi">40</span> <span class="o">||</span> <span class="nx">x</span> <span class="o">&gt;=</span> <span class="mi">360</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">speed</span> <span class="o">=</span> <span class="o">-</span><span class="nx">speed</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">draw</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">draw</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fillStyle</span> <span class="o">=</span> <span class="s2">"#bcd664"</span><span class="p">;</span>
+
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">calculateRadians</span><span class="p">(</span><span class="mi">360</span><span class="p">));</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>
+    <span class="nx">ctx</span><span class="p">.</span><span class="nx">closePath</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">animate</span><span class="p">();</span></code></pre></figure>
+<p><br /></p>
+
+<p>At this moment you should see your circle rolling around your canvas from one side to another - and back. Now you can play with the speed, y-axis position and much more. Have fun! :)</p>
+
+<h2 id="further-reading">Further reading</h2>
+
+<p>I have only touched the very surface of canvas’ possibilities and I’m sure you’ll want much more. Here’s a generous handful of really nice recourses that will help you dive deeper into canvas’ features:</p>
+
+<ul>
+  <li>This is a big one! A <a href="http://codetheory.in/20-best-canvas-tutorials-and-examples-that-will-make-you-a-canvas-master/">selection of top-notch tutorials for any-level coders</a>. Thank you, <a href="http://codetheory.in/">Code Theory</a>! :)</li>
+  <li>A great <a href="http://diveintohtml5.info/canvas.html">step-by-step guide by DiveIntoHTML5</a>. As a side note, I encourage you to check out all the <a href="http://diveintohtml5.info/index.html">DiveIntoHTML5 series</a>, Mark Pilgrim did an excellent job explaining all the HTML5 particularities in a creative yet not overwhelming form.</li>
+  <li><a href="http://creativejs.com/2011/08/31-days-of-canvas-tutorials/">A 31-days canvas challenge</a>. Good way to stay on track in the learning process.</li>
+</ul>
+
+<h2 id="how-are-boids-flying-on-canvas">How are Boids flying on canvas?</h2>
+
+<p>If you’re curious how I’m doing with the Boids, check it out here:</p>
+<ul>
+  <li><a href="https://github.com/ka1130/Boids">the source code on GitHub</a>. You can find out how I applied the methods described in the above tutorial to animate Boid instances on canvas. I will be glad to hear your tips on that!</li>
+  <li><a href="https://ka1130.github.io/Boids/src/">Boids online</a></li>
+</ul>
+
+<p>That’s it for now, hope you’ve enjoyed this little playground, see you back soon! :)</p>
 
 
 
@@ -187,6 +964,225 @@
 
             <p>If you follow me along on “Just sudo IT”, you remember <a href="http://just-sudo-it.pl/jekyll-on-windows-part1">the post about setting up Jekyll</a>. We have ended up with a basic set-up of a default Minima-themed blog. Great for beginning but now time has come to customize it to your liking. You will probably want to adjust the layout, install a chosen template (you can also style your blog completely from scratch but we’re not going to cover this case here), add custom domain etc. Let’s see how to do it.</p>
 
+<h2 id="basic-configuration">Basic configuration</h2>
+
+<p>First, we’ll have a look at the <code class="highlighter-rouge">_config.yml</code> file that lives in your project’s root. Open it up with your editor. Change the default values of the <code class="highlighter-rouge">title</code>, <code class="highlighter-rouge">email</code>, <code class="highlighter-rouge">description</code>, <code class="highlighter-rouge">url</code> and <code class="highlighter-rouge">baseurl</code> (the subpath of your site, e.g. /blog).</p>
+
+<p>The <code class="highlighter-rouge">url</code> will be your GitHub .io home page and the <code class="highlighter-rouge">baseurl</code> will be the name of the repository which we’ll create later on. Here’s how it looks in my case:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">baseurl</span><span class="err">:</span> <span class="s2">"/testjekyll"</span>
+<span class="nx">url</span><span class="err">:</span> <span class="s2">"https://ka1130.github.io/"</span> </code></pre></figure>
+<p><br />
+You can find a very extensive explanation of all the configuration options on the <a href="http://jekyllrb.com/docs/configuration/">Jekyll documentation page</a> but you probably won’t need most of this stuff. Good to know, however.</p>
+
+<p>As you will see in the <code class="highlighter-rouge">Build settings</code> section, the default template is <em>minima</em>: that’s what you can see at the moment once you run <code class="highlighter-rouge">jekyll serve</code> and open up your browser on <code class="highlighter-rouge">http://localhost:4000</code>.</p>
+
+<h2 id="pushing-your-blog-to-github-pages">Pushing your blog to GitHub pages</h2>
+
+<p>Now let’s create a new repository on GitHub. As mentioned above, I decided to go for a <em>testjekyll</em> name. Check the <code class="highlighter-rouge">Initialize this repository with a README</code> box, otherwise you’ll be directed to the setup page.</p>
+
+<p><img src="img/post-assets/repo-init.jpg" alt="Starting a new repository" class="img-responsive" /></p>
+
+<p>At this point my exemplary repo lives under this address:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">https</span><span class="err">:</span><span class="c1">//github.com/ka1130/testjekyll</span></code></pre></figure>
+<p><br />
+Now push the project to GitHub pages (remember to change the address to the one of your blog!):</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">git</span> <span class="nx">remote</span> <span class="nx">add</span> <span class="nx">origin</span> <span class="nx">https</span><span class="err">:</span><span class="c1">//github.com/ka1130/testjekyll</span></code></pre></figure>
+<p><br />
+Next, add a special branch that has to be called <code class="highlighter-rouge">gh-pages</code>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">git</span> <span class="nx">checkout</span> <span class="o">-</span><span class="nx">b</span> <span class="nx">gh</span><span class="o">-</span><span class="nx">pages</span></code></pre></figure>
+<p><br />
+Still on gh-pages branch, make your first commit:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">git</span> <span class="nx">add</span> <span class="p">.</span>
+<span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="err">“</span><span class="nx">Initial</span> <span class="nx">commit</span><span class="p">.</span><span class="err">”</span></code></pre></figure>
+<p><br />
+And finally, push the commit to GitHub pages:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">git</span> <span class="nx">push</span> <span class="nx">origin</span> <span class="nx">gh</span><span class="o">-</span><span class="nx">pages</span></code></pre></figure>
+<p><br />
+In your browser, navigate to the new project:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">https</span><span class="err">:</span><span class="c1">//ka1130.github.io/testjekyll/</span></code></pre></figure>
+<p><br />
+No need to add that in the address there will be your username instead of ka1130, and the uri will be the name of your project. :) Here we are, your blog in already online, hosted on GitHub pages. Cool!</p>
+
+<h2 id="setting-up-your-theme">Setting up your theme</h2>
+
+<p>Time for some work with the visual part of your project. As mentioned before, you can style it all by yourself and there are many nice walkthroughs to check, like for example:</p>
+<ul>
+  <li><a href="http://jekyll.tips/">A series of <strong>video tutorials</strong>, far beyond customizing your blog only</a></li>
+  <li><a href="http://pixelcog.com/blog/2013/jekyll-from-scratch-core-architecture/">A nice guide from <strong>Pixel Cog</strong> by Mike Greiling</a></li>
+  <li><a href="https://app.pluralsight.com/library/courses/custom-jekyll-theme-2372/table-of-contents">An in-depth tutorial on <strong>Pluralsight</strong></a>. By the way, you can get a <strong>free Pluralsight account</strong> for as long as <strong>3 months</strong>! Tons of great knowledge to grab, expert tutors, highly recommended stuff.</li>
+</ul>
+
+<p>However you might choose to go for a ready-to-go theme, just as I did, since I was running out of time and needed something “here and now”. In this case you can opt for a free or premium template. I personally recommend you the second option, simply from my own experience. I might have had bad luck but having tried to install a free theme, I failed. The first problem was the outlook: as a (more or less former) designer, I just couldn’t bear something I found ugly in terms of fonts, layout, colors etc. ;) This point is kind of funny in a coding world, I know - but wait, there’s more! The tricky thing is that free templates are often not-that-great in terms of documentation and adjustability. For me, being very fresh to Jekyll, that was a pain in the ass. A few hours wasted and I moved back to the good old <a href="https://themeforest.net/tags/jekyll">Theme Forest</a>. Don’t yell at me, I know their downsides but, on the other hand, their themes are well tested, you get almost immediate support for any issue - and they simply look good. Again, presumably no one will write your template better than yourself but… yeah, you know my <em>but</em>. ;)</p>
+
+<p>So here’s the deal: once you get your theme (you choose the source, it may well be true, that there are far better options that Theme Forest, I’ll be happy to get to know them!), you need to get familiar with the Jekyll’s structure. At this moment your project’s structure looks probably like this:</p>
+
+<ul>
+  <li><strong>.git</strong> 		    // <em>folder</em></li>
+  <li>_posts 		// <em>folder</em></li>
+  <li>_site		    // <em>folder</em></li>
+  <li><strong>_config.yml</strong>	// <em>file</em></li>
+  <li>about.md	    // <em>file</em></li>
+  <li><strong>Gemfile</strong>	    // <em>file</em></li>
+  <li><strong>Gemfile.lock</strong>	// <em>file</em></li>
+  <li>index.md	    // <em>file</em></li>
+</ul>
+
+<p>I have bolded the files and folders that need to stay where they are, the rest will be replaced with your theme files. In my case, that was enough to get the template up and running. If you chose a free theme, it may end up being a bit more tricky so choose wisely - paid or not, your theme should have clear installation guides, unless you already are a Jekyll ninja. :)</p>
+
+<p>Now what are these folders for exactly? Let’s have a look at an exemplary basic structure of a Jekyll site:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">├──</span> <span class="nx">_config</span><span class="p">.</span><span class="nx">yml</span>
+<span class="err">├──</span> <span class="nx">_drafts</span>
+<span class="o">|</span>   <span class="err">├──</span> <span class="nx">begin</span><span class="o">-</span><span class="kd">with</span><span class="o">-</span><span class="nx">the</span><span class="o">-</span><span class="nx">crazy</span><span class="o">-</span><span class="nx">ideas</span><span class="p">.</span><span class="nx">md</span>
+<span class="o">|</span>   <span class="err">└──</span> <span class="nx">on</span><span class="o">-</span><span class="nx">simplicity</span><span class="o">-</span><span class="k">in</span><span class="o">-</span><span class="nx">technology</span><span class="p">.</span><span class="nx">md</span>
+<span class="err">├──</span> <span class="nx">_includes</span>
+<span class="o">|</span>   <span class="err">├──</span> <span class="nx">footer</span><span class="p">.</span><span class="nx">html</span>
+<span class="o">|</span>   <span class="err">└──</span> <span class="nx">header</span><span class="p">.</span><span class="nx">html</span>
+<span class="err">├──</span> <span class="nx">_layouts</span>
+<span class="o">|</span>   <span class="err">├──</span> <span class="k">default</span><span class="p">.</span><span class="nx">html</span>
+<span class="o">|</span>   <span class="err">└──</span> <span class="nx">post</span><span class="p">.</span><span class="nx">html</span>
+<span class="err">├──</span> <span class="nx">_posts</span>
+<span class="o">|</span>   <span class="err">├──</span> <span class="mi">2007</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span><span class="o">-</span><span class="nx">why</span><span class="o">-</span><span class="nx">every</span><span class="o">-</span><span class="nx">programmer</span><span class="o">-</span><span class="nx">should</span><span class="o">-</span><span class="nx">play</span><span class="o">-</span><span class="nx">nethack</span><span class="p">.</span><span class="nx">md</span>
+<span class="o">|</span>   <span class="err">└──</span> <span class="mi">2009</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">26</span><span class="o">-</span><span class="nx">barcamp</span><span class="o">-</span><span class="nx">boston</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="nx">roundup</span><span class="p">.</span><span class="nx">md</span>
+<span class="err">├──</span> <span class="nx">_sass</span>
+<span class="o">|</span>   <span class="err">├──</span> <span class="nx">_base</span><span class="p">.</span><span class="nx">scss</span>
+<span class="o">|</span>   <span class="err">└──</span> <span class="nx">_layout</span><span class="p">.</span><span class="nx">scss</span>
+<span class="err">├──</span> <span class="nx">_site</span>
+<span class="err">└──</span> <span class="nx">index</span><span class="p">.</span><span class="nx">html</span> <span class="c1">// or index.md</span></code></pre></figure>
+<p><br />
+We already know what <code class="highlighter-rouge">_config.yml</code> is. And we’ll come back to some more adjustments here in just a moment.</p>
+
+<p>The <code class="highlighter-rouge">_drafts</code> folder is optional. As its name suggests, here’s where you store draft files for your posts. You will not see them published on your public blog but you can preview them locally once you run <code class="highlighter-rouge">jekyll serve</code> command on your console.</p>
+
+<p>The <code class="highlighter-rouge">_includes</code> folder stores the partials such as footer or sidebar. These are the sections that get duplicated on respective sites.</p>
+
+<p>The <code class="highlighter-rouge">_layouts</code> keeps, you guessed it, the layouts for individual sites, such as home, page, post, contact or category. You may well have only the default.html and post.html here, all up to you and/or the theme chosen.</p>
+
+<p>The <code class="highlighter-rouge">_posts</code> are also pretty self-explanatory. It’s basically post files, each of them keeping a single post with its date, title and contents.</p>
+
+<p>If you’re working with Sass, it will be no surprise to you to encounter the <code class="highlighter-rouge">_sass</code> folder. In case you don’t know this preprocessor (I strongly recommend you to familiarize yourself with Sass, it will enhance your workflow tremendously), these are the source files for your stylesheets. Something like CSS on steroids. ;)</p>
+
+<p>And finally the <code class="highlighter-rouge">_site</code> folder where the whole generated site is placed. Stay away from fiddling with this one, it’s not where you edit things, it’s just the final outcome to display in the browser.</p>
+
+<p>Now basically how you modify the way your sites display is by editing the so-called <a href="https://jekyllrb.com/docs/frontmatter/">YAML front matter</a>. This section is always at the beginning of the file containing your page or post and it allows you to control how Jekyll processes and builds pages. The YAML front matter is put between triple-dashed lines and can look like so:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">---</span>
+<span class="nx">layout</span><span class="err">:</span> <span class="k">default</span>
+<span class="nx">title</span><span class="err">:</span> <span class="nx">My</span> <span class="nx">first</span> <span class="nx">post</span>
+<span class="nx">date</span><span class="err">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">15</span> <span class="mi">10</span><span class="err">:</span><span class="mi">34</span>
+<span class="nx">author</span><span class="err">:</span> <span class="nx">John</span> <span class="nx">Smith</span>
+<span class="o">---</span></code></pre></figure>
+<p><br />
+In the above example we ask Jekyll to display this specific post using the <code class="highlighter-rouge">default.html</code> layout, to give it a specific title and author, and to publish it on a specific date. 
+These are just four examples of predefined global variables that you can use at this point. Some of the others are:</p>
+
+<ul>
+  <li><strong>permalink</strong>: allows you to override the default permalink settings</li>
+  <li><strong>category</strong> or <strong>categories</strong>: puts your post into a specific category / categories (simply put as an array with spaces; no brackets, no commas)</li>
+  <li><strong>comments</strong>: a boolean (true/false) stating whether or not you want the comments to be displayed; <a href="https://disqus.com/">Disqus</a> is a recommended solution for introducing comments’ feature on a Jekyll blog</li>
+  <li><strong>published</strong>: another boolean value that allows you to keep your post unpublished, if set to false</li>
+  <li><strong>tags</strong>: pretty much like comments, tags allow the posts to fall under a given tag</li>
+  <li>and more</li>
+</ul>
+
+<p>Depending on your theme and needs you will probably mainly need to adjust only front matter. When it comes to styling the contents, it boils down to mastering (joking, some basics will do) Markdown. I will cover some of its syntax in the next section.</p>
+
+<p>Done with the fundamentals of Jekyll structure, let’s switch back to the <code class="highlighter-rouge">_config.yml</code> file for a minute. You may want to manage how to handle permalinks here. Most often, you will want them to point at the post’s title. In this case go ahead and add this line:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">permalink</span><span class="err">:</span> <span class="err">:</span><span class="nx">title</span></code></pre></figure>
+<p><br />
+You can also set up your top navigation and footer here. In my case, here is the final <code class="highlighter-rouge">_config.yml</code> for this blog:</p>
+
+<p><img src="img/post-assets/config-yml.jpg" alt="Final _config.yml" class="img-responsive" /></p>
+
+<p>Don’t forget that you need to re-serve jekyll if you introduce any changes to the <code class="highlighter-rouge">_config.yml</code>, otherwise you won’t be able to track the changes.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jekyll</span> <span class="nx">serve</span></code></pre></figure>
+<p><br />
+Meanwhile, I run up against two really promising FREE Jekyll themes. Seem to be well documented and hopefully they will prove to be a counterexample of my former thesis on the supremacy of premium themes. Check them out, I will be happy to hear your feedback!</p>
+
+<ul>
+  <li><a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a></li>
+  <li><a href="https://mmistakes.github.io/so-simple-theme/">So Simple</a></li>
+</ul>
+
+<h2 id="formatting-your-posts-with-markdown">Formatting your posts with Markdown</h2>
+
+<p>The actual content of your Jekyll posts and pages is written in Markdown, a simple text formatting engine that you probably got familiar with when creating your README.md file for your GitHub repositories. However, in case you did not, here are some basics:</p>
+
+<ul>
+  <li><strong>Headers</strong><br />
+You simply use hashtags for that. The numbers of hashtags determines the size of the header. You can think of adding hashtags as incrementing the number in your &lt;h…&gt;&lt;/h...&gt; tags. For instance, if you write <code class="highlighter-rouge"># Header1</code> the result will be a big header, <code class="highlighter-rouge">##  Header</code> will be a bit smaller and so on. <br />Note two things:
+    <ul>
+      <li>The single hashtag headers (the biggest ones, equivalent to <code class="highlighter-rouge">&lt;h1&gt;&lt;/h1&gt;</code>) are reserved for blog titles, don’t use them in your content.</li>
+      <li>Make sure there is a space after the hashtag. For some reason Jekyll cares about that.</li>
+    </ul>
+  </li>
+  <li><strong>Inline markup styles</strong><br />
+    <ul>
+      <li>To make a phrase render as <em>italics</em> you put it in between of single asterisks: <code class="highlighter-rouge">*italics*</code>.</li>
+      <li>To make a phrase <strong>bold</strong> you need to put it in between of double asterisks, like so: <code class="highlighter-rouge">**bold**</code>.</li>
+      <li>To make your phrase render like <code class="highlighter-rouge">code()</code>, you put it in between of backticks: <code class="highlighter-rouge">`code()`</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Lists</strong><br />
+    <ul>
+      <li><strong>Unordered lists</strong><br />
+  Unordered lists’ items start with <code class="highlighter-rouge">*</code> or <code class="highlighter-rouge">+</code> or <code class="highlighter-rouge">-</code> . Don’t forget the <strong>space</strong> afterwards!
+        <ul>
+          <li><strong>Nested list items</strong><br />
+  For a nested list item hit <code class="highlighter-rouge">Tab</code> followed by <code class="highlighter-rouge">-</code> and <strong>space</strong>. You can exchange <code class="highlighter-rouge">-</code> with <code class="highlighter-rouge">+</code> or <code class="highlighter-rouge">*</code> or even <strong>number</strong> (followed by <strong>dot</strong> and, of course, <strong>space</strong>)</li>
+        </ul>
+      </li>
+      <li><strong>Ordered lists</strong><br />
+  This one is simple: press <strong>number</strong> followed by <strong>dot</strong> and <strong>space</strong>, like so: <code class="highlighter-rouge">1. list element</code>. That’s it!</li>
+    </ul>
+  </li>
+  <li><strong>Links</strong>
+  To create a link put its title inside square brackets first, then the actual address inside round brackets, like so: <br />
+  <code class="highlighter-rouge">[Google](http://google.com)</code></li>
+  <li><strong>Images</strong>
+  Placing images follows a rule similar to the links, you only need to precede the whole stuff with an exclamation mark. In the round brackets you either put a relative path to the image on your server, or an absolute path to an image hosted elsewhere. Example:<br />
+  <code class="highlighter-rouge">![Image title](img/my-image.jpg)</code></li>
+</ul>
+
+<p>That was just some very basics of Markdown, enough for the very beginning but in the nearest future you might need a more extensive resource. In this case, have a look at what I found for you:</p>
+
+<ul>
+  <li><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown cheatsheet on GitHub</a></li>
+  <li><a href="https://masteringmarkdown.com/">A great video series by Wes Bos</a>. 
+  You might have known the guy before, he’s the author of fabulous courses on JavaScript, Flexbox and more. Some of them are free, the others are paid. I purchased the one on <a href="http://wesbos.com/es6-for-everyone/">EcmaScript6</a> and it proved a great value for money.</li>
+</ul>
+
+<h2 id="using-a-custom-domain-with-jekyll">Using a custom domain with Jekyll</h2>
+
+<p>The last thing I’m going to cover is setting up a custom domain for your Jekyll blog. Once you’ve purchased your domain there are three steps to follow in order to redirect your blog which is currently hosted under <code class="highlighter-rouge">your-login.github.io/your-project</code>.</p>
+
+<ol>
+  <li>In your project’s root create a new empty file and save it as <code class="highlighter-rouge">CNAME</code> (with no extension). Inside of this file enter your domain’s name. For the sake of this example I have got myself a free jekyll.cf domain and that’s exactly and only thing that goes into the <code class="highlighter-rouge">CNAME</code> file. No http://, www or so, just the plain name.</li>
+  <li>Now login to your GitHub account and navigate to your project. Choose the <strong>Settings</strong> panel (top right option). Once you’re there, scroll down to the <strong>GitHub Pages</strong> section. You will find here a place to type in your <strong>Custom domain</strong> like on the image below:
+<img src="img/post-assets/custom-domain.jpg" alt="Custom domain on GitHub Pages" class="img-responsive" /></li>
+  <li>Point your DNS to GitHub Pages. Login to your domain provider’s panel. Add a <strong>new CNAME record</strong> and target it at your base user’s github.io site. Here is how it looks like in my case:
+<img src="img/post-assets/dns.jpg" alt="DNS" class="img-responsive" /> <br /> Wait for the DNS to propagate. You’re there, nice and simple. :)</li>
+</ol>
+
+<h2 id="final-word">Final word</h2>
+
+<p>Whew, you’ve done that! If you’ve read through both parts, congratulations, you are a patient reader. A great feature for a programmer! If you stumble upon any issues (pretty sure you will as every project is different, our needs too), the best places to dive deeper into Jekyll are:</p>
+<ul>
+  <li><a href="http://jekyllrb.com/">Jekyll’s official site</a></li>
+  <li><a href="https://help.github.com/categories/customizing-github-pages/">GitHub Pages help</a></li>
+  <li>and, as always, invaluable <strong>StackOverflow</strong>, god bless the dudes!</li>
+</ul>
+
+<p>Have fun working on your project. :)</p>
 
 
             <p class="meta">
@@ -208,6 +1204,74 @@
 </blockquote>
 <p><br /></p>
 
+<p>Before I decided to register to the “Get Noticed” contest, I had read a whole bunch of posts and articles by attendees of the 2016 edition. They were describing how the participation itself helped them grow as developers, why it is all worth time and effort - and how to prepare yourself to the challenge. Not surprisingly, they all emphasised the significance of having a good, thoughtful plan, factorizing the problem and getting into details of every single step. With that in mind, I started coding with… several sheets of paper and tons of bookmarks open in my browser to analyze what actually needs to be done and how to start. Here is what I have come up with.</p>
+
+<h2 id="stage-1-choosing-tools-and-technologies">Stage 1: Choosing tools and technologies</h2>
+
+<p>This one was quite obvious: HTML &amp; CSS(Sass) for the project’s shell, JavaScript for the engine. Since there are many cool features introduced by ECMAScript 2015 (wider known as ECMAScript 6 or simply ES6), I will try my first steps here, taking advantage of the newly introduced classes, arrow functions, destructuring etc. The Boids themselves will be animated on HTML5 canvas and I plan to prepare an introduction to the canvas API in the nearest future.</p>
+
+<h2 id="stage-2-preparing-the-environment">Stage 2: Preparing the environment</h2>
+
+<p>Another warm-up thing: preparing a visual platform at which Boids will be flying. I have created a palette of swatches (an old designer’s habit) and decided to divide the layout vertically, leaving a left-hand aside for some basic information on the Boids idea and a simple manual. All the rest will be taken up by canvas. Initially I wanted to start with a single bird-oid form animating itself but then I changed my mind and chose a roughly straightforward solution to begin with. The elementary Boids will be simply small circles drawn directly on canvas. Once I figure out all the animation’s algorithms, I will try to think of a way to turn circles into something more complex. First things first.</p>
+
+<h2 id="stage-3-maths">Stage 3: Maths!</h2>
+
+<p>Now here comes the hardest thing for me, or at least at this point it seems so. Getting into counting! Vectors, numbers, algorithms… getting together three seemingly simple rules of flocking put me hardly off. Still, it had to be done. OK, a pile of blank paper sheets and a pen and let’s dismantle the sucker!</p>
+
+<p>I will need a 2D coordinate system and an array of starting positions of Boids (X and Y). Thereafter, Boids will be placed on the given coordinates and put into motion. At this point there has to be a function that takes the initial coordinates and counts the next position of each Boid as per the rules described in the former post. A quick reminder:</p>
+
+<ul>
+  <li><strong>separation</strong>: steer to avoid crowding</li>
+  <li><strong>alignment</strong>: steer towards the average heading of local flockmates</li>
+  <li><strong>cohesion</strong>: steer to move toward the average position of local flockmates</li>
+</ul>
+
+<p>Let’s break these apart.</p>
+
+<p>I decided to start with <strong>cohesion</strong>. To calculate it, I will need to find the center of mass for the flock. This will be the average of coordinates of all the boids except for the one, for which I will calculate the movement. I assume I will move the Boid towards the new position by 10% of the distance between the current and calculated position, just to keep the whole animation smooth and concise. In order to count the distance, I will need the Pythagorean theorem, a nice reminder of good old times in my primary school. ;)</p>
+
+<p>Next, I will handle the <strong>separation</strong> rule. This rule needs a constant of the maximum distance between the boids. When a Boid gets too close to its colleague, it will need to steer away.</p>
+
+<p>And finally, the <strong>alignment</strong> rule forcing all Boids to follow the average direction of the flock and adjust the speed of each Boid to its neighbours.</p>
+
+<p>When breaking these rules apart, I came across a nice explanation of the problem by Conrad Parker. He <a href="http://www.kfish.org/boids/pseudocode.html">decribed the calculations using pseudocode</a>. This was a great help in my implementation, having understood this thing was enough to get down to coding in JavaScript.</p>
+
+<h2 id="stage-4-creating-a-boid-class">Stage 4: Creating a Boid class</h2>
+
+<p>One of the cool new features of ES6 is the introduction of <a href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Classes">classes</a>. Something for you, JS-despisers! JavaScript classes are actually just a bit of syntactic sugar over the Objects and prototypes but they make our code much cleaner and simplify working with inheritance. I will harness this new feature by creating a simple Boid class that keeps the instance’s position and speed.</p>
+
+<h2 id="stage-5-initial-animation-for-a-group-of-boids">Stage 5: Initial animation for a group of Boids</h2>
+
+<p>Having the initial group of boids on canvas, I will define the first basic animation. It can be simply running on the X-axis. Once a boid hits the canvas’ border, the direction of the movement will be reverted. Thereafter, I will make boids fly on the Y-axis as well so that they make use of the whole canvas’ area.</p>
+
+<h2 id="stage-6-counting-next-position">Stage 6: Counting next position</h2>
+
+<p>I will need a function that makes use of the previously defined cohesion, separation and alignment rules. This way the function will perform calculations of the next position of a Boid, then clear the canvas and redraw the whole flock on a new position. At this point I can tell I’d have released the projects’ .beta version. :)</p>
+
+<h2 id="stage-7-changing-the-circle-into-bird-oid-form">Stage 7: Changing the circle into bird-oid form</h2>
+
+<p>Now it’s time to play: circles look dull so I will think of something more creative, probably in a form of bird. It would be great if every single boid would also animate itself, as if it was flying. If I get stuck, I will continue with the next steps and come back here after resolving the rest of the issues.</p>
+
+<h2 id="stage-8-adding-controls">Stage 8: Adding controls</h2>
+
+<p>At this point I can hand over the control to the user, letting them decide on the boids’ amount, speed, distance etc. I will need a way to get data from the user: it can be a set of range sliders, buttons or other types of inputs.</p>
+
+<h2 id="stage-9-first-roadblock">Stage 9: First roadblock</h2>
+
+<p>Time for a first roadblock! I will put a static circle imitating an obstacle and write a function that steers boids away of it. More calculations ahead…</p>
+
+<h2 id="stage-10-dynamic-roadblocks-on-users-click">Stage 10: Dynamic roadblocks on user’s click</h2>
+
+<p>Now that I have a working roadblock, I will put the user in charge of adding and deleting the roadblocks. Guess the simplest option will be by clicking on the canvas to create a roadblock, then another click on the roadblock created would delete it. I may want to change the way the roadblocks look, perhaps add some randomness here too.</p>
+
+<h2 id="stage-11-getting-it-nice">Stage 11: Getting it nice!</h2>
+
+<p>Once all is working fine and tested, I’ll get back to my Sass and add some styling so that the whole thing simply looks good. It’s also time to develop the aside part, put some more information here and maybe think of some kind of introductory part that tells the story behind the project. I hope to get back to this point before the planned 10 weeks pass.</p>
+
+<h2 id="where-am-i-now">Where am I now?</h2>
+
+<p>At this moment things are going quite fine. I got to the Stage 6 and the boids are flying as planned. You can check the current status <a href="https://ka1130.github.io/Boids/src/">here</a>. In case you were curious, all the code goes to a <a href="https://github.com/ka1130/Boids">GitHub repo</a>. Wish me good luck! :)</p>
+
 
 
             <p class="meta">
@@ -223,6 +1287,127 @@
 
 
             <p>For many years I have been using Wordpress as an obvious choice when choosing a blogging platform. Wordpress is by far the most popular CMS on the market, supported and developed for 14 years, powering around 8% of all pages in World Wide Web. That speaks for itself. However, since I’ve been keeping my projects on GitHub pages for the last few months, I’ve discovered it might be much easier to run the next blogging project directly on GitHub server and make use of Jekyll due to its native support in GitHub pages.</p>
+
+<h2 id="so-what-is-jekyll">So what is Jekyll?</h2>
+<p>As the recurring definition states, Jekyll is a simple, blog-aware, static site generator based on Ruby language. By saying “static” we mean it’s flat-file and ready for deployment. No databases needed, no security headaches, no maintenance issues. It’s ultra-fast, cheap (your blog can be hosted for free on GitHub pages) and manageable. The contents are written simply in HTML/CSS/Markdown so if you’ve had any blogging experience, switching to Jekyll should be duck soup. :) At least when you’re running it on Mac OS or Linux platform.</p>
+
+<h2 id="but-i-am-not">…but I am not.</h2>
+
+<p>And here’s where things go a little bit trickier. As the majority of Poles, I am a more or less happy user of a mundane Windows 7 (yes, 7, in 2017 I find it funny too). As it turned out, running Jekyll on Microsoft’s child was not as smooth as I hoped. I will try to guide you through the process and prevent you from running  into some stumbling blocks I’ve needed to force through myself.</p>
+
+<p>Some of the steps below look probably alike on systems other than Windows, however, since I have tested the process on Win7 only, I can not specify the exact differences.</p>
+
+<h2 id="step-1-ruby-installation">Step 1. Ruby installation</h2>
+
+<p>Assuming that you have some basic knowledge of command line and are familiar with Git (and have Git ready to use on your platform), you can proceed with setting up our GitHub-hosted, Jekyll-powered website. First, we need to install Ruby. It is likely you already have Ruby on your machine so go ahead and type in your console:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ruby</span> <span class="o">-</span><span class="nx">v</span></code></pre></figure>
+<p><br />
+In my case I got the following answer:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ruby</span> <span class="mf">2.3</span><span class="p">.</span><span class="mi">3</span><span class="nx">p222</span> <span class="p">(</span><span class="mi">2016</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">21</span> <span class="nx">revision</span> <span class="mi">56859</span><span class="p">)</span> <span class="p">[</span><span class="nx">x64</span><span class="o">-</span><span class="nx">mingw32</span><span class="p">]</span></code></pre></figure>
+<p><br />
+If your version is lower than 2.0.0, you can update it. If you don’t have Ruby yet, just visit <a href="http://rubyinstaller.org/downloads/">this place</a> and download the most suitable installer as per suggestions on the right-hand side. Don’t close the tab yet, we’ll go back to this page in a minute.</p>
+
+<p>Now simply run the .exe files and keep clicking “next” until you see the screen below.</p>
+
+<p><img src="img/post-assets/ruby-installer.jpg" alt="ruby-installer" class="img-responsive" /></p>
+
+<p>Make sure to check the option in the middle, “Add Ruby executables to your PATH”. Click “install” and you’re done! Restart your console and run</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ruby</span> <span class="o">-</span><span class="nx">v</span></code></pre></figure>
+<p><br />
+again to ensure you’re good to go.</p>
+
+<h2 id="step-2-ruby-dev-kit">Step 2. Ruby Dev Kit</h2>
+
+<p>Since Ruby was not built to be used on Windows (although it is, surely, possible), it can be difficult to install some of the Gems (which you can think of, generally speaking, as a specific kind of library or plugin; more in-depth description <a href="http://guides.rubygems.org/what-is-a-gem/">here</a>). Go back to the Ruby Installer page and scroll it down. On the left-hand site there is a “Development Section.” Choose the one appropriate for your system’s version and download it. Create a new folder called <strong>RubyDevKit</strong> directly in your <strong>C:\ ** directory. Select to extract Ruby Dev Kit’s .exe file in **C:\RubyDevKit</strong> (the folder you have just created). Now navigate to this path in your command line:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">cd</span> <span class="nx">C</span><span class="err">:\</span><span class="nx">RubyDevKit</span></code></pre></figure>
+<p><br />
+Then go ahead and run the commands below:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">ruby</span> <span class="nx">dk</span><span class="p">.</span><span class="nx">rb</span> <span class="nx">init</span>
+<span class="nx">ruby</span> <span class="nx">dk</span><span class="p">.</span><span class="nx">rb</span> <span class="nx">review</span>
+<span class="nx">ruby</span> <span class="nx">dk</span><span class="p">.</span><span class="nx">rb</span> <span class="nx">install</span></code></pre></figure>
+<p><br />
+If you encounter any trouble at this point, check up <a href="https://labs.sverrirs.com/jekyll/1x-ruby-and-devkit-error.html">this place</a> for a solution.
+That’s it! If all went fine, you’re ready to proceed and install Jekyll Gem.</p>
+
+<h2 id="step-3-setting-up-jekyll-and-bundler">Step 3. Setting up Jekyll and Bundler</h2>
+
+<p>To get your Jekyll up and ready you simply run:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gem</span> <span class="nx">install</span> <span class="nx">jekyll</span></code></pre></figure>
+<p><br />
+You will need a package manager called Bundler to get all Jekyll dependencies installed properly. Your console needs the following commands:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gem</span> <span class="nx">install</span> <span class="nx">bundler</span>
+<span class="nx">bundle</span> <span class="nx">install</span></code></pre></figure>
+<p><br />
+There you go! You can now start your first Jekyll project. That simple.</p>
+
+<h2 id="step-4-get-your-jekyll-blog">Step 4. Get your Jekyll blog</h2>
+
+<p>Assuming that you know the basics of Git and GitHub, choose a path on your machine where you want to keep your new Jekyll project. Navigate there in your console. Now if for instance your project will be called coolblog, you need to run the following command:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jekyll</span> <span class="k">new</span> <span class="nx">coolblog</span></code></pre></figure>
+<p><br />
+Move to this directory…</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">cd</span> <span class="nx">coolblog</span></code></pre></figure>
+<p><br />
+…and intialize your Git repo:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">git</span> <span class="nx">init</span></code></pre></figure>
+<p><br />
+In your project’s folder you will find a file called “Gemfile” (with no extension), open it up and comment the following snippet by simply putting <strong>#</strong> before:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span> <span class="nx">gem</span> <span class="s2">"jekyll"</span><span class="p">,</span> <span class="s2">"(your version here)"</span></code></pre></figure>
+<p><br />
+Now uncomment the “github-pages” gem below by deleting the <strong>#</strong> from the beginning of the line:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gem</span> <span class="s2">"github-pages"</span><span class="p">,</span> <span class="nx">group</span><span class="err">:</span> <span class="err">:</span><span class="nx">jekyll_plugins</span></code></pre></figure>
+<p><br />
+…and have a look at the end of the file which should say something like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span> <span class="nx">Windows</span> <span class="nx">does</span> <span class="nx">not</span> <span class="nx">include</span> <span class="nx">zoneinfo</span> <span class="nx">files</span><span class="p">,</span> <span class="nx">so</span> <span class="nx">bundle</span> <span class="nx">the</span> <span class="nx">tzinfo</span><span class="o">-</span><span class="nx">data</span> <span class="nx">gem</span>
+<span class="nx">gem</span> <span class="s1">'tzinfo-data'</span><span class="p">,</span> <span class="nx">platforms</span><span class="err">:</span> <span class="p">[</span><span class="err">:</span><span class="nx">mingw</span><span class="p">,</span> <span class="err">:</span><span class="nx">mswin</span><span class="p">,</span> <span class="err">:</span><span class="nx">x64_mingw</span><span class="p">,</span> <span class="err">:</span><span class="nx">jruby</span><span class="p">]</span>
+
+<span class="nx">gem</span> <span class="s1">'wdm'</span><span class="p">,</span> <span class="s1">'&gt;= 0.1.0'</span> <span class="k">if</span> <span class="nx">Gem</span><span class="p">.</span><span class="nx">win_platform</span><span class="p">?</span></code></pre></figure>
+<p><br />
+At this point bundler needs to be updated so run:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">bundle</span> <span class="nx">update</span></code></pre></figure>
+<p><br />
+You are now ready to get your blog life. Go ahead and type in in your console:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">jekyll</span> <span class="nx">serve</span></code></pre></figure>
+<p><br />
+to put Jekyll in kind of “watch” mode where all your changes to the blog’s files (apart from .yml configuration files) will be instantly introduced.</p>
+
+<p>Now, in your browser go to <code class="highlighter-rouge">http://localhost:4000</code>. You will see your freshly created blog which will look like this:</p>
+
+<p><img src="img/post-assets/your-awesome-blog.jpg" alt="your-awesome-blog" class="img-responsive" /></p>
+
+<p>Congratulations! You’re ready to go!</p>
+
+<p>Bear in mind that once you hit Ctrl + C or close the console, Jekyll server will stop and you will be unable to see your site on localhost. I myself was not aware of this initially and lost much too much time stack-overflowing why my blog stopped working. ;)</p>
+
+<h2 id="further-reading-and-tips">Further reading and tips</h2>
+
+<p>This has been a long post, however you may find it insufficient. To learn more about working with Jekyll I encourage you to visit the following places:</p>
+<ul>
+  <li>Very insightful yet easy to follow <a href="https://jekyllrb.com/">documentation</a></li>
+  <li><a href="http://jekyll-windows.juthilo.com/">Nice guide for Windows users</a></li>
+  <li>Another <a href="http://yizeng.me/2013/05/10/install-jekyll-3-on-windows/">Jekyll installation guide</a> with a very helpful part about troubleshooting</li>
+  <li>For those unfamiliar with GitHub, <a href="https://guides.github.com/activities/hello-world/">here</a> is a friendly and straightforward overview</li>
+  <li>Using Windows command line only? This may not always be the best idea. Check out <a href="https://git-for-windows.github.io/">Git Bash</a></li>
+</ul>
+
+<p>In the next post we will take a look at customizing your blog and running it on your own domain if you preferred it over the Git Hub default one.</p>
+
+<p>Now get down to work, I keep my fingers crossed for your awesome project! :)</p>
 
 
 
@@ -240,6 +1425,27 @@
 
             <h2 id="what-is-this-project-about">What is this project about?</h2>
 
+<p>Ever heard about artificial life programs? Sure you have, Internet is full of information, projects and games based on natural life’s simulation. Consider <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway’s Game of Life</a>, for instance, which simulates “colonies” growing or dying depending on how crowded or lonely the single cells are. It is still purely math-based but it very believably resembles a kind of natural life patterns, where cells are forming generations connoting almost a kind of collective intelligence, especially if they are given a really big space to colonize. Since I have lately programmed <a href="https://ka1130.github.io/Game-of-Life/src/">JavaScript implementation of Game of Life</a>, I decided to challenge myself with something presumably much more demanding.</p>
+
+<h2 id="the-boids-idea">The “Boids” idea</h2>
+
+<p>As per <a href="https://en.wikipedia.org/wiki/Boids">Wikipedia’s definition</a>, Boids is an artificial life program, developed by Craig Reynolds in 1986, which simulates the flocking behaviour of birds. I have encountered two derivations of the term “boids”. One says it is a shorthand for “bird-oid”, in other words, “bird-like” objects. The other suggests it stems from the way that New Yorkers pronounce the word “birds”. Leaving aside the story of the term, Reynold’s Boids model (also referred to as flocking algorithm) follows three simple rules:</p>
+
+<ul>
+  <li><strong>separation</strong>: steer to avoid crowding</li>
+  <li><strong>alignment</strong>: steer towards the average heading of local flockmates</li>
+  <li><strong>cohesion</strong>: steer to move toward the average position of local flockmates</li>
+</ul>
+
+<p>What is phenomenal about Reynold’s model is that using these plain rules only on single units it generates behaviour strongly resembling a real flock’s one. Just as in the Game of Life the result is surprisingly complex and realistic. Boids are one of many experiments in the field of so-called <a href="https://en.wikipedia.org/wiki/Swarm_intelligence">swarm intelligence</a> characterized by the lack of centralized control agent: each boid follows its own rules, still resulting in a surprising group behaviour.</p>
+
+<p>Here is a nice visualization and further explanation of the idea:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QbUPfMXXQIY?ecver=1" frameborder="0"> </iframe>
+
+<h2 id="my-goal">My goal</h2>
+
+<p>The purpose of my project is to create a JavaScript implementation of boids. I know I am definitely not the first one to try - there even are whole libraries and scripts available to use freely. However, I will try to figure the thing out myself, preferably with pure Vanilla JS. We’ll see what I’ll end up with. Keep your fingers crossed, I will report you soon about the project’s state!</p>
 
 
             <p class="meta">
@@ -256,6 +1462,20 @@
 
             <h2 id="ds---what">..Ds - what?</h2>
 <p>You might be wondering what the heck is this Dsp2017 in the categories’ section and what actually am I doing here, starting yet another programming blog with little experience in front-end development. Well, what got me going with all this stuff is a competition opened by <a href="http://devstyle.pl/o-mnie/">Maciej Aniserowicz</a>, founder of <a href="http://devstyle.pl">Devstyle</a> blog, one of the best of the kind in Poland. “Dsp” is a Polish acronym for “Get Noticed” and this is exactly the name of the competition. It is targeted at literally all programmers, no matter how experienced they are. Anyone can join, work on their own project, blog about it, share their knowledge and learn at the same time.</p>
+
+<p>Believe me, I’m scared to death. I have defined my project (more about it in the following posts), gathered necessary materials but, as a newbie in the industry, I know I will need to work really hard to make my readers benefit from the posts here. That said, I know there are thousands of people like me and I hope to encourage them to step out of the shade and believe that if I can become an IT blogger, they too have valuable knowledge to share.</p>
+
+<h2 id="so-why-would-anyone-want-to-stay-here">So why would anyone want to stay here?</h2>
+<p>Little experience does not mean having nothing to contribute. I’ve made sure my project would be ambitious enough to get some programmers interested. I will definitely stumble upon problems some programmers will encounter (or already did in the past) too and hope the solutions I come up with will prove helpful.</p>
+
+<h2 id="schedule">Schedule</h2>
+<p>The posts will appear at least twice a week for minimum 10 weeks continuously. Each week I will issue a post with some information related strictly to the project, and another one associated with coding / IT environment.</p>
+
+<h2 id="technologies">Technologies</h2>
+<p>You can expect me to write about JavaScript, as well as HTML/CSS/Sass issues. The blog is powered by Jekyll and hosted on GitHub pages so I plan to walk you through the process which turned out to be a bit tricky on Windows. ;)</p>
+
+<h2 id="ok-are-you-finished">OK, are you finished?</h2>
+<p>Yes. Not going to bore you to death. ;) If you wish to keep track of this blog, just make use of the RSS button on the <a href="http://just-sudo-it.pl">home site</a>.</p>
 
 
 

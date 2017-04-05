@@ -190,9 +190,23 @@ Bear in mind that a subclass cannot contain an empty constructor. Even if the co
 
 Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are problematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is [Babel](https://babeljs.io/). Go ahead and visit its site. In the top menu you will find a “Try it out” tab which allows you to see how Babel handles your ES6 code. When you paste a snippet of your code on the left, its ES5 representation will show up on the right. Babel does a really good job here!
 
-An instruction for using Babel could actually take a whole new and quite long tutorial so for now please just refer to the great [Babel documentation](https://babeljs.io/docs/setup/) or try out the tool live [here](https://babeljs.io/repl/).
+An instruction for using Babel could actually take a whole new and quite long tutorial(and I consider preparing one for you) so for now please just refer to the great [Babel documentation](https://babeljs.io/docs/setup/) or try out the tool live [here](https://babeljs.io/repl/). 
 
 
 ## Summing Up & Learning Resources
+
+Despite the substantial length of this post, this was just a very brief introduction into the ES6 features described, let alone the whole bunch of other stuff that ES6 has in its offer. I assume you'd feel like diving deeper into the subject so I created a list of nice resources for you. A few free once to start: 
+
+ + A solid course by [Egghead.io](https://egghead.io/courses/learn-es6-ecmascript-2015)
+ + A series of articles by [Mozilla](https://hacks.mozilla.org/category/es6-in-depth/)
+ + Another extensive series, all details nicely explained on [Medium.com](https://medium.com/@mrzepinski)
+
+And for those who want even more and are ready to sacrifice some pennies, here are two video trainings that I gave a try and found helpful:
+
+ + A fabulous course by [Wes Bos](http://wesbos.com/es6-for-everyone/), whom you may know from his free [30-day ES6 challenge](https://javascript30.com/)
+ + A nice training on [Udemy](https://www.udemy.com/javascript-es6-tutorial/). There are often huge discounts there so I'd advice you to wait for one, as you can get the course for as little as 10-15 Euro.
+
+In case you were curious, how are Boids doing, please be invited to the [GitHub repo](https://github.com/ka1130/Boids).
+Thanks for reading, see you later! :)
 
 
