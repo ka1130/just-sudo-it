@@ -190,7 +190,7 @@ Bear in mind that a subclass cannot contain an empty constructor. Even if the co
 
 Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are problematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is [Babel](https://babeljs.io/). Go ahead and visit its site. In the top menu you will find a “Try it out” tab which allows you to see how Babel handles your ES6 code. When you paste a snippet of your code on the left, its ES5 representation will show up on the right. Babel does a really good job here!
 
-Installing Babel is easy. A prerequisite is Node.js and npm running on your system. If you do not have them on your system - or aren’t sure about it - please refer to my [Gulp introduction](http://just-sudo-it.pl/gulp-introduction), the first part will follow you along with that.
+An instruction for using Babel could actually take a whole new and quite long tutorial so for now please just refer to the great [Babel documentation](https://babeljs.io/docs/setup/) or try out the tool live [here](https://babeljs.io/repl/).
 
 
 ## Summing Up & Learning Resources
