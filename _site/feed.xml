@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 06 Apr 2017 20:20:31 +0200</pubDate>
-    <lastBuildDate>Thu, 06 Apr 2017 20:20:31 +0200</lastBuildDate>
+    <pubDate>Thu, 06 Apr 2017 21:01:05 +0200</pubDate>
+    <lastBuildDate>Thu, 06 Apr 2017 21:01:05 +0200</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -225,13 +225,30 @@ Thanks for reading, see you later! :)&lt;/p&gt;
 
 &lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
 
-&lt;h2 id=&quot;the-schedule&quot;&gt;The Schedule&lt;/h2&gt;
+&lt;p&gt;In fact, anyone can enroll to the bootcamp, regardless of their coding skills (or the lack of them). There are two tests to pass though: one for logical thinking, the other one for English. They are absolutely passable, no worries. If your English is good enough to read documentation and communicate well, this should do. The logical test might be tricky to get 100% of but as far as I’m concerned, more than 50% is OK. Check this out, this could have changed. Having both tests passed, you’ll need to tell a bit about your background and motivation.&lt;/p&gt;
 
-&lt;p&gt;In Coders Lab full-time is full-time. Plus, afterhours, lots of afterhours. No mercy, you paid (a lot!) for the hard time. You need to enroll way in advance for two reasons:&lt;/p&gt;
+&lt;p&gt;Bear in mind that you’ll probably need to enroll to the bootcamp way before your edition will start - and there are two reasons for that:&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;There’s a long list of applicants.&lt;/li&gt;
-  &lt;li&gt;You need to spend some 60 hours with Prework materials and then solve a series of coding tasks on GitHub. Don’t even think of starting the course with no knowledge at all because you didn’t feel like buckling down to study or just went through the Prework briefly and had somebody help you solve the tasks. That will not work and you’d realize this fact the very first day of the bootcamp. Waste of your money.&lt;/li&gt;
+  &lt;li&gt;You need to spend some 60 hours with Prework materials and then solve a series of coding tasks on GitHub. Don’t even think of starting the course with no knowledge at all because you didn’t feel like buckling down to study or just went through the Prework briefly and had somebody help you solve the tasks. That will not work and you’d realize this fact the very first day of the bootcamp. Waste of your money. :)&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h2 id=&quot;the-schedule&quot;&gt;The Schedule&lt;/h2&gt;
+
+&lt;p&gt;In Coders Lab full-time is full-time. Plus, afterhours, lots of afterhours. No mercy, you paid (a lot!) for the hard time. You’ll have an hour of lunch break which you might end up spending mostly with your nose in the code. No outer pressure, though. ;) Each day consists of a theory parts interspersed with practical tasks. Or rather, practical tasks interspersed with theory, since the former eats up some 80% of the time. You will be sent all the presentations so that you can get back to them at any time.&lt;/p&gt;
+
+&lt;p&gt;Every week is dedicated to one basic topic, for instance &lt;em&gt;Advanced HTML &amp;amp; CSS&lt;/em&gt;, &lt;em&gt;JavaScript&lt;/em&gt;, &lt;em&gt;Sass &amp;amp; RWD&lt;/em&gt; etc. The program is being adjusted dynamically since, as we all know, IT profession is all about changes, changes and even more changes. A day without a new framework being born is a lost day. ;) At the end of every learning block (Fridays) you will sit an exam. It takes a series of tasks and you can use any help you need as long as it’s not your neighbours’ help. ;) Internet allowed - but no real-time communication. That’s kind of obvious, though.&lt;/p&gt;
+
+&lt;p&gt;After the exam you will use the rest of the day for a workshop. You’re actually bound to finish it during the weekend. Plus, homework, every day. Again, practice, practice, practice - and if you don’t have enough, no worries, you’ll be given some extras. :)&lt;/p&gt;
+
+&lt;h2 id=&quot;mentors&quot;&gt;Mentors&lt;/h2&gt;
+
+&lt;h2 id=&quot;final-project&quot;&gt;Final Project&lt;/h2&gt;
+
+&lt;h2 id=&quot;your-first-job&quot;&gt;Your first job!&lt;/h2&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 </description>
         <pubDate>Wed, 19 Apr 2017 10:20:12 +0200</pubDate>
         <link>http://localhost:4000/coders-lab</link>
