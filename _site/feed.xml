@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Apr 2017 17:38:19 +0200</pubDate>
-    <lastBuildDate>Wed, 05 Apr 2017 17:38:19 +0200</lastBuildDate>
+    <pubDate>Thu, 06 Apr 2017 20:20:31 +0200</pubDate>
+    <lastBuildDate>Thu, 06 Apr 2017 20:20:31 +0200</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -218,8 +218,20 @@ Thanks for reading, see you later! :)&lt;/p&gt;
       </item>
     
       <item>
-        <title>Coders Lab: my opinion</title>
-        <description>
+        <title>Coders Lab: an alumn's opinion</title>
+        <description>&lt;p&gt;To my great surprise I have discovered lately a huuuge controversy around preparing to a developer’s job in a way other than: &lt;em&gt;a)&lt;/em&gt; graduating from a University of Technology; &lt;em&gt;b)&lt;/em&gt; self-study. The &lt;em&gt;c)&lt;/em&gt; option are coding schools that in the most common case run programming bootcamps preparing freshmen to their first Junior Developer position. I am the one that went for the &lt;em&gt;c)&lt;/em&gt; option (which does not exclude self-study, quite the opposite: it forces unassisted work as much as possible).&lt;/p&gt;
+
+&lt;p&gt;My choice was &lt;a href=&quot;http://coderslab.pl/&quot;&gt;Coders Lab&lt;/a&gt; due to its long-term reputation - and because I had kept their handout for 3 years as a fallback plan for my career. Coders Lab offers two paths: Front-End / Back-End, in a pace of your choice: full-time (which takes 6 weeks) / weekend (15 weeks). I enrolled to a full-time Front-End bootcamp that I finished in the end of January 2017.&lt;/p&gt;
+
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;h2 id=&quot;the-schedule&quot;&gt;The Schedule&lt;/h2&gt;
+
+&lt;p&gt;In Coders Lab full-time is full-time. Plus, afterhours, lots of afterhours. No mercy, you paid (a lot!) for the hard time. You need to enroll way in advance for two reasons:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;There’s a long list of applicants.&lt;/li&gt;
+  &lt;li&gt;You need to spend some 60 hours with Prework materials and then solve a series of coding tasks on GitHub. Don’t even think of starting the course with no knowledge at all because you didn’t feel like buckling down to study or just went through the Prework briefly and had somebody help you solve the tasks. That will not work and you’d realize this fact the very first day of the bootcamp. Waste of your money.&lt;/li&gt;
+&lt;/ol&gt;
 </description>
         <pubDate>Wed, 19 Apr 2017 10:20:12 +0200</pubDate>
         <link>http://localhost:4000/coders-lab</link>
