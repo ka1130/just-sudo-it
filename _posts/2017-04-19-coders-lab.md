@@ -37,8 +37,18 @@ After the exam you will use the rest of the day for a workshop. You're actually 
 
 ## Mentors
 
+Each group (around 10 students) is assigned a mentor, plus, some weeks will probably be guided by other mentors. Mentors are your wells of knowledge and motivation, use it but not overdose, especially in the later weeks. The more independent you try to get, the better for you. On the other hand, don't be shy asking for help if you get really stuck, mentors are there for you and will do their best to give you hand. However, expect a fishing-rod rather than the fish itself. :)
+
+I had luck to had been led by Mateusz Rojecki whom I owe true passion to JavaScript and an ambitious idea for the final project. Thanks, Boss! :) I still keep in touch with him and other Coders Lab mentors, still can ask their advice or just have a nice random talk. 
+
+Bear in mind that your mentor may be (and probably is) overloaded with work so don't worry if your email does not get immediate response. In the meantime, try to seek solution by yourself - if you succedd, you'll be proud and likely not to forget the lesson learned.  
+
 ## Final Project
 
+The last week is devoted to your own project: you can come up with your own idea, take up one of the ready-to-go propositions or go on for a charity project. I'd recommend the first or last option but no matter what you choose, if your mentor approves, you will definitely learn A LOT while developing your project and this will probably the most intensive week of all. You don't have to finish the project by the official end of the course, you will have two more weeks to bring it to a production version - but you have to be able to present your work in front of the audience. This is because during the official day of completion each student will demonstrate their project to all the rest of the group. This is kind of a final exam or a "thesis defence" after which you can officially receive a certificate of completion. Plus, a glass of champaigne. ;)
+
 ## Your first job!
+
+Having your project completed, resume prepared (the CL Human Resources Department will need to approve it first) - you can set forth searching for your first job in the Developer's profession. Coders Lab sends out the group's resumes to their partner companies once the edition is finished. However, it is still a good idea to take the initiative and serach yourself. I personally was on a one review with a CL partner and didn't like the company too much. I found a place where I currently work on my own and am more than happy about that, I couldn't have landed a better place. I will write something more about my first steps as a Junior Developer in the near future. :)
 
 ## Conclusion
