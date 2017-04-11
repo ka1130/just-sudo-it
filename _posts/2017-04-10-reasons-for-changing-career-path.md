@@ -1,7 +1,7 @@
 ---
 layout: post-sidebar
 title: "Why I changed my career path"
-date: 2017-04-10 11:15:53
+date: 2017-04-10 18:15:43
 categories: dsp2017 life
 author_name : Kamila
 author_url : /author/kamila
