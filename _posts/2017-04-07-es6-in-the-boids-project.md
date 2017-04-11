@@ -1,7 +1,7 @@
 ---
 layout: post-sidebar
 title: "6 ES6 features I use in the Boids project (and work great anywhere!)"
-date: 2017-04-07 09:00:12
+date: 2017-04-07 09:10:12
 categories: dsp2017 coding
 author_name : Kamila
 author_url : /author/kamila
