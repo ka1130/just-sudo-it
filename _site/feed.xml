@@ -6,9 +6,133 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Apr 2017 19:21:49 +0200</pubDate>
-    <lastBuildDate>Tue, 11 Apr 2017 19:21:49 +0200</lastBuildDate>
+    <pubDate>Tue, 11 Apr 2017 19:25:10 +0200</pubDate>
+    <lastBuildDate>Tue, 11 Apr 2017 19:25:10 +0200</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Coders Lab: an alumn's opinion</title>
+        <description>&lt;p&gt;To my great surprise I have discovered lately a huuuge controversy around preparing to a developer’s job in a way other than: &lt;em&gt;a)&lt;/em&gt; graduating from a University of Technology; &lt;em&gt;b)&lt;/em&gt; self-study. The &lt;em&gt;c)&lt;/em&gt; option are coding schools that in the most common case run programming bootcamps preparing freshmen to their first Junior Developer position. I am the one that went for the &lt;em&gt;c)&lt;/em&gt; option (which does not exclude self-study, quite the opposite: it forces unassisted work as much as possible).&lt;/p&gt;
+
+&lt;p&gt;My choice was &lt;a href=&quot;http://coderslab.pl/&quot;&gt;Coders Lab&lt;/a&gt; due to its long-term reputation - and because I had kept their handout for 3 years as a fallback plan for my career. Coders Lab offers two paths: Front-End / Back-End, in a pace of your choice: full-time (which takes 6 weeks) / weekend (15 weeks). I enrolled to a full-time Front-End bootcamp that I finished in the end of January 2017.&lt;/p&gt;
+
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
+
+&lt;p&gt;In fact, anyone can enroll to the bootcamp, regardless of their coding skills (or the lack of them). There are two tests to pass though: one for logical thinking, the other one for English. They are absolutely passable, no worries. If your English is good enough to read documentation and communicate well, this should do. The logical test might be tricky to get 100% of but as far as I’m concerned, more than 50% is OK. Check it out, this could have changed. Having both tests passed, you’ll need to tell a bit about your background and motivation.&lt;/p&gt;
+
+&lt;p&gt;Bear in mind that you’ll probably need to enroll to the bootcamp way before your edition will start - and there are two reasons for that:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;There’s a long list of applicants.&lt;/li&gt;
+  &lt;li&gt;You need to spend some 60 hours with Prework materials and then solve a series of coding tasks on GitHub. Don’t even think of starting the course with no knowledge at all because you didn’t feel like buckling down to study or just went through the Prework briefly and had somebody help you solve the tasks. That will not work and you’d realize this fact the very first day of the bootcamp. Waste of your money. :)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;the-schedule&quot;&gt;The Schedule&lt;/h2&gt;
+
+&lt;p&gt;In Coders Lab full-time is full-time. Plus, afterhours, lots of afterhours. No mercy, you paid (a lot!) for the hard time. You’ll have an hour of lunch break which you might end up spending mostly with your nose in the code. No outer pressure, though. ;) Each day consists of a theory parts interspersed with practical tasks. Or rather, practical tasks interspersed with theory, since the former eats up some 80% of the time. You will be sent all the presentations so that you can get back to them at any time.&lt;/p&gt;
+
+&lt;p&gt;Every week is dedicated to one basic topic, for instance &lt;em&gt;Advanced HTML &amp;amp; CSS&lt;/em&gt;, &lt;em&gt;JavaScript&lt;/em&gt;, &lt;em&gt;Sass &amp;amp; RWD&lt;/em&gt; etc. The program is being adjusted dynamically since, as we all know, IT profession is all about changes, changes and even more changes. A day without a new framework being born is a lost day. ;) At the end of every learning block (Fridays) you will sit an exam. It takes a series of tasks and you can use any help you need as long as it’s not your neighbours’ help. ;) Internet allowed - but no real-time communication. That’s kind of obvious, though.&lt;/p&gt;
+
+&lt;p&gt;After the exam you will use the rest of the day for a workshop. You’re actually bound to finish it during the weekend. Plus, homework, every day. Again, practice, practice, practice - and if you don’t have enough, no worries, you’ll be given some extras. :)&lt;/p&gt;
+
+&lt;h2 id=&quot;mentors&quot;&gt;Mentors&lt;/h2&gt;
+
+&lt;p&gt;Each group (around 10 students) is assigned a mentor, plus, some weeks will probably be guided by other mentors. Mentors are your wells of knowledge and motivation, use it but not overdose, especially in the later weeks. The more independent you try to get, the better for you. On the other hand, don’t be shy asking for help if you get really stuck, mentors are there for you and will do their best to give you hand. However, expect a fishing-rod rather than a fish itself. :)&lt;/p&gt;
+
+&lt;p&gt;I had luck to had been led by Mateusz Rojecki whom I owe true passion to JavaScript and an ambitious idea for the final project. Thanks, Boss! :) I still keep in touch with him and other Coders Lab mentors, still can ask their advice or just have a nice random talk.&lt;/p&gt;
+
+&lt;p&gt;Bear in mind that your mentor may be (and probably is) overloaded with work so don’t worry if your email does not get immediate response. In the meantime, try to seek solution by yourself - if you succedd, you’ll be proud and likely not to forget the lesson learned.&lt;/p&gt;
+
+&lt;h2 id=&quot;final-project&quot;&gt;Final Project&lt;/h2&gt;
+
+&lt;p&gt;The last week is devoted to your own project: you can come up with your own idea, take up one of the ready-to-go propositions or go for a charity project. I’d recommend the first or last option but no matter what you choose, if your mentor approves of it, you will definitely learn A LOT. This will probably the most intensive week of all. You don’t have to finish the project by the official end of the course, you will have two more weeks to bring it to a production version - but you have to be able to present your work in front of the audience. This is because during the official day of completion each student will demonstrate their project to all the rest of the group. It’s a kind of a final exam or a “thesis defence” after which you can officially receive a certificate of completion. Plus, a glass of champaigne. ;)&lt;/p&gt;
+
+&lt;h2 id=&quot;your-first-job&quot;&gt;Your first job!&lt;/h2&gt;
+
+&lt;p&gt;Having your project completed, resume prepared (the CL Human Resources Department will need to approve it first) - you can set forth searching for your first job in the Developer’s profession. Coders Lab sends out the group’s resumes to their partner companies once the edition is finished. However, it is still a good idea to take the initiative and search yourself. I personally was on a one review with a CL partner and didn’t like the company too much. I found a place where I currently work on my own and am more than happy about that, I couldn’t have landed a better place. I will write something more about my first steps as a Junior Developer in the nearest future.&lt;/p&gt;
+
+&lt;h2 id=&quot;shortcomings&quot;&gt;Shortcomings&lt;/h2&gt;
+
+&lt;p&gt;Are there any flaws on this idyllic picture? Sure there are! Coders Lab has developed tremendously during the last years so we experienced some organizational issues such as problems with getting thorugh to counselors on telephone, sometimes misleading information, unexpected changes in classrooms etc. I also regret that my group was the last one that was tought PHP and Wordpress instead of ES6, React.js and Webpack, I’d really prefer the freshly introduced front-end program. Mentors differ as differ people, they are all nice but you may (and probably will) have personal preferences. It’s a good idea to make a little reserach before your edition starts and find out more about the person who will guide your group. You may want to wait for someone else.&lt;/p&gt;
+
+&lt;p&gt;For most of people, the biggest drawback of Coders Lab courses is their price. Let’s put it clear: they are expensive as hell. I paid 9 000 PLN which is an equivalent of around three decent monthly wages in Poland. It took me a long time of saving but I believe that the investment will return in the years to come.&lt;/p&gt;
+
+&lt;p&gt;Last but not least, if you want to try getting a refund from the Polish Labor Office, good luck! It’s doable but extremely obtrusive. A friend of mine has succeeded with that but I’m not sure you’d enjoy her story… She may want to write a political thriller based on it.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;In conclusion, if your choice is a bootcamp rather than self-study, go for Coders Lab. As far as I am concerned there’s no better option currently on the market (correct me if I am wrong). Just pure statistics: 80% of CL graduates get’s their first developer’s job soon after completing the course. I have also heard recruiters repeat that Coders Lab graduates have a good reputation among employers - and I am a living proof of that. So, yes, I do recommend CL. If your ready to commit your saving, time and tons of effort, it’s one of the best options to start.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 19 Apr 2017 10:20:12 +0200</pubDate>
+        <link>http://localhost:4000/coders-lab</link>
+        <guid isPermaLink="true">http://localhost:4000/coders-lab</guid>
+        
+        
+        <category>dsp2017</category>
+        
+      </item>
+    
+      <item>
+        <title>Why I changed my career path</title>
+        <description>&lt;p&gt;OK, time for a coming out. I am 33 years old and I have just started my career as a Junior Developer. My former position? Senior Graphic Designer. I have been working in the design industry for 9 years, after completing 5 years long studies in the Graphic Design faculty. Adding 2 years of pre-study preparations, it gives me 16 years that I have just turned into dust. Sounds gloomy but, believe me, I feel really happy and excited. Many people ask me why I quit a stable, well-paid job, with no after-hours and familiar environment to… work much more for less(which is obvious at the beginning). Why did I then spend a big part of my savings to get into a full-time programming bootcamp that was eating up to 11-12 hours a day? And how come I find it really cool as opposed to designing, which people believe is more play than work? Well, the answer demands a whole story.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-choices&quot;&gt;The choices&lt;/h2&gt;
+
+&lt;p&gt;I was struggling with career choices from a young, actually too young age. The world seemed so inspiring that I wanted to do everything, preferably, everything simultaneously. ;) And yet, everybody around told me I needed to pick up just one thing and concentrate on that since, they explained, I’d have only one profession in my adult life. Trying to figure out what to choose from the growing amount of possibilities, one thing was obvious to me: it had to be something creative. I ended up going for graphic design - not that I had any special manual skills - but I have always loved arts of any kind and designing seemed really alluring. Plus, since the collapse of Communism in Poland, the advertising industry was thriving. Finishing our studies on 2007, me and almost all my fellow students dreamed of working in a “real” advertising agency, imaging it as the coolest and most rewarding job in the world.&lt;/p&gt;
+
+&lt;h2 id=&quot;imagination-vs-reality&quot;&gt;Imagination vs reality&lt;/h2&gt;
+
+&lt;p&gt;When I started my first job as a Junior Graphic Designer in a small advertising agency, the first signals of the upcoming economic crisis were already discernible. At the same time, Poland was still rushing ahead to make up for dozens years lost for our Eastern Big Brother. In consequence, the advertising industry was incredibly hungry for more work done but at the same time, not rich enough to reassure decent working conditions, especially for the newbies to the design job - at least that’s how it looked like in most of the cases. It still does. It was normal to work several hours a day, leave the office at night or even early in the morning, be bullied by your boss and Account Managers, always afraid of being fired. Trainings? Development? Sure, you have to do it somehow. At your own cost. After hours.&lt;/p&gt;
+
+&lt;p&gt;Designing was cool during studies when we created things that mattered, even if only to us. Put eye to eye with the market’s needs we had to forget about the ideals. What counted was the satisfied client and his money, not the project that you probably wouldn’t like to sign with your name. All of that is a perfect prescription for burnout.&lt;/p&gt;
+
+&lt;p&gt;Obviously, this is only the black side of the advertising industry. I know happy designers who love their job, grow as professionals and would tell here an exact opposite story. I also had many bright days and times when I designed with true passion. However, much too often was I confronted with the dirty side of the business. So often that, year by year, my fear of the future and uncertainty about my career choice were growing.&lt;/p&gt;
+
+&lt;h2 id=&quot;catching-the-balance&quot;&gt;Catching the balance&lt;/h2&gt;
+
+&lt;p&gt;Years were passing, I was changing the workplaces, slowly figuring out my own ways in the designer’s profession. After periods of storms and stillness, I landed up in a nice small company ran by my former boss. Already experienced, I started to feel really well, appreciated and respected. The environment was friendly, salary was very good, “nine to five” did mean “nine to five”. And all would be great if not for the nagging thought: “what would I do if I lost it? where would I go?”. I was scared by the fact that beyond the cosy walls of this one-off company there was no place for me. How come, you could ask. Well, as I mentioned before, there is a professional development problem in the industry. For 9 years, even though at every job interview I highlighted how important professional development for me was (more even than wages), even though I was promised trainings and development - I wasn’t offered any. Ever. Pardon, once, in a huge corporation, I went through a procedural training. I learned from my colleagues which was fine until 2011. From then on, I was working as the only designer in a company and my growth just stopped. At the same time, the industry’s expectations have skyrocketed. So many new technologies, so much to learn - I didn’t even know what to start with. The longer it lasted, the more anxious I was. I felt like I was getting detached from the world, as if it all raced forward leaving me far behind. I simply could not accept this situation. And though, I had no idea how which way to go.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-coding-story&quot;&gt;The coding story&lt;/h2&gt;
+
+&lt;p&gt;Why coding? Why not just choose to learn more great design tools, sharpen my skills etc. Well, there were a few problems with that.&lt;/p&gt;
+
+&lt;p&gt;First, I never felt that designer’s job is a best fit for me. I didn’t want to admit even before myself but there were many times when doubted my career choice. It might have been because of unpleasant experiences in my former workplaces, or it was just an intuitive signal.&lt;/p&gt;
+
+&lt;p&gt;Second, when you work as a designer, it’s not professionals who judge your work. It’s the client. Client who often believes that it’s just knowing Photoshop tools that makes one a graphic designer. Client who forces their ideas which often result in a work that is, to put it bluntly, ugly as hell. Guess who’s gonna be blamed for that? ;)&lt;/p&gt;
+
+&lt;p&gt;And third, I was just tired of struggling with forces that were undeniably unsurmountable. Tired of getting things forever “more catchy”, “more dynamic”, “crazy but not too crazy”, “just not like this…” etc. I’m no fortune-teller, I don’t read minds. I missed explicit expectations, clear evaluation criteria, chances to grow in my profession.&lt;/p&gt;
+
+&lt;p&gt;It’s a funny thing with coding in my life: looking back I see that since I got the first experiences with the Internet, I wanted to learn to write websites (I absolutely had no idea that coding goes far beyond that). Now this one will take you aback: I didn’t know how to deal with Internet until the age of 20. True story. It was 2004 when I moved to my own apartment and got myself a broadband, then I learned how to use basic communicators, make do with Yahoo!, Google and Netsprint, manage emails and so on. 2 years later, after completing a short EU-funded training, I wrote my very first website using XHTML and table-based layout. It was a present for my dad who needed a website with an overview of his trainings’ offer. Actually, as for those days, it looked really nice. :)&lt;/p&gt;
+
+&lt;p&gt;As a designer, I needed some coding stuff for myself too: online portfolios, Wordpress blogs etc. I completed a few courses, some of them on-line, the others stationary, even finished postgraduate studies on Polish-Japanese Academy of Information Technology, two semesters on “Advanced Multimedia”, again, EU-funded. Honestly, I didn’t learn much on programming there, yet I reasserted my conviction that coding is really cool.&lt;/p&gt;
+
+&lt;p&gt;A breaking point came in 2013 - and 3 years must have passed before I realized that. I stumbled upon an announcement on &lt;a href=&quot;http://railsgirls.com/&quot;&gt;Rails Girls workshops&lt;/a&gt; in Warsaw. I didn’t even know that there is a programming language called Ruby but since the workshop was dedicated to beginners, and it was about CODING, I applied and got approved.&lt;/p&gt;
+
+&lt;p&gt;The workshop lasted two days - definitely not enough to learn Ruby but enough to get to know the basics of programming, hear stories of people who have retrained and became developers, and finally - how to change one’s career path. I still keep pics from that time:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;img/post-assets/ruby1.jpg&quot; alt=&quot;Rails Girls 2013&quot; class=&quot;img-responsive&quot; /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;img/post-assets/ruby2.jpg&quot; alt=&quot;Rails Girls 2013&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It was also at Rails Girls where I got to know there is a place called Coders Lab, an intensive full-time bootcamp that takes 6 weeks of hard work, costs a fortune - but actually guarantees you will find a job as a Junior Developer after completion. I asked my mentor what he thought about that and he told me that, yes, that’s a hard deal but for those ready to commit - it’s worth it. I took a discount flier for Coders Lab and kept it in a cabinet so that I saw it every day. Remember I told myself: “if anything else fails, I’ll go for it”.&lt;/p&gt;
+
+&lt;p&gt;May 2016, I woke up one morning, having a really tough year behind me, and it dawned on me quite mightily: “actually, isn’t NOW the right time”? I do not believe in stories of “one day change” of one’s life, I guess there was a huge subconscious process behind but the truth is: it was this morning when I took the decision. I quit my job. Enrolled to Coders Lab. Learned as hard as I could. And you know what? That was reaaaalllly cool. I simply couldn’t break away from coding, it turned out to be the most engaging, rewarding - and, yes, creative activity I’ve ever experienced. Obviously, it’s also wearing at times, as any job, I guess. But I feel that a developer’s profession is just a great fit to me.&lt;/p&gt;
+
+&lt;h2 id=&quot;and-what-now&quot;&gt;…and what now?&lt;/h2&gt;
+
+&lt;p&gt;Well, I started working as a Junior Developer a few days ago. So actually - it all just began. Once I settle down a bit, I plan to write a bit more on that. Keep your fingers crossed!&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 10 Apr 2017 20:15:43 +0200</pubDate>
+        <link>http://localhost:4000/reasons-for-changing-career-path</link>
+        <guid isPermaLink="true">http://localhost:4000/reasons-for-changing-career-path</guid>
+        
+        
+        <category>dsp2017</category>
+        
+        <category>life</category>
+        
+      </item>
     
       <item>
         <title>6 ES6 features I use in the Boids project (and work great anywhere!)</title>
@@ -206,7 +330,7 @@ Bear in mind that a subclass cannot contain an empty constructor. Even if the co
 Thanks for reading, see you later! :)&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 19 Apr 2017 11:00:12 +0200</pubDate>
+        <pubDate>Fri, 07 Apr 2017 11:00:12 +0200</pubDate>
         <link>http://localhost:4000/es6-in-the-boids-project</link>
         <guid isPermaLink="true">http://localhost:4000/es6-in-the-boids-project</guid>
         
@@ -218,126 +342,209 @@ Thanks for reading, see you later! :)&lt;/p&gt;
       </item>
     
       <item>
-        <title>Coders Lab: an alumn's opinion</title>
-        <description>&lt;p&gt;To my great surprise I have discovered lately a huuuge controversy around preparing to a developer’s job in a way other than: &lt;em&gt;a)&lt;/em&gt; graduating from a University of Technology; &lt;em&gt;b)&lt;/em&gt; self-study. The &lt;em&gt;c)&lt;/em&gt; option are coding schools that in the most common case run programming bootcamps preparing freshmen to their first Junior Developer position. I am the one that went for the &lt;em&gt;c)&lt;/em&gt; option (which does not exclude self-study, quite the opposite: it forces unassisted work as much as possible).&lt;/p&gt;
+        <title>6 ES6 features I use in the Boids project (and work great anywhere!)</title>
+        <description>&lt;p&gt;The introduction of ECMAScript 2015 standard, also known as ES6, is a quantum leap for JavaScript that the language hadn’t seen since 2009. I didn’t realize the significance of the changes until very recently when I started to learn the new ES6 features. Some of them are pretty self-explanatory, the others took me more time to comprehend - and there’s still a bunch of stuff I have only blurry idea about. Since the best way of learning to code is actually… to code, I decided to introduce ES6 to the Boids project. And you know what, it considerably simplified and clarified the work. So I decided to share some insight with you. Here are the 6 ES6 features I have used when programming Boids.&lt;/p&gt;
 
-&lt;p&gt;My choice was &lt;a href=&quot;http://coderslab.pl/&quot;&gt;Coders Lab&lt;/a&gt; due to its long-term reputation - and because I had kept their handout for 3 years as a fallback plan for my career. Coders Lab offers two paths: Front-End / Back-End, in a pace of your choice: full-time (which takes 6 weeks) / weekend (15 weeks). I enrolled to a full-time Front-End bootcamp that I finished in the end of January 2017.&lt;/p&gt;
+&lt;h2 id=&quot;1-block-scoped-constructs-let-and-const&quot;&gt;1. Block-Scoped Constructs: Let and Const&lt;/h2&gt;
 
-&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;ES6 has introduced two new ways of defining variables. Apart from &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; we have also now &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;cost&lt;/code&gt;. Now what are &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; for and why was &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; not enough?&lt;/p&gt;
 
-&lt;p&gt;In fact, anyone can enroll to the bootcamp, regardless of their coding skills (or the lack of them). There are two tests to pass though: one for logical thinking, the other one for English. They are absolutely passable, no worries. If your English is good enough to read documentation and communicate well, this should do. The logical test might be tricky to get 100% of but as far as I’m concerned, more than 50% is OK. Check it out, this could have changed. Having both tests passed, you’ll need to tell a bit about your background and motivation.&lt;/p&gt;
+&lt;p&gt;The main problem with &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; was its scope, which is a function scope, whereas &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; are block-scoped. It means they only exist within the current block represented by a pair of curly braces: &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt;: it may be a block within an &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; statement, a loop - or you can simply create one and put your &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; inside. This helps avoid common developers’ problems and makes JavaScript behave more predictably to those used to work in other languages, such as Java, C or C++.&lt;/p&gt;
 
-&lt;p&gt;Bear in mind that you’ll probably need to enroll to the bootcamp way before your edition will start - and there are two reasons for that:&lt;/p&gt;
+&lt;p&gt;Also, when using &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; you do not fall into the hoisting trap, which you may welcome with relief as many people find the hoisting idea pretty distressing. This is because &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; remain uninitialized until they are declared. The timespan before &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; initialization is called “Temporal Dead Zone” (TDZ). For more in-depth explanation, have a look &lt;a href=&quot;https://ponyfoo.com/articles/es6-let-const-and-temporal-dead-zone-in-depth&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;There’s a long list of applicants.&lt;/li&gt;
-  &lt;li&gt;You need to spend some 60 hours with Prework materials and then solve a series of coding tasks on GitHub. Don’t even think of starting the course with no knowledge at all because you didn’t feel like buckling down to study or just went through the Prework briefly and had somebody help you solve the tasks. That will not work and you’d realize this fact the very first day of the bootcamp. Waste of your money. :)&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Next, &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; declarations cannot be reassigned. So you won’t accidentally overwrite your variables. You can only update the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt;. By contrast, &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; declaration is created to keep values that will not be changed. Some programmers say it’s best to use &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; by default and &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; only in special cases, when the value of the variable is bound to be changed (such as the counter in your &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loop).&lt;/p&gt;
 
-&lt;h2 id=&quot;the-schedule&quot;&gt;The Schedule&lt;/h2&gt;
+&lt;p&gt;Last but not least, &lt;code class=&quot;highlighter-rouge&quot;&gt;let&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;const&lt;/code&gt; do not become properties of the global object, in case you defined them globally (which you should never do by the way). The same is true for the new ES6 Classes - and I’ll tell you more about them later in this post.&lt;/p&gt;
 
-&lt;p&gt;In Coders Lab full-time is full-time. Plus, afterhours, lots of afterhours. No mercy, you paid (a lot!) for the hard time. You’ll have an hour of lunch break which you might end up spending mostly with your nose in the code. No outer pressure, though. ;) Each day consists of a theory parts interspersed with practical tasks. Or rather, practical tasks interspersed with theory, since the former eats up some 80% of the time. You will be sent all the presentations so that you can get back to them at any time.&lt;/p&gt;
+&lt;p&gt;Of course, you can still use &lt;code class=&quot;highlighter-rouge&quot;&gt;var&lt;/code&gt; if you want, there’s nothing wrong with that. Just be aware of it’s characteristics and give the new constructs a try too see if you feel commfortable working with them.&lt;/p&gt;
 
-&lt;p&gt;Every week is dedicated to one basic topic, for instance &lt;em&gt;Advanced HTML &amp;amp; CSS&lt;/em&gt;, &lt;em&gt;JavaScript&lt;/em&gt;, &lt;em&gt;Sass &amp;amp; RWD&lt;/em&gt; etc. The program is being adjusted dynamically since, as we all know, IT profession is all about changes, changes and even more changes. A day without a new framework being born is a lost day. ;) At the end of every learning block (Fridays) you will sit an exam. It takes a series of tasks and you can use any help you need as long as it’s not your neighbours’ help. ;) Internet allowed - but no real-time communication. That’s kind of obvious, though.&lt;/p&gt;
+&lt;h2 id=&quot;2-arrow-functions&quot;&gt;2. Arrow Functions&lt;/h2&gt;
 
-&lt;p&gt;After the exam you will use the rest of the day for a workshop. You’re actually bound to finish it during the weekend. Plus, homework, every day. Again, practice, practice, practice - and if you don’t have enough, no worries, you’ll be given some extras. :)&lt;/p&gt;
+&lt;p&gt;A cool new feature of ES6 are arrow functions, also referred to as fat-arrow functions. Their name stems from the token they use: &lt;code class=&quot;highlighter-rouge&quot;&gt;=&amp;gt;&lt;/code&gt; which looks… well, like a fat arrow. Arrow functions are just a more concise syntax for writing function expressions. They also handle &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; bindings in functions in a different way which takes two issues. First, they
+don’t rebind the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; when you use an arrow function inside of another function. Second, the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; inside of a function can never be changed.&lt;/p&gt;
 
-&lt;h2 id=&quot;mentors&quot;&gt;Mentors&lt;/h2&gt;
+&lt;p&gt;Let’s see how it works in practice. We’ll use a &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt; method on an array of numbers to sum them up:&lt;/p&gt;
 
-&lt;p&gt;Each group (around 10 students) is assigned a mentor, plus, some weeks will probably be guided by other mentors. Mentors are your wells of knowledge and motivation, use it but not overdose, especially in the later weeks. The more independent you try to get, the better for you. On the other hand, don’t be shy asking for help if you get really stuck, mentors are there for you and will do their best to give you hand. However, expect a fishing-rod rather than a fish itself. :)&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nums&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 
-&lt;p&gt;I had luck to had been led by Mateusz Rojecki whom I owe true passion to JavaScript and an ambitious idea for the final project. Thanks, Boss! :) I still keep in touch with him and other Coders Lab mentors, still can ask their advice or just have a nice random talk.&lt;/p&gt;
+&lt;span class=&quot;nx&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Now with the use of ES6 standard we can simplify it to just:&lt;/p&gt;
 
-&lt;p&gt;Bear in mind that your mentor may be (and probably is) overloaded with work so don’t worry if your email does not get immediate response. In the meantime, try to seek solution by yourself - if you succedd, you’ll be proud and likely not to forget the lesson learned.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nums&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 
-&lt;h2 id=&quot;final-project&quot;&gt;Final Project&lt;/h2&gt;
+&lt;span class=&quot;nx&quot;&gt;nums&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Whoaa, what has just happened here? Well, first, we’ve got rid of the &lt;code class=&quot;highlighter-rouge&quot;&gt;function&lt;/code&gt; keyword. Next, we’ve replaced the &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;&lt;/code&gt; curly braces with the fat-arrow token: &lt;code class=&quot;highlighter-rouge&quot;&gt;=&amp;gt;&lt;/code&gt;. Then, we’ve made use of the fact that arrow function have so-called implicit returns, which means that we could omit the &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; keyword if it was a simple one-liner. We couldn’t have done this if the &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; expression had multiple lines. And last, since we’ve had just one parameter in the function, we could omit the parentheses around it as well. Doesn’t it look gorgeously nice and clear?&lt;/p&gt;
 
-&lt;p&gt;The last week is devoted to your own project: you can come up with your own idea, take up one of the ready-to-go propositions or go for a charity project. I’d recommend the first or last option but no matter what you choose, if your mentor approves of it, you will definitely learn A LOT. This will probably the most intensive week of all. You don’t have to finish the project by the official end of the course, you will have two more weeks to bring it to a production version - but you have to be able to present your work in front of the audience. This is because during the official day of completion each student will demonstrate their project to all the rest of the group. It’s a kind of a final exam or a “thesis defence” after which you can officially receive a certificate of completion. Plus, a glass of champaigne. ;)&lt;/p&gt;
+&lt;p&gt;What you need to bear in mind when using arrow functions is the behaviour of &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; that I mentioned in the beginning of this section. So, remember that in an arrow function &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; does not get rebound, it is just inherited from its parent’s scope. Imagine for instance a situation when you want to trigger an event on an element using the &lt;code class=&quot;highlighter-rouge&quot;&gt;addEventListener()&lt;/code&gt; method. You pass this method a function as a second parameter and &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; in such function gets rebound to an element on which the event was performed. If you tried now to exchange the regular function expression inside of an &lt;code class=&quot;highlighter-rouge&quot;&gt;addEventListener()&lt;/code&gt; method and printed &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; to the console, you may find out, it directs you to the &lt;code class=&quot;highlighter-rouge&quot;&gt;Window&lt;/code&gt; object! This would be true if you created a function in a global scope. Conclusion: when working with events or whenever you WANT &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; to get rebound, go for a regular function expression. 
+On the other hand, in situations when you’d write something like &lt;code class=&quot;highlighter-rouge&quot;&gt;var self = this&lt;/code&gt;, thus needed a fixed &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;, using an arrow function will makes things much cleaner.&lt;/p&gt;
 
-&lt;h2 id=&quot;your-first-job&quot;&gt;Your first job!&lt;/h2&gt;
+&lt;p&gt;And the last thing to remember about arrow functions: they are really handy when working with &lt;strong&gt;anonymous&lt;/strong&gt; functions. You cannot use this shorthand if your function is named.&lt;/p&gt;
 
-&lt;p&gt;Having your project completed, resume prepared (the CL Human Resources Department will need to approve it first) - you can set forth searching for your first job in the Developer’s profession. Coders Lab sends out the group’s resumes to their partner companies once the edition is finished. However, it is still a good idea to take the initiative and search yourself. I personally was on a one review with a CL partner and didn’t like the company too much. I found a place where I currently work on my own and am more than happy about that, I couldn’t have landed a better place. I will write something more about my first steps as a Junior Developer in the nearest future.&lt;/p&gt;
+&lt;h2 id=&quot;3-default-parameters&quot;&gt;3. Default Parameters&lt;/h2&gt;
 
-&lt;h2 id=&quot;shortcomings&quot;&gt;Shortcomings&lt;/h2&gt;
+&lt;p&gt;Another cool new feature of ES6 are default functions parameters. By declaring the defaults for a function you initialize it with default values of your choice. They get passed to a called function when an argument is either omitted or &lt;code class=&quot;highlighter-rouge&quot;&gt;undefined&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Are there any flaws on this idyllic picture? Sure there are! Coders Lab has developed tremendously during the last years so we experienced some organizational issues such as problems with getting thorugh to counselors on telephone, sometimes misleading information, unexpected changes in classrooms etc. I also regret that my group was the last one that was tought PHP and Wordpress instead of ES6, React.js and Webpack, I’d really prefer the freshly introduced front-end program. Mentors differ as differ people, they are all nice but you may (and probably will) have personal preferences. It’s a good idea to make a little reserach before your edition starts and find out more about the person who will guide your group. You may want to wait for someone else.&lt;/p&gt;
+&lt;p&gt;Let’s say you want to initialize a simple &lt;code class=&quot;highlighter-rouge&quot;&gt;sum&lt;/code&gt; function with default values. This is how you do it:&lt;/p&gt;
 
-&lt;p&gt;For most of people, the biggest drawback of Coders Lab courses is their price. Let’s put it clear: they are expensive as hell. I paid 9 000 PLN which is an equivalent of around three decent monthly wages in Poland. It took me a long time of saving but I believe that the investment will return in the years to come.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; 9
+&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// =&amp;gt; 12&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+That simple! You just assign the default values to the function you declare with the use of an equal sign. Nice, easy and really handy at times.&lt;/p&gt;
 
-&lt;p&gt;Last but not least, if you want to try getting a refund from the Polish Labor Office, good luck! It’s doable but extremely obtrusive. A friend of mine has succeeded with that but I’m not sure you’d enjoy her story… She may want to write a political thriller based on it.&lt;/p&gt;
+&lt;h2 id=&quot;4-template-literals&quot;&gt;4. Template Literals&lt;/h2&gt;
 
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This one is easy to grasp as well. You have surely done things like this in the past:&lt;/p&gt;
 
-&lt;p&gt;In conclusion, if your choice is a bootcamp rather than self-study, go for Coders Lab. As far as I am concerned there’s no better option currently on the market (correct me if I am wrong). Just pure statistics: 80% of CL graduates get’s their first developer’s job soon after completing the course. I have also heard recruiters repeat that Coders Lab graduates have a good reputation among employers - and I am a living proof of that. So, yes, I do recommend CL. If your ready to commit your saving, time and tons of effort, it’s one of the best options to start.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;, nice to meet you&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; thing looks pretty awkward especially to the newbies. Now we can handle such issues much simpler using string interpolation (you may be familiar with this idea if you use Sass). What you need is a pair of backticks &lt;code class=&quot;highlighter-rouge&quot;&gt;`code`&lt;/code&gt; to wrap your expression and a dollar sign followed by a pair of curly brackets which keep an expression (of any kind), parameter or variable. The above code could thus be rewritten like so:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;hello&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nice&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;meet&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;you&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Moreover, template literals support multiliners. That means you no longer need to write weird things like:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloEs5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Hello\n'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'  World\n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+ES6 will understand you’d like to keep line breaks if you rewrote the above declaration in this way:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;helloEs6&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;World&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Again, clean, simple and self-explanatory snippet of code. And again, just a piece of syntactic sugar, yet since most of us like sweets - why not help yourself? :)&lt;/p&gt;
+
+&lt;h2 id=&quot;5-destructuring&quot;&gt;5. Destructuring&lt;/h2&gt;
+
+&lt;p&gt;At this point I actually ended up dropping out destructuring from the project but who knows where the further work will bring me. Anyways, destructuring is a really nifty way of extracting data from arrays and objects and assign them to variables. Let’s have a look at the following example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;names&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Sally&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;James&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Ben&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;names&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//&quot;Sally&quot;
+&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//&quot;James&quot;
+&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//&quot;Ben&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Instead of referring each object in the array with the use of its index value, we can simply destructure the array, passing to the square brackets the names of the variables. If we passed less names than the amount of elements in the array, nothing will happen - the excess elements will be ignored.&lt;/p&gt;
+
+&lt;p&gt;Destructuring works pretty the same way with objects.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;firstname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;John&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;lastname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Smith&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;country&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Canada&quot;&lt;/span&gt; 
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;firstname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lastname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;country&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;firstname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//&quot;John&quot;
+&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lastname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//&quot;Smith&quot;
+&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;country&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//&quot;Canada&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Again, the output code is clean, readable and easy to maintain. Of course, there’s much more you can do with destructuring (as with any other feature I present in this post), so go ahead and check it out. I will also show you some resources in the Internet which go deeper into ES6 in the sum-up section.&lt;/p&gt;
+
+&lt;h2 id=&quot;6-classes&quot;&gt;6. Classes&lt;/h2&gt;
+
+&lt;p&gt;Last but not least, classes. I’ve found this feature particularly helpful in my project. Classes will replace the ES5 constructor functions and take JavaScript closer to fully object-oriented languages. Classes are just a bit of syntactic sugar over prototypal inheritance in JS but they make the syntax much cleaner and more readable. JavaScript still keeps its prototypal way of object inheritance, so ES6 classes do not work exactly like in classic OOP as, for obvious reasons, JS has to maintain backward compatibility.&lt;/p&gt;
+
+&lt;p&gt;To define a class we simply use the &lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt; keyword followed by its name and a pair of curly braces which keep the class’ body. Here, we can set a special &lt;code class=&quot;highlighter-rouge&quot;&gt;constructor&lt;/code&gt; method which initializes every instance of the class with a defined logic. For example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_brand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_year&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;toyota&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Toyota&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2012&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toyota&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Car {_brand: &quot;Toyota&quot;, _year: &quot;2012&quot;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+We can also set methods for a class, again, in a much more concise and clean way. Let’s add a &lt;code class=&quot;highlighter-rouge&quot;&gt;drive()&lt;/code&gt; method to our class:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_brand&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_year&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;vroom&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;toyota&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Toyota&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2012&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;toyota&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//vroom&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+You can also make use of inheritance and create subclasses (also referred to as “derived classes”) with the new &lt;code class=&quot;highlighter-rouge&quot;&gt;extends&lt;/code&gt; keyword. Now let’s imagine we would like to create a subclass that inherits the properties of the Car and extends them with yet another “model” property. In this case, we can make use of the &lt;code class=&quot;highlighter-rouge&quot;&gt;super&lt;/code&gt; keyword which calls the parent class. Let’s see this in action:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kr&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Model&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kr&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;year&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prius&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Toyota&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2012&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Prius&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//Model {_brand: &quot;Toyota&quot;, _year: &quot;2012&quot;, _model: &quot;Prius&quot;}
+&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;prius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;drive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//vroom&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br /&gt;
+Bear in mind that a subclass cannot contain an empty constructor. Even if the constructor would only call &lt;code class=&quot;highlighter-rouge&quot;&gt;super()&lt;/code&gt;, it still needs to be there.&lt;/p&gt;
+
+&lt;h2 id=&quot;babel&quot;&gt;Babel&lt;/h2&gt;
+
+&lt;p&gt;Now here’s the key issue: “Can I use…?”. Although most of the modern browser do not have problems with understanding ES6, there are some features of the standards that still are problematic. You might also need to support dinosaurs (if so, accept my sympathy). This is where so-called transpilers come in handy. What they do is convert your ECMAScript 6 code to ECMAScript 5 compatible code. One of the most popular, actually a standard now, is &lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt;. Go ahead and visit its site. In the top menu you will find a “Try it out” tab which allows you to see how Babel handles your ES6 code. When you paste a snippet of your code on the left, its ES5 representation will show up on the right. Babel does a really good job here!&lt;/p&gt;
+
+&lt;p&gt;An instruction for using Babel could actually take a whole new and quite long tutorial(and I consider preparing one for you) so for now please just refer to the great &lt;a href=&quot;https://babeljs.io/docs/setup/&quot;&gt;Babel documentation&lt;/a&gt; or try out the tool live &lt;a href=&quot;https://babeljs.io/repl/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;summing-up--learning-resources&quot;&gt;Summing Up &amp;amp; Learning Resources&lt;/h2&gt;
+
+&lt;p&gt;Despite the substantial length of this post, this was just a very brief introduction into the ES6 features described, let alone the whole bunch of other stuff that ES6 has in its offer. I assume you’d feel like diving deeper into the subject so I created a list of nice resources for you. A few free once to start:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A solid course by &lt;a href=&quot;https://egghead.io/courses/learn-es6-ecmascript-2015&quot;&gt;Egghead.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A series of articles by &lt;a href=&quot;https://hacks.mozilla.org/category/es6-in-depth/&quot;&gt;Mozilla&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Another extensive series, all details nicely explained on &lt;a href=&quot;https://medium.com/@mrzepinski&quot;&gt;Medium.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And for those who want even more and are ready to sacrifice some pennies, here are two video trainings that I gave a try and found helpful:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A fabulous course by &lt;a href=&quot;http://wesbos.com/es6-for-everyone/&quot;&gt;Wes Bos&lt;/a&gt;, whom you may know from his free &lt;a href=&quot;https://javascript30.com/&quot;&gt;30-day ES6 challenge&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A nice training on &lt;a href=&quot;https://www.udemy.com/javascript-es6-tutorial/&quot;&gt;Udemy&lt;/a&gt;. There are often huge discounts there so I’d advice you to wait for one, as you can get the course for as little as 10-15 Euro.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In case you were curious, how are Boids doing, please be invited to the &lt;a href=&quot;https://github.com/ka1130/Boids&quot;&gt;GitHub repo&lt;/a&gt;.
+Thanks for reading, see you later! :)&lt;/p&gt;
+
 </description>
-        <pubDate>Wed, 19 Apr 2017 10:20:12 +0200</pubDate>
-        <link>http://localhost:4000/coders-lab</link>
-        <guid isPermaLink="true">http://localhost:4000/coders-lab</guid>
+        <pubDate>Fri, 07 Apr 2017 11:00:12 +0200</pubDate>
+        <link>http://localhost:4000/es6-in-the-boids-project</link>
+        <guid isPermaLink="true">http://localhost:4000/es6-in-the-boids-project</guid>
         
         
         <category>dsp2017</category>
         
-      </item>
-    
-      <item>
-        <title>Why I changed my career path</title>
-        <description>&lt;p&gt;OK, time for a coming out. I am 33 years old and I have just started my career as a Junior Developer. My former position? Senior Graphic Designer. I have been working in the design industry for 9 years, after completing 5 years long studies in the Graphic Design faculty. Adding 2 years of pre-study preparations, it gives me 16 years that I have just turned into dust. Sounds gloomy but, believe me, I feel really happy and excited. Many people ask me why I quit a stable, well-paid job, with no after-hours and familiar environment to… work much more for less(which is obvious at the beginning). Why did I then spend a big part of my savings to get into a full-time programming bootcamp that was eating up to 11-12 hours a day? And how come I find it really cool as opposed to designing, which people believe is more play than work? Well, the answer demands a whole story.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-choices&quot;&gt;The choices&lt;/h2&gt;
-
-&lt;p&gt;I was struggling with career choices from a young, actually too young age. The world seemed so inspiring that I wanted to do everything, preferably, everything simultaneously. ;) And yet, everybody around told me I needed to pick up just one thing and concentrate on that since, they explained, I’d have only one profession in my adult life. Trying to figure out what to choose from the growing amount of possibilities, one thing was obvious to me: it had to be something creative. I ended up going for graphic design - not that I had any special manual skills - but I have always loved arts of any kind and designing seemed really alluring. Plus, since the collapse of Communism in Poland, the advertising industry was thriving. Finishing our studies on 2007, me and almost all my fellow students dreamed of working in a “real” advertising agency, imaging it as the coolest and most rewarding job in the world.&lt;/p&gt;
-
-&lt;h2 id=&quot;imagination-vs-reality&quot;&gt;Imagination vs reality&lt;/h2&gt;
-
-&lt;p&gt;When I started my first job as a Junior Graphic Designer in a small advertising agency, the first signals of the upcoming economic crisis were already discernible. At the same time, Poland was still rushing ahead to make up for dozens years lost for our Eastern Big Brother. In consequence, the advertising industry was incredibly hungry for more work done but at the same time, not rich enough to reassure decent working conditions, especially for the newbies to the design job - at least that’s how it looked like in most of the cases. It still does. It was normal to work several hours a day, leave the office at night or even early in the morning, be bullied by your boss and Account Managers, always afraid of being fired. Trainings? Development? Sure, you have to do it somehow. At your own cost. After hours.&lt;/p&gt;
-
-&lt;p&gt;Designing was cool during studies when we created things that mattered, even if only to us. Put eye to eye with the market’s needs we had to forget about the ideals. What counted was the satisfied client and his money, not the project that you probably wouldn’t like to sign with your name. All of that is a perfect prescription for burnout.&lt;/p&gt;
-
-&lt;p&gt;Obviously, this is only the black side of the advertising industry. I know happy designers who love their job, grow as professionals and would tell here an exact opposite story. I also had many bright days and times when I designed with true passion. However, much too often was I confronted with the dirty side of the business. So often that, year by year, my fear of the future and uncertainty about my career choice were growing.&lt;/p&gt;
-
-&lt;h2 id=&quot;catching-the-balance&quot;&gt;Catching the balance&lt;/h2&gt;
-
-&lt;p&gt;Years were passing, I was changing the workplaces, slowly figuring out my own ways in the designer’s profession. After periods of storms and stillness, I landed up in a nice small company ran by my former boss. Already experienced, I started to feel really well, appreciated and respected. The environment was friendly, salary was very good, “nine to five” did mean “nine to five”. And all would be great if not for the nagging thought: “what would I do if I lost it? where would I go?”. I was scared by the fact that beyond the cosy walls of this one-off company there was no place for me. How come, you could ask. Well, as I mentioned before, there is a professional development problem in the industry. For 9 years, even though at every job interview I highlighted how important professional development for me was (more even than wages), even though I was promised trainings and development - I wasn’t offered any. Ever. Pardon, once, in a huge corporation, I went through a procedural training. I learned from my colleagues which was fine until 2011. From then on, I was working as the only designer in a company and my growth just stopped. At the same time, the industry’s expectations have skyrocketed. So many new technologies, so much to learn - I didn’t even know what to start with. The longer it lasted, the more anxious I was. I felt like I was getting detached from the world, as if it all raced forward leaving me far behind. I simply could not accept this situation. And though, I had no idea how which way to go.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-coding-story&quot;&gt;The coding story&lt;/h2&gt;
-
-&lt;p&gt;Why coding? Why not just choose to learn more great design tools, sharpen my skills etc. Well, there were a few problems with that.&lt;/p&gt;
-
-&lt;p&gt;First, I never felt that designer’s job is a best fit for me. I didn’t want to admit even before myself but there were many times when doubted my career choice. It might have been because of unpleasant experiences in my former workplaces, or it was just an intuitive signal.&lt;/p&gt;
-
-&lt;p&gt;Second, when you work as a designer, it’s not professionals who judge your work. It’s the client. Client who often believes that it’s just knowing Photoshop tools that makes one a graphic designer. Client who forces their ideas which often result in a work that is, to put it bluntly, ugly as hell. Guess who’s gonna be blamed for that? ;)&lt;/p&gt;
-
-&lt;p&gt;And third, I was just tired of struggling with forces that were undeniably unsurmountable. Tired of getting things forever “more catchy”, “more dynamic”, “crazy but not too crazy”, “just not like this…” etc. I’m no fortune-teller, I don’t read minds. I missed explicit expectations, clear evaluation criteria, chances to grow in my profession.&lt;/p&gt;
-
-&lt;p&gt;It’s a funny thing with coding in my life: looking back I see that since I got the first experiences with the Internet, I wanted to learn to write websites (I absolutely had no idea that coding goes far beyond that). Now this one will take you aback: I didn’t know how to deal with Internet until the age of 20. True story. It was 2004 when I moved to my own apartment and got myself a broadband, then I learned how to use basic communicators, make do with Yahoo!, Google and Netsprint, manage emails and so on. 2 years later, after completing a short EU-funded training, I wrote my very first website using XHTML and table-based layout. It was a present for my dad who needed a website with an overview of his trainings’ offer. Actually, as for those days, it looked really nice. :)&lt;/p&gt;
-
-&lt;p&gt;As a designer, I needed some coding stuff for myself too: online portfolios, Wordpress blogs etc. I completed a few courses, some of them on-line, the others stationary, even finished postgraduate studies on Polish-Japanese Academy of Information Technology, two semesters on “Advanced Multimedia”, again, EU-funded. Honestly, I didn’t learn much on programming there, yet I reasserted my conviction that coding is really cool.&lt;/p&gt;
-
-&lt;p&gt;A breaking point came in 2013 - and 3 years must have passed before I realized that. I stumbled upon an announcement on &lt;a href=&quot;http://railsgirls.com/&quot;&gt;Rails Girls workshops&lt;/a&gt; in Warsaw. I didn’t even know that there is a programming language called Ruby but since the workshop was dedicated to beginners, and it was about CODING, I applied and got approved.&lt;/p&gt;
-
-&lt;p&gt;The workshop lasted two days - definitely not enough to learn Ruby but enough to get to know the basics of programming, hear stories of people who have retrained and became developers, and finally - how to change one’s career path. I still keep pics from that time:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;img/post-assets/ruby1.jpg&quot; alt=&quot;Rails Girls 2013&quot; class=&quot;img-responsive&quot; /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;img/post-assets/ruby2.jpg&quot; alt=&quot;Rails Girls 2013&quot; class=&quot;img-responsive&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It was also at Rails Girls where I got to know there is a place called Coders Lab, an intensive full-time bootcamp that takes 6 weeks of hard work, costs a fortune - but actually guarantees you will find a job as a Junior Developer after completion. I asked my mentor what he thought about that and he told me that, yes, that’s a hard deal but for those ready to commit - it’s worth it. I took a discount flier for Coders Lab and kept it in a cabinet so that I saw it every day. Remember I told myself: “if anything else fails, I’ll go for it”.&lt;/p&gt;
-
-&lt;p&gt;May 2016, I woke up one morning, having a really tough year behind me, and it dawned on me quite mightily: “actually, isn’t NOW the right time”? I do not believe in stories of “one day change” of one’s life, I guess there was a huge subconscious process behind but the truth is: it was this morning when I took the decision. I quit my job. Enrolled to Coders Lab. Learned as hard as I could. And you know what? That was reaaaalllly cool. I simply couldn’t break away from coding, it turned out to be the most engaging, rewarding - and, yes, creative activity I’ve ever experienced. Obviously, it’s also wearing at times, as any job, I guess. But I feel that a developer’s profession is just a great fit to me.&lt;/p&gt;
-
-&lt;h2 id=&quot;and-what-now&quot;&gt;…and what now?&lt;/h2&gt;
-
-&lt;p&gt;Well, I started working as a Junior Developer a few days ago. So actually - it all just began. Once I settle down a bit, I plan to write a bit more on that. Keep your fingers crossed!&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 10 Apr 2017 20:15:43 +0200</pubDate>
-        <link>http://localhost:4000/reasons-for-changing-career-path</link>
-        <guid isPermaLink="true">http://localhost:4000/reasons-for-changing-career-path</guid>
-        
-        
-        <category>dsp2017</category>
-        
-        <category>life</category>
+        <category>coding</category>
         
       </item>
     
@@ -1413,35 +1620,6 @@ to put Jekyll in kind of “watch” mode where all your changes to the blog’s
         <pubDate>Sat, 18 Mar 2017 14:20:02 +0100</pubDate>
         <link>http://localhost:4000/what-the-boids</link>
         <guid isPermaLink="true">http://localhost:4000/what-the-boids</guid>
-        
-        
-        <category>dsp2017</category>
-        
-      </item>
-    
-      <item>
-        <title>Get Noticed! / ed.2017</title>
-        <description>&lt;h2 id=&quot;ds---what&quot;&gt;..Ds - what?&lt;/h2&gt;
-&lt;p&gt;You might be wondering what the heck is this Dsp2017 in the categories’ section and what actually am I doing here, starting yet another programming blog with little experience in front-end development. Well, what got me going with all this stuff is a competition opened by &lt;a href=&quot;http://devstyle.pl/o-mnie/&quot;&gt;Maciej Aniserowicz&lt;/a&gt;, founder of &lt;a href=&quot;http://devstyle.pl&quot;&gt;Devstyle&lt;/a&gt; blog, one of the best of the kind in Poland. “Dsp” is a Polish acronym for “Get Noticed” and this is exactly the name of the competition. It is targeted at literally all programmers, no matter how experienced they are. Anyone can join, work on their own project, blog about it, share their knowledge and learn at the same time.&lt;/p&gt;
-
-&lt;p&gt;Believe me, I’m scared to death. I have defined my project (more about it in the following posts), gathered necessary materials but, as a newbie in the industry, I know I will need to work really hard to make my readers benefit from the posts here. That said, I know there are thousands of people like me and I hope to encourage them to step out of the shade and believe that if I can become an IT blogger, they too have valuable knowledge to share.&lt;/p&gt;
-
-&lt;h2 id=&quot;so-why-would-anyone-want-to-stay-here&quot;&gt;So why would anyone want to stay here?&lt;/h2&gt;
-&lt;p&gt;Little experience does not mean having nothing to contribute. I’ve made sure my project would be ambitious enough to get some programmers interested. I will definitely stumble upon problems some programmers will encounter (or already did in the past) too and hope the solutions I come up with will prove helpful.&lt;/p&gt;
-
-&lt;h2 id=&quot;schedule&quot;&gt;Schedule&lt;/h2&gt;
-&lt;p&gt;The posts will appear at least twice a week for minimum 10 weeks continuously. Each week I will issue a post with some information related strictly to the project, and another one associated with coding / IT environment.&lt;/p&gt;
-
-&lt;h2 id=&quot;technologies&quot;&gt;Technologies&lt;/h2&gt;
-&lt;p&gt;You can expect me to write about JavaScript, as well as HTML/CSS/Sass issues. The blog is powered by Jekyll and hosted on GitHub pages so I plan to walk you through the process which turned out to be a bit tricky on Windows. ;)&lt;/p&gt;
-
-&lt;h2 id=&quot;ok-are-you-finished&quot;&gt;OK, are you finished?&lt;/h2&gt;
-&lt;p&gt;Yes. Not going to bore you to death. ;) If you wish to keep track of this blog, just make use of the RSS button on the &lt;a href=&quot;http://just-sudo-it.pl&quot;&gt;home site&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 15 Mar 2017 09:50:28 +0100</pubDate>
-        <link>http://localhost:4000/get-noticed-2017</link>
-        <guid isPermaLink="true">http://localhost:4000/get-noticed-2017</guid>
         
         
         <category>dsp2017</category>
