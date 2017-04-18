@@ -1,7 +1,7 @@
 ---
 layout: post-sidebar
 title: "Taking it slower"
-date: 2017-04-16 18:09:56
+date: 2017-04-16 16:09:56
 categories: dsp2017 coding life
 author_name : Kamila
 author_url : /author/kamila
