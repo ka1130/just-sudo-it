@@ -22,7 +22,7 @@ That leads me to some afterthoughts on motivation issues, organizational skills 
 
 ## The general message
 
-We all hear it, read it and maybe even keep repeating ourselves every day. *Your only limit is you.* *Wake up with determination, go to bed with satisfaction.* *Don't stop when you're tired, stop when you're DONE.* And, yep, *just sudo it* on top of that. Already motivated? Slightly bored and doubtful? Or already sick of the bullshit behind? If you've reached the last level, I have good news for you: you really don't need to push any harder. Listen to your inner voice. There are times when less is more. And, yes, that applies to your work, projects and goals too.
+We all hear it, read it and maybe even keep repeating ourselves every day. *Your only limit is you.* *Wake up with determination, go to bed with satisfaction.* *Don't stop when you're tired, stop when you're DONE.* And, yep, *just sudo it* on top of that. Already motivated? Slightly bored and doubtful? Or simply sick of the bullshit behind? If you've reached the last level, I have good news for you: you really don't need to push any harder. Listen to your inner voice. There are times when less is more. And, yes, that applies to your work, projects and goals too.
 
 ## The quiet message
 
