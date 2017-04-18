@@ -30,7 +30,7 @@ Several years ago I was overcoming one of the toughest times in my life. There w
 
 ## Balancing it all out 
 
-The hardest thing is to balance the two concepts. I was just about to give up the project: there's a huge amount of learning awaiting me in my job (I am lucky enough to be paid for undergoing a programming training now :)), I need to remind myself how to charge my batteries after work, my house asks for some care at last, et cetera, et cetera. However, I am giving the project a chance. There is already an explicit plan for further steps and some corrections of the code and I plan to re-run Boids in the days to come. Your fingers crossed will help! :)
+The hardest thing is to balance the two concepts. I was just about to give up this project: there's a huge amount of learning awaiting me in my job (I am lucky enough to be paid for undergoing a programming training now :)), I need to remind myself how to charge my batteries after work, my house asks for some care at last, et cetera, et cetera. However, I am giving the project a chance. There is already an explicit plan for further steps and some corrections of the code and I plan to re-run Boids in the days to come. Your fingers crossed will help! :)
 
 
 
