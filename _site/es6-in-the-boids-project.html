@@ -116,7 +116,8 @@ On the other hand, in situations when you’d write something like <code class="
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="nx">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="nx">sum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// =&gt; 9</span>
+<span class="nx">sum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// =&gt; 9
+</span>
 <span class="nx">add</span><span class="p">();</span> <span class="c1">// =&gt; 12</span></code></pre></figure>
 <p><br />
 That simple! You just assign the default values to the function you declare with the use of an equal sign. Nice, easy and really handy at times.</p>
@@ -155,8 +156,10 @@ Again, clean, simple and self-explanatory snippet of code. And again, just a pie
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Sally"</span><span class="p">,</span> <span class="s2">"James"</span><span class="p">,</span> <span class="s2">"Ben"</span><span class="p">];</span>
 <span class="kd">let</span> <span class="p">[</span><span class="nx">name1</span><span class="p">,</span> <span class="nx">name2</span><span class="p">,</span> <span class="nx">name3</span><span class="p">]</span> <span class="o">=</span> <span class="nx">names</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name1</span><span class="p">);</span>  <span class="c1">//"Sally"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name2</span><span class="p">);</span>  <span class="c1">//"James"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name1</span><span class="p">);</span>  <span class="c1">//"Sally"
+</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name2</span><span class="p">);</span>  <span class="c1">//"James"
+</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name3</span><span class="p">);</span>  <span class="c1">//"Ben"</span></code></pre></figure>
 <p><br />
 Instead of referring each object in the array with the use of its index value, we can simply destructure the array, passing to the square brackets the names of the variables. If we passed less names than the amount of elements in the array, nothing will happen - the excess elements will be ignored.</p>
@@ -171,8 +174,10 @@ Instead of referring each object in the array with the use of its index value, w
 
 <span class="kd">let</span> <span class="p">{</span> <span class="nx">firstname</span><span class="p">,</span> <span class="nx">lastname</span><span class="p">,</span> <span class="nx">country</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">person</span><span class="p">;</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>  <span class="c1">//"John"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastname</span><span class="p">);</span>  <span class="c1">//"Smith"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstname</span><span class="p">);</span>  <span class="c1">//"John"
+</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lastname</span><span class="p">);</span>  <span class="c1">//"Smith"
+</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">country</span><span class="p">);</span>  <span class="c1">//"Canada"</span></code></pre></figure>
 <p><br />
 Again, the output code is clean, readable and easy to maintain. Of course, there’s much more you can do with destructuring (as with any other feature I present in this post), so go ahead and check it out. I will also show you some resources in the Internet which go deeper into ES6 in the sum-up section.</p>
@@ -221,7 +226,8 @@ You can also make use of inheritance and create subclasses (also referred to as 
 
 <span class="kd">let</span> <span class="nx">prius</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Model</span><span class="p">(</span><span class="s2">"Toyota"</span><span class="p">,</span> <span class="s2">"2012"</span><span class="p">,</span> <span class="s2">"Prius"</span><span class="p">);</span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prius</span><span class="p">);</span> <span class="c1">//Model {_brand: "Toyota", _year: "2012", _model: "Prius"}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">prius</span><span class="p">);</span> <span class="c1">//Model {_brand: "Toyota", _year: "2012", _model: "Prius"}
+</span>
 <span class="nx">prius</span><span class="p">.</span><span class="nx">drive</span><span class="p">();</span> <span class="c1">//vroom</span></code></pre></figure>
 <p><br />
 Bear in mind that a subclass cannot contain an empty constructor. Even if the constructor would only call <code class="highlighter-rouge">super()</code>, it still needs to be there.</p>
@@ -280,8 +286,8 @@ Thanks for reading, see you later! :)</p>
                 </a>
         </div>
            <div class="similar-post">
-                <a href="/taking-it-easy">
-                    <h3>Taking it easy</h3>
+                <a href="/taking-it-slower">
+                    <h3>Taking it slower</h3>
                 </a>
         </div>
            <div class="similar-post">
@@ -387,10 +393,10 @@ Thanks for reading, see you later! :)</p>
         
     
         
-        <a href="/taking-it-easy"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
+        <a href="/taking-it-slower"><div class="col-sm-6 col-md-2 no-gutter read-another-container">
             <div class="overlay"></div>
             <img src='/img/recommend-slow.jpg'>
-            <h3 class="read-another">Taking it easy</h3>
+            <h3 class="read-another">Taking it slower</h3>
         </div></a>
         
     
