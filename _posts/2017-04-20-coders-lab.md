@@ -1,7 +1,7 @@
 ---
 layout: post-sidebar
 title: "Coders Lab: an alumn's opinion"
-date: 2017-04-19 10:20:12
+date: 2017-04-20 10:20:12
 categories: dsp2017
 author_name : Kamila
 author_url : /author/kamila
